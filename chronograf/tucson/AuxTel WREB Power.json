@@ -1,0 +1,454 @@
+{
+	"meta": {
+		"chronografVersion": "1.7.14",
+		"sources": {
+			"4": {
+				"name": "Influx 1",
+				"link": "/chronograf/v1/sources/4"
+			}
+		}
+	},
+	"dashboard": {
+		"id": 5,
+		"cells": [
+			{
+				"i": "b6ccf085-5018-48a3-b073-71885d83f28f",
+				"x": 0,
+				"y": 0,
+				"w": 4,
+				"h": 4,
+				"name": "Voltages",
+				"queries": [
+					{
+						"query": "SELECT mean(\"analog_V\") AS \"mean_analog_V\", mean(\"clkHigh_V\") AS \"mean_clkHigh_V\", mean(\"clkLow_V\") AS \"mean_clkLow_V\", mean(\"digital_V\") AS \"mean_digital_V\", mean(\"dphi_V\") AS \"mean_dphi_V\", mean(\"heater_V\") AS \"mean_heater_V\", mean(\"hvbias_V\") AS \"mean_hvbias_V\", mean(\"od_V\") AS \"mean_od_V\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wrebPower\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ATCamera.wrebPower",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_analog_V",
+									"args": [
+										{
+											"value": "analog_V",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_clkHigh_V",
+									"args": [
+										{
+											"value": "clkHigh_V",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_clkLow_V",
+									"args": [
+										{
+											"value": "clkLow_V",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_digital_V",
+									"args": [
+										{
+											"value": "digital_V",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_dphi_V",
+									"args": [
+										{
+											"value": "dphi_V",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_heater_V",
+									"args": [
+										{
+											"value": "heater_V",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_hvbias_V",
+									"args": [
+										{
+											"value": "hvbias_V",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_od_V",
+									"args": [
+										{
+											"value": "od_V",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "Voltage",
+						"prefix": "",
+						"suffix": " V",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "61ffd8d3-e006-4479-92e7-5ba00469158b",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "10e3088b-538a-4603-b634-83000302174d",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "97227fbd-f10e-49f9-91da-912b911262f4",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/5/cells/b6ccf085-5018-48a3-b073-71885d83f28f"
+				}
+			},
+			{
+				"i": "1e7aa1c0-4a6a-49f4-ac25-80d6dd05038a",
+				"x": 4,
+				"y": 0,
+				"w": 4,
+				"h": 4,
+				"name": "Currents",
+				"queries": [
+					{
+						"query": "SELECT mean(\"analog_I\") AS \"mean_analog_I\", mean(\"clkHigh_I\") AS \"mean_clkHigh_I\", mean(\"clkLow_I\") AS \"mean_clkLow_I\", mean(\"digital_I\") AS \"mean_digital_I\", mean(\"dphi_I\") AS \"mean_dphi_I\", mean(\"heater_I\") AS \"mean_heater_I\", mean(\"hvbias_I\") AS \"mean_hvbias_I\", mean(\"od_I\") AS \"mean_od_I\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wrebPower\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ATCamera.wrebPower",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_analog_I",
+									"args": [
+										{
+											"value": "analog_I",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_clkHigh_I",
+									"args": [
+										{
+											"value": "clkHigh_I",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_clkLow_I",
+									"args": [
+										{
+											"value": "clkLow_I",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_digital_I",
+									"args": [
+										{
+											"value": "digital_I",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_dphi_I",
+									"args": [
+										{
+											"value": "dphi_I",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_heater_I",
+									"args": [
+										{
+											"value": "heater_I",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_hvbias_I",
+									"args": [
+										{
+											"value": "hvbias_I",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_od_I",
+									"args": [
+										{
+											"value": "od_I",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "Current",
+						"prefix": "",
+						"suffix": " mA",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "61ffd8d3-e006-4479-92e7-5ba00469158b",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "10e3088b-538a-4603-b634-83000302174d",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "97227fbd-f10e-49f9-91da-912b911262f4",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/5/cells/1e7aa1c0-4a6a-49f4-ac25-80d6dd05038a"
+				}
+			}
+		],
+		"templates": [],
+		"name": "AuxTel WREB Power",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/5",
+			"cells": "/chronograf/v1/dashboards/5/cells",
+			"templates": "/chronograf/v1/dashboards/5/templates"
+		}
+	}
+}

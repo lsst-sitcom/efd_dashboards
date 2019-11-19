@@ -1,0 +1,158 @@
+{
+	"meta": {
+		"chronografVersion": "1.7.14",
+		"sources": {
+			"4": {
+				"name": "Influx 1",
+				"link": "/chronograf/v1/sources/4"
+			}
+		}
+	},
+	"dashboard": {
+		"id": 13,
+		"cells": [
+			{
+				"i": "2ed2e1fa-96b4-45c4-a225-73e10f1508c3",
+				"x": 0,
+				"y": 0,
+				"w": 11,
+				"h": 7,
+				"name": "ATArchiver Processing",
+				"queries": [
+					{
+						"query": "SELECT \"private_sndStamp\", \"statusCode\", \"description\" FROM \"efd\".\"autogen\".\"lsst.sal.ATArchiver.logevent_processingStatus\" WHERE time > :dashboardTime: ",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ATArchiver.logevent_processingStatus",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "private_sndStamp",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "statusCode",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "description",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATArchiver.logevent_processingStatus.private_sndStamp",
+						"displayName": "Send Stamp",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATArchiver.logevent_processingStatus.statusCode",
+						"displayName": "Status Code",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATArchiver.logevent_processingStatus.description",
+						"displayName": "Description",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/13/cells/2ed2e1fa-96b4-45c4-a225-73e10f1508c3"
+				}
+			}
+		],
+		"templates": [],
+		"name": "Processing Table",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/13",
+			"cells": "/chronograf/v1/dashboards/13/cells",
+			"templates": "/chronograf/v1/dashboards/13/templates"
+		}
+	}
+}

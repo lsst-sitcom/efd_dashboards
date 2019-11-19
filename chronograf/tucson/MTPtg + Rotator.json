@@ -1,0 +1,240 @@
+{
+	"meta": {
+		"chronografVersion": "1.7.14",
+		"sources": {
+			"4": {
+				"name": "Influx 1",
+				"link": "/chronograf/v1/sources/4"
+			}
+		}
+	},
+	"dashboard": {
+		"id": 15,
+		"cells": [
+			{
+				"i": "80695c34-0ede-4437-9af2-75c2bef073a9",
+				"x": 0,
+				"y": 0,
+				"w": 7,
+				"h": 2,
+				"name": "DemandRot",
+				"queries": [
+					{
+						"query": "SELECT \"demandRot\" FROM \"efd\".\"autogen\".\"lsst.sal.MTPtg.currentTargetStatus\" ORDER BY DESC LIMIT 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"demandRot\" FROM \"efd\".\"autogen\".\"lsst.sal.MTPtg.currentTargetStatus\" ORDER BY DESC LIMIT 1",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.MTPtg.currentTargetStatus.demandRot",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/15/cells/80695c34-0ede-4437-9af2-75c2bef073a9"
+				}
+			},
+			{
+				"i": "8c7792f3-ced1-4c5a-b7e1-4ad64ab7bcd6",
+				"x": 0,
+				"y": 2,
+				"w": 7,
+				"h": 2,
+				"name": "Rotator Position",
+				"queries": [
+					{
+						"query": "SELECT \"Position\" FROM \"efd\".\"autogen\".\"lsst.sal.Rotator.Application\" ORDER BY DESC LIMIT 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"Position\" FROM \"efd\".\"autogen\".\"lsst.sal.Rotator.Application\" ORDER BY DESC LIMIT 1",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.Rotator.Application.Position",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/15/cells/8c7792f3-ced1-4c5a-b7e1-4ad64ab7bcd6"
+				}
+			}
+		],
+		"templates": [],
+		"name": "MTPtg + Rotator",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/15",
+			"cells": "/chronograf/v1/dashboards/15/cells",
+			"templates": "/chronograf/v1/dashboards/15/templates"
+		}
+	}
+}
