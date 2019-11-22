@@ -12,6 +12,123 @@
 		"id": 11,
 		"cells": [
 			{
+				"i": "ca13de56-636d-4212-8551-a7e133d9a138",
+				"x": 0,
+				"y": 0,
+				"w": 3,
+				"h": 3,
+				"name": "Offline State",
+				"queries": [
+					{
+						"query": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.logevent_offlineDetailedState\" ORDER BY DESC LIMIT 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.logevent_offlineDetailedState\" ORDER BY DESC LIMIT 1",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "background",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					},
+					{
+						"id": "ce18afb0-d615-4093-bc3f-e13c459a4f61",
+						"type": "background",
+						"hex": "#4ED8A0",
+						"name": "rainforest",
+						"value": "0.9"
+					},
+					{
+						"id": "abfee8ea-882a-4cff-8ea6-e1eb3dd554d1",
+						"type": "background",
+						"hex": "#FFB94A",
+						"name": "pineapple",
+						"value": "1.9"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": false,
+					"digits": 2
+				},
+				"note": "OFFLINE AVAILABLE = 1\n\nOFFLINE PUBLISH ONLY = 2",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/11/cells/ca13de56-636d-4212-8551-a7e133d9a138"
+				}
+			},
+			{
 				"i": "2ab3b22f-9032-436a-95a2-9a6930e85388",
 				"x": 3,
 				"y": 0,
@@ -138,7 +255,7 @@
 			{
 				"i": "222b4c3e-f2b9-4c5d-814e-2d7df707efdb",
 				"x": 0,
-				"y": 0,
+				"y": 3,
 				"w": 3,
 				"h": 3,
 				"name": "Rafts",
@@ -399,8 +516,8 @@
 			},
 			{
 				"i": "6236bf91-9ef6-417d-be7c-de41c769c7ae",
-				"x": 9,
-				"y": 0,
+				"x": 3,
+				"y": 3,
 				"w": 3,
 				"h": 3,
 				"name": "Shutter",

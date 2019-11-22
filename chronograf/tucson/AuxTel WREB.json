@@ -17,10 +17,10 @@
 				"y": 4,
 				"w": 4,
 				"h": 4,
-				"name": "Currents Set 2",
+				"name": "Requested Currents",
 				"queries": [
 					{
-						"query": "SELECT mean(\"anaPS_I\") AS \"mean_anaPS_I\", mean(\"clkHPS_I\") AS \"mean_clkHPS_I\", mean(\"digPS_I\") AS \"mean_digPS_I\", mean(\"htrPS_I\") AS \"mean_htrPS_I\", mean(\"odPS_I\") AS \"mean_odPS_I\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wreb\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"anaI\") AS \"mean_anaI\", mean(\"clkHI\") AS \"mean_clkHI\", mean(\"digI\") AS \"mean_digI\", mean(\"odI\") AS \"mean_odI\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wreb\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.ATCamera.wreb",
@@ -29,10 +29,10 @@
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "mean_anaPS_I",
+									"alias": "mean_anaI",
 									"args": [
 										{
-											"value": "anaPS_I",
+											"value": "anaI",
 											"type": "field",
 											"alias": ""
 										}
@@ -41,10 +41,10 @@
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "mean_clkHPS_I",
+									"alias": "mean_clkHI",
 									"args": [
 										{
-											"value": "clkHPS_I",
+											"value": "clkHI",
 											"type": "field",
 											"alias": ""
 										}
@@ -53,10 +53,10 @@
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "mean_digPS_I",
+									"alias": "mean_digI",
 									"args": [
 										{
-											"value": "digPS_I",
+											"value": "digI",
 											"type": "field",
 											"alias": ""
 										}
@@ -65,22 +65,10 @@
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "mean_htrPS_I",
+									"alias": "mean_odI",
 									"args": [
 										{
-											"value": "htrPS_I",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_odPS_I",
-									"args": [
-										{
-											"value": "odPS_I",
+											"value": "odI",
 											"type": "field",
 											"alias": ""
 										}
@@ -196,7 +184,7 @@
 				"y": 4,
 				"w": 4,
 				"h": 4,
-				"name": "Currents Set 1",
+				"name": "Actual Currents",
 				"queries": [
 					{
 						"query": "SELECT mean(\"od0I\") AS \"mean_od0I\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wreb\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
@@ -327,10 +315,10 @@
 				"y": 0,
 				"w": 4,
 				"h": 4,
-				"name": "Voltages Set 2",
+				"name": "Requested Voltages",
 				"queries": [
 					{
-						"query": "SELECT mean(\"anaPS_V\") AS \"mean_anaPS_V\", mean(\"clkHPS_V\") AS \"mean_clkHPS_V\", mean(\"digPS_V\") AS \"mean_digPS_V\", mean(\"htrPS_V\") AS \"mean_htrPS_V\", mean(\"odPS_V\") AS \"mean_odPS_V\", mean(\"rgL_V\") AS \"mean_rgL_V\", mean(\"rgU_V\") AS \"mean_rgU_V\", mean(\"sckL_V\") AS \"mean_sckL_V\", mean(\"sckU_V\") AS \"mean_sckU_V\", mean(\"power\") AS \"mean_power\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wreb\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"anaV\") AS \"mean_anaV\", mean(\"clkHV\") AS \"mean_clkHV\", mean(\"clkLV\") AS \"mean_clkLV\", mean(\"digV\") AS \"mean_digV\", mean(\"htrPS_V\") AS \"mean_htrPS_V\", mean(\"odPS_V\") AS \"mean_odPS_V\", mean(\"rgL_V\") AS \"mean_rgL_V\", mean(\"rgV\") AS \"mean_rgV\", mean(\"sckL_V\") AS \"mean_sckL_V\", mean(\"sckU_V\") AS \"mean_sckU_V\", mean(\"power\") AS \"mean_power\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wreb\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.ATCamera.wreb",
@@ -339,10 +327,10 @@
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "mean_anaPS_V",
+									"alias": "mean_anaV",
 									"args": [
 										{
-											"value": "anaPS_V",
+											"value": "anaV",
 											"type": "field",
 											"alias": ""
 										}
@@ -351,10 +339,10 @@
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "mean_clkHPS_V",
+									"alias": "mean_clkHV",
 									"args": [
 										{
-											"value": "clkHPS_V",
+											"value": "clkHV",
 											"type": "field",
 											"alias": ""
 										}
@@ -363,10 +351,22 @@
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "mean_digPS_V",
+									"alias": "mean_clkLV",
 									"args": [
 										{
-											"value": "digPS_V",
+											"value": "clkLV",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_digV",
+									"args": [
+										{
+											"value": "digV",
 											"type": "field",
 											"alias": ""
 										}
@@ -411,10 +411,10 @@
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "mean_rgU_V",
+									"alias": "mean_rgV",
 									"args": [
 										{
-											"value": "rgU_V",
+											"value": "rgV",
 											"type": "field",
 											"alias": ""
 										}
@@ -566,39 +566,15 @@
 				"y": 0,
 				"w": 4,
 				"h": 4,
-				"name": "Voltages Set 1",
+				"name": "Actual Voltages",
 				"queries": [
 					{
-						"query": "SELECT mean(\"ckPSH_V\") AS \"mean_ckPSH_V\", mean(\"ckPOV\") AS \"mean_ckPOV\", mean(\"cks0V\") AS \"mean_cks0V\", mean(\"gd0V\") AS \"mean_gd0V\", mean(\"ogoV\") AS \"mean_ogoV\", mean(\"rg0V\") AS \"mean_rg0V\", mean(\"rd0V\") AS \"mean_rd0V\", mean(\"od0V\") AS \"mean_od0V\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wreb\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"cks0V\") AS \"mean_cks0V\", mean(\"gd0V\") AS \"mean_gd0V\", mean(\"og0V\") AS \"mean_og0V\", mean(\"rg0V\") AS \"mean_rg0V\", mean(\"rd0V\") AS \"mean_rd0V\", mean(\"od0V\") AS \"mean_od0V\", mean(\"pClk0\") AS \"mean_pClk0\", mean(\"rg0\") AS \"mean_rg0\", mean(\"sClk0\") AS \"mean_sClk0\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wreb\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.ATCamera.wreb",
 							"retentionPolicy": "autogen",
 							"fields": [
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_ckPSH_V",
-									"args": [
-										{
-											"value": "ckPSH_V",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_ckPOV",
-									"args": [
-										{
-											"value": "ckPOV",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
 								{
 									"value": "mean",
 									"type": "func",
@@ -626,10 +602,10 @@
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "mean_ogoV",
+									"alias": "mean_og0V",
 									"args": [
 										{
-											"value": "ogoV",
+											"value": "og0V",
 											"type": "field",
 											"alias": ""
 										}
@@ -666,6 +642,42 @@
 									"args": [
 										{
 											"value": "od0V",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_pClk0",
+									"args": [
+										{
+											"value": "pClk0",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_rg0",
+									"args": [
+										{
+											"value": "rg0",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_sClk0",
+									"args": [
+										{
+											"value": "sClk0",
 											"type": "field",
 											"alias": ""
 										}

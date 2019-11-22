@@ -20,7 +20,7 @@
 				"name": "Voltages",
 				"queries": [
 					{
-						"query": "SELECT mean(\"analog_V\") AS \"mean_analog_V\", mean(\"clkHigh_V\") AS \"mean_clkHigh_V\", mean(\"clkLow_V\") AS \"mean_clkLow_V\", mean(\"digital_V\") AS \"mean_digital_V\", mean(\"dphi_V\") AS \"mean_dphi_V\", mean(\"heater_V\") AS \"mean_heater_V\", mean(\"hvbias_V\") AS \"mean_hvbias_V\", mean(\"od_V\") AS \"mean_od_V\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wrebPower\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"analog_V\") AS \"mean_analog_V\", mean(\"clkHigh_V\") AS \"mean_clkHigh_V\", mean(\"clkLow_V\") AS \"mean_clkLow_V\", mean(\"digital_V\") AS \"mean_digital_V\", mean(\"dphi_V\") AS \"mean_dphi_V\", mean(\"heater_V\") AS \"mean_heater_V\", mean(\"hvbias_V\") AS \"mean_hvbias_V\", mean(\"od_V\") AS \"mean_od_V\", mean(\"otm_V\") AS \"mean_otm_V\", mean(\"aux_V\") AS \"mean_aux_V\", mean(\"fan_V\") AS \"mean_fan_V\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wrebPower\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.ATCamera.wrebPower",
@@ -117,6 +117,42 @@
 									"args": [
 										{
 											"value": "od_V",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_otm_V",
+									"args": [
+										{
+											"value": "otm_V",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_aux_V",
+									"args": [
+										{
+											"value": "aux_V",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_fan_V",
+									"args": [
+										{
+											"value": "fan_V",
 											"type": "field",
 											"alias": ""
 										}
@@ -235,7 +271,7 @@
 				"name": "Currents",
 				"queries": [
 					{
-						"query": "SELECT mean(\"analog_I\") AS \"mean_analog_I\", mean(\"clkHigh_I\") AS \"mean_clkHigh_I\", mean(\"clkLow_I\") AS \"mean_clkLow_I\", mean(\"digital_I\") AS \"mean_digital_I\", mean(\"dphi_I\") AS \"mean_dphi_I\", mean(\"heater_I\") AS \"mean_heater_I\", mean(\"hvbias_I\") AS \"mean_hvbias_I\", mean(\"od_I\") AS \"mean_od_I\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wrebPower\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"analog_I\") AS \"mean_analog_I\", mean(\"clkHigh_I\") AS \"mean_clkHigh_I\", mean(\"clkLow_I\") AS \"mean_clkLow_I\", mean(\"digital_I\") AS \"mean_digital_I\", mean(\"dphi_I\") AS \"mean_dphi_I\", mean(\"heater_I\") AS \"mean_heater_I\", mean(\"hvbias_I\") AS \"mean_hvbias_I\", mean(\"od_I\") AS \"mean_od_I\", mean(\"aux_I\") AS \"mean_aux_I\", mean(\"fan_I\") AS \"mean_fan_I\", mean(\"otm_I\") AS \"mean_otm_I\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wrebPower\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.ATCamera.wrebPower",
@@ -332,6 +368,42 @@
 									"args": [
 										{
 											"value": "od_I",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_aux_I",
+									"args": [
+										{
+											"value": "aux_I",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_fan_I",
+									"args": [
+										{
+											"value": "fan_I",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_otm_I",
+									"args": [
+										{
+											"value": "otm_I",
 											"type": "field",
 											"alias": ""
 										}
