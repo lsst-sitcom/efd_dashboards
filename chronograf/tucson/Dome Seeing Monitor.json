@@ -1,0 +1,1766 @@
+{
+	"meta": {
+		"chronografVersion": "1.7.14",
+		"sources": {
+			"4": {
+				"name": "Influx 1",
+				"link": "/chronograf/v1/sources/4"
+			}
+		}
+	},
+	"dashboard": {
+		"id": 18,
+		"cells": [
+			{
+				"i": "43e10c52-2952-4aee-98c6-ed07b2479082",
+				"x": 10,
+				"y": 4,
+				"w": 2,
+				"h": 2,
+				"name": "FWHM:2",
+				"queries": [
+					{
+						"query": "SELECT \"fwhm\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 2 AND time > :dashboardTime:",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"fwhm\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 2 AND time > :dashboardTime:",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "(pixels)",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "ff7e09bf-2b1e-4ee1-9194-1500c69efaf0",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "5c0b07fc-566d-4f19-927a-bac66c73dc53",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "dc6b773e-cdf0-4525-b1f1-67866b412436",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/43e10c52-2952-4aee-98c6-ed07b2479082"
+				}
+			},
+			{
+				"i": "e83db370-8db2-4bfe-9b3e-f251dd2f3389",
+				"x": 8,
+				"y": 4,
+				"w": 2,
+				"h": 2,
+				"name": "Flux:2",
+				"queries": [
+					{
+						"query": "SELECT \"flux\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 2 AND time > :dashboardTime:",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"flux\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 2 AND time > :dashboardTime:",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "ff7e09bf-2b1e-4ee1-9194-1500c69efaf0",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "5c0b07fc-566d-4f19-927a-bac66c73dc53",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "dc6b773e-cdf0-4525-b1f1-67866b412436",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/e83db370-8db2-4bfe-9b3e-f251dd2f3389"
+				}
+			},
+			{
+				"i": "64a4de74-c730-427a-8050-5d1099dc55cb",
+				"x": 6,
+				"y": 4,
+				"w": 2,
+				"h": 2,
+				"name": "Max ADC:2",
+				"queries": [
+					{
+						"query": "SELECT \"maxADC\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 2 AND time > :dashboardTime:",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"maxADC\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 2 AND time > :dashboardTime:",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "ff7e09bf-2b1e-4ee1-9194-1500c69efaf0",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "5c0b07fc-566d-4f19-927a-bac66c73dc53",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "dc6b773e-cdf0-4525-b1f1-67866b412436",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/64a4de74-c730-427a-8050-5d1099dc55cb"
+				}
+			},
+			{
+				"i": "48b08522-c1a9-40be-bfa7-5802f461015f",
+				"x": 10,
+				"y": 0,
+				"w": 2,
+				"h": 2,
+				"name": "FWHM:1",
+				"queries": [
+					{
+						"query": "SELECT \"fwhm\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 1 AND time > :dashboardTime:",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"fwhm\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 1 AND time > :dashboardTime:",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "(pixels)",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "ff7e09bf-2b1e-4ee1-9194-1500c69efaf0",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "5c0b07fc-566d-4f19-927a-bac66c73dc53",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "dc6b773e-cdf0-4525-b1f1-67866b412436",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/48b08522-c1a9-40be-bfa7-5802f461015f"
+				}
+			},
+			{
+				"i": "9506cd67-c29a-4e94-97c4-e220bcf45edd",
+				"x": 6,
+				"y": 0,
+				"w": 2,
+				"h": 2,
+				"name": "Max ADC:1",
+				"queries": [
+					{
+						"query": "SELECT \"maxADC\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 1 AND time > :dashboardTime:",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"maxADC\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 1 AND time > :dashboardTime:",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "ff7e09bf-2b1e-4ee1-9194-1500c69efaf0",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "5c0b07fc-566d-4f19-927a-bac66c73dc53",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "dc6b773e-cdf0-4525-b1f1-67866b412436",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/9506cd67-c29a-4e94-97c4-e220bcf45edd"
+				}
+			},
+			{
+				"i": "e62aa62e-d469-49ce-b432-d0e2e139a3c9",
+				"x": 8,
+				"y": 0,
+				"w": 2,
+				"h": 2,
+				"name": "Flux:1",
+				"queries": [
+					{
+						"query": "SELECT \"flux\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 1 AND time > :dashboardTime:",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"flux\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 1 AND time > :dashboardTime:",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "ff7e09bf-2b1e-4ee1-9194-1500c69efaf0",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "5c0b07fc-566d-4f19-927a-bac66c73dc53",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "dc6b773e-cdf0-4525-b1f1-67866b412436",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/e62aa62e-d469-49ce-b432-d0e2e139a3c9"
+				}
+			},
+			{
+				"i": "3396527f-baab-4df6-bbb4-0ad7b29d4c9e",
+				"x": 0,
+				"y": 4,
+				"w": 2,
+				"h": 2,
+				"name": "DSM:2",
+				"queries": [
+					{
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE DSMID = 2 ORDER BY DESC LIMIT 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE DSMID = 2 ORDER BY DESC LIMIT 1",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "background",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					},
+					{
+						"id": "388fe368-d68e-4873-9129-3da4062b28a7",
+						"type": "background",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "0.9"
+					},
+					{
+						"id": "dec261fe-6a5f-4f34-80ff-50c94a915e98",
+						"type": "background",
+						"hex": "#4ED8A0",
+						"name": "rainforest",
+						"value": "1.9"
+					},
+					{
+						"id": "b4b7650b-2b7d-47ba-8aa9-698ddbc89434",
+						"type": "background",
+						"hex": "#BF3D5E",
+						"name": "ruby",
+						"value": "2.9"
+					},
+					{
+						"id": "4101f7e8-f2a1-4022-9f46-578a9647eb7e",
+						"type": "background",
+						"hex": "#545667",
+						"name": "graphite",
+						"value": "3.9"
+					},
+					{
+						"id": "cbea99cb-a04a-4830-881f-0f3973567524",
+						"type": "background",
+						"hex": "#FFB94A",
+						"name": "pineapple",
+						"value": "4.9"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/3396527f-baab-4df6-bbb4-0ad7b29d4c9e"
+				}
+			},
+			{
+				"i": "92203676-9d66-4163-abb0-163ef63702a7",
+				"x": 0,
+				"y": 0,
+				"w": 2,
+				"h": 2,
+				"name": "DSM:1",
+				"queries": [
+					{
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE DSMID = 1 ORDER BY DESC LIMIT 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE DSMID = 1 ORDER BY DESC LIMIT 1",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "background",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					},
+					{
+						"id": "388fe368-d68e-4873-9129-3da4062b28a7",
+						"type": "background",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "0.9"
+					},
+					{
+						"id": "dec261fe-6a5f-4f34-80ff-50c94a915e98",
+						"type": "background",
+						"hex": "#4ED8A0",
+						"name": "rainforest",
+						"value": "1.9"
+					},
+					{
+						"id": "b4b7650b-2b7d-47ba-8aa9-698ddbc89434",
+						"type": "background",
+						"hex": "#BF3D5E",
+						"name": "ruby",
+						"value": "2.9"
+					},
+					{
+						"id": "4101f7e8-f2a1-4022-9f46-578a9647eb7e",
+						"type": "background",
+						"hex": "#545667",
+						"name": "graphite",
+						"value": "3.9"
+					},
+					{
+						"id": "cbea99cb-a04a-4830-881f-0f3973567524",
+						"type": "background",
+						"hex": "#FFB94A",
+						"name": "pineapple",
+						"value": "4.9"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/92203676-9d66-4163-abb0-163ef63702a7"
+				}
+			},
+			{
+				"i": "670480bd-370c-49d3-82a3-721b3d5fdfa7",
+				"x": 0,
+				"y": 6,
+				"w": 12,
+				"h": 2,
+				"name": "DSM:2 Configuration",
+				"queries": [
+					{
+						"query": "SELECT \"cameraFps\", \"cameraName\", \"dataAcquisitionTime\", \"dataBufferSize\", \"timestampConfigStart\", \"uiConfigFile\", \"uiVersionCode\", \"uiVersionConfig\", \"private_sndStamp\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.configuration\" WHERE DSMID = 2 ORDER BY time DESC LIMIT 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"cameraFps\", \"cameraName\", \"dataAcquisitionTime\", \"dataBufferSize\", \"timestampConfigStart\", \"uiConfigFile\", \"uiVersionCode\", \"uiVersionConfig\", \"private_sndStamp\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.configuration\" WHERE DSMID = 2 ORDER BY time DESC LIMIT 1",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DSM.configuration.cameraFps",
+						"displayName": "Camera FPS",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DSM.configuration.cameraName",
+						"displayName": "Camera Name",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DSM.configuration.dataAcquisitionTime",
+						"displayName": "Data Acquisition Time",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DSM.configuration.dataBufferSize",
+						"displayName": "Data Buffer Size",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DSM.configuration.private_sndStamp",
+						"displayName": "private_sndStamp",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DSM.configuration.timestampConfigStart",
+						"displayName": "Timestamp",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DSM.configuration.uiConfigFile",
+						"displayName": "UI Config File",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DSM.configuration.uiVersionCode",
+						"displayName": "UI Code Version",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DSM.configuration.uiVersionConfig",
+						"displayName": "UI Config Version",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/670480bd-370c-49d3-82a3-721b3d5fdfa7"
+				}
+			},
+			{
+				"i": "9e347cc2-ac32-4e21-beef-92982b798710",
+				"x": 4,
+				"y": 4,
+				"w": 2,
+				"h": 2,
+				"name": "RMS:2",
+				"queries": [
+					{
+						"query": "SELECT \"rmsX\", \"rmsY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 2 AND time > :dashboardTime: ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"rmsX\", \"rmsY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 2 AND time > :dashboardTime: ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "(arcseconds)",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "c511f20d-49bd-4935-b6bf-1ebc800dd491",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "1ed17242-0641-4426-8137-81150f902414",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "deaca155-4759-4e39-94fd-98f322d857c6",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/9e347cc2-ac32-4e21-beef-92982b798710"
+				}
+			},
+			{
+				"i": "90d4daa8-ecf9-4b61-92eb-ecbb16d30617",
+				"x": 4,
+				"y": 0,
+				"w": 2,
+				"h": 2,
+				"name": "RMS:1",
+				"queries": [
+					{
+						"query": "SELECT \"rmsX\", \"rmsY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 1 AND time > :dashboardTime: ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"rmsX\", \"rmsY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 1 AND time > :dashboardTime: ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "(arcseconds)",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "c511f20d-49bd-4935-b6bf-1ebc800dd491",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "1ed17242-0641-4426-8137-81150f902414",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "deaca155-4759-4e39-94fd-98f322d857c6",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/90d4daa8-ecf9-4b61-92eb-ecbb16d30617"
+				}
+			},
+			{
+				"i": "e84330e2-147f-440b-94cc-32f202d0f126",
+				"x": 2,
+				"y": 4,
+				"w": 2,
+				"h": 2,
+				"name": "Centroid:2",
+				"queries": [
+					{
+						"query": "SELECT \"centroidX\", \"centroidY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 2 AND time > :dashboardTime: ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"centroidX\", \"centroidY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 2 AND time > :dashboardTime: ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "c511f20d-49bd-4935-b6bf-1ebc800dd491",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "1ed17242-0641-4426-8137-81150f902414",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "deaca155-4759-4e39-94fd-98f322d857c6",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/e84330e2-147f-440b-94cc-32f202d0f126"
+				}
+			},
+			{
+				"i": "95751a80-ce46-4969-ae6f-08805c12957d",
+				"x": 2,
+				"y": 0,
+				"w": 2,
+				"h": 2,
+				"name": "Centroid:1",
+				"queries": [
+					{
+						"query": "SELECT \"centroidX\", \"centroidY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 1 AND time > :dashboardTime: ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"centroidX\", \"centroidY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 1 AND time > :dashboardTime: ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "c511f20d-49bd-4935-b6bf-1ebc800dd491",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "1ed17242-0641-4426-8137-81150f902414",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "deaca155-4759-4e39-94fd-98f322d857c6",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/95751a80-ce46-4969-ae6f-08805c12957d"
+				}
+			},
+			{
+				"i": "bdefed5c-2591-4c40-8140-e6495fd1e005",
+				"x": 0,
+				"y": 2,
+				"w": 12,
+				"h": 2,
+				"name": "DSM:1 Configuration",
+				"queries": [
+					{
+						"query": "SELECT \"cameraFps\", \"cameraName\", \"dataAcquisitionTime\", \"dataBufferSize\", \"timestampConfigStart\", \"uiConfigFile\", \"uiVersionCode\", \"uiVersionConfig\", \"private_sndStamp\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.configuration\" WHERE DSMID = 1 ORDER BY time DESC LIMIT 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"cameraFps\", \"cameraName\", \"dataAcquisitionTime\", \"dataBufferSize\", \"timestampConfigStart\", \"uiConfigFile\", \"uiVersionCode\", \"uiVersionConfig\", \"private_sndStamp\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.configuration\" WHERE DSMID = 1 ORDER BY time DESC LIMIT 1",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DSM.configuration.cameraFps",
+						"displayName": "Camera FPS",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DSM.configuration.cameraName",
+						"displayName": "Camera Name",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DSM.configuration.dataAcquisitionTime",
+						"displayName": "Data Acquisition Time",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DSM.configuration.dataBufferSize",
+						"displayName": "Data Buffer Size",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DSM.configuration.private_sndStamp",
+						"displayName": "private_sndStamp",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DSM.configuration.timestampConfigStart",
+						"displayName": "Timestamp",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DSM.configuration.uiConfigFile",
+						"displayName": "UI Config File",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DSM.configuration.uiVersionCode",
+						"displayName": "UI Code Version",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DSM.configuration.uiVersionConfig",
+						"displayName": "UI Config Version",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/18/cells/bdefed5c-2591-4c40-8140-e6495fd1e005"
+				}
+			}
+		],
+		"templates": [],
+		"name": "Dome Seeing Monitor",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/18",
+			"cells": "/chronograf/v1/dashboards/18/cells",
+			"templates": "/chronograf/v1/dashboards/18/templates"
+		}
+	}
+}
