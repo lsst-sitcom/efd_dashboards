@@ -1,0 +1,649 @@
+{
+	"meta": {
+		"chronografVersion": "1.7.14",
+		"sources": {
+			"4": {
+				"name": "Influx 1",
+				"link": "/chronograf/v1/sources/4"
+			}
+		}
+	},
+	"dashboard": {
+		"id": 17,
+		"cells": [
+			{
+				"i": "dea13bbc-e438-480a-8563-8c59aa3a48ab",
+				"x": 0,
+				"y": 0,
+				"w": 12,
+				"h": 2,
+				"name": "Introduction",
+				"queries": [
+					{
+						"query": "",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/4",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "note",
+				"colors": [],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "Example of dashboard using template variables to constraint the visualization in a time window. Click on `Variables` to redefine the :start_test:, :end_test: time window based on the time logged on the tables.\n",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/17/cells/dea13bbc-e438-480a-8563-8c59aa3a48ab"
+				}
+			},
+			{
+				"i": "eddeb90a-484f-42ff-9a13-32af4e8a9823",
+				"x": 0,
+				"y": 6,
+				"w": 12,
+				"h": 2,
+				"name": "Raw Position ",
+				"queries": [
+					{
+						"query": "SELECT \"Position\" FROM \"efd\".\"autogen\".\"lsst.sal.Rotator.Application\" WHERE time > :test_start: AND time < :test_end: ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"Position\" FROM \"efd\".\"autogen\".\"lsst.sal.Rotator.Application\" WHERE time > :test_start: AND time < :test_end: ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/4",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "c3f559ec-4707-44b4-8249-a44eed9978f3",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "a70aad2a-9be5-45d9-b2b2-e071cc08a9ba",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "f4441fe9-6215-4444-b01a-b08e323aae0d",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.Rotator.Application.mean_Position",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/17/cells/eddeb90a-484f-42ff-9a13-32af4e8a9823"
+				}
+			},
+			{
+				"i": "e1e7f078-a685-4c48-8bb0-8c3f6d2dd878",
+				"x": 0,
+				"y": 4,
+				"w": 12,
+				"h": 2,
+				"name": "Mean Position",
+				"queries": [
+					{
+						"query": "SELECT mean(\"Position\") AS \"mean_Position\" FROM \"efd\".\"autogen\".\"lsst.sal.Rotator.Application\" WHERE time > :test_start: AND time < :test_end: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT mean(\"Position\") AS \"mean_Position\" FROM \"efd\".\"autogen\".\"lsst.sal.Rotator.Application\" WHERE time > :test_start: AND time < :test_end: GROUP BY time(:interval:) FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/4",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "c3f559ec-4707-44b4-8249-a44eed9978f3",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "a70aad2a-9be5-45d9-b2b2-e071cc08a9ba",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "f4441fe9-6215-4444-b01a-b08e323aae0d",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.Rotator.Application.mean_Position",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/17/cells/e1e7f078-a685-4c48-8bb0-8c3f6d2dd878"
+				}
+			},
+			{
+				"i": "27739dc5-3c83-4720-bb0e-e400062df0b2",
+				"x": 6,
+				"y": 2,
+				"w": 6,
+				"h": 2,
+				"name": "TEST END",
+				"queries": [
+					{
+						"query": "SELECT last(\"message\") FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\" WHERE message =~ /END/ order by desc",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT last(\"message\") FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\" WHERE message =~ /END/ order by desc",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/4",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": false
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.Script.logevent_logMessage.last",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "x000000",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/17/cells/27739dc5-3c83-4720-bb0e-e400062df0b2"
+				}
+			},
+			{
+				"i": "264ea0cd-3719-4bcb-be04-d1fd1c75ec18",
+				"x": 0,
+				"y": 2,
+				"w": 6,
+				"h": 2,
+				"name": "TEST START",
+				"queries": [
+					{
+						"query": "SELECT \"message\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\" WHERE message =~ /START/ order by desc",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"message\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\" WHERE message =~ /START/ order by desc",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/4",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": false
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.Script.logevent_logMessage.message",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "x000000",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/17/cells/264ea0cd-3719-4bcb-be04-d1fd1c75ec18"
+				}
+			}
+		],
+		"templates": [
+			{
+				"tempVar": ":test_start:",
+				"values": [
+					{
+						"value": "1576152043620000000",
+						"type": "map",
+						"selected": true,
+						"key": "START - Rotator Night Observing integration test"
+					}
+				],
+				"id": "3e6e1366-d908-4c06-a018-f1a770736251",
+				"type": "map",
+				"label": "",
+				"query": {
+					"influxql": "",
+					"measurement": "",
+					"tagKey": "",
+					"fieldKey": ""
+				},
+				"links": {
+					"self": "/chronograf/v1/dashboards/17/templates/3e6e1366-d908-4c06-a018-f1a770736251"
+				}
+			},
+			{
+				"tempVar": ":test_end:",
+				"values": [
+					{
+						"value": "1576155601106000000",
+						"type": "map",
+						"selected": true,
+						"key": "END - Rotator Night Observing integration test"
+					}
+				],
+				"id": "28ce827c-c924-4022-8bd4-e102cb81a2c7",
+				"type": "map",
+				"label": "",
+				"query": {
+					"influxql": "",
+					"measurement": "",
+					"tagKey": "",
+					"fieldKey": ""
+				},
+				"links": {
+					"self": "/chronograf/v1/dashboards/17/templates/28ce827c-c924-4022-8bd4-e102cb81a2c7"
+				}
+			},
+			{
+				"tempVar": ":Testing:",
+				"values": [
+					{
+						"value": "Rotator Night Observing integration testEND",
+						"type": "map",
+						"selected": true,
+						"key": "1.58E+18"
+					}
+				],
+				"id": "9fcc3d35-d4ea-4bfc-97a4-2d11d2e80b99",
+				"type": "map",
+				"label": "",
+				"query": {
+					"influxql": "",
+					"measurement": "",
+					"tagKey": "",
+					"fieldKey": ""
+				},
+				"links": {
+					"self": "/chronograf/v1/dashboards/17/templates/9fcc3d35-d4ea-4bfc-97a4-2d11d2e80b99"
+				}
+			}
+		],
+		"name": "Rotator test  - time window example",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/17",
+			"cells": "/chronograf/v1/dashboards/17/cells",
+			"templates": "/chronograf/v1/dashboards/17/templates"
+		}
+	}
+}
