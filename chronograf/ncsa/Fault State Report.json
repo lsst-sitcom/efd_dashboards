@@ -190,6 +190,21 @@
 						"selected": false
 					},
 					{
+						"value": "CCArchiver",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "CCCamera",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "CCHeaderService",
+						"type": "csv",
+						"selected": false
+					},
+					{
 						"value": "ScriptQueue",
 						"type": "csv",
 						"selected": false

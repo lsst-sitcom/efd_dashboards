@@ -1,0 +1,642 @@
+{
+	"meta": {
+		"chronografVersion": "1.7.14",
+		"sources": {
+			"1": {
+				"name": "EFD",
+				"link": "/chronograf/v1/sources/1"
+			}
+		}
+	},
+	"dashboard": {
+		"id": 4,
+		"cells": [
+			{
+				"i": "5fc2fdb1-6176-4893-8685-60403a395d6a",
+				"x": 4,
+				"y": 0,
+				"w": 4,
+				"h": 3,
+				"name": "Nasmyth2 Rotator Angle",
+				"queries": [
+					{
+						"query": "SELECT \"nasmyth2CalculatedAngle99\" FROM \"efd\".\"autogen\".\"lsst.sal.ATMCS.mount_Nasmyth_Encoders\" ORDER BY time DESC LIMIT 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"nasmyth2CalculatedAngle99\" FROM \"efd\".\"autogen\".\"lsst.sal.ATMCS.mount_Nasmyth_Encoders\" ORDER BY time DESC LIMIT 1",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "Angle",
+						"prefix": "",
+						"suffix": "°",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "gauge",
+				"colors": [
+					{
+						"id": "0",
+						"type": "min",
+						"hex": "#BF3D5E",
+						"name": "ruby",
+						"value": "-170"
+					},
+					{
+						"id": "7fcb54f8-5bbb-4b01-af45-e6a4ec7c9c7f",
+						"type": "threshold",
+						"hex": "#FFB94A",
+						"name": "pineapple",
+						"value": "-160"
+					},
+					{
+						"id": "34c6d368-eaf0-4ce4-9189-ac45df175029",
+						"type": "threshold",
+						"hex": "#4ED8A0",
+						"name": "rainforest",
+						"value": "-150"
+					},
+					{
+						"id": "3bfcfa7b-429d-494f-878e-bcb1c2f46049",
+						"type": "threshold",
+						"hex": "#FFB94A",
+						"name": "pineapple",
+						"value": "150"
+					},
+					{
+						"id": "673400e4-71ee-43ef-9dc0-a7a3bfbe8617",
+						"type": "threshold",
+						"hex": "#BF3D5E",
+						"name": "ruby",
+						"value": "160"
+					},
+					{
+						"id": "1",
+						"type": "max",
+						"hex": "#9394FF",
+						"name": "comet",
+						"value": "170"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/4/cells/5fc2fdb1-6176-4893-8685-60403a395d6a"
+				}
+			},
+			{
+				"i": "9fa51296-ee45-4fb4-affe-afc8bcba23e8",
+				"x": 0,
+				"y": 0,
+				"w": 4,
+				"h": 3,
+				"name": "Nasmyth1 Rotator Angle",
+				"queries": [
+					{
+						"query": "SELECT \"nasmyth1CalculatedAngle99\" FROM \"efd\".\"autogen\".\"lsst.sal.ATMCS.mount_Nasmyth_Encoders\" ORDER BY time DESC LIMIT 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"nasmyth1CalculatedAngle99\" FROM \"efd\".\"autogen\".\"lsst.sal.ATMCS.mount_Nasmyth_Encoders\" ORDER BY time DESC LIMIT 1",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "Angle",
+						"prefix": "",
+						"suffix": "°",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "gauge",
+				"colors": [
+					{
+						"id": "0",
+						"type": "min",
+						"hex": "#BF3D5E",
+						"name": "ruby",
+						"value": "-170"
+					},
+					{
+						"id": "7fcb54f8-5bbb-4b01-af45-e6a4ec7c9c7f",
+						"type": "threshold",
+						"hex": "#FFB94A",
+						"name": "pineapple",
+						"value": "-160"
+					},
+					{
+						"id": "34c6d368-eaf0-4ce4-9189-ac45df175029",
+						"type": "threshold",
+						"hex": "#4ED8A0",
+						"name": "rainforest",
+						"value": "-150"
+					},
+					{
+						"id": "3bfcfa7b-429d-494f-878e-bcb1c2f46049",
+						"type": "threshold",
+						"hex": "#FFB94A",
+						"name": "pineapple",
+						"value": "150"
+					},
+					{
+						"id": "673400e4-71ee-43ef-9dc0-a7a3bfbe8617",
+						"type": "threshold",
+						"hex": "#BF3D5E",
+						"name": "ruby",
+						"value": "160"
+					},
+					{
+						"id": "1",
+						"type": "max",
+						"hex": "#9394FF",
+						"name": "comet",
+						"value": "170"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/4/cells/9fa51296-ee45-4fb4-affe-afc8bcba23e8"
+				}
+			},
+			{
+				"i": "51a14190-035d-4cea-b590-0cce1cf98a9a",
+				"x": 8,
+				"y": 0,
+				"w": 4,
+				"h": 2,
+				"name": "Mount Status",
+				"queries": [
+					{
+						"query": "SELECT \"inPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.ATMCS.logevent_allAxesInPosition\" ORDER BY time DESC LIMIT 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"inPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.ATMCS.logevent_allAxesInPosition\" ORDER BY time DESC LIMIT 1",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATMCS.logevent_allAxesInPosition.inPosition",
+						"displayName": "All Axes in Position",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/4/cells/51a14190-035d-4cea-b590-0cce1cf98a9a"
+				}
+			},
+			{
+				"i": "e92b0407-e3ce-45d0-b604-da16723944c3",
+				"x": 4,
+				"y": 3,
+				"w": 4,
+				"h": 3,
+				"name": "Nasmyth2 Rotator Angle Velocity",
+				"queries": [
+					{
+						"query": "SELECT \"nasmyth2RotatorAngleVelocity\" FROM \"efd\".\"autogen\".\"lsst.sal.ATMCS.logevent_target\" ORDER BY time DESC LIMIT 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"nasmyth2RotatorAngleVelocity\" FROM \"efd\".\"autogen\".\"lsst.sal.ATMCS.logevent_target\" ORDER BY time DESC LIMIT 1",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "Angle",
+						"prefix": "",
+						"suffix": "°/s",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "gauge",
+				"colors": [
+					{
+						"id": "0",
+						"type": "min",
+						"hex": "#4ED8A0",
+						"name": "rainforest",
+						"value": "-0.03"
+					},
+					{
+						"id": "a56c4f6b-70d3-4e96-b138-b7b8722b959a",
+						"type": "threshold",
+						"hex": "#ffffff",
+						"name": "white",
+						"value": "0.029999"
+					},
+					{
+						"id": "1",
+						"type": "max",
+						"hex": "#383846",
+						"name": "pepper",
+						"value": "0.03"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 4
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/4/cells/e92b0407-e3ce-45d0-b604-da16723944c3"
+				}
+			},
+			{
+				"i": "67ba3416-9e62-4cef-aeea-b8dbc7b0af15",
+				"x": 0,
+				"y": 3,
+				"w": 4,
+				"h": 3,
+				"name": "Nasmyth1 Rotator Angle Velocity",
+				"queries": [
+					{
+						"query": "SELECT \"nasmyth1RotatorAngleVelocity\" FROM \"efd\".\"autogen\".\"lsst.sal.ATMCS.logevent_target\" ORDER BY time DESC LIMIT 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"nasmyth1RotatorAngleVelocity\" FROM \"efd\".\"autogen\".\"lsst.sal.ATMCS.logevent_target\" ORDER BY time DESC LIMIT 1",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "Angle",
+						"prefix": "",
+						"suffix": "°/s",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "gauge",
+				"colors": [
+					{
+						"id": "0",
+						"type": "min",
+						"hex": "#4ED8A0",
+						"name": "rainforest",
+						"value": "-0.03"
+					},
+					{
+						"id": "a56c4f6b-70d3-4e96-b138-b7b8722b959a",
+						"type": "threshold",
+						"hex": "#ffffff",
+						"name": "white",
+						"value": "0.029999"
+					},
+					{
+						"id": "1",
+						"type": "max",
+						"hex": "#383846",
+						"name": "pepper",
+						"value": "0.03"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 4
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/4/cells/67ba3416-9e62-4cef-aeea-b8dbc7b0af15"
+				}
+			}
+		],
+		"templates": [],
+		"name": "AT Mount Status",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/4",
+			"cells": "/chronograf/v1/dashboards/4/cells",
+			"templates": "/chronograf/v1/dashboards/4/templates"
+		}
+	}
+}

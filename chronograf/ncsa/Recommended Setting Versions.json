@@ -103,12 +103,12 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATAOS.logevent_settingVersions.recommendedSettingsLabels",
+						"internalName": "lsst.sal.ATSpectrograph.logevent_settingVersions.recommendedSettingsLabels",
 						"displayName": "Labels",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATAOS.logevent_settingVersions.recommendedSettingsVersion",
+						"internalName": "lsst.sal.ATSpectrograph.logevent_settingVersions.recommendedSettingsVersion",
 						"displayName": "Version",
 						"visible": true
 					}
