@@ -2,17 +2,17 @@
 	"meta": {
 		"chronografVersion": "1.7.14",
 		"sources": {
-			"4": {
-				"name": "Influx 1",
-				"link": "/chronograf/v1/sources/4"
+			"2": {
+				"name": "InfluxDB",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},
 	"dashboard": {
-		"id": 17,
+		"id": 10,
 		"cells": [
 			{
-				"i": "dea13bbc-e438-480a-8563-8c59aa3a48ab",
+				"i": "27e6961b-1d47-4884-a182-a3af62626e83",
 				"x": 0,
 				"y": 0,
 				"w": 12,
@@ -36,7 +36,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "/chronograf/v1/sources/4",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -103,11 +103,11 @@
 				"note": "Example of dashboard using template variables to constraint the visualization in a time window. Click on `Variables` to redefine the :start_test:, :end_test: time window based on the time logged on the tables.\n",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/cells/dea13bbc-e438-480a-8563-8c59aa3a48ab"
+					"self": "/chronograf/v1/dashboards/10/cells/27e6961b-1d47-4884-a182-a3af62626e83"
 				}
 			},
 			{
-				"i": "eddeb90a-484f-42ff-9a13-32af4e8a9823",
+				"i": "ec456d42-66a3-4681-ad80-132ac370065f",
 				"x": 0,
 				"y": 6,
 				"w": 12,
@@ -131,7 +131,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "/chronograf/v1/sources/4",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -225,11 +225,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/cells/eddeb90a-484f-42ff-9a13-32af4e8a9823"
+					"self": "/chronograf/v1/dashboards/10/cells/ec456d42-66a3-4681-ad80-132ac370065f"
 				}
 			},
 			{
-				"i": "e1e7f078-a685-4c48-8bb0-8c3f6d2dd878",
+				"i": "195a6dcd-07ae-4936-a48b-c326ab539193",
 				"x": 0,
 				"y": 4,
 				"w": 12,
@@ -253,7 +253,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "/chronograf/v1/sources/4",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -347,11 +347,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/cells/e1e7f078-a685-4c48-8bb0-8c3f6d2dd878"
+					"self": "/chronograf/v1/dashboards/10/cells/195a6dcd-07ae-4936-a48b-c326ab539193"
 				}
 			},
 			{
-				"i": "27739dc5-3c83-4720-bb0e-e400062df0b2",
+				"i": "051c8b76-b89b-4a95-9ca7-ccc91f558360",
 				"x": 6,
 				"y": 2,
 				"w": 6,
@@ -375,7 +375,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "/chronograf/v1/sources/4",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -455,11 +455,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/cells/27739dc5-3c83-4720-bb0e-e400062df0b2"
+					"self": "/chronograf/v1/dashboards/10/cells/051c8b76-b89b-4a95-9ca7-ccc91f558360"
 				}
 			},
 			{
-				"i": "264ea0cd-3719-4bcb-be04-d1fd1c75ec18",
+				"i": "6c75c119-30ff-42a0-9a24-a8759e337613",
 				"x": 0,
 				"y": 2,
 				"w": 6,
@@ -483,7 +483,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "/chronograf/v1/sources/4",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -563,7 +563,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/cells/264ea0cd-3719-4bcb-be04-d1fd1c75ec18"
+					"self": "/chronograf/v1/dashboards/10/cells/6c75c119-30ff-42a0-9a24-a8759e337613"
 				}
 			}
 		],
@@ -588,7 +588,7 @@
 					"fieldKey": ""
 				},
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/templates/3e6e1366-d908-4c06-a018-f1a770736251"
+					"self": "/chronograf/v1/dashboards/10/templates/3e6e1366-d908-4c06-a018-f1a770736251"
 				}
 			},
 			{
@@ -611,7 +611,7 @@
 					"fieldKey": ""
 				},
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/templates/28ce827c-c924-4022-8bd4-e102cb81a2c7"
+					"self": "/chronograf/v1/dashboards/10/templates/28ce827c-c924-4022-8bd4-e102cb81a2c7"
 				}
 			},
 			{
@@ -634,16 +634,16 @@
 					"fieldKey": ""
 				},
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/templates/9fcc3d35-d4ea-4bfc-97a4-2d11d2e80b99"
+					"self": "/chronograf/v1/dashboards/10/templates/9fcc3d35-d4ea-4bfc-97a4-2d11d2e80b99"
 				}
 			}
 		],
 		"name": "Rotator test  - time window example",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/17",
-			"cells": "/chronograf/v1/dashboards/17/cells",
-			"templates": "/chronograf/v1/dashboards/17/templates"
+			"self": "/chronograf/v1/dashboards/10",
+			"cells": "/chronograf/v1/dashboards/10/cells",
+			"templates": "/chronograf/v1/dashboards/10/templates"
 		}
 	}
 }

@@ -2,17 +2,17 @@
 	"meta": {
 		"chronografVersion": "1.7.14",
 		"sources": {
-			"4": {
-				"name": "Influx 1",
-				"link": "/chronograf/v1/sources/4"
+			"2": {
+				"name": "InfluxDB",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},
 	"dashboard": {
-		"id": 6,
+		"id": 2,
 		"cells": [
 			{
-				"i": "6306da2f-b970-4e73-a4e6-5c898066b9a9",
+				"i": "bedd4825-2f57-40e6-afa8-3bf90f5aa21e",
 				"x": 0,
 				"y": 0,
 				"w": 6,
@@ -139,11 +139,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/6/cells/6306da2f-b970-4e73-a4e6-5c898066b9a9"
+					"self": "/chronograf/v1/dashboards/2/cells/bedd4825-2f57-40e6-afa8-3bf90f5aa21e"
 				}
 			},
 			{
-				"i": "c89627bf-3182-4a67-86ca-a29e610d6584",
+				"i": "26f48c97-0b66-48dd-a50e-59bab78ae533",
 				"x": 0,
 				"y": 2,
 				"w": 6,
@@ -270,7 +270,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/6/cells/c89627bf-3182-4a67-86ca-a29e610d6584"
+					"self": "/chronograf/v1/dashboards/2/cells/26f48c97-0b66-48dd-a50e-59bab78ae533"
 				}
 			}
 		],
@@ -278,9 +278,9 @@
 		"name": "AuxTel Overview",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/6",
-			"cells": "/chronograf/v1/dashboards/6/cells",
-			"templates": "/chronograf/v1/dashboards/6/templates"
+			"self": "/chronograf/v1/dashboards/2",
+			"cells": "/chronograf/v1/dashboards/2/cells",
+			"templates": "/chronograf/v1/dashboards/2/templates"
 		}
 	}
 }

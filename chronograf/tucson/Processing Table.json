@@ -2,17 +2,17 @@
 	"meta": {
 		"chronografVersion": "1.7.14",
 		"sources": {
-			"4": {
-				"name": "Influx 1",
-				"link": "/chronograf/v1/sources/4"
+			"2": {
+				"name": "InfluxDB",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},
 	"dashboard": {
-		"id": 13,
+		"id": 8,
 		"cells": [
 			{
-				"i": "2ed2e1fa-96b4-45c4-a225-73e10f1508c3",
+				"i": "1b2c1f76-1677-4d6a-a260-b5d5f7789051",
 				"x": 0,
 				"y": 0,
 				"w": 11,
@@ -142,7 +142,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/13/cells/2ed2e1fa-96b4-45c4-a225-73e10f1508c3"
+					"self": "/chronograf/v1/dashboards/8/cells/1b2c1f76-1677-4d6a-a260-b5d5f7789051"
 				}
 			}
 		],
@@ -150,9 +150,9 @@
 		"name": "Processing Table",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/13",
-			"cells": "/chronograf/v1/dashboards/13/cells",
-			"templates": "/chronograf/v1/dashboards/13/templates"
+			"self": "/chronograf/v1/dashboards/8",
+			"cells": "/chronograf/v1/dashboards/8/cells",
+			"templates": "/chronograf/v1/dashboards/8/templates"
 		}
 	}
 }

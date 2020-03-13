@@ -2,17 +2,17 @@
 	"meta": {
 		"chronografVersion": "1.7.14",
 		"sources": {
-			"4": {
-				"name": "Influx 1",
-				"link": "/chronograf/v1/sources/4"
+			"2": {
+				"name": "InfluxDB",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},
 	"dashboard": {
-		"id": 5,
+		"id": 4,
 		"cells": [
 			{
-				"i": "b6ccf085-5018-48a3-b073-71885d83f28f",
+				"i": "d8c68470-36d2-4b80-9d6a-3bcc32a3c584",
 				"x": 0,
 				"y": 0,
 				"w": 4,
@@ -259,11 +259,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/5/cells/b6ccf085-5018-48a3-b073-71885d83f28f"
+					"self": "/chronograf/v1/dashboards/4/cells/d8c68470-36d2-4b80-9d6a-3bcc32a3c584"
 				}
 			},
 			{
-				"i": "1e7aa1c0-4a6a-49f4-ac25-80d6dd05038a",
+				"i": "543e609d-77d3-423b-9309-b22b756834aa",
 				"x": 4,
 				"y": 0,
 				"w": 4,
@@ -510,7 +510,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/5/cells/1e7aa1c0-4a6a-49f4-ac25-80d6dd05038a"
+					"self": "/chronograf/v1/dashboards/4/cells/543e609d-77d3-423b-9309-b22b756834aa"
 				}
 			}
 		],
@@ -518,9 +518,9 @@
 		"name": "AuxTel WREB Power",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/5",
-			"cells": "/chronograf/v1/dashboards/5/cells",
-			"templates": "/chronograf/v1/dashboards/5/templates"
+			"self": "/chronograf/v1/dashboards/4",
+			"cells": "/chronograf/v1/dashboards/4/cells",
+			"templates": "/chronograf/v1/dashboards/4/templates"
 		}
 	}
 }

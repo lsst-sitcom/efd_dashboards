@@ -2,17 +2,17 @@
 	"meta": {
 		"chronografVersion": "1.7.14",
 		"sources": {
-			"4": {
-				"name": "Influx 1",
-				"link": "/chronograf/v1/sources/4"
+			"2": {
+				"name": "InfluxDB",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},
 	"dashboard": {
-		"id": 11,
+		"id": 1,
 		"cells": [
 			{
-				"i": "ca13de56-636d-4212-8551-a7e133d9a138",
+				"i": "201e26c2-ab50-44a5-923f-eead85fedf2c",
 				"x": 0,
 				"y": 0,
 				"w": 3,
@@ -125,11 +125,11 @@
 				"note": "OFFLINE AVAILABLE = 1\n\nOFFLINE PUBLISH ONLY = 2",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/11/cells/ca13de56-636d-4212-8551-a7e133d9a138"
+					"self": "/chronograf/v1/dashboards/1/cells/201e26c2-ab50-44a5-923f-eead85fedf2c"
 				}
 			},
 			{
-				"i": "2ab3b22f-9032-436a-95a2-9a6930e85388",
+				"i": "b720670d-d72b-4d46-b0de-b92c4980b63a",
 				"x": 3,
 				"y": 0,
 				"w": 3,
@@ -249,11 +249,11 @@
 				"note": "READY         = 1\n\nNOT_READY     = 2\n\nGETTING_READY = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/11/cells/2ab3b22f-9032-436a-95a2-9a6930e85388"
+					"self": "/chronograf/v1/dashboards/1/cells/b720670d-d72b-4d46-b0de-b92c4980b63a"
 				}
 			},
 			{
-				"i": "222b4c3e-f2b9-4c5d-814e-2d7df707efdb",
+				"i": "021105d4-b5a1-45b2-84b8-7ac8861e8bae",
 				"x": 0,
 				"y": 3,
 				"w": 3,
@@ -387,11 +387,11 @@
 				"note": "NEEDS_CLEAR = 1\n\nCLEARING    = 2\n\nINTEGRATING = 3\n\nREADING_OUT = 4\n\nQUIESCENT   = 5",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/11/cells/222b4c3e-f2b9-4c5d-814e-2d7df707efdb"
+					"self": "/chronograf/v1/dashboards/1/cells/021105d4-b5a1-45b2-84b8-7ac8861e8bae"
 				}
 			},
 			{
-				"i": "128df37b-403c-4057-a7e3-b0cffdd4eb51",
+				"i": "05f2173b-be32-456b-aa96-8538fc3ec9eb",
 				"x": 6,
 				"y": 0,
 				"w": 3,
@@ -511,11 +511,11 @@
 				"note": "DISABLED    = 1\n\nENABLED     = 2\n\nINTEGRATING = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/11/cells/128df37b-403c-4057-a7e3-b0cffdd4eb51"
+					"self": "/chronograf/v1/dashboards/1/cells/05f2173b-be32-456b-aa96-8538fc3ec9eb"
 				}
 			},
 			{
-				"i": "6236bf91-9ef6-417d-be7c-de41c769c7ae",
+				"i": "62bb8232-78ab-4b61-92f0-e85978dd7e17",
 				"x": 3,
 				"y": 3,
 				"w": 3,
@@ -642,7 +642,7 @@
 				"note": "CLOSED  = 1\n\nOPEN    = 2\n\nCLOSING = 3\n\nOPENING = 4",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/11/cells/6236bf91-9ef6-417d-be7c-de41c769c7ae"
+					"self": "/chronograf/v1/dashboards/1/cells/62bb8232-78ab-4b61-92f0-e85978dd7e17"
 				}
 			}
 		],
@@ -650,9 +650,9 @@
 		"name": "ATCamera Substate Monitor",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/11",
-			"cells": "/chronograf/v1/dashboards/11/cells",
-			"templates": "/chronograf/v1/dashboards/11/templates"
+			"self": "/chronograf/v1/dashboards/1",
+			"cells": "/chronograf/v1/dashboards/1/cells",
+			"templates": "/chronograf/v1/dashboards/1/templates"
 		}
 	}
 }

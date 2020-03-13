@@ -2,17 +2,17 @@
 	"meta": {
 		"chronografVersion": "1.7.14",
 		"sources": {
-			"4": {
-				"name": "Influx 1",
-				"link": "/chronograf/v1/sources/4"
+			"2": {
+				"name": "InfluxDB",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},
 	"dashboard": {
-		"id": 15,
+		"id": 7,
 		"cells": [
 			{
-				"i": "80695c34-0ede-4437-9af2-75c2bef073a9",
+				"i": "4bf2a08b-2332-4812-940a-476877421376",
 				"x": 0,
 				"y": 0,
 				"w": 7,
@@ -116,11 +116,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/15/cells/80695c34-0ede-4437-9af2-75c2bef073a9"
+					"self": "/chronograf/v1/dashboards/7/cells/4bf2a08b-2332-4812-940a-476877421376"
 				}
 			},
 			{
-				"i": "8c7792f3-ced1-4c5a-b7e1-4ad64ab7bcd6",
+				"i": "df993cf9-b588-4c5a-b6cd-2d82272a1635",
 				"x": 0,
 				"y": 2,
 				"w": 7,
@@ -224,11 +224,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/15/cells/8c7792f3-ced1-4c5a-b7e1-4ad64ab7bcd6"
+					"self": "/chronograf/v1/dashboards/7/cells/df993cf9-b588-4c5a-b6cd-2d82272a1635"
 				}
 			},
 			{
-				"i": "19a4ed83-fa18-4d2e-89da-a78b562cbe3a",
+				"i": "e55a796a-bdce-4995-907b-6848114ca75c",
 				"x": 0,
 				"y": 4,
 				"w": 7,
@@ -258,7 +258,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "/chronograf/v1/sources/4",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -347,7 +347,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/15/cells/19a4ed83-fa18-4d2e-89da-a78b562cbe3a"
+					"self": "/chronograf/v1/dashboards/7/cells/e55a796a-bdce-4995-907b-6848114ca75c"
 				}
 			}
 		],
@@ -355,9 +355,9 @@
 		"name": "MTPtg + Rotator",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/15",
-			"cells": "/chronograf/v1/dashboards/15/cells",
-			"templates": "/chronograf/v1/dashboards/15/templates"
+			"self": "/chronograf/v1/dashboards/7",
+			"cells": "/chronograf/v1/dashboards/7/cells",
+			"templates": "/chronograf/v1/dashboards/7/templates"
 		}
 	}
 }

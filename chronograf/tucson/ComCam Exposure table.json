@@ -9,10 +9,10 @@
 		}
 	},
 	"dashboard": {
-		"id": 6,
+		"id": 16,
 		"cells": [
 			{
-				"i": "e74b2c1e-d4eb-473c-9682-adf4d430aac9",
+				"i": "12e7cbed-9de8-4d2b-ad6c-8c50c1944107",
 				"x": 0,
 				"y": 0,
 				"w": 9,
@@ -100,14 +100,14 @@
 					"isEnforced": true,
 					"digits": 2
 				},
-				"note": "Last images taken with ATCamera.\n\nSelect an appropriate time window (e.g. `Past 24h`)\n\n",
+				"note": "Last images taken with CCCamera.\n\nSelect an appropriate time window (e.g. `Past 24h`)\n\n",
 				"noteVisibility": "showWhenNoData",
 				"links": {
-					"self": "/chronograf/v1/dashboards/6/cells/e74b2c1e-d4eb-473c-9682-adf4d430aac9"
+					"self": "/chronograf/v1/dashboards/16/cells/12e7cbed-9de8-4d2b-ad6c-8c50c1944107"
 				}
 			},
 			{
-				"i": "610910bf-3eca-434b-844e-0012c888bc4c",
+				"i": "1c286e7f-354f-46be-acfd-3f7fec5ee6ab",
 				"x": 0,
 				"y": 2,
 				"w": 9,
@@ -115,10 +115,10 @@
 				"name": "Exposure sequence",
 				"queries": [
 					{
-						"query": "SELECT \"groupId\", \"expTime\", \"numImages\", \"shutter\", \"imageType\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.command_takeImages\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"groupId\", \"expTime\", \"numImages\", \"shutter\", \"imageType\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.command_takeImages\" WHERE time > :dashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.command_takeImages",
+							"measurement": "lsst.sal.CCCamera.command_takeImages",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
@@ -224,28 +224,28 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.groupId",
+						"internalName": "lsst.sal.CCCamera.command_takeImages.expTime",
+						"displayName": "Exposure Time",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.CCCamera.command_takeImages.groupId",
 						"displayName": "Group ID",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.imageType",
-						"displayName": "Image Type",
+						"internalName": "lsst.sal.CCCamera.command_takeImages.imageType",
+						"displayName": "Imae Type",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.expTime",
-						"displayName": "ExpTime (s)",
+						"internalName": "lsst.sal.CCCamera.command_takeImages.numImages",
+						"displayName": "Num Images",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.numImages",
-						"displayName": "# of Images",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.shutter",
-						"displayName": "Is shutter open?",
+						"internalName": "lsst.sal.CCCamera.command_takeImages.shutter",
+						"displayName": "Shutter",
 						"visible": true
 					}
 				],
@@ -257,17 +257,17 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/6/cells/610910bf-3eca-434b-844e-0012c888bc4c"
+					"self": "/chronograf/v1/dashboards/16/cells/1c286e7f-354f-46be-acfd-3f7fec5ee6ab"
 				}
 			}
 		],
 		"templates": [],
-		"name": "Exposure table",
+		"name": "ComCam Exposure table",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/6",
-			"cells": "/chronograf/v1/dashboards/6/cells",
-			"templates": "/chronograf/v1/dashboards/6/templates"
+			"self": "/chronograf/v1/dashboards/16",
+			"cells": "/chronograf/v1/dashboards/16/cells",
+			"templates": "/chronograf/v1/dashboards/16/templates"
 		}
 	}
 }
