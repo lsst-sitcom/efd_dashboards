@@ -866,6 +866,11 @@
 						"internalName": "time",
 						"displayName": "",
 						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.Script.logevent_logMessage.message",
+						"displayName": "",
+						"visible": true
 					}
 				],
 				"timeFormat": "x000000",

@@ -1403,10 +1403,10 @@
 						"type": "influxql"
 					},
 					{
-						"query": "SELECT \"pressure\" FROM \"efd\".\"autogen\".\"lsst.sal.ATAOS.logevent_m1CorrectionCompleted\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"pressure\" FROM \"efd\".\"autogen\".\"lsst.sal.ATAOS.logevent_m1CorrectionStarted\" WHERE time > :dashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATAOS.logevent_m1CorrectionCompleted",
+							"measurement": "lsst.sal.ATAOS.logevent_m1CorrectionStarted",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{

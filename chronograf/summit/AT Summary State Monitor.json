@@ -227,21 +227,35 @@
 						"type": "threshold",
 						"hex": "#4ED8A0",
 						"name": "rainforest",
-						"value": "10"
+						"value": "30"
+					},
+					{
+						"id": "91e32e1d-3485-44b5-9478-441ae0efaead",
+						"type": "threshold",
+						"hex": "#FFB94A",
+						"name": "pineapple",
+						"value": "26"
+					},
+					{
+						"id": "439201c8-9a11-49ea-b5ba-dd6098064ebf",
+						"type": "threshold",
+						"hex": "#FFB94A",
+						"name": "pineapple",
+						"value": "80"
 					},
 					{
 						"id": "a6a6bcf9-500f-4f79-9b2e-31aa980fb893",
 						"type": "threshold",
-						"hex": "#DC4E58",
-						"name": "fire",
-						"value": "80"
+						"hex": "#BF3D5E",
+						"name": "ruby",
+						"value": "86"
 					},
 					{
 						"id": "1",
 						"type": "max",
 						"hex": "#9394FF",
 						"name": "comet",
-						"value": "86"
+						"value": "90"
 					}
 				],
 				"legend": {},

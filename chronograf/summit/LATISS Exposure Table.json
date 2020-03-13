@@ -115,10 +115,10 @@
 				"name": "Exposure sequence",
 				"queries": [
 					{
-						"query": "SELECT \"groupId\", \"expTime\", \"numImages\", \"shutter\", \"imageType\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.command_takeImages\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"groupId\", \"imageNumber\", \"exposureTime\", \"imagesInSequence\", \"imageType\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.logevent_endReadout\" WHERE time > :dashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.command_takeImages",
+							"measurement": "lsst.sal.ATCamera.logevent_endReadout",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
@@ -127,17 +127,17 @@
 									"alias": ""
 								},
 								{
-									"value": "expTime",
+									"value": "imageNumber",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "numImages",
+									"value": "exposureTime",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "shutter",
+									"value": "imagesInSequence",
 									"type": "field",
 									"alias": ""
 								},
@@ -224,28 +224,28 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.groupId",
-						"displayName": "Group ID",
+						"internalName": "lsst.sal.ATCamera.logevent_endReadout.groupId",
+						"displayName": "Group Id",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.imageType",
+						"internalName": "lsst.sal.ATCamera.logevent_endReadout.imageType",
 						"displayName": "Image Type",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.expTime",
-						"displayName": "ExpTime (s)",
+						"internalName": "lsst.sal.ATCamera.logevent_endReadout.imagesInSequence",
+						"displayName": "# Images",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.numImages",
-						"displayName": "# of Images",
+						"internalName": "lsst.sal.ATCamera.logevent_endReadout.exposureTime",
+						"displayName": "Exposure Time",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.shutter",
-						"displayName": "Is shutter open?",
+						"internalName": "lsst.sal.ATCamera.logevent_endReadout.imageNumber",
+						"displayName": "Image Number",
 						"visible": true
 					}
 				],

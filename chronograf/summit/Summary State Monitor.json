@@ -17,7 +17,7 @@
 				"y": 0,
 				"w": 3,
 				"h": 1,
-				"name": "DIMM:2",
+				"name": "DIMM:2 (Portable)",
 				"queries": [
 					{
 						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_summaryState\" WHERE \"DIMMID\" = 2 ORDER BY DESC LIMIT 1",

@@ -9,18 +9,18 @@
 		}
 	},
 	"dashboard": {
-		"id": 8,
+		"id": 32,
 		"cells": [
 			{
-				"i": "141dd3b4-ee56-49ee-a165-e682b63d196b",
+				"i": "067315b9-3dbb-42b7-a10a-760331f35b2d",
 				"x": 0,
 				"y": 0,
-				"w": 4,
-				"h": 4,
-				"name": "Summary State",
+				"w": 6,
+				"h": 2,
+				"name": "",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Hexapod.logevent_summaryState\" ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"targetName\", \"raString\", \"decString\" FROM \"efd\".\"autogen\".\"lsst.sal.ATPtg.logevent_currentTarget\" ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Hexapod.logevent_summaryState\" ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"targetName\", \"raString\", \"decString\" FROM \"efd\".\"autogen\".\"lsst.sal.ATPtg.logevent_currentTarget\" ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -75,7 +75,7 @@
 						"scale": "linear"
 					}
 				},
-				"type": "single-stat",
+				"type": "table",
 				"colors": [
 					{
 						"id": "base",
@@ -101,6 +101,21 @@
 						"internalName": "time",
 						"displayName": "",
 						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATPtg.logevent_currentTarget.targetName",
+						"displayName": "Target",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATPtg.logevent_currentTarget.raString",
+						"displayName": "RA",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATPtg.logevent_currentTarget.decString",
+						"displayName": "Dec",
+						"visible": true
 					}
 				],
 				"timeFormat": "MM/DD/YYYY HH:mm:ss",
@@ -111,17 +126,17 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/8/cells/141dd3b4-ee56-49ee-a165-e682b63d196b"
+					"self": "/chronograf/v1/dashboards/32/cells/067315b9-3dbb-42b7-a10a-760331f35b2d"
 				}
 			}
 		],
 		"templates": [],
-		"name": "CamHexapod",
+		"name": "AT Current Target",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/8",
-			"cells": "/chronograf/v1/dashboards/8/cells",
-			"templates": "/chronograf/v1/dashboards/8/templates"
+			"self": "/chronograf/v1/dashboards/32",
+			"cells": "/chronograf/v1/dashboards/32/cells",
+			"templates": "/chronograf/v1/dashboards/32/templates"
 		}
 	}
 }

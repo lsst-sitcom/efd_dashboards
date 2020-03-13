@@ -9,37 +9,16 @@
 		}
 	},
 	"dashboard": {
-		"id": 8,
+		"id": 30,
 		"cells": [
 			{
-				"i": "141dd3b4-ee56-49ee-a165-e682b63d196b",
+				"i": "6fd36b0b-4e58-4282-9210-95ef1474f74b",
 				"x": 0,
 				"y": 0,
 				"w": 4,
 				"h": 4,
-				"name": "Summary State",
-				"queries": [
-					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Hexapod.logevent_summaryState\" ORDER BY DESC LIMIT 1",
-						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Hexapod.logevent_summaryState\" ORDER BY DESC LIMIT 1",
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
+				"name": "Untitled Graph",
+				"queries": [],
 				"axes": {
 					"x": {
 						"bounds": [
@@ -75,16 +54,8 @@
 						"scale": "linear"
 					}
 				},
-				"type": "single-stat",
-				"colors": [
-					{
-						"id": "base",
-						"type": "text",
-						"hex": "#00C9FF",
-						"name": "laser",
-						"value": "-1000000000000000000"
-					}
-				],
+				"type": "line",
+				"colors": [],
 				"legend": {},
 				"tableOptions": {
 					"verticalTimeAxis": true,
@@ -111,17 +82,17 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/8/cells/141dd3b4-ee56-49ee-a165-e682b63d196b"
+					"self": "/chronograf/v1/dashboards/30/cells/6fd36b0b-4e58-4282-9210-95ef1474f74b"
 				}
 			}
 		],
 		"templates": [],
-		"name": "CamHexapod",
+		"name": "Telescope Pointing Information",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/8",
-			"cells": "/chronograf/v1/dashboards/8/cells",
-			"templates": "/chronograf/v1/dashboards/8/templates"
+			"self": "/chronograf/v1/dashboards/30",
+			"cells": "/chronograf/v1/dashboards/30/cells",
+			"templates": "/chronograf/v1/dashboards/30/templates"
 		}
 	}
 }

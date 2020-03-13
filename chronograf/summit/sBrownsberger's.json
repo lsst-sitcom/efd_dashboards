@@ -9,10 +9,10 @@
 		}
 	},
 	"dashboard": {
-		"id": 14,
+		"id": 31,
 		"cells": [
 			{
-				"i": "1ad5ade7-2beb-49a2-9a3e-7c459420f7eb",
+				"i": "1bd04c44-572d-4852-8468-2b45a4f79e2b",
 				"x": 4,
 				"y": 0,
 				"w": 4,
@@ -131,11 +131,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/14/cells/1ad5ade7-2beb-49a2-9a3e-7c459420f7eb"
+					"self": "/chronograf/v1/dashboards/31/cells/1bd04c44-572d-4852-8468-2b45a4f79e2b"
 				}
 			},
 			{
-				"i": "fe9b7847-82ca-4eeb-b219-f227ff4fffe8",
+				"i": "8328704d-f1c5-4dbd-a0ea-b6de281d9f29",
 				"x": 8,
 				"y": 4,
 				"w": 4,
@@ -254,11 +254,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/14/cells/fe9b7847-82ca-4eeb-b219-f227ff4fffe8"
+					"self": "/chronograf/v1/dashboards/31/cells/8328704d-f1c5-4dbd-a0ea-b6de281d9f29"
 				}
 			},
 			{
-				"i": "eda9cbbb-99b5-49cd-95f1-c6aa7175adfa",
+				"i": "a8b446f1-42c8-49f7-8a79-cc68756f105d",
 				"x": 0,
 				"y": 4,
 				"w": 4,
@@ -411,11 +411,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/14/cells/eda9cbbb-99b5-49cd-95f1-c6aa7175adfa"
+					"self": "/chronograf/v1/dashboards/31/cells/a8b446f1-42c8-49f7-8a79-cc68756f105d"
 				}
 			},
 			{
-				"i": "449923c6-bdd7-4add-9089-5dddb94c10e1",
+				"i": "0af5b127-235d-484c-89b5-bc692ae2897b",
 				"x": 4,
 				"y": 4,
 				"w": 4,
@@ -602,11 +602,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/14/cells/449923c6-bdd7-4add-9089-5dddb94c10e1"
+					"self": "/chronograf/v1/dashboards/31/cells/0af5b127-235d-484c-89b5-bc692ae2897b"
 				}
 			},
 			{
-				"i": "f3c232b2-d442-475c-838f-273eeef81480",
+				"i": "a9db828d-2867-4a34-b5d8-aa89ebe3e71f",
 				"x": 8,
 				"y": 0,
 				"w": 4,
@@ -745,11 +745,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/14/cells/f3c232b2-d442-475c-838f-273eeef81480"
+					"self": "/chronograf/v1/dashboards/31/cells/a9db828d-2867-4a34-b5d8-aa89ebe3e71f"
 				}
 			},
 			{
-				"i": "f5bd66c3-a10d-4032-b366-2b7af4e1d2ae",
+				"i": "967b5803-edf5-4e7c-aa14-337b46506f97",
 				"x": 0,
 				"y": 0,
 				"w": 4,
@@ -868,17 +868,17 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/14/cells/f5bd66c3-a10d-4032-b366-2b7af4e1d2ae"
+					"self": "/chronograf/v1/dashboards/31/cells/967b5803-edf5-4e7c-aa14-337b46506f97"
 				}
 			}
 		],
 		"templates": [],
-		"name": "AuxTel Temperatures and Pressure",
+		"name": "sBrownsberger's",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/14",
-			"cells": "/chronograf/v1/dashboards/14/cells",
-			"templates": "/chronograf/v1/dashboards/14/templates"
+			"self": "/chronograf/v1/dashboards/31",
+			"cells": "/chronograf/v1/dashboards/31/cells",
+			"templates": "/chronograf/v1/dashboards/31/templates"
 		}
 	}
 }
