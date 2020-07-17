@@ -1,18 +1,151 @@
 {
 	"meta": {
-		"chronografVersion": "1.7.14",
+		"chronografVersion": "1.8.4",
 		"sources": {
-			"1": {
-				"name": "Summit EFD",
-				"link": "/chronograf/v1/sources/1"
+			"2": {
+				"name": "EFD",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},
 	"dashboard": {
-		"id": 14,
+		"id": "8",
 		"cells": [
 			{
-				"i": "1ad5ade7-2beb-49a2-9a3e-7c459420f7eb",
+				"i": "6da36c14-482a-479a-83e3-bd3008cfb08b",
+				"x": 0,
+				"y": 4,
+				"w": 12,
+				"h": 3,
+				"name": "Cryocon Temperatures",
+				"queries": [
+					{
+						"query": "SELECT \"tempCCD\", \"tempColdPlate\", \"tempCryoHead\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.vacuum\" WHERE time > :dashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ATCamera.vacuum",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "tempCCD",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "tempColdPlate",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "tempCryoHead",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "7d9ad263-5c59-43ae-adab-3933c6d7f57d",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "8a3a77c9-5f9a-4671-bfcd-570621b44e81",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "c0ee6260-9a19-432c-a27e-44d1800f0980",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/8/cells/6da36c14-482a-479a-83e3-bd3008cfb08b"
+				}
+			},
+			{
+				"i": "790aaf31-dc41-40a4-b953-8b079445a35f",
 				"x": 4,
 				"y": 0,
 				"w": 4,
@@ -131,13 +264,13 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/14/cells/1ad5ade7-2beb-49a2-9a3e-7c459420f7eb"
+					"self": "/chronograf/v1/dashboards/8/cells/790aaf31-dc41-40a4-b953-8b079445a35f"
 				}
 			},
 			{
-				"i": "fe9b7847-82ca-4eeb-b219-f227ff4fffe8",
+				"i": "06cbe212-b5cc-4cd0-8abb-916b5743f6bf",
 				"x": 8,
-				"y": 4,
+				"y": 7,
 				"w": 4,
 				"h": 4,
 				"name": "Dewar Vacuum Pressure",
@@ -254,13 +387,13 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/14/cells/fe9b7847-82ca-4eeb-b219-f227ff4fffe8"
+					"self": "/chronograf/v1/dashboards/8/cells/06cbe212-b5cc-4cd0-8abb-916b5743f6bf"
 				}
 			},
 			{
-				"i": "eda9cbbb-99b5-49cd-95f1-c6aa7175adfa",
+				"i": "f5be8d06-a051-4a91-ac09-52aa069bf048",
 				"x": 0,
-				"y": 4,
+				"y": 7,
 				"w": 4,
 				"h": 4,
 				"name": "CCD",
@@ -411,13 +544,13 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/14/cells/eda9cbbb-99b5-49cd-95f1-c6aa7175adfa"
+					"self": "/chronograf/v1/dashboards/8/cells/f5be8d06-a051-4a91-ac09-52aa069bf048"
 				}
 			},
 			{
-				"i": "449923c6-bdd7-4add-9089-5dddb94c10e1",
+				"i": "4a52e5be-6227-4296-b5bf-d5153b520a7f",
 				"x": 4,
-				"y": 4,
+				"y": 7,
 				"w": 4,
 				"h": 4,
 				"name": "WREB On-Board",
@@ -602,11 +735,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/14/cells/449923c6-bdd7-4add-9089-5dddb94c10e1"
+					"self": "/chronograf/v1/dashboards/8/cells/4a52e5be-6227-4296-b5bf-d5153b520a7f"
 				}
 			},
 			{
-				"i": "f3c232b2-d442-475c-838f-273eeef81480",
+				"i": "7c2efe2b-508c-4450-88f2-81ccc41a3d08",
 				"x": 8,
 				"y": 0,
 				"w": 4,
@@ -745,11 +878,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/14/cells/f3c232b2-d442-475c-838f-273eeef81480"
+					"self": "/chronograf/v1/dashboards/8/cells/7c2efe2b-508c-4450-88f2-81ccc41a3d08"
 				}
 			},
 			{
-				"i": "f5bd66c3-a10d-4032-b366-2b7af4e1d2ae",
+				"i": "2b10a1e7-927f-49a7-9728-eda31e9afba4",
 				"x": 0,
 				"y": 0,
 				"w": 4,
@@ -868,7 +1001,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/14/cells/f5bd66c3-a10d-4032-b366-2b7af4e1d2ae"
+					"self": "/chronograf/v1/dashboards/8/cells/2b10a1e7-927f-49a7-9728-eda31e9afba4"
 				}
 			}
 		],
@@ -876,9 +1009,9 @@
 		"name": "AuxTel Temperatures and Pressure",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/14",
-			"cells": "/chronograf/v1/dashboards/14/cells",
-			"templates": "/chronograf/v1/dashboards/14/templates"
+			"self": "/chronograf/v1/dashboards/8",
+			"cells": "/chronograf/v1/dashboards/8/cells",
+			"templates": "/chronograf/v1/dashboards/8/templates"
 		}
 	}
 }

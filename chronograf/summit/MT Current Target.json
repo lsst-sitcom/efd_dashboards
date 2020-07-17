@@ -9,44 +9,30 @@
 		}
 	},
 	"dashboard": {
-		"id": "12",
+		"id": "44",
 		"cells": [
 			{
-				"i": "455525ae-3a69-4d23-8e88-3588aefb233d",
+				"i": "54388fe9-4683-4200-b0a0-1bf623892cc5",
 				"x": 0,
 				"y": 0,
-				"w": 8,
-				"h": 4,
-				"name": "Position 1",
+				"w": 6,
+				"h": 2,
+				"name": "",
 				"queries": [
 					{
-						"query": "SELECT mean(\"CCW_Angle_1\") AS \"mean_CCW_Angle_1\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.Camera_Cable_Wrap\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT \"targetName\", \"raString\", \"decString\" FROM \"efd\".\"autogen\".\"lsst.sal.MTPtg.logevent_currentTarget\" ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.MTMount.Camera_Cable_Wrap",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_CCW_Angle_1",
-									"args": [
-										{
-											"value": "CCW_Angle_1",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								}
-							],
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
 							"tags": {},
 							"groupBy": {
-								"time": "auto",
+								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"fill": "null",
-							"rawText": null,
+							"rawText": "SELECT \"targetName\", \"raString\", \"decString\" FROM \"efd\".\"autogen\".\"lsst.sal.MTPtg.logevent_currentTarget\" ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -89,28 +75,14 @@
 						"scale": "linear"
 					}
 				},
-				"type": "line",
+				"type": "table",
 				"colors": [
 					{
-						"id": "82f9ee4d-10bc-4d4c-83b7-48b098d7da54",
-						"type": "scale",
-						"hex": "#31C0F6",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "0180b146-02f4-430f-8f11-d1bd084c23aa",
-						"type": "scale",
-						"hex": "#A500A5",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "499ca3de-c842-4129-a4d1-ca80098346b0",
-						"type": "scale",
-						"hex": "#FF7E27",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
 					}
 				],
 				"legend": {},
@@ -129,6 +101,21 @@
 						"internalName": "time",
 						"displayName": "",
 						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.MTPtg.logevent_currentTarget.targetName",
+						"displayName": "Target",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.MTPtg.logevent_currentTarget.decString",
+						"displayName": "Dec",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.MTPtg.logevent_currentTarget.raString",
+						"displayName": "RA",
+						"visible": true
 					}
 				],
 				"timeFormat": "MM/DD/YYYY HH:mm:ss",
@@ -139,17 +126,17 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/12/cells/455525ae-3a69-4d23-8e88-3588aefb233d"
+					"self": "/chronograf/v1/dashboards/44/cells/54388fe9-4683-4200-b0a0-1bf623892cc5"
 				}
 			}
 		],
 		"templates": [],
-		"name": "CCW",
+		"name": "MT Current Target",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/12",
-			"cells": "/chronograf/v1/dashboards/12/cells",
-			"templates": "/chronograf/v1/dashboards/12/templates"
+			"self": "/chronograf/v1/dashboards/44",
+			"cells": "/chronograf/v1/dashboards/44/cells",
+			"templates": "/chronograf/v1/dashboards/44/templates"
 		}
 	}
 }

@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.7.14",
+		"chronografVersion": "1.8.4",
 		"sources": {
-			"1": {
-				"name": "Summit EFD",
-				"link": "/chronograf/v1/sources/1"
+			"2": {
+				"name": "EFD",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},
 	"dashboard": {
-		"id": 30,
+		"id": "31",
 		"cells": [
 			{
-				"i": "6fd36b0b-4e58-4282-9210-95ef1474f74b",
+				"i": "6f758354-852e-4196-b6ed-87e41f40623b",
 				"x": 0,
 				"y": 0,
 				"w": 4,
@@ -82,7 +82,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/30/cells/6fd36b0b-4e58-4282-9210-95ef1474f74b"
+					"self": "/chronograf/v1/dashboards/31/cells/6f758354-852e-4196-b6ed-87e41f40623b"
 				}
 			}
 		],
@@ -90,9 +90,9 @@
 		"name": "Telescope Pointing Information",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/30",
-			"cells": "/chronograf/v1/dashboards/30/cells",
-			"templates": "/chronograf/v1/dashboards/30/templates"
+			"self": "/chronograf/v1/dashboards/31",
+			"cells": "/chronograf/v1/dashboards/31/cells",
+			"templates": "/chronograf/v1/dashboards/31/templates"
 		}
 	}
 }

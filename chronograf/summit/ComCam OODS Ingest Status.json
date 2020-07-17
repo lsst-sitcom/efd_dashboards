@@ -9,10 +9,10 @@
 		}
 	},
 	"dashboard": {
-		"id": "20",
+		"id": "40",
 		"cells": [
 			{
-				"i": "f6d08b8c-9a59-45bf-a652-cf9109528b10",
+				"i": "951ff36f-8646-4073-b692-240c47dd833d",
 				"x": 0,
 				"y": 0,
 				"w": 9,
@@ -100,49 +100,39 @@
 					"isEnforced": true,
 					"digits": 2
 				},
-				"note": "Last images taken with ATCamera.\n\nSelect an appropriate time window (e.g. `Past 24h`)\n\n",
+				"note": "Last images ingested into the OODS.\n\nSelect an appropriate time window (e.g. `Past 24h`)\n\n",
 				"noteVisibility": "showWhenNoData",
 				"links": {
-					"self": "/chronograf/v1/dashboards/20/cells/f6d08b8c-9a59-45bf-a652-cf9109528b10"
+					"self": "/chronograf/v1/dashboards/40/cells/951ff36f-8646-4073-b692-240c47dd833d"
 				}
 			},
 			{
-				"i": "23733aa4-1cde-4f37-9a74-69b9186724cc",
+				"i": "61cbf324-4c2f-4e7e-a217-6c6f5071ec24",
 				"x": 0,
 				"y": 2,
 				"w": 11,
 				"h": 6,
-				"name": "Exposure sequence",
+				"name": "Ingest sequence",
 				"queries": [
 					{
-						"query": "SELECT \"groupId\", \"imageNumber\", \"exposureTime\", \"imagesInSequence\", \"imageType\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.logevent_endReadout\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"obsid\", \"statusCode\", \"description\" FROM \"efd\".\"autogen\".\"lsst.sal.CCArchiver.logevent_imageInOODS\" WHERE time > :dashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.logevent_endReadout",
+							"measurement": "lsst.sal.CCArchiver.logevent_imageInOODS",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "groupId",
+									"value": "obsid",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "imageNumber",
+									"value": "statusCode",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "exposureTime",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "imagesInSequence",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "imageType",
+									"value": "description",
 									"type": "field",
 									"alias": ""
 								}
@@ -222,31 +212,6 @@
 						"internalName": "time",
 						"displayName": "",
 						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.ATCamera.logevent_endReadout.groupId",
-						"displayName": "Group Id",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.ATCamera.logevent_endReadout.imageType",
-						"displayName": "Image Type",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.ATCamera.logevent_endReadout.imagesInSequence",
-						"displayName": "# Images",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.ATCamera.logevent_endReadout.exposureTime",
-						"displayName": "Exposure Time",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.ATCamera.logevent_endReadout.imageNumber",
-						"displayName": "Image Number",
-						"visible": true
 					}
 				],
 				"timeFormat": "MM/DD/YYYY HH:mm:ss",
@@ -257,17 +222,17 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/20/cells/23733aa4-1cde-4f37-9a74-69b9186724cc"
+					"self": "/chronograf/v1/dashboards/40/cells/61cbf324-4c2f-4e7e-a217-6c6f5071ec24"
 				}
 			}
 		],
 		"templates": [],
-		"name": "LATISS Exposure Table",
+		"name": "ComCam OODS Ingest Status",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/20",
-			"cells": "/chronograf/v1/dashboards/20/cells",
-			"templates": "/chronograf/v1/dashboards/20/templates"
+			"self": "/chronograf/v1/dashboards/40",
+			"cells": "/chronograf/v1/dashboards/40/cells",
+			"templates": "/chronograf/v1/dashboards/40/templates"
 		}
 	}
 }

@@ -9,18 +9,18 @@
 		}
 	},
 	"dashboard": {
-		"id": "3",
+		"id": "35",
 		"cells": [
 			{
-				"i": "6e8e8106-47cf-4a38-afa2-69782ee218b6",
-				"x": 4,
-				"y": 2,
-				"w": 3,
-				"h": 2,
-				"name": "Dropout Shutter Open Percentage",
+				"i": "0dc3e591-5559-4b2b-82a4-6e75b4705bf1",
+				"x": 0,
+				"y": 4,
+				"w": 4,
+				"h": 4,
+				"name": "Reil CryoTel Temperatures",
 				"queries": [
 					{
-						"query": "SELECT \"dropoutDoorOpeningPercentage\" FROM \"efd\".\"autogen\".\"lsst.sal.ATDome.position\" ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"temperature\", \"temp\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold1\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold2\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cryo\" WHERE time > :dashboardTime: ",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"dropoutDoorOpeningPercentage\" FROM \"efd\".\"autogen\".\"lsst.sal.ATDome.position\" ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"temperature\", \"temp\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold1\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold2\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cryo\" WHERE time > :dashboardTime: ",
 							"range": null,
 							"shifts": null
 						},
@@ -57,9 +57,9 @@
 							"",
 							""
 						],
-						"label": "",
+						"label": "(℃)",
 						"prefix": "",
-						"suffix": "%",
+						"suffix": "",
 						"base": "10",
 						"scale": "linear"
 					},
@@ -75,42 +75,28 @@
 						"scale": "linear"
 					}
 				},
-				"type": "gauge",
+				"type": "line",
 				"colors": [
 					{
-						"id": "0",
-						"type": "min",
-						"hex": "#BF3D5E",
-						"name": "ruby",
+						"id": "9c817dba-83af-4150-8f85-59528aba723f",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "ca1e77b4-8332-427c-8591-a36b270095b4",
-						"type": "threshold",
-						"hex": "#F95F53",
-						"name": "curacao",
-						"value": "35"
+						"id": "a88a1620-8d18-48dd-ab1a-1e80d01efcb3",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
 					},
 					{
-						"id": "d1bde7e0-02ce-465e-ae86-f7d6bd57e1e9",
-						"type": "threshold",
-						"hex": "#FFB94A",
-						"name": "pineapple",
-						"value": "70"
-					},
-					{
-						"id": "3944a6cc-f6e7-4688-bac3-dac945d88289",
-						"type": "threshold",
-						"hex": "#4ED8A0",
-						"name": "rainforest",
-						"value": "90"
-					},
-					{
-						"id": "1",
-						"type": "max",
-						"hex": "#9394FF",
-						"name": "comet",
-						"value": "100"
+						"id": "90ee8341-5a1a-4ba5-864e-46d16626204c",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
 					}
 				],
 				"legend": {},
@@ -128,114 +114,6 @@
 					{
 						"internalName": "time",
 						"displayName": "",
-						"visible": true
-					}
-				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 0
-				},
-				"note": "",
-				"noteVisibility": "default",
-				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/6e8e8106-47cf-4a38-afa2-69782ee218b6"
-				}
-			},
-			{
-				"i": "f3d5fd40-15f6-4fa9-b1db-a9d6eace7293",
-				"x": 7,
-				"y": 0,
-				"w": 4,
-				"h": 2,
-				"name": "Dome Status",
-				"queries": [
-					{
-						"query": "SELECT \"inPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.ATDome.logevent_allAxesInPosition\" ORDER BY time DESC LIMIT 1",
-						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": "SELECT \"inPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.ATDome.logevent_allAxesInPosition\" ORDER BY time DESC LIMIT 1",
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "table",
-				"colors": [
-					{
-						"id": "base",
-						"type": "text",
-						"hex": "#00C9FF",
-						"name": "laser",
-						"value": "-1000000000000000000"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": true
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.ATDome.logevent_allAxesInPosition.inPosition",
-						"displayName": "All Axes In Position",
 						"visible": true
 					}
 				],
@@ -247,31 +125,37 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/f3d5fd40-15f6-4fa9-b1db-a9d6eace7293"
+					"self": "/chronograf/v1/dashboards/35/cells/0dc3e591-5559-4b2b-82a4-6e75b4705bf1"
 				}
 			},
 			{
-				"i": "4573f8b9-16e6-4b42-b2a2-8772a5c3005f",
+				"i": "1c286e70-9bf6-4e5e-ae85-46ac16480132",
 				"x": 0,
 				"y": 0,
 				"w": 4,
 				"h": 4,
-				"name": "Azimuth Position",
+				"name": "VQ Monitor Pressure",
 				"queries": [
 					{
-						"query": "SELECT \"azimuthPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.ATDome.position\" ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"vqmpressure\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_VQMonitor\" WHERE time > :dashboardTime:",
 						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
+							"database": "efd",
+							"measurement": "lsst.sal.CCCamera.vacuum_VQMonitor",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "vqmpressure",
+									"type": "field",
+									"alias": ""
+								}
+							],
 							"tags": {},
 							"groupBy": {
 								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"azimuthPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.ATDome.position\" ORDER BY time DESC LIMIT 1",
+							"rawText": null,
 							"range": null,
 							"shifts": null
 						},
@@ -296,9 +180,9 @@
 							"",
 							""
 						],
-						"label": "",
+						"label": "(Torr)",
 						"prefix": "",
-						"suffix": "°",
+						"suffix": "",
 						"base": "10",
 						"scale": "linear"
 					},
@@ -314,21 +198,28 @@
 						"scale": "linear"
 					}
 				},
-				"type": "gauge",
+				"type": "line",
 				"colors": [
 					{
-						"id": "0",
-						"type": "min",
-						"hex": "#00C9FF",
-						"name": "laser",
+						"id": "9c817dba-83af-4150-8f85-59528aba723f",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "1",
-						"type": "max",
-						"hex": "#9394FF",
-						"name": "comet",
-						"value": "360"
+						"id": "a88a1620-8d18-48dd-ab1a-1e80d01efcb3",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "90ee8341-5a1a-4ba5-864e-46d16626204c",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
 					}
 				],
 				"legend": {},
@@ -357,19 +248,19 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/4573f8b9-16e6-4b42-b2a2-8772a5c3005f"
+					"self": "/chronograf/v1/dashboards/35/cells/1c286e70-9bf6-4e5e-ae85-46ac16480132"
 				}
 			},
 			{
-				"i": "56cd9352-f240-492f-a972-b1c7d63ce8f3",
+				"i": "d4ebb8b3-44bc-4655-8877-78f09ac88e2d",
 				"x": 4,
 				"y": 0,
-				"w": 3,
-				"h": 2,
-				"name": "Main Shutter Open Percentage",
+				"w": 4,
+				"h": 4,
+				"name": "CryoTel Temperatures",
 				"queries": [
 					{
-						"query": "SELECT \"mainDoorOpeningPercentage\" FROM \"efd\".\"autogen\".\"lsst.sal.ATDome.position\" ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"temperature\", \"temp\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold1\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold2\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cryo\" WHERE time > :dashboardTime: ",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -381,7 +272,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"mainDoorOpeningPercentage\" FROM \"efd\".\"autogen\".\"lsst.sal.ATDome.position\" ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"temperature\", \"temp\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold1\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold2\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cryo\" WHERE time > :dashboardTime: ",
 							"range": null,
 							"shifts": null
 						},
@@ -406,9 +297,9 @@
 							"",
 							""
 						],
-						"label": "",
+						"label": "(℃)",
 						"prefix": "",
-						"suffix": "%",
+						"suffix": "",
 						"base": "10",
 						"scale": "linear"
 					},
@@ -424,42 +315,28 @@
 						"scale": "linear"
 					}
 				},
-				"type": "gauge",
+				"type": "line",
 				"colors": [
 					{
-						"id": "0",
-						"type": "min",
-						"hex": "#BF3D5E",
-						"name": "ruby",
+						"id": "9c817dba-83af-4150-8f85-59528aba723f",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "ca1e77b4-8332-427c-8591-a36b270095b4",
-						"type": "threshold",
-						"hex": "#F95F53",
-						"name": "curacao",
-						"value": "35"
+						"id": "a88a1620-8d18-48dd-ab1a-1e80d01efcb3",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
 					},
 					{
-						"id": "d1bde7e0-02ce-465e-ae86-f7d6bd57e1e9",
-						"type": "threshold",
-						"hex": "#FFB94A",
-						"name": "pineapple",
-						"value": "70"
-					},
-					{
-						"id": "3944a6cc-f6e7-4688-bac3-dac945d88289",
-						"type": "threshold",
-						"hex": "#4ED8A0",
-						"name": "rainforest",
-						"value": "90"
-					},
-					{
-						"id": "1",
-						"type": "max",
-						"hex": "#9394FF",
-						"name": "comet",
-						"value": "100"
+						"id": "90ee8341-5a1a-4ba5-864e-46d16626204c",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
 					}
 				],
 				"legend": {},
@@ -483,22 +360,139 @@
 				"timeFormat": "MM/DD/YYYY HH:mm:ss",
 				"decimalPlaces": {
 					"isEnforced": true,
-					"digits": 0
+					"digits": 2
 				},
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/56cd9352-f240-492f-a972-b1c7d63ce8f3"
+					"self": "/chronograf/v1/dashboards/35/cells/d4ebb8b3-44bc-4655-8877-78f09ac88e2d"
+				}
+			},
+			{
+				"i": "ec6972a1-ccb6-4013-85be-03ab66919287",
+				"x": 8,
+				"y": 0,
+				"w": 4,
+				"h": 4,
+				"name": "CryoTel Powers",
+				"queries": [
+					{
+						"query": "SELECT \"power\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold1\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold2\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cryo\" WHERE time > :dashboardTime: ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"power\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold1\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold2\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cryo\" WHERE time > :dashboardTime: ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "(W)",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "9c817dba-83af-4150-8f85-59528aba723f",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "a88a1620-8d18-48dd-ab1a-1e80d01efcb3",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "90ee8341-5a1a-4ba5-864e-46d16626204c",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/35/cells/ec6972a1-ccb6-4013-85be-03ab66919287"
 				}
 			}
 		],
 		"templates": [],
-		"name": "AT Dome Status",
+		"name": "ComCam Vacuum",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/3",
-			"cells": "/chronograf/v1/dashboards/3/cells",
-			"templates": "/chronograf/v1/dashboards/3/templates"
+			"self": "/chronograf/v1/dashboards/35",
+			"cells": "/chronograf/v1/dashboards/35/cells",
+			"templates": "/chronograf/v1/dashboards/35/templates"
 		}
 	}
 }

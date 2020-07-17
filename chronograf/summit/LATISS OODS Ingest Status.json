@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.7.14",
+		"chronografVersion": "1.8.4",
 		"sources": {
-			"1": {
-				"name": "Summit EFD",
-				"link": "/chronograf/v1/sources/1"
+			"2": {
+				"name": "EFD",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},
 	"dashboard": {
-		"id": 27,
+		"id": "21",
 		"cells": [
 			{
-				"i": "8b9f82bd-7f30-4f7c-85e8-2b47cca839df",
+				"i": "3d9d2f71-b5c8-49b4-9ca2-7f96611eef63",
 				"x": 0,
 				"y": 0,
 				"w": 9,
@@ -103,11 +103,11 @@
 				"note": "Last images ingested into the OODS.\n\nSelect an appropriate time window (e.g. `Past 24h`)\n\n",
 				"noteVisibility": "showWhenNoData",
 				"links": {
-					"self": "/chronograf/v1/dashboards/27/cells/8b9f82bd-7f30-4f7c-85e8-2b47cca839df"
+					"self": "/chronograf/v1/dashboards/21/cells/3d9d2f71-b5c8-49b4-9ca2-7f96611eef63"
 				}
 			},
 			{
-				"i": "7d9ff48c-af13-467d-bb81-a4d7927c432e",
+				"i": "c03fa1eb-df71-43e0-86dd-c7e3975aa5b7",
 				"x": 0,
 				"y": 2,
 				"w": 11,
@@ -147,7 +147,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "/chronograf/v1/sources/1",
+						"source": "/chronograf/v1/sources/2",
 						"type": "influxql"
 					}
 				],
@@ -237,7 +237,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/27/cells/7d9ff48c-af13-467d-bb81-a4d7927c432e"
+					"self": "/chronograf/v1/dashboards/21/cells/c03fa1eb-df71-43e0-86dd-c7e3975aa5b7"
 				}
 			}
 		],
@@ -245,9 +245,9 @@
 		"name": "LATISS OODS Ingest Status",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/27",
-			"cells": "/chronograf/v1/dashboards/27/cells",
-			"templates": "/chronograf/v1/dashboards/27/templates"
+			"self": "/chronograf/v1/dashboards/21",
+			"cells": "/chronograf/v1/dashboards/21/cells",
+			"templates": "/chronograf/v1/dashboards/21/templates"
 		}
 	}
 }

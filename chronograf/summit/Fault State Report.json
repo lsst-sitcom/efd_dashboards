@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.7.14",
+		"chronografVersion": "1.8.4",
 		"sources": {
-			"1": {
-				"name": "Summit EFD",
-				"link": "/chronograf/v1/sources/1"
+			"2": {
+				"name": "EFD",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},
 	"dashboard": {
-		"id": 28,
+		"id": "19",
 		"cells": [
 			{
-				"i": "b49a9e73-a822-4e84-97c8-789b741ee81e",
+				"i": "5c1b88c1-71dc-41c2-9130-7e4701f67eb4",
 				"x": 0,
 				"y": 0,
 				"w": 12,
@@ -126,7 +126,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/28/cells/b49a9e73-a822-4e84-97c8-789b741ee81e"
+					"self": "/chronograf/v1/dashboards/19/cells/5c1b88c1-71dc-41c2-9130-7e4701f67eb4"
 				}
 			}
 		],
@@ -190,6 +190,21 @@
 						"selected": false
 					},
 					{
+						"value": "CCArchiver",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "CCCamera",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "CCHeaderService",
+						"type": "csv",
+						"selected": false
+					},
+					{
 						"value": "DIMM",
 						"type": "csv",
 						"selected": false
@@ -215,6 +230,16 @@
 						"selected": false
 					},
 					{
+						"value": "MTM1M3",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTM2",
+						"type": "csv",
+						"selected": false
+					},
+					{
 						"value": "MTMount",
 						"type": "csv",
 						"selected": false
@@ -225,7 +250,17 @@
 						"selected": false
 					},
 					{
+						"value": "MTVMS",
+						"type": "csv",
+						"selected": false
+					},
+					{
 						"value": "Rotator",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "Scheduler",
 						"type": "csv",
 						"selected": false
 					},
@@ -236,6 +271,11 @@
 					},
 					{
 						"value": "ScriptQueue",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "Test",
 						"type": "csv",
 						"selected": false
 					},
@@ -254,17 +294,18 @@
 					"tagKey": "",
 					"fieldKey": ""
 				},
+				"sourceID": "dynamic",
 				"links": {
-					"self": "/chronograf/v1/dashboards/28/templates/7d4d7854-86c8-4811-8d99-23bb99f06901"
+					"self": "/chronograf/v1/dashboards/19/templates/7d4d7854-86c8-4811-8d99-23bb99f06901"
 				}
 			}
 		],
 		"name": "Fault State Report",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/28",
-			"cells": "/chronograf/v1/dashboards/28/cells",
-			"templates": "/chronograf/v1/dashboards/28/templates"
+			"self": "/chronograf/v1/dashboards/19",
+			"cells": "/chronograf/v1/dashboards/19/cells",
+			"templates": "/chronograf/v1/dashboards/19/templates"
 		}
 	}
 }

@@ -9,13 +9,13 @@
 		}
 	},
 	"dashboard": {
-		"id": "20",
+		"id": "42",
 		"cells": [
 			{
-				"i": "f6d08b8c-9a59-45bf-a652-cf9109528b10",
+				"i": "bde94ac6-d9ff-4a0a-b5f8-30f43888ea4a",
 				"x": 0,
 				"y": 0,
-				"w": 9,
+				"w": 11,
 				"h": 2,
 				"name": "Info",
 				"queries": [
@@ -100,49 +100,49 @@
 					"isEnforced": true,
 					"digits": 2
 				},
-				"note": "Last images taken with ATCamera.\n\nSelect an appropriate time window (e.g. `Past 24h`)\n\n",
+				"note": "Last images taken with CCCamera.\n\nSelect an appropriate time window (e.g. `Past 24h`)\n\n",
 				"noteVisibility": "showWhenNoData",
 				"links": {
-					"self": "/chronograf/v1/dashboards/20/cells/f6d08b8c-9a59-45bf-a652-cf9109528b10"
+					"self": "/chronograf/v1/dashboards/42/cells/bde94ac6-d9ff-4a0a-b5f8-30f43888ea4a"
 				}
 			},
 			{
-				"i": "23733aa4-1cde-4f37-9a74-69b9186724cc",
+				"i": "77720f26-f94a-43e0-b3a8-eb0b453a3f9a",
 				"x": 0,
 				"y": 2,
 				"w": 11,
-				"h": 6,
+				"h": 5,
 				"name": "Exposure sequence",
 				"queries": [
 					{
-						"query": "SELECT \"groupId\", \"imageNumber\", \"exposureTime\", \"imagesInSequence\", \"imageType\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.logevent_endReadout\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"expTime\", \"numImages\", \"shutter\", \"keyValueMap\", \"obsNote\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.command_takeImages\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.logevent_endReadout",
+							"measurement": "lsst.sal.CCCamera.command_takeImages",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "groupId",
+									"value": "expTime",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "imageNumber",
+									"value": "numImages",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "exposureTime",
+									"value": "shutter",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "imagesInSequence",
+									"value": "keyValueMap",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "imageType",
+									"value": "obsNote",
 									"type": "field",
 									"alias": ""
 								}
@@ -224,28 +224,28 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.logevent_endReadout.groupId",
-						"displayName": "Group Id",
+						"internalName": "lsst.sal.CCCamera.command_takeImages.expTime",
+						"displayName": "ExpTime",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.logevent_endReadout.imageType",
-						"displayName": "Image Type",
+						"internalName": "lsst.sal.CCCamera.command_takeImages.keyValueMap",
+						"displayName": "Key Value Map",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.logevent_endReadout.imagesInSequence",
-						"displayName": "# Images",
+						"internalName": "lsst.sal.CCCamera.command_takeImages.numImages",
+						"displayName": "Num Images",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.logevent_endReadout.exposureTime",
-						"displayName": "Exposure Time",
+						"internalName": "lsst.sal.CCCamera.command_takeImages.shutter",
+						"displayName": "Shutter",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.logevent_endReadout.imageNumber",
-						"displayName": "Image Number",
+						"internalName": "lsst.sal.CCCamera.command_takeImages.obsNote",
+						"displayName": "Obs Note",
 						"visible": true
 					}
 				],
@@ -257,17 +257,17 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/20/cells/23733aa4-1cde-4f37-9a74-69b9186724cc"
+					"self": "/chronograf/v1/dashboards/42/cells/77720f26-f94a-43e0-b3a8-eb0b453a3f9a"
 				}
 			}
 		],
 		"templates": [],
-		"name": "LATISS Exposure Table",
+		"name": "ComCam Exposure table",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/20",
-			"cells": "/chronograf/v1/dashboards/20/cells",
-			"templates": "/chronograf/v1/dashboards/20/templates"
+			"self": "/chronograf/v1/dashboards/42",
+			"cells": "/chronograf/v1/dashboards/42/cells",
+			"templates": "/chronograf/v1/dashboards/42/templates"
 		}
 	}
 }

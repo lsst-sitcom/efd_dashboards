@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.7.14",
+		"chronografVersion": "1.8.4",
 		"sources": {
-			"1": {
-				"name": "Summit EFD",
-				"link": "/chronograf/v1/sources/1"
+			"2": {
+				"name": "EFD",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},
 	"dashboard": {
-		"id": 18,
+		"id": "4",
 		"cells": [
 			{
-				"i": "8d2aeebc-69f4-426b-ac20-9e1d6b54ddba",
+				"i": "841ea717-0c15-4350-bb7c-ccfe7b418b8f",
 				"x": 4,
 				"y": 0,
 				"w": 4,
@@ -146,11 +146,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/18/cells/8d2aeebc-69f4-426b-ac20-9e1d6b54ddba"
+					"self": "/chronograf/v1/dashboards/4/cells/841ea717-0c15-4350-bb7c-ccfe7b418b8f"
 				}
 			},
 			{
-				"i": "f762061d-8457-49ec-98a6-a791e7eb475e",
+				"i": "97b0e8b5-0dcf-48f2-8788-687fc942c889",
 				"x": 0,
 				"y": 0,
 				"w": 4,
@@ -284,11 +284,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/18/cells/f762061d-8457-49ec-98a6-a791e7eb475e"
+					"self": "/chronograf/v1/dashboards/4/cells/97b0e8b5-0dcf-48f2-8788-687fc942c889"
 				}
 			},
 			{
-				"i": "5c487223-6d18-42c8-8e68-e11b2bfce5ab",
+				"i": "dc47cb0c-bdaa-4ab8-9f04-bbfc128aa9c0",
 				"x": 8,
 				"y": 0,
 				"w": 4,
@@ -392,11 +392,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/18/cells/5c487223-6d18-42c8-8e68-e11b2bfce5ab"
+					"self": "/chronograf/v1/dashboards/4/cells/dc47cb0c-bdaa-4ab8-9f04-bbfc128aa9c0"
 				}
 			},
 			{
-				"i": "0de3cacc-8b36-47b6-86ee-2e7564358334",
+				"i": "a8e8d669-6997-4a82-a95a-b67c35d063b5",
 				"x": 4,
 				"y": 3,
 				"w": 4,
@@ -509,11 +509,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/18/cells/0de3cacc-8b36-47b6-86ee-2e7564358334"
+					"self": "/chronograf/v1/dashboards/4/cells/a8e8d669-6997-4a82-a95a-b67c35d063b5"
 				}
 			},
 			{
-				"i": "77a06c6b-9578-41e8-80db-b8d060694165",
+				"i": "76a35969-50ee-40ee-b19f-d5475ad39a29",
 				"x": 0,
 				"y": 3,
 				"w": 4,
@@ -626,7 +626,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/18/cells/77a06c6b-9578-41e8-80db-b8d060694165"
+					"self": "/chronograf/v1/dashboards/4/cells/76a35969-50ee-40ee-b19f-d5475ad39a29"
 				}
 			}
 		],
@@ -634,9 +634,9 @@
 		"name": "AT Mount Status",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/18",
-			"cells": "/chronograf/v1/dashboards/18/cells",
-			"templates": "/chronograf/v1/dashboards/18/templates"
+			"self": "/chronograf/v1/dashboards/4",
+			"cells": "/chronograf/v1/dashboards/4/cells",
+			"templates": "/chronograf/v1/dashboards/4/templates"
 		}
 	}
 }

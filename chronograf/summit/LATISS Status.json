@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.7.14",
+		"chronografVersion": "1.8.4",
 		"sources": {
-			"1": {
-				"name": "Summit EFD",
-				"link": "/chronograf/v1/sources/1"
+			"2": {
+				"name": "EFD",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},
 	"dashboard": {
-		"id": 23,
+		"id": "22",
 		"cells": [
 			{
-				"i": "dd556f95-d774-4127-a447-552342acce61",
+				"i": "9c1b841b-32d7-4fb1-9a4d-efa583a6c105",
 				"x": 0,
 				"y": 6,
 				"w": 9,
@@ -116,11 +116,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/23/cells/dd556f95-d774-4127-a447-552342acce61"
+					"self": "/chronograf/v1/dashboards/22/cells/9c1b841b-32d7-4fb1-9a4d-efa583a6c105"
 				}
 			},
 			{
-				"i": "33cd3416-e320-4e26-9979-5b0037110810",
+				"i": "3189e85c-74e2-48d9-bec9-256d92165b40",
 				"x": 6,
 				"y": 2,
 				"w": 3,
@@ -219,11 +219,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/23/cells/33cd3416-e320-4e26-9979-5b0037110810"
+					"self": "/chronograf/v1/dashboards/22/cells/3189e85c-74e2-48d9-bec9-256d92165b40"
 				}
 			},
 			{
-				"i": "7f7afeb1-06d1-4185-98fe-8cf897e956bd",
+				"i": "71d63f83-3077-4f42-8547-545e5f043016",
 				"x": 6,
 				"y": 0,
 				"w": 3,
@@ -322,11 +322,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/23/cells/7f7afeb1-06d1-4185-98fe-8cf897e956bd"
+					"self": "/chronograf/v1/dashboards/22/cells/71d63f83-3077-4f42-8547-545e5f043016"
 				}
 			},
 			{
-				"i": "370674d2-1a7c-4986-a92a-c3a9e7887dc5",
+				"i": "2f5314c0-bad7-4e04-8db6-8aa5afb99ff2",
 				"x": 6,
 				"y": 4,
 				"w": 3,
@@ -425,11 +425,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/23/cells/370674d2-1a7c-4986-a92a-c3a9e7887dc5"
+					"self": "/chronograf/v1/dashboards/22/cells/2f5314c0-bad7-4e04-8db6-8aa5afb99ff2"
 				}
 			},
 			{
-				"i": "0cee1912-616a-4290-978a-11196046a2aa",
+				"i": "fc6f05ef-689d-44d6-aaca-2f80d11ad6fa",
 				"x": 0,
 				"y": 2,
 				"w": 6,
@@ -533,11 +533,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/23/cells/0cee1912-616a-4290-978a-11196046a2aa"
+					"self": "/chronograf/v1/dashboards/22/cells/fc6f05ef-689d-44d6-aaca-2f80d11ad6fa"
 				}
 			},
 			{
-				"i": "7efac940-388e-45e6-a8a8-a6f410408db3",
+				"i": "bd4e154b-e487-4c57-b4d6-44d1609e612c",
 				"x": 0,
 				"y": 4,
 				"w": 6,
@@ -646,11 +646,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/23/cells/7efac940-388e-45e6-a8a8-a6f410408db3"
+					"self": "/chronograf/v1/dashboards/22/cells/bd4e154b-e487-4c57-b4d6-44d1609e612c"
 				}
 			},
 			{
-				"i": "60b19b48-fb97-4e39-86d5-78b9dbff3e22",
+				"i": "30463575-68a5-4412-ab82-592c5b113f15",
 				"x": 0,
 				"y": 0,
 				"w": 5,
@@ -759,11 +759,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/23/cells/60b19b48-fb97-4e39-86d5-78b9dbff3e22"
+					"self": "/chronograf/v1/dashboards/22/cells/30463575-68a5-4412-ab82-592c5b113f15"
 				}
 			},
 			{
-				"i": "837e4bf6-1f9c-4ef3-9d2f-656dfe952ef1",
+				"i": "bc080edb-4747-4499-8308-b2dca85e4ed6",
 				"x": 0,
 				"y": 8,
 				"w": 9,
@@ -867,7 +867,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/23/cells/837e4bf6-1f9c-4ef3-9d2f-656dfe952ef1"
+					"self": "/chronograf/v1/dashboards/22/cells/bc080edb-4747-4499-8308-b2dca85e4ed6"
 				}
 			}
 		],
@@ -875,9 +875,9 @@
 		"name": "LATISS Status",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/23",
-			"cells": "/chronograf/v1/dashboards/23/cells",
-			"templates": "/chronograf/v1/dashboards/23/templates"
+			"self": "/chronograf/v1/dashboards/22",
+			"cells": "/chronograf/v1/dashboards/22/cells",
+			"templates": "/chronograf/v1/dashboards/22/templates"
 		}
 	}
 }

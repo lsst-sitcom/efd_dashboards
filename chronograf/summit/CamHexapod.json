@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.7.14",
+		"chronografVersion": "1.8.4",
 		"sources": {
-			"1": {
-				"name": "Summit EFD",
-				"link": "/chronograf/v1/sources/1"
+			"2": {
+				"name": "EFD",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},
 	"dashboard": {
-		"id": 8,
+		"id": "11",
 		"cells": [
 			{
-				"i": "141dd3b4-ee56-49ee-a165-e682b63d196b",
+				"i": "f49728b5-e6d9-4139-8984-c5a33256d6ef",
 				"x": 0,
 				"y": 0,
 				"w": 4,
@@ -111,7 +111,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/8/cells/141dd3b4-ee56-49ee-a165-e682b63d196b"
+					"self": "/chronograf/v1/dashboards/11/cells/f49728b5-e6d9-4139-8984-c5a33256d6ef"
 				}
 			}
 		],
@@ -119,9 +119,9 @@
 		"name": "CamHexapod",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/8",
-			"cells": "/chronograf/v1/dashboards/8/cells",
-			"templates": "/chronograf/v1/dashboards/8/templates"
+			"self": "/chronograf/v1/dashboards/11",
+			"cells": "/chronograf/v1/dashboards/11/cells",
+			"templates": "/chronograf/v1/dashboards/11/templates"
 		}
 	}
 }

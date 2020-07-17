@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.7.14",
+		"chronografVersion": "1.8.4",
 		"sources": {
-			"1": {
-				"name": "Summit EFD",
-				"link": "/chronograf/v1/sources/1"
+			"2": {
+				"name": "EFD",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},
 	"dashboard": {
-		"id": 29,
+		"id": "27",
 		"cells": [
 			{
-				"i": "427d1a7d-4ad2-4458-bd26-658525c74ed3",
+				"i": "d3d52894-22e7-47d0-96e3-b737cef1119a",
 				"x": 0,
 				"y": 0,
 				"w": 11,
@@ -121,7 +121,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/29/cells/427d1a7d-4ad2-4458-bd26-658525c74ed3"
+					"self": "/chronograf/v1/dashboards/27/cells/d3d52894-22e7-47d0-96e3-b737cef1119a"
 				}
 			}
 		],
@@ -210,6 +210,16 @@
 						"selected": false
 					},
 					{
+						"value": "MTM1M3",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTM2",
+						"type": "csv",
+						"selected": false
+					},
+					{
 						"value": "MTMount",
 						"type": "csv",
 						"selected": false
@@ -220,7 +230,17 @@
 						"selected": false
 					},
 					{
+						"value": "MTVMS",
+						"type": "csv",
+						"selected": false
+					},
+					{
 						"value": "Rotator",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "Scheduler",
 						"type": "csv",
 						"selected": false
 					},
@@ -249,17 +269,18 @@
 					"tagKey": "",
 					"fieldKey": ""
 				},
+				"sourceID": "dynamic",
 				"links": {
-					"self": "/chronograf/v1/dashboards/29/templates/7d4d7854-86c8-4811-8d99-23bb99f06901"
+					"self": "/chronograf/v1/dashboards/27/templates/7d4d7854-86c8-4811-8d99-23bb99f06901"
 				}
 			}
 		],
 		"name": "Recommended Setting Versions",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/29",
-			"cells": "/chronograf/v1/dashboards/29/cells",
-			"templates": "/chronograf/v1/dashboards/29/templates"
+			"self": "/chronograf/v1/dashboards/27",
+			"cells": "/chronograf/v1/dashboards/27/cells",
+			"templates": "/chronograf/v1/dashboards/27/templates"
 		}
 	}
 }

@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.7.14",
+		"chronografVersion": "1.8.4",
 		"sources": {
-			"1": {
-				"name": "Summit EFD",
-				"link": "/chronograf/v1/sources/1"
+			"2": {
+				"name": "EFD",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},
 	"dashboard": {
-		"id": 13,
+		"id": "9",
 		"cells": [
 			{
-				"i": "fed813e9-9733-4630-9a54-ed98a9b95b04",
+				"i": "090f7c4e-316c-4a7e-a135-1ee21a733543",
 				"x": 4,
 				"y": 4,
 				"w": 4,
@@ -175,11 +175,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/13/cells/fed813e9-9733-4630-9a54-ed98a9b95b04"
+					"self": "/chronograf/v1/dashboards/9/cells/090f7c4e-316c-4a7e-a135-1ee21a733543"
 				}
 			},
 			{
-				"i": "f5e60184-6009-4ff7-8968-84fcafa691e1",
+				"i": "70246461-feb4-496e-8b01-8fa388feb3fc",
 				"x": 0,
 				"y": 4,
 				"w": 4,
@@ -306,11 +306,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/13/cells/f5e60184-6009-4ff7-8968-84fcafa691e1"
+					"self": "/chronograf/v1/dashboards/9/cells/70246461-feb4-496e-8b01-8fa388feb3fc"
 				}
 			},
 			{
-				"i": "58286519-1b5c-4ec7-b88b-2c69277c30ad",
+				"i": "c4de6560-700c-4d1a-b32c-39fa27ad7d6b",
 				"x": 4,
 				"y": 0,
 				"w": 4,
@@ -557,11 +557,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/13/cells/58286519-1b5c-4ec7-b88b-2c69277c30ad"
+					"self": "/chronograf/v1/dashboards/9/cells/c4de6560-700c-4d1a-b32c-39fa27ad7d6b"
 				}
 			},
 			{
-				"i": "e1448a36-74a7-45e1-9d1c-473362516ae4",
+				"i": "c51b8f42-76f6-4251-82ac-e88b185ec279",
 				"x": 0,
 				"y": 0,
 				"w": 4,
@@ -784,7 +784,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/13/cells/e1448a36-74a7-45e1-9d1c-473362516ae4"
+					"self": "/chronograf/v1/dashboards/9/cells/c51b8f42-76f6-4251-82ac-e88b185ec279"
 				}
 			}
 		],
@@ -792,9 +792,9 @@
 		"name": "AuxTel WREB",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/13",
-			"cells": "/chronograf/v1/dashboards/13/cells",
-			"templates": "/chronograf/v1/dashboards/13/templates"
+			"self": "/chronograf/v1/dashboards/9",
+			"cells": "/chronograf/v1/dashboards/9/cells",
+			"templates": "/chronograf/v1/dashboards/9/templates"
 		}
 	}
 }
