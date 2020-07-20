@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.7.14",
+		"chronografVersion": "1.8.4",
 		"sources": {
-			"1": {
-				"name": "Summit EFD",
-				"link": "/chronograf/v1/sources/1"
+			"2": {
+				"name": "EFD",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},
 	"dashboard": {
-		"id": 1,
+		"id": "32",
 		"cells": [
 			{
-				"i": "72b38b3c-f7c8-4eef-835c-d7c68ca326ec",
+				"i": "95ba6f11-d713-4e00-8dfb-c40ff754ca6f",
 				"x": 0,
 				"y": 0,
 				"w": 12,
@@ -22,17 +22,38 @@
 					{
 						"query": "SELECT \"value\",\"min2M\",\"avg2M\",\"avg10M\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.windSpeed\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
+							"database": "efd",
+							"measurement": "lsst.sal.Environment.windSpeed",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "value",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "min2M",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "avg2M",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "avg10M",
+									"type": "field",
+									"alias": ""
+								}
+							],
 							"tags": {},
 							"groupBy": {
 								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"value\",\"min2M\",\"avg2M\",\"avg10M\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.windSpeed\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+							"rawText": null,
 							"range": null,
 							"shifts": null
 						},
@@ -125,11 +146,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/1/cells/72b38b3c-f7c8-4eef-835c-d7c68ca326ec"
+					"self": "/chronograf/v1/dashboards/32/cells/95ba6f11-d713-4e00-8dfb-c40ff754ca6f"
 				}
 			},
 			{
-				"i": "7fc5a4eb-0d21-40eb-8c0f-c2fcd0057326",
+				"i": "2fe2ea03-02cf-4fc9-ab70-5e357dd2d3a7",
 				"x": 0,
 				"y": 3,
 				"w": 12,
@@ -139,17 +160,67 @@
 					{
 						"query": "SELECT mean(\"avg10M\") AS \"mean_avg10M\", mean(\"avg2M\") AS \"mean_avg2M\", mean(\"min2M\") AS \"mean_min2M\", mean(\"value\") AS \"mean_value\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.windSpeed\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
+							"database": "efd",
+							"measurement": "lsst.sal.Environment.windSpeed",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_avg10M",
+									"args": [
+										{
+											"value": "avg10M",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_avg2M",
+									"args": [
+										{
+											"value": "avg2M",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_min2M",
+									"args": [
+										{
+											"value": "min2M",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_value",
+									"args": [
+										{
+											"value": "value",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
 							"tags": {},
 							"groupBy": {
-								"time": "",
+								"time": "auto",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(\"avg10M\") AS \"mean_avg10M\", mean(\"avg2M\") AS \"mean_avg2M\", mean(\"min2M\") AS \"mean_min2M\", mean(\"value\") AS \"mean_value\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.windSpeed\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+							"fill": "null",
+							"rawText": null,
 							"range": null,
 							"shifts": null
 						},
@@ -242,7 +313,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/1/cells/7fc5a4eb-0d21-40eb-8c0f-c2fcd0057326"
+					"self": "/chronograf/v1/dashboards/32/cells/2fe2ea03-02cf-4fc9-ab70-5e357dd2d3a7"
 				}
 			}
 		],
@@ -250,9 +321,9 @@
 		"name": "Wind Speed check",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/1",
-			"cells": "/chronograf/v1/dashboards/1/cells",
-			"templates": "/chronograf/v1/dashboards/1/templates"
+			"self": "/chronograf/v1/dashboards/32",
+			"cells": "/chronograf/v1/dashboards/32/cells",
+			"templates": "/chronograf/v1/dashboards/32/templates"
 		}
 	}
 }
