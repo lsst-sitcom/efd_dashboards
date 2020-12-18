@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.7.14",
+		"chronografVersion": "1.8.8",
 		"sources": {
 			"1": {
 				"name": "EFD",
@@ -9,7 +9,7 @@
 		}
 	},
 	"dashboard": {
-		"id": 6,
+		"id": "6",
 		"cells": [
 			{
 				"i": "9c2919a2-c9e4-4653-80dd-759c03846d6d",
@@ -205,6 +205,56 @@
 						"selected": false
 					},
 					{
+						"value": "Hexapod",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTAOS",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTM1M3",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTM2",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTMount",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTPtg",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "NewMTMount",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTRotator",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "Scheduler",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "Script",
+						"type": "csv",
+						"selected": false
+					},
+					{
 						"value": "ScriptQueue",
 						"type": "csv",
 						"selected": false
@@ -219,6 +269,7 @@
 					"tagKey": "",
 					"fieldKey": ""
 				},
+				"sourceID": "dynamic",
 				"links": {
 					"self": "/chronograf/v1/dashboards/6/templates/7d4d7854-86c8-4811-8d99-23bb99f06901"
 				}

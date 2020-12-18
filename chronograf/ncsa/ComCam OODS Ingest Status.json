@@ -9,10 +9,10 @@
 		}
 	},
 	"dashboard": {
-		"id": "7",
+		"id": "22",
 		"cells": [
 			{
-				"i": "060212e7-d7ea-47b5-a409-feb1d62bbcfc",
+				"i": "210b3032-2508-4a65-bb73-5cc57703ffed",
 				"x": 0,
 				"y": 0,
 				"w": 9,
@@ -100,49 +100,49 @@
 					"isEnforced": true,
 					"digits": 2
 				},
-				"note": "Last images taken with ATCamera.\n\nSelect an appropriate time window (e.g. `Past 24h`)\n\n",
+				"note": "Last images ingested into the OODS.\n\nSelect an appropriate time window (e.g. `Past 24h`)\n\n",
 				"noteVisibility": "showWhenNoData",
 				"links": {
-					"self": "/chronograf/v1/dashboards/7/cells/060212e7-d7ea-47b5-a409-feb1d62bbcfc"
+					"self": "/chronograf/v1/dashboards/22/cells/210b3032-2508-4a65-bb73-5cc57703ffed"
 				}
 			},
 			{
-				"i": "64cfe4fd-285b-4af4-8fa2-32321be55591",
+				"i": "91ad9487-94a3-40c6-9b1c-38a12385af24",
 				"x": 0,
 				"y": 2,
 				"w": 11,
 				"h": 6,
-				"name": "Exposure sequence",
+				"name": "Ingest sequence",
 				"queries": [
 					{
-						"query": "SELECT \"groupId\", \"expTime\", \"numImages\", \"shutter\", \"imageType\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.command_takeImages\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"obsid\", \"statusCode\", \"description\", \"raft\", \"sensor\" FROM \"efd\".\"autogen\".\"lsst.sal.CCArchiver.logevent_imageInOODS\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.command_takeImages",
+							"measurement": "lsst.sal.CCArchiver.logevent_imageInOODS",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "groupId",
+									"value": "obsid",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "expTime",
+									"value": "statusCode",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "numImages",
+									"value": "description",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "shutter",
+									"value": "raft",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "imageType",
+									"value": "sensor",
 									"type": "field",
 									"alias": ""
 								}
@@ -224,28 +224,28 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.groupId",
-						"displayName": "Group ID",
+						"internalName": "lsst.sal.CCArchiver.logevent_imageInOODS.obsid",
+						"displayName": "Obs ID",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.imageType",
-						"displayName": "Image Type",
+						"internalName": "lsst.sal.CCArchiver.logevent_imageInOODS.raft",
+						"displayName": "Raft",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.expTime",
-						"displayName": "ExpTime (s)",
+						"internalName": "lsst.sal.CCArchiver.logevent_imageInOODS.sensor",
+						"displayName": "Sensor",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.numImages",
-						"displayName": "# of Images",
+						"internalName": "lsst.sal.CCArchiver.logevent_imageInOODS.statusCode",
+						"displayName": "Status Code",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.shutter",
-						"displayName": "Is shutter open?",
+						"internalName": "lsst.sal.CCArchiver.logevent_imageInOODS.description",
+						"displayName": "Description",
 						"visible": true
 					}
 				],
@@ -257,17 +257,17 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/7/cells/64cfe4fd-285b-4af4-8fa2-32321be55591"
+					"self": "/chronograf/v1/dashboards/22/cells/91ad9487-94a3-40c6-9b1c-38a12385af24"
 				}
 			}
 		],
 		"templates": [],
-		"name": "LATISS Exposure Table",
+		"name": "ComCam OODS Ingest Status",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/7",
-			"cells": "/chronograf/v1/dashboards/7/cells",
-			"templates": "/chronograf/v1/dashboards/7/templates"
+			"self": "/chronograf/v1/dashboards/22",
+			"cells": "/chronograf/v1/dashboards/22/cells",
+			"templates": "/chronograf/v1/dashboards/22/templates"
 		}
 	}
 }

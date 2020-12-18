@@ -9,13 +9,13 @@
 		}
 	},
 	"dashboard": {
-		"id": "7",
+		"id": "15",
 		"cells": [
 			{
-				"i": "060212e7-d7ea-47b5-a409-feb1d62bbcfc",
+				"i": "0ce480e0-605f-4f8d-8281-c48d0b313088",
 				"x": 0,
 				"y": 0,
-				"w": 9,
+				"w": 11,
 				"h": 2,
 				"name": "Info",
 				"queries": [
@@ -100,25 +100,25 @@
 					"isEnforced": true,
 					"digits": 2
 				},
-				"note": "Last images taken with ATCamera.\n\nSelect an appropriate time window (e.g. `Past 24h`)\n\n",
+				"note": "Last images taken with CCCamera.\n\nSelect an appropriate time window (e.g. `Past 24h`)\n\n",
 				"noteVisibility": "showWhenNoData",
 				"links": {
-					"self": "/chronograf/v1/dashboards/7/cells/060212e7-d7ea-47b5-a409-feb1d62bbcfc"
+					"self": "/chronograf/v1/dashboards/15/cells/0ce480e0-605f-4f8d-8281-c48d0b313088"
 				}
 			},
 			{
-				"i": "64cfe4fd-285b-4af4-8fa2-32321be55591",
+				"i": "b2c475c9-3fc2-46f6-af2e-f2fb2f959e88",
 				"x": 0,
 				"y": 2,
-				"w": 11,
-				"h": 6,
+				"w": 12,
+				"h": 5,
 				"name": "Exposure sequence",
 				"queries": [
 					{
-						"query": "SELECT \"groupId\", \"expTime\", \"numImages\", \"shutter\", \"imageType\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.command_takeImages\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"groupId\", \"expTime\", \"numImages\", \"shutter\", \"imageType\", \"keyValueMap\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.command_takeImages\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.command_takeImages",
+							"measurement": "lsst.sal.CCCamera.command_takeImages",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
@@ -143,6 +143,11 @@
 								},
 								{
 									"value": "imageType",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "keyValueMap",
 									"type": "field",
 									"alias": ""
 								}
@@ -224,28 +229,33 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.groupId",
+						"internalName": "lsst.sal.CCCamera.command_takeImages.expTime",
+						"displayName": "Exposure Time",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.CCCamera.command_takeImages.keyValueMap",
+						"displayName": "Image Parameters",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.CCCamera.command_takeImages.groupId",
 						"displayName": "Group ID",
-						"visible": true
+						"visible": false
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.imageType",
+						"internalName": "lsst.sal.CCCamera.command_takeImages.imageType",
 						"displayName": "Image Type",
+						"visible": false
+					},
+					{
+						"internalName": "lsst.sal.CCCamera.command_takeImages.numImages",
+						"displayName": "Num Images",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.expTime",
-						"displayName": "ExpTime (s)",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.numImages",
-						"displayName": "# of Images",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.shutter",
-						"displayName": "Is shutter open?",
+						"internalName": "lsst.sal.CCCamera.command_takeImages.shutter",
+						"displayName": "Shutter",
 						"visible": true
 					}
 				],
@@ -257,17 +267,17 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/7/cells/64cfe4fd-285b-4af4-8fa2-32321be55591"
+					"self": "/chronograf/v1/dashboards/15/cells/b2c475c9-3fc2-46f6-af2e-f2fb2f959e88"
 				}
 			}
 		],
 		"templates": [],
-		"name": "LATISS Exposure Table",
+		"name": "ComCam Exposure table",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/7",
-			"cells": "/chronograf/v1/dashboards/7/cells",
-			"templates": "/chronograf/v1/dashboards/7/templates"
+			"self": "/chronograf/v1/dashboards/15",
+			"cells": "/chronograf/v1/dashboards/15/cells",
+			"templates": "/chronograf/v1/dashboards/15/templates"
 		}
 	}
 }

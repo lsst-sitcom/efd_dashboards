@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.7.14",
+		"chronografVersion": "1.8.8",
 		"sources": {
 			"1": {
 				"name": "EFD",
@@ -9,7 +9,7 @@
 		}
 	},
 	"dashboard": {
-		"id": 5,
+		"id": "5",
 		"cells": [
 			{
 				"i": "d2c3c167-2f22-4416-bf75-a0a9391a71fe",
