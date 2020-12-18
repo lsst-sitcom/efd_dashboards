@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.4",
+		"chronografVersion": "1.8.8",
 		"sources": {
-			"2": {
-				"name": "EFD",
-				"link": "/chronograf/v1/sources/2"
+			"1": {
+				"name": "Summit EFD",
+				"link": "/chronograf/v1/sources/1"
 			}
 		}
 	},
 	"dashboard": {
-		"id": "7",
+		"id": "11",
 		"cells": [
 			{
-				"i": "3a8046de-b3ca-4ea4-97b5-5838d8fdace4",
+				"i": "b4c60e54-96fd-4661-bc9a-39d3ac6392bb",
 				"x": 0,
 				"y": 4,
 				"w": 11,
@@ -139,11 +139,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/7/cells/3a8046de-b3ca-4ea4-97b5-5838d8fdace4"
+					"self": "/chronograf/v1/dashboards/11/cells/b4c60e54-96fd-4661-bc9a-39d3ac6392bb"
 				}
 			},
 			{
-				"i": "21a34cf2-075e-4b58-a458-c18050d6c7bd",
+				"i": "5d9aeeb7-aa3e-4350-a5d0-d45ca97ef672",
 				"x": 0,
 				"y": 0,
 				"w": 11,
@@ -262,11 +262,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/7/cells/21a34cf2-075e-4b58-a458-c18050d6c7bd"
+					"self": "/chronograf/v1/dashboards/11/cells/5d9aeeb7-aa3e-4350-a5d0-d45ca97ef672"
 				}
 			},
 			{
-				"i": "d67154ab-d976-4b5e-8484-c0629e304d7e",
+				"i": "66ba2b4e-8108-4069-8564-ca84f1052ee2",
 				"x": 0,
 				"y": 8,
 				"w": 11,
@@ -385,11 +385,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/7/cells/d67154ab-d976-4b5e-8484-c0629e304d7e"
+					"self": "/chronograf/v1/dashboards/11/cells/66ba2b4e-8108-4069-8564-ca84f1052ee2"
 				}
 			},
 			{
-				"i": "e41dacb1-8d86-4af6-9dae-48196dc31368",
+				"i": "d30229b3-ad8c-48c1-9c91-b27ad9fafea3",
 				"x": 0,
 				"y": 12,
 				"w": 11,
@@ -516,7 +516,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/7/cells/e41dacb1-8d86-4af6-9dae-48196dc31368"
+					"self": "/chronograf/v1/dashboards/11/cells/d30229b3-ad8c-48c1-9c91-b27ad9fafea3"
 				}
 			}
 		],
@@ -524,9 +524,9 @@
 		"name": "ATCamera Vacuum",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/7",
-			"cells": "/chronograf/v1/dashboards/7/cells",
-			"templates": "/chronograf/v1/dashboards/7/templates"
+			"self": "/chronograf/v1/dashboards/11",
+			"cells": "/chronograf/v1/dashboards/11/cells",
+			"templates": "/chronograf/v1/dashboards/11/templates"
 		}
 	}
 }

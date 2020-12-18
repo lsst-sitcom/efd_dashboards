@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.7.14",
+		"chronografVersion": "1.8.8",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -9,7 +9,7 @@
 		}
 	},
 	"dashboard": {
-		"id": 12,
+		"id": "12",
 		"cells": [
 			{
 				"i": "d72cf390-1bf3-4629-affd-7bba4b64fac0",

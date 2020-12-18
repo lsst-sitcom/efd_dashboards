@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.4",
+		"chronografVersion": "1.8.8",
 		"sources": {
-			"2": {
-				"name": "EFD",
-				"link": "/chronograf/v1/sources/2"
+			"1": {
+				"name": "Summit EFD",
+				"link": "/chronograf/v1/sources/1"
 			}
 		}
 	},
 	"dashboard": {
-		"id": "20",
+		"id": "25",
 		"cells": [
 			{
-				"i": "f6d08b8c-9a59-45bf-a652-cf9109528b10",
+				"i": "f0e64755-502d-4247-84db-2e5c56cf9347",
 				"x": 0,
 				"y": 0,
 				"w": 9,
@@ -103,11 +103,11 @@
 				"note": "Last images taken with ATCamera.\n\nSelect an appropriate time window (e.g. `Past 24h`)\n\n",
 				"noteVisibility": "showWhenNoData",
 				"links": {
-					"self": "/chronograf/v1/dashboards/20/cells/f6d08b8c-9a59-45bf-a652-cf9109528b10"
+					"self": "/chronograf/v1/dashboards/25/cells/f0e64755-502d-4247-84db-2e5c56cf9347"
 				}
 			},
 			{
-				"i": "23733aa4-1cde-4f37-9a74-69b9186724cc",
+				"i": "a2489f40-a17e-492b-9d84-35e04a8fc38d",
 				"x": 0,
 				"y": 2,
 				"w": 11,
@@ -157,7 +157,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "/chronograf/v1/sources/2",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -257,7 +257,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/20/cells/23733aa4-1cde-4f37-9a74-69b9186724cc"
+					"self": "/chronograf/v1/dashboards/25/cells/a2489f40-a17e-492b-9d84-35e04a8fc38d"
 				}
 			}
 		],
@@ -265,9 +265,9 @@
 		"name": "LATISS Exposure Table",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/20",
-			"cells": "/chronograf/v1/dashboards/20/cells",
-			"templates": "/chronograf/v1/dashboards/20/templates"
+			"self": "/chronograf/v1/dashboards/25",
+			"cells": "/chronograf/v1/dashboards/25/cells",
+			"templates": "/chronograf/v1/dashboards/25/templates"
 		}
 	}
 }

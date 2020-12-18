@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.4",
+		"chronografVersion": "1.8.8",
 		"sources": {
-			"2": {
-				"name": "EFD",
-				"link": "/chronograf/v1/sources/2"
+			"1": {
+				"name": "Summit EFD",
+				"link": "/chronograf/v1/sources/1"
 			}
 		}
 	},
 	"dashboard": {
-		"id": "17",
+		"id": "20",
 		"cells": [
 			{
-				"i": "73f72246-4fe1-4aaf-8b01-c6dc51bb379a",
+				"i": "48333fc5-0a27-42d2-b4bd-0bc7d79c1c39",
 				"x": 0,
 				"y": 1,
 				"w": 3,
@@ -146,11 +146,11 @@
 				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/cells/73f72246-4fe1-4aaf-8b01-c6dc51bb379a"
+					"self": "/chronograf/v1/dashboards/20/cells/48333fc5-0a27-42d2-b4bd-0bc7d79c1c39"
 				}
 			},
 			{
-				"i": "7d8886e5-dfcc-4fbc-bbd5-eef123e590f1",
+				"i": "eba4f6b1-5f2d-4841-a620-420eb34086cd",
 				"x": 3,
 				"y": 0,
 				"w": 3,
@@ -284,11 +284,11 @@
 				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/cells/7d8886e5-dfcc-4fbc-bbd5-eef123e590f1"
+					"self": "/chronograf/v1/dashboards/20/cells/eba4f6b1-5f2d-4841-a620-420eb34086cd"
 				}
 			},
 			{
-				"i": "912411c1-21d8-44de-acdd-e04b822626a3",
+				"i": "61c3be58-387d-4d55-ab6c-b1e9e934101d",
 				"x": 0,
 				"y": 0,
 				"w": 3,
@@ -422,11 +422,11 @@
 				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/cells/912411c1-21d8-44de-acdd-e04b822626a3"
+					"self": "/chronograf/v1/dashboards/20/cells/61c3be58-387d-4d55-ab6c-b1e9e934101d"
 				}
 			},
 			{
-				"i": "778328ba-883a-4587-a497-23accb4ae2cd",
+				"i": "02f0b27c-201c-481f-8532-5e63f51e6fb8",
 				"x": 3,
 				"y": 1,
 				"w": 3,
@@ -560,11 +560,11 @@
 				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/cells/778328ba-883a-4587-a497-23accb4ae2cd"
+					"self": "/chronograf/v1/dashboards/20/cells/02f0b27c-201c-481f-8532-5e63f51e6fb8"
 				}
 			},
 			{
-				"i": "0b2d01e8-ac67-47c5-bbeb-2f4d7d7b9f79",
+				"i": "c34d3b6c-f00f-4710-b60d-d0d76a174208",
 				"x": 6,
 				"y": 0,
 				"w": 3,
@@ -698,7 +698,7 @@
 				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/cells/0b2d01e8-ac67-47c5-bbeb-2f4d7d7b9f79"
+					"self": "/chronograf/v1/dashboards/20/cells/c34d3b6c-f00f-4710-b60d-d0d76a174208"
 				}
 			}
 		],
@@ -706,9 +706,9 @@
 		"name": "EAS Summary State Monitor",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/17",
-			"cells": "/chronograf/v1/dashboards/17/cells",
-			"templates": "/chronograf/v1/dashboards/17/templates"
+			"self": "/chronograf/v1/dashboards/20",
+			"cells": "/chronograf/v1/dashboards/20/cells",
+			"templates": "/chronograf/v1/dashboards/20/templates"
 		}
 	}
 }

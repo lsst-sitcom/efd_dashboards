@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.4",
+		"chronografVersion": "1.8.8",
 		"sources": {
-			"2": {
-				"name": "EFD",
-				"link": "/chronograf/v1/sources/2"
+			"1": {
+				"name": "Summit EFD",
+				"link": "/chronograf/v1/sources/1"
 			}
 		}
 	},
 	"dashboard": {
-		"id": "27",
+		"id": "29",
 		"cells": [
 			{
-				"i": "d3d52894-22e7-47d0-96e3-b737cef1119a",
+				"i": "427d1a7d-4ad2-4458-bd26-658525c74ed3",
 				"x": 0,
 				"y": 0,
 				"w": 11,
@@ -121,7 +121,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/27/cells/d3d52894-22e7-47d0-96e3-b737cef1119a"
+					"self": "/chronograf/v1/dashboards/29/cells/427d1a7d-4ad2-4458-bd26-658525c74ed3"
 				}
 			}
 		],
@@ -271,16 +271,16 @@
 				},
 				"sourceID": "dynamic",
 				"links": {
-					"self": "/chronograf/v1/dashboards/27/templates/7d4d7854-86c8-4811-8d99-23bb99f06901"
+					"self": "/chronograf/v1/dashboards/29/templates/7d4d7854-86c8-4811-8d99-23bb99f06901"
 				}
 			}
 		],
 		"name": "Recommended Setting Versions",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/27",
-			"cells": "/chronograf/v1/dashboards/27/cells",
-			"templates": "/chronograf/v1/dashboards/27/templates"
+			"self": "/chronograf/v1/dashboards/29",
+			"cells": "/chronograf/v1/dashboards/29/cells",
+			"templates": "/chronograf/v1/dashboards/29/templates"
 		}
 	}
 }

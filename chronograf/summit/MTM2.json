@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.4",
+		"chronografVersion": "1.8.8",
 		"sources": {
-			"2": {
-				"name": "EFD",
-				"link": "/chronograf/v1/sources/2"
+			"1": {
+				"name": "Summit EFD",
+				"link": "/chronograf/v1/sources/1"
 			}
 		}
 	},
 	"dashboard": {
-		"id": "25",
+		"id": "34",
 		"cells": [
 			{
-				"i": "4eaac74e-3d22-467e-bf64-d05518e86ad2",
+				"i": "fa66a142-ae76-408e-b456-9944aa5c3935",
 				"x": 0,
 				"y": 6,
 				"w": 3,
@@ -116,11 +116,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/25/cells/4eaac74e-3d22-467e-bf64-d05518e86ad2"
+					"self": "/chronograf/v1/dashboards/34/cells/fa66a142-ae76-408e-b456-9944aa5c3935"
 				}
 			},
 			{
-				"i": "1122b0ee-4771-45bf-b138-815d05c81a53",
+				"i": "bba053f3-5777-4cb7-9254-55c7859a2645",
 				"x": 7,
 				"y": 0,
 				"w": 3,
@@ -224,11 +224,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/25/cells/1122b0ee-4771-45bf-b138-815d05c81a53"
+					"self": "/chronograf/v1/dashboards/34/cells/bba053f3-5777-4cb7-9254-55c7859a2645"
 				}
 			},
 			{
-				"i": "427123ca-4a96-41c5-a347-270835f44335",
+				"i": "12da0fa3-de51-444e-b035-efbe06a71d21",
 				"x": 0,
 				"y": 2,
 				"w": 11,
@@ -357,11 +357,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/25/cells/427123ca-4a96-41c5-a347-270835f44335"
+					"self": "/chronograf/v1/dashboards/34/cells/12da0fa3-de51-444e-b035-efbe06a71d21"
 				}
 			},
 			{
-				"i": "44a286ce-9c1d-448f-afd6-086aba90c6f0",
+				"i": "acf3a6b7-e844-42a1-b26f-646de6057e28",
 				"x": 2,
 				"y": 0,
 				"w": 5,
@@ -470,11 +470,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/25/cells/44a286ce-9c1d-448f-afd6-086aba90c6f0"
+					"self": "/chronograf/v1/dashboards/34/cells/acf3a6b7-e844-42a1-b26f-646de6057e28"
 				}
 			},
 			{
-				"i": "2b9992fc-594a-406b-bc7c-8352765ca3d9",
+				"i": "285cac24-4a19-400a-a731-47b814de8da0",
 				"x": 0,
 				"y": 0,
 				"w": 2,
@@ -578,11 +578,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/25/cells/2b9992fc-594a-406b-bc7c-8352765ca3d9"
+					"self": "/chronograf/v1/dashboards/34/cells/285cac24-4a19-400a-a731-47b814de8da0"
 				}
 			},
 			{
-				"i": "8813d4e9-ff39-4ef2-b02c-1c5cc16e92e4",
+				"i": "10f0cb3c-9ff6-4938-b865-20a5cf01113f",
 				"x": 3,
 				"y": 6,
 				"w": 6,
@@ -726,11 +726,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/25/cells/8813d4e9-ff39-4ef2-b02c-1c5cc16e92e4"
+					"self": "/chronograf/v1/dashboards/34/cells/10f0cb3c-9ff6-4938-b865-20a5cf01113f"
 				}
 			},
 			{
-				"i": "0dfe5a7d-c4be-4865-92a4-f3a9c7287452",
+				"i": "81ffdc4a-0c57-4f91-a9db-4d78519fdfdd",
 				"x": 0,
 				"y": 4,
 				"w": 5,
@@ -864,11 +864,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/25/cells/0dfe5a7d-c4be-4865-92a4-f3a9c7287452"
+					"self": "/chronograf/v1/dashboards/34/cells/81ffdc4a-0c57-4f91-a9db-4d78519fdfdd"
 				}
 			},
 			{
-				"i": "a1bedd0b-513c-4183-a7ad-a4b22241de7e",
+				"i": "82771816-13ef-4b1f-916c-f06852525926",
 				"x": 5,
 				"y": 4,
 				"w": 6,
@@ -987,7 +987,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/25/cells/a1bedd0b-513c-4183-a7ad-a4b22241de7e"
+					"self": "/chronograf/v1/dashboards/34/cells/82771816-13ef-4b1f-916c-f06852525926"
 				}
 			}
 		],
@@ -995,9 +995,9 @@
 		"name": "MTM2",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/25",
-			"cells": "/chronograf/v1/dashboards/25/cells",
-			"templates": "/chronograf/v1/dashboards/25/templates"
+			"self": "/chronograf/v1/dashboards/34",
+			"cells": "/chronograf/v1/dashboards/34/cells",
+			"templates": "/chronograf/v1/dashboards/34/templates"
 		}
 	}
 }

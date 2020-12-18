@@ -1,22 +1,396 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.4",
+		"chronografVersion": "1.8.8",
 		"sources": {
-			"2": {
-				"name": "EFD",
-				"link": "/chronograf/v1/sources/2"
+			"1": {
+				"name": "Summit EFD",
+				"link": "/chronograf/v1/sources/1"
 			}
 		}
 	},
 	"dashboard": {
-		"id": "4",
+		"id": "43",
 		"cells": [
 			{
-				"i": "841ea717-0c15-4350-bb7c-ccfe7b418b8f",
+				"i": "6ff1ac0a-b63d-4dbb-99ad-95229b47029b",
+				"x": 8,
+				"y": 0,
+				"w": 4,
+				"h": 2,
+				"name": "Azimuth",
+				"queries": [
+					{
+						"query": "SELECT \"azimuthCalculatedAngle0\" FROM \"efd\".\"autogen\".\"lsst.sal.ATMCS.mount_AzEl_Encoders\" WHERE time > :dashboardTime: ",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ATMCS.mount_AzEl_Encoders",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "azimuthCalculatedAngle0",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "abe2a47d-94ec-4eee-8b36-2ecc2cb0a82b",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "6f01885f-e8e8-4aae-8110-6ea692f6bb1b",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "4b71ecf0-317f-4279-bb71-7ef4fb8133b5",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/43/cells/6ff1ac0a-b63d-4dbb-99ad-95229b47029b"
+				}
+			},
+			{
+				"i": "9ed49b72-2d14-4187-a355-2c732f5d64f1",
 				"x": 4,
 				"y": 0,
 				"w": 4,
-				"h": 3,
+				"h": 2,
+				"name": "Elevation",
+				"queries": [
+					{
+						"query": "SELECT \"elevationCalculatedAngle0\" FROM \"efd\".\"autogen\".\"lsst.sal.ATMCS.mount_AzEl_Encoders\" WHERE time > :dashboardTime: ",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ATMCS.mount_AzEl_Encoders",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "elevationCalculatedAngle0",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "abe2a47d-94ec-4eee-8b36-2ecc2cb0a82b",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "6f01885f-e8e8-4aae-8110-6ea692f6bb1b",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "4b71ecf0-317f-4279-bb71-7ef4fb8133b5",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/43/cells/9ed49b72-2d14-4187-a355-2c732f5d64f1"
+				}
+			},
+			{
+				"i": "07a318b7-f6c2-4826-a2bb-f26749e994a1",
+				"x": 4,
+				"y": 2,
+				"w": 4,
+				"h": 2,
+				"name": "Nasmyth target",
+				"queries": [
+					{
+						"query": "SELECT \"nasmyth1CalculatedAngle0\", \"nasmyth2CalculatedAngle0\" FROM \"efd\".\"autogen\".\"lsst.sal.ATMCS.mount_Nasmyth_Encoders\" WHERE time > :dashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ATMCS.mount_Nasmyth_Encoders",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "nasmyth1CalculatedAngle0",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "nasmyth2CalculatedAngle0",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "abe2a47d-94ec-4eee-8b36-2ecc2cb0a82b",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "6f01885f-e8e8-4aae-8110-6ea692f6bb1b",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "4b71ecf0-317f-4279-bb71-7ef4fb8133b5",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/43/cells/07a318b7-f6c2-4826-a2bb-f26749e994a1"
+				}
+			},
+			{
+				"i": "75ad8b46-d1f4-4d4e-af9b-c4e56cf7a4fb",
+				"x": 2,
+				"y": 0,
+				"w": 2,
+				"h": 2,
 				"name": "Nasmyth2 Rotator Angle",
 				"queries": [
 					{
@@ -146,15 +520,15 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/4/cells/841ea717-0c15-4350-bb7c-ccfe7b418b8f"
+					"self": "/chronograf/v1/dashboards/43/cells/75ad8b46-d1f4-4d4e-af9b-c4e56cf7a4fb"
 				}
 			},
 			{
-				"i": "97b0e8b5-0dcf-48f2-8788-687fc942c889",
+				"i": "6aaa2d3c-bfb7-443b-b178-764a354e3288",
 				"x": 0,
 				"y": 0,
-				"w": 4,
-				"h": 3,
+				"w": 2,
+				"h": 2,
 				"name": "Nasmyth1 Rotator Angle",
 				"queries": [
 					{
@@ -284,13 +658,13 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/4/cells/97b0e8b5-0dcf-48f2-8788-687fc942c889"
+					"self": "/chronograf/v1/dashboards/43/cells/6aaa2d3c-bfb7-443b-b178-764a354e3288"
 				}
 			},
 			{
-				"i": "dc47cb0c-bdaa-4ab8-9f04-bbfc128aa9c0",
+				"i": "3bf7351b-4218-450d-9fb4-507b162d44ef",
 				"x": 8,
-				"y": 0,
+				"y": 2,
 				"w": 4,
 				"h": 2,
 				"name": "Mount Status",
@@ -392,15 +766,15 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/4/cells/dc47cb0c-bdaa-4ab8-9f04-bbfc128aa9c0"
+					"self": "/chronograf/v1/dashboards/43/cells/3bf7351b-4218-450d-9fb4-507b162d44ef"
 				}
 			},
 			{
-				"i": "a8e8d669-6997-4a82-a95a-b67c35d063b5",
-				"x": 4,
-				"y": 3,
-				"w": 4,
-				"h": 3,
+				"i": "06221dad-a3e9-46d9-b7a8-988ce6233752",
+				"x": 2,
+				"y": 2,
+				"w": 2,
+				"h": 2,
 				"name": "Nasmyth2 Rotator Angle Velocity",
 				"queries": [
 					{
@@ -509,15 +883,15 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/4/cells/a8e8d669-6997-4a82-a95a-b67c35d063b5"
+					"self": "/chronograf/v1/dashboards/43/cells/06221dad-a3e9-46d9-b7a8-988ce6233752"
 				}
 			},
 			{
-				"i": "76a35969-50ee-40ee-b19f-d5475ad39a29",
+				"i": "dd878fce-a9e0-4daa-9b15-6b643d58fe2b",
 				"x": 0,
-				"y": 3,
-				"w": 4,
-				"h": 3,
+				"y": 2,
+				"w": 2,
+				"h": 2,
 				"name": "Nasmyth1 Rotator Angle Velocity",
 				"queries": [
 					{
@@ -626,7 +1000,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/4/cells/76a35969-50ee-40ee-b19f-d5475ad39a29"
+					"self": "/chronograf/v1/dashboards/43/cells/dd878fce-a9e0-4daa-9b15-6b643d58fe2b"
 				}
 			}
 		],
@@ -634,9 +1008,9 @@
 		"name": "AT Mount Status",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/4",
-			"cells": "/chronograf/v1/dashboards/4/cells",
-			"templates": "/chronograf/v1/dashboards/4/templates"
+			"self": "/chronograf/v1/dashboards/43",
+			"cells": "/chronograf/v1/dashboards/43/cells",
+			"templates": "/chronograf/v1/dashboards/43/templates"
 		}
 	}
 }

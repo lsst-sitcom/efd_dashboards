@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.4",
+		"chronografVersion": "1.8.8",
 		"sources": {
-			"2": {
-				"name": "EFD",
-				"link": "/chronograf/v1/sources/2"
+			"1": {
+				"name": "Summit EFD",
+				"link": "/chronograf/v1/sources/1"
 			}
 		}
 	},
 	"dashboard": {
-		"id": "32",
+		"id": "1",
 		"cells": [
 			{
-				"i": "95ba6f11-d713-4e00-8dfb-c40ff754ca6f",
+				"i": "72b38b3c-f7c8-4eef-835c-d7c68ca326ec",
 				"x": 0,
 				"y": 0,
 				"w": 12,
@@ -146,11 +146,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/32/cells/95ba6f11-d713-4e00-8dfb-c40ff754ca6f"
+					"self": "/chronograf/v1/dashboards/1/cells/72b38b3c-f7c8-4eef-835c-d7c68ca326ec"
 				}
 			},
 			{
-				"i": "2fe2ea03-02cf-4fc9-ab70-5e357dd2d3a7",
+				"i": "7fc5a4eb-0d21-40eb-8c0f-c2fcd0057326",
 				"x": 0,
 				"y": 3,
 				"w": 12,
@@ -313,7 +313,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/32/cells/2fe2ea03-02cf-4fc9-ab70-5e357dd2d3a7"
+					"self": "/chronograf/v1/dashboards/1/cells/7fc5a4eb-0d21-40eb-8c0f-c2fcd0057326"
 				}
 			}
 		],
@@ -321,9 +321,9 @@
 		"name": "Wind Speed check",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/32",
-			"cells": "/chronograf/v1/dashboards/32/cells",
-			"templates": "/chronograf/v1/dashboards/32/templates"
+			"self": "/chronograf/v1/dashboards/1",
+			"cells": "/chronograf/v1/dashboards/1/cells",
+			"templates": "/chronograf/v1/dashboards/1/templates"
 		}
 	}
 }

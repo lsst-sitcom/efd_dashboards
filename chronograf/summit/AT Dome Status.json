@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.4",
+		"chronografVersion": "1.8.8",
 		"sources": {
-			"2": {
-				"name": "EFD",
-				"link": "/chronograf/v1/sources/2"
+			"1": {
+				"name": "Summit EFD",
+				"link": "/chronograf/v1/sources/1"
 			}
 		}
 	},
 	"dashboard": {
-		"id": "3",
+		"id": "22",
 		"cells": [
 			{
-				"i": "6e8e8106-47cf-4a38-afa2-69782ee218b6",
+				"i": "9fc3f4a4-8e9e-417e-affb-59d9197e5789",
 				"x": 4,
 				"y": 2,
 				"w": 3,
@@ -139,11 +139,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/6e8e8106-47cf-4a38-afa2-69782ee218b6"
+					"self": "/chronograf/v1/dashboards/22/cells/9fc3f4a4-8e9e-417e-affb-59d9197e5789"
 				}
 			},
 			{
-				"i": "f3d5fd40-15f6-4fa9-b1db-a9d6eace7293",
+				"i": "1143434d-54a2-45a6-bb96-21facbb8edbe",
 				"x": 7,
 				"y": 0,
 				"w": 4,
@@ -247,11 +247,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/f3d5fd40-15f6-4fa9-b1db-a9d6eace7293"
+					"self": "/chronograf/v1/dashboards/22/cells/1143434d-54a2-45a6-bb96-21facbb8edbe"
 				}
 			},
 			{
-				"i": "4573f8b9-16e6-4b42-b2a2-8772a5c3005f",
+				"i": "f715d8c2-f4c0-4866-b2f9-3819ceb591f2",
 				"x": 0,
 				"y": 0,
 				"w": 4,
@@ -357,11 +357,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/4573f8b9-16e6-4b42-b2a2-8772a5c3005f"
+					"self": "/chronograf/v1/dashboards/22/cells/f715d8c2-f4c0-4866-b2f9-3819ceb591f2"
 				}
 			},
 			{
-				"i": "56cd9352-f240-492f-a972-b1c7d63ce8f3",
+				"i": "53a0bd8a-039d-4e0f-8b7f-9952a886fa19",
 				"x": 4,
 				"y": 0,
 				"w": 3,
@@ -488,7 +488,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/56cd9352-f240-492f-a972-b1c7d63ce8f3"
+					"self": "/chronograf/v1/dashboards/22/cells/53a0bd8a-039d-4e0f-8b7f-9952a886fa19"
 				}
 			}
 		],
@@ -496,9 +496,9 @@
 		"name": "AT Dome Status",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/3",
-			"cells": "/chronograf/v1/dashboards/3/cells",
-			"templates": "/chronograf/v1/dashboards/3/templates"
+			"self": "/chronograf/v1/dashboards/22",
+			"cells": "/chronograf/v1/dashboards/22/cells",
+			"templates": "/chronograf/v1/dashboards/22/templates"
 		}
 	}
 }

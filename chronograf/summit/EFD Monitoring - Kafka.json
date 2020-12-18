@@ -9,30 +9,30 @@
 		}
 	},
 	"dashboard": {
-		"id": "7",
+		"id": "45",
 		"cells": [
 			{
-				"i": "b16eb684-bd82-4f8a-9f17-62bedffad5d2",
+				"i": "52d3a43d-9ec2-489f-b43a-9f0b5c1ab51a",
 				"x": 0,
 				"y": 0,
-				"w": 8,
-				"h": 4,
-				"name": "Position 1",
+				"w": 3,
+				"h": 2,
+				"name": "Number of connectors",
 				"queries": [
 					{
-						"query": "SELECT mean(\"CCW_Angle_1\") AS \"mean_CCW_Angle_1\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.Camera_Cable_Wrap\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT max(\"cp_kafka_connect_connect_worker_metrics_connector_count\") AS \"max_cp_kafka_connect_connect_worker_metrics_connector_count\" FROM \"telegraf\".\"autogen\".\"prometheus\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(120s) FILL(null)",
 						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.MTMount.Camera_Cable_Wrap",
+							"database": "telegraf",
+							"measurement": "prometheus",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "mean",
+									"value": "max",
 									"type": "func",
-									"alias": "mean_CCW_Angle_1",
+									"alias": "max_cp_kafka_connect_connect_worker_metrics_connector_count",
 									"args": [
 										{
-											"value": "CCW_Angle_1",
+											"value": "cp_kafka_connect_connect_worker_metrics_connector_count",
 											"type": "field",
 											"alias": ""
 										}
@@ -41,7 +41,7 @@
 							],
 							"tags": {},
 							"groupBy": {
-								"time": "auto",
+								"time": "2m",
 								"tags": []
 							},
 							"areTagsAccepted": false,
@@ -89,24 +89,24 @@
 						"scale": "linear"
 					}
 				},
-				"type": "line",
+				"type": "line-plus-single-stat",
 				"colors": [
 					{
-						"id": "82f9ee4d-10bc-4d4c-83b7-48b098d7da54",
+						"id": "base",
 						"type": "scale",
 						"hex": "#31C0F6",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "0180b146-02f4-430f-8f11-d1bd084c23aa",
+						"id": "e146ef54-f9ac-49a5-9a39-9e9952979608",
 						"type": "scale",
 						"hex": "#A500A5",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "499ca3de-c842-4129-a4d1-ca80098346b0",
+						"id": "d3530a22-c61b-49d9-a580-059c90795baa",
 						"type": "scale",
 						"hex": "#FF7E27",
 						"name": "Nineteen Eighty Four",
@@ -139,17 +139,17 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/7/cells/b16eb684-bd82-4f8a-9f17-62bedffad5d2"
+					"self": "/chronograf/v1/dashboards/45/cells/52d3a43d-9ec2-489f-b43a-9f0b5c1ab51a"
 				}
 			}
 		],
 		"templates": [],
-		"name": "CCW",
+		"name": "EFD Monitoring - Kafka",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/7",
-			"cells": "/chronograf/v1/dashboards/7/cells",
-			"templates": "/chronograf/v1/dashboards/7/templates"
+			"self": "/chronograf/v1/dashboards/45",
+			"cells": "/chronograf/v1/dashboards/45/cells",
+			"templates": "/chronograf/v1/dashboards/45/templates"
 		}
 	}
 }

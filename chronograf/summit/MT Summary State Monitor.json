@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.4",
+		"chronografVersion": "1.8.8",
 		"sources": {
-			"2": {
-				"name": "EFD",
-				"link": "/chronograf/v1/sources/2"
+			"1": {
+				"name": "Summit EFD",
+				"link": "/chronograf/v1/sources/1"
 			}
 		}
 	},
 	"dashboard": {
-		"id": "43",
+		"id": "47",
 		"cells": [
 			{
-				"i": "8b9d548b-480b-4017-91f6-52215222b59f",
+				"i": "8c489130-4102-4ee5-b55a-6c996fef2afd",
 				"x": 0,
 				"y": 2,
 				"w": 3,
@@ -146,11 +146,11 @@
 				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3\n\nREMOTE CONTROL = 6\n\nHAND PADDLE CONTROL = 7\n\nTRACKING DISABLED = 8\n\nTRACKING ENABLED = 9\n\nTRACKING STOPPED = 10",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/43/cells/8b9d548b-480b-4017-91f6-52215222b59f"
+					"self": "/chronograf/v1/dashboards/47/cells/8c489130-4102-4ee5-b55a-6c996fef2afd"
 				}
 			},
 			{
-				"i": "724ff864-49ca-42c8-87d0-1b456957f50c",
+				"i": "05b098b5-63e8-477f-b964-08caa2e0e572",
 				"x": 3,
 				"y": 2,
 				"w": 3,
@@ -270,11 +270,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/43/cells/724ff864-49ca-42c8-87d0-1b456957f50c"
+					"self": "/chronograf/v1/dashboards/47/cells/05b098b5-63e8-477f-b964-08caa2e0e572"
 				}
 			},
 			{
-				"i": "40fb5a69-8dd8-47a9-9bbc-9aafdf3218f9",
+				"i": "bbc332cb-4fc1-48c2-a8ea-b9590294960e",
 				"x": 6,
 				"y": 2,
 				"w": 3,
@@ -408,11 +408,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/43/cells/40fb5a69-8dd8-47a9-9bbc-9aafdf3218f9"
+					"self": "/chronograf/v1/dashboards/47/cells/bbc332cb-4fc1-48c2-a8ea-b9590294960e"
 				}
 			},
 			{
-				"i": "93c73580-8b1b-481f-ac33-f595980bfaf4",
+				"i": "334a54d9-cec1-4819-b916-11dea980ff29",
 				"x": 9,
 				"y": 3,
 				"w": 3,
@@ -546,11 +546,11 @@
 				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/43/cells/93c73580-8b1b-481f-ac33-f595980bfaf4"
+					"self": "/chronograf/v1/dashboards/47/cells/334a54d9-cec1-4819-b916-11dea980ff29"
 				}
 			},
 			{
-				"i": "b0d8b15c-9431-4fa6-81ef-d5ea4c084bb8",
+				"i": "98334a82-32ed-496d-9ff3-1db7f93a277b",
 				"x": 9,
 				"y": 4,
 				"w": 3,
@@ -684,11 +684,11 @@
 				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/43/cells/b0d8b15c-9431-4fa6-81ef-d5ea4c084bb8"
+					"self": "/chronograf/v1/dashboards/47/cells/98334a82-32ed-496d-9ff3-1db7f93a277b"
 				}
 			},
 			{
-				"i": "8a2e12af-9219-4417-b794-ff892e926759",
+				"i": "66ed9f82-36b9-44c9-9194-5066bbfe619e",
 				"x": 9,
 				"y": 1,
 				"w": 3,
@@ -822,11 +822,11 @@
 				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/43/cells/8a2e12af-9219-4417-b794-ff892e926759"
+					"self": "/chronograf/v1/dashboards/47/cells/66ed9f82-36b9-44c9-9194-5066bbfe619e"
 				}
 			},
 			{
-				"i": "55c263df-a6dd-4c20-97e3-59c6cb73b63c",
+				"i": "55e0e273-57fd-4d00-a0ae-ad82f42453fe",
 				"x": 0,
 				"y": 3,
 				"w": 3,
@@ -960,11 +960,11 @@
 				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/43/cells/55c263df-a6dd-4c20-97e3-59c6cb73b63c"
+					"self": "/chronograf/v1/dashboards/47/cells/55e0e273-57fd-4d00-a0ae-ad82f42453fe"
 				}
 			},
 			{
-				"i": "efbadb3c-f1b7-4ed4-bde2-e20602b9de65",
+				"i": "076d0f4e-33bd-4040-8b69-ff54b1ee5d8d",
 				"x": 0,
 				"y": 1,
 				"w": 3,
@@ -1098,11 +1098,11 @@
 				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/43/cells/efbadb3c-f1b7-4ed4-bde2-e20602b9de65"
+					"self": "/chronograf/v1/dashboards/47/cells/076d0f4e-33bd-4040-8b69-ff54b1ee5d8d"
 				}
 			},
 			{
-				"i": "153641a5-d117-4b66-a8ae-895fca1527bc",
+				"i": "d22d3ccb-75c7-4748-9f9b-db1d51f51ea6",
 				"x": 0,
 				"y": 4,
 				"w": 3,
@@ -1236,11 +1236,11 @@
 				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/43/cells/153641a5-d117-4b66-a8ae-895fca1527bc"
+					"self": "/chronograf/v1/dashboards/47/cells/d22d3ccb-75c7-4748-9f9b-db1d51f51ea6"
 				}
 			},
 			{
-				"i": "3d4045a1-3853-4ce4-9f63-d81ac7c1f656",
+				"i": "51b865fc-139d-4c1d-8763-3f60edce9401",
 				"x": 0,
 				"y": 0,
 				"w": 3,
@@ -1374,11 +1374,11 @@
 				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/43/cells/3d4045a1-3853-4ce4-9f63-d81ac7c1f656"
+					"self": "/chronograf/v1/dashboards/47/cells/51b865fc-139d-4c1d-8763-3f60edce9401"
 				}
 			},
 			{
-				"i": "348a7f28-4a97-4b22-ba60-2ddf49096dca",
+				"i": "f97f8a18-6b65-4798-8824-02678faa6760",
 				"x": 9,
 				"y": 2,
 				"w": 3,
@@ -1512,11 +1512,11 @@
 				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/43/cells/348a7f28-4a97-4b22-ba60-2ddf49096dca"
+					"self": "/chronograf/v1/dashboards/47/cells/f97f8a18-6b65-4798-8824-02678faa6760"
 				}
 			},
 			{
-				"i": "f1ba6025-9f43-4a9c-adc9-b766a5728b24",
+				"i": "7e31309b-2ba6-4655-99dd-b5b19bbed7ec",
 				"x": 3,
 				"y": 0,
 				"w": 3,
@@ -1650,11 +1650,11 @@
 				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/43/cells/f1ba6025-9f43-4a9c-adc9-b766a5728b24"
+					"self": "/chronograf/v1/dashboards/47/cells/7e31309b-2ba6-4655-99dd-b5b19bbed7ec"
 				}
 			},
 			{
-				"i": "1e8455df-2995-4985-91bf-8f1d0f63dc7b",
+				"i": "a415720a-547f-483d-98e4-5d2f3a056832",
 				"x": 3,
 				"y": 1,
 				"w": 3,
@@ -1788,11 +1788,11 @@
 				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/43/cells/1e8455df-2995-4985-91bf-8f1d0f63dc7b"
+					"self": "/chronograf/v1/dashboards/47/cells/a415720a-547f-483d-98e4-5d2f3a056832"
 				}
 			},
 			{
-				"i": "2fb67324-5037-4e4f-81e6-6cdcb9591985",
+				"i": "5227262f-ea5f-486e-88fc-a6ab54fdeec7",
 				"x": 6,
 				"y": 1,
 				"w": 3,
@@ -1926,11 +1926,11 @@
 				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/43/cells/2fb67324-5037-4e4f-81e6-6cdcb9591985"
+					"self": "/chronograf/v1/dashboards/47/cells/5227262f-ea5f-486e-88fc-a6ab54fdeec7"
 				}
 			},
 			{
-				"i": "623fa2c1-1b21-4fba-8ac1-fe9ca3f09b08",
+				"i": "59fbf60f-c58f-4d4e-a88d-379b7ac697cc",
 				"x": 6,
 				"y": 0,
 				"w": 3,
@@ -2064,11 +2064,11 @@
 				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/43/cells/623fa2c1-1b21-4fba-8ac1-fe9ca3f09b08"
+					"self": "/chronograf/v1/dashboards/47/cells/59fbf60f-c58f-4d4e-a88d-379b7ac697cc"
 				}
 			},
 			{
-				"i": "a9797dc7-4ac6-4728-9225-982814000306",
+				"i": "353ff105-298e-4125-a732-2009d67ce62f",
 				"x": 9,
 				"y": 0,
 				"w": 3,
@@ -2202,7 +2202,145 @@
 				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/43/cells/a9797dc7-4ac6-4728-9225-982814000306"
+					"self": "/chronograf/v1/dashboards/47/cells/353ff105-298e-4125-a732-2009d67ce62f"
+				}
+			},
+			{
+				"i": "797490f1-6979-4533-a6e1-4ff4ec0d2b28",
+				"x": 3,
+				"y": 4,
+				"w": 3,
+				"h": 1,
+				"name": "Watcher",
+				"queries": [
+					{
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Watcher.logevent_summaryState\" ORDER BY DESC LIMIT 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Watcher.logevent_summaryState\" ORDER BY DESC LIMIT 1",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "background",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					},
+					{
+						"id": "ce18afb0-d615-4093-bc3f-e13c459a4f61",
+						"type": "background",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "0.9"
+					},
+					{
+						"id": "abfee8ea-882a-4cff-8ea6-e1eb3dd554d1",
+						"type": "background",
+						"hex": "#4ED8A0",
+						"name": "rainforest",
+						"value": "1.9"
+					},
+					{
+						"id": "89a4870b-c4eb-4781-accc-426f8bc97c73",
+						"type": "background",
+						"hex": "#BF3D5E",
+						"name": "ruby",
+						"value": "2.9"
+					},
+					{
+						"id": "bc968944-be67-498c-ae88-2c872643890c",
+						"type": "background",
+						"hex": "#545667",
+						"name": "graphite",
+						"value": "3.9"
+					},
+					{
+						"id": "963310b2-50db-462e-a9d1-8795908a4912",
+						"type": "background",
+						"hex": "#FFB94A",
+						"name": "pineapple",
+						"value": "4.9"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": false,
+					"digits": 2
+				},
+				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/47/cells/797490f1-6979-4533-a6e1-4ff4ec0d2b28"
 				}
 			}
 		],
@@ -2210,9 +2348,9 @@
 		"name": "MT Summary State Monitor",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/43",
-			"cells": "/chronograf/v1/dashboards/43/cells",
-			"templates": "/chronograf/v1/dashboards/43/templates"
+			"self": "/chronograf/v1/dashboards/47",
+			"cells": "/chronograf/v1/dashboards/47/cells",
+			"templates": "/chronograf/v1/dashboards/47/templates"
 		}
 	}
 }

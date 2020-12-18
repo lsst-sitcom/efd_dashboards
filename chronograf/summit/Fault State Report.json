@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.4",
+		"chronografVersion": "1.8.8",
 		"sources": {
-			"2": {
-				"name": "EFD",
-				"link": "/chronograf/v1/sources/2"
+			"1": {
+				"name": "Summit EFD",
+				"link": "/chronograf/v1/sources/1"
 			}
 		}
 	},
 	"dashboard": {
-		"id": "19",
+		"id": "28",
 		"cells": [
 			{
-				"i": "5c1b88c1-71dc-41c2-9130-7e4701f67eb4",
+				"i": "b49a9e73-a822-4e84-97c8-789b741ee81e",
 				"x": 0,
 				"y": 0,
 				"w": 12,
@@ -126,7 +126,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/19/cells/5c1b88c1-71dc-41c2-9130-7e4701f67eb4"
+					"self": "/chronograf/v1/dashboards/28/cells/b49a9e73-a822-4e84-97c8-789b741ee81e"
 				}
 			}
 		],
@@ -190,16 +190,6 @@
 						"selected": false
 					},
 					{
-						"value": "CCArchiver",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "CCCamera",
-						"type": "csv",
-						"selected": false
-					},
-					{
 						"value": "CCHeaderService",
 						"type": "csv",
 						"selected": false
@@ -215,6 +205,11 @@
 						"selected": false
 					},
 					{
+						"value": "Dome",
+						"type": "csv",
+						"selected": false
+					},
+					{
 						"value": "Environment",
 						"type": "csv",
 						"selected": false
@@ -226,6 +221,16 @@
 					},
 					{
 						"value": "Hexapod",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTAOS",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTDomeTrajectory",
 						"type": "csv",
 						"selected": false
 					},
@@ -255,6 +260,11 @@
 						"selected": false
 					},
 					{
+						"value": "NewMTMount",
+						"type": "csv",
+						"selected": false
+					},
+					{
 						"value": "Rotator",
 						"type": "csv",
 						"selected": false
@@ -275,11 +285,6 @@
 						"selected": false
 					},
 					{
-						"value": "Test",
-						"type": "csv",
-						"selected": false
-					},
-					{
 						"value": "Watcher",
 						"type": "csv",
 						"selected": false
@@ -296,16 +301,16 @@
 				},
 				"sourceID": "dynamic",
 				"links": {
-					"self": "/chronograf/v1/dashboards/19/templates/7d4d7854-86c8-4811-8d99-23bb99f06901"
+					"self": "/chronograf/v1/dashboards/28/templates/7d4d7854-86c8-4811-8d99-23bb99f06901"
 				}
 			}
 		],
 		"name": "Fault State Report",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/19",
-			"cells": "/chronograf/v1/dashboards/19/cells",
-			"templates": "/chronograf/v1/dashboards/19/templates"
+			"self": "/chronograf/v1/dashboards/28",
+			"cells": "/chronograf/v1/dashboards/28/cells",
+			"templates": "/chronograf/v1/dashboards/28/templates"
 		}
 	}
 }

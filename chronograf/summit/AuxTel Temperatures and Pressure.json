@@ -1,22 +1,22 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.4",
+		"chronografVersion": "1.8.8",
 		"sources": {
-			"2": {
-				"name": "EFD",
-				"link": "/chronograf/v1/sources/2"
+			"1": {
+				"name": "Summit EFD",
+				"link": "/chronograf/v1/sources/1"
 			}
 		}
 	},
 	"dashboard": {
-		"id": "8",
+		"id": "14",
 		"cells": [
 			{
-				"i": "6da36c14-482a-479a-83e3-bd3008cfb08b",
+				"i": "3b850305-e0f5-4273-8ff5-9535b2514fdd",
 				"x": 0,
-				"y": 4,
-				"w": 12,
-				"h": 3,
+				"y": 0,
+				"w": 8,
+				"h": 7,
 				"name": "Cryocon Temperatures",
 				"queries": [
 					{
@@ -141,13 +141,13 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/8/cells/6da36c14-482a-479a-83e3-bd3008cfb08b"
+					"self": "/chronograf/v1/dashboards/14/cells/3b850305-e0f5-4273-8ff5-9535b2514fdd"
 				}
 			},
 			{
-				"i": "790aaf31-dc41-40a4-b953-8b079445a35f",
+				"i": "1ad5ade7-2beb-49a2-9a3e-7c459420f7eb",
 				"x": 4,
-				"y": 0,
+				"y": 7,
 				"w": 4,
 				"h": 4,
 				"name": "Cryohead Temperature",
@@ -264,13 +264,13 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/8/cells/790aaf31-dc41-40a4-b953-8b079445a35f"
+					"self": "/chronograf/v1/dashboards/14/cells/1ad5ade7-2beb-49a2-9a3e-7c459420f7eb"
 				}
 			},
 			{
-				"i": "06cbe212-b5cc-4cd0-8abb-916b5743f6bf",
+				"i": "fe9b7847-82ca-4eeb-b219-f227ff4fffe8",
 				"x": 8,
-				"y": 7,
+				"y": 4,
 				"w": 4,
 				"h": 4,
 				"name": "Dewar Vacuum Pressure",
@@ -387,13 +387,13 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/8/cells/06cbe212-b5cc-4cd0-8abb-916b5743f6bf"
+					"self": "/chronograf/v1/dashboards/14/cells/fe9b7847-82ca-4eeb-b219-f227ff4fffe8"
 				}
 			},
 			{
-				"i": "f5be8d06-a051-4a91-ac09-52aa069bf048",
+				"i": "eda9cbbb-99b5-49cd-95f1-c6aa7175adfa",
 				"x": 0,
-				"y": 7,
+				"y": 11,
 				"w": 4,
 				"h": 4,
 				"name": "CCD",
@@ -544,13 +544,13 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/8/cells/f5be8d06-a051-4a91-ac09-52aa069bf048"
+					"self": "/chronograf/v1/dashboards/14/cells/eda9cbbb-99b5-49cd-95f1-c6aa7175adfa"
 				}
 			},
 			{
-				"i": "4a52e5be-6227-4296-b5bf-d5153b520a7f",
+				"i": "449923c6-bdd7-4add-9089-5dddb94c10e1",
 				"x": 4,
-				"y": 7,
+				"y": 11,
 				"w": 4,
 				"h": 4,
 				"name": "WREB On-Board",
@@ -735,11 +735,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/8/cells/4a52e5be-6227-4296-b5bf-d5153b520a7f"
+					"self": "/chronograf/v1/dashboards/14/cells/449923c6-bdd7-4add-9089-5dddb94c10e1"
 				}
 			},
 			{
-				"i": "7c2efe2b-508c-4450-88f2-81ccc41a3d08",
+				"i": "f3c232b2-d442-475c-838f-273eeef81480",
 				"x": 8,
 				"y": 0,
 				"w": 4,
@@ -878,13 +878,13 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/8/cells/7c2efe2b-508c-4450-88f2-81ccc41a3d08"
+					"self": "/chronograf/v1/dashboards/14/cells/f3c232b2-d442-475c-838f-273eeef81480"
 				}
 			},
 			{
-				"i": "2b10a1e7-927f-49a7-9728-eda31e9afba4",
+				"i": "f5bd66c3-a10d-4032-b366-2b7af4e1d2ae",
 				"x": 0,
-				"y": 0,
+				"y": 7,
 				"w": 4,
 				"h": 4,
 				"name": "ColdPlate Temperature",
@@ -1001,7 +1001,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/8/cells/2b10a1e7-927f-49a7-9728-eda31e9afba4"
+					"self": "/chronograf/v1/dashboards/14/cells/f5bd66c3-a10d-4032-b366-2b7af4e1d2ae"
 				}
 			}
 		],
@@ -1009,9 +1009,9 @@
 		"name": "AuxTel Temperatures and Pressure",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/8",
-			"cells": "/chronograf/v1/dashboards/8/cells",
-			"templates": "/chronograf/v1/dashboards/8/templates"
+			"self": "/chronograf/v1/dashboards/14",
+			"cells": "/chronograf/v1/dashboards/14/cells",
+			"templates": "/chronograf/v1/dashboards/14/templates"
 		}
 	}
 }
