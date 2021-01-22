@@ -654,7 +654,7 @@
 				"name": "Ready To Take Images",
 				"queries": [
 					{
-						"query": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_readyToTakeImage\" ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_ccsCommandState\" ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -666,7 +666,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_readyToTakeImage\" ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_ccsCommandState\" ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
