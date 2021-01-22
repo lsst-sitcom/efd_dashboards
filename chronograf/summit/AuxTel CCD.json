@@ -9,140 +9,40 @@
 		}
 	},
 	"dashboard": {
-		"id": "59",
+		"id": "57",
 		"cells": [
 			{
-				"i": "90210818-32d2-4c1e-b48c-cbc94e37d10c",
+				"i": "d2afc258-9150-4bfb-8464-374dce8909a5",
 				"x": 0,
 				"y": 0,
-				"w": 11,
-				"h": 2,
-				"name": "Info",
+				"w": 4,
+				"h": 4,
+				"name": "Voltages",
 				"queries": [
 					{
-						"query": "",
-						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": "",
-							"range": null,
-							"shifts": null
-						},
-						"source": "/chronograf/v1/sources/1",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "note",
-				"colors": [],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": true
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					}
-				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 2
-				},
-				"note": "Last images taken with ATCamera.\n\nSelect an appropriate time window (e.g. `Past 24h`)\n\n",
-				"noteVisibility": "showWhenNoData",
-				"links": {
-					"self": "/chronograf/v1/dashboards/59/cells/90210818-32d2-4c1e-b48c-cbc94e37d10c"
-				}
-			},
-			{
-				"i": "9fd51159-ba69-41d7-b62b-bc490c4826ba",
-				"x": 0,
-				"y": 2,
-				"w": 12,
-				"h": 5,
-				"name": "Exposure sequence",
-				"queries": [
-					{
-						"query": "SELECT \"expTime\", \"numImages\", \"shutter\", \"keyValueMap\", \"obsNote\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.command_takeImages\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"gDV\", \"oDV\", \"oGV\", \"rDV\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_Ccd\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.command_takeImages",
+							"measurement": "lsst.sal.ATCamera.fp_Ccd",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "expTime",
+									"value": "gDV",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "numImages",
+									"value": "oDV",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "shutter",
+									"value": "oGV",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "keyValueMap",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "obsNote",
+									"value": "rDV",
 									"type": "field",
 									"alias": ""
 								}
@@ -157,7 +57,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "/chronograf/v1/sources/1",
+						"source": "",
 						"type": "influxql"
 					}
 				],
@@ -178,9 +78,9 @@
 							"",
 							""
 						],
-						"label": "",
+						"label": "VOltage",
 						"prefix": "",
-						"suffix": "",
+						"suffix": "V",
 						"base": "10",
 						"scale": "linear"
 					},
@@ -196,14 +96,28 @@
 						"scale": "linear"
 					}
 				},
-				"type": "table",
+				"type": "line",
 				"colors": [
 					{
-						"id": "base",
-						"type": "text",
-						"hex": "#00C9FF",
-						"name": "laser",
-						"value": "-1000000000000000000"
+						"id": "76487493-e963-4e3b-a549-6267187781f4",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "b56d4aa9-24b3-4ce5-b988-1aa8bb7dc0c4",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "5688b94a-b0ab-4b88-b45a-ea0673c9022b",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
 					}
 				],
 				"legend": {},
@@ -222,30 +136,128 @@
 						"internalName": "time",
 						"displayName": "",
 						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/57/cells/d2afc258-9150-4bfb-8464-374dce8909a5"
+				}
+			},
+			{
+				"i": "20a5ced1-7473-4f4c-9f4c-a5a86728044b",
+				"x": 4,
+				"y": 0,
+				"w": 4,
+				"h": 4,
+				"name": "Temperature",
+				"queries": [
+					{
+						"query": "SELECT \"temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_Ccd\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ATCamera.fp_Ccd",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "temp",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "Temperature",
+						"prefix": "",
+						"suffix": "°C",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "",
+						"scale": ""
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "76487493-e963-4e3b-a549-6267187781f4",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.expTime",
-						"displayName": "ExpTime",
+						"id": "b56d4aa9-24b3-4ce5-b988-1aa8bb7dc0c4",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "5688b94a-b0ab-4b88-b45a-ea0673c9022b",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
 						"visible": true
 					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.keyValueMap",
-						"displayName": "Key Value Map",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.numImages",
-						"displayName": "Num Images",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.obsNote",
-						"displayName": "Shutter",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.shutter",
-						"displayName": "Obs Note",
+						"internalName": "time",
+						"displayName": "",
 						"visible": true
 					}
 				],
@@ -257,17 +269,17 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/59/cells/9fd51159-ba69-41d7-b62b-bc490c4826ba"
+					"self": "/chronograf/v1/dashboards/57/cells/20a5ced1-7473-4f4c-9f4c-a5a86728044b"
 				}
 			}
 		],
 		"templates": [],
-		"name": "LATISS Exposure Table",
+		"name": "AuxTel CCD",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/59",
-			"cells": "/chronograf/v1/dashboards/59/cells",
-			"templates": "/chronograf/v1/dashboards/59/templates"
+			"self": "/chronograf/v1/dashboards/57",
+			"cells": "/chronograf/v1/dashboards/57/cells",
+			"templates": "/chronograf/v1/dashboards/57/templates"
 		}
 	}
 }

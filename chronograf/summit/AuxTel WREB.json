@@ -12,18 +12,448 @@
 		"id": "13",
 		"cells": [
 			{
-				"i": "fed813e9-9733-4630-9a54-ed98a9b95b04",
-				"x": 4,
-				"y": 4,
+				"i": "f75678d3-8a2f-475d-8713-acd322726e7c",
+				"x": 8,
+				"y": 6,
 				"w": 4,
-				"h": 4,
-				"name": "Requested Currents",
+				"h": 2,
+				"name": "REB Total Power",
 				"queries": [
 					{
-						"query": "SELECT mean(\"anaI\") AS \"mean_anaI\", mean(\"clkHI\") AS \"mean_clkHI\", mean(\"digI\") AS \"mean_digI\", mean(\"odI\") AS \"mean_odI\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wreb\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT \"rebTotalPower\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_RebTotalPower\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: ",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.wreb",
+							"measurement": "lsst.sal.ATCamera.fp_RebTotalPower",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "rebTotalPower",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "Total Power",
+						"prefix": "",
+						"suffix": "W",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line-plus-single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "b56d4aa9-24b3-4ce5-b988-1aa8bb7dc0c4",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "5688b94a-b0ab-4b88-b45a-ea0673c9022b",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 3
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/13/cells/f75678d3-8a2f-475d-8713-acd322726e7c"
+				}
+			},
+			{
+				"i": "cbbe975d-a0f1-46ee-aa41-43b6eb690006",
+				"x": 8,
+				"y": 4,
+				"w": 4,
+				"h": 2,
+				"name": "HV Bias Switch",
+				"queries": [
+					{
+						"query": "SELECT \"hVBiasSwitch\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ATCamera.fp_Reb",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "hVBiasSwitch",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "background",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					},
+					{
+						"id": "be5fa0d7-cd9f-4d2b-b05f-50b9553d543e",
+						"type": "background",
+						"hex": "#4ED8A0",
+						"name": "rainforest",
+						"value": "0.5"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/13/cells/cbbe975d-a0f1-46ee-aa41-43b6eb690006"
+				}
+			},
+			{
+				"i": "0355f829-1575-4410-a8cc-7686a5fb501e",
+				"x": 8,
+				"y": 0,
+				"w": 4,
+				"h": 4,
+				"name": "Reference Voltages",
+				"queries": [
+					{
+						"query": "SELECT mean(\"ref05V\") AS \"mean_ref05V\", mean(\"ref125V\") AS \"mean_ref125V\", mean(\"ref15V\") AS \"mean_ref15V\", mean(\"ref25V\") AS \"mean_ref25V\", mean(\"refN12\") AS \"mean_refN12\", mean(\"refP12\") AS \"mean_refP12\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ATCamera.fp_Reb",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_ref05V",
+									"args": [
+										{
+											"value": "ref05V",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_ref125V",
+									"args": [
+										{
+											"value": "ref125V",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_ref15V",
+									"args": [
+										{
+											"value": "ref15V",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_ref25V",
+									"args": [
+										{
+											"value": "ref25V",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_refN12",
+									"args": [
+										{
+											"value": "refN12",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_refP12",
+									"args": [
+										{
+											"value": "refP12",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "Voltage",
+						"prefix": "",
+						"suffix": " V",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "61ffd8d3-e006-4479-92e7-5ba00469158b",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "10e3088b-538a-4603-b634-83000302174d",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "97227fbd-f10e-49f9-91da-912b911262f4",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/13/cells/0355f829-1575-4410-a8cc-7686a5fb501e"
+				}
+			},
+			{
+				"i": "fed813e9-9733-4630-9a54-ed98a9b95b04",
+				"x": 4,
+				"y": 0,
+				"w": 4,
+				"h": 4,
+				"name": "Standard Currents",
+				"queries": [
+					{
+						"query": "SELECT mean(\"anaI\") AS \"mean_anaI\", mean(\"clkHI\") AS \"mean_clkHI\", mean(\"digI\") AS \"mean_digI\", mean(\"odI\") AS \"mean_odI\", mean(\"oDI\") AS \"mean_oDI\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ATCamera.fp_Reb",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
@@ -69,6 +499,18 @@
 									"args": [
 										{
 											"value": "odI",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_oDI",
+									"args": [
+										{
+											"value": "oDI",
 											"type": "field",
 											"alias": ""
 										}
@@ -172,7 +614,7 @@
 					"isEnforced": true,
 					"digits": 2
 				},
-				"note": "",
+				"note": "These are measurements that ended in I in their name.",
 				"noteVisibility": "default",
 				"links": {
 					"self": "/chronograf/v1/dashboards/13/cells/fed813e9-9733-4630-9a54-ed98a9b95b04"
@@ -184,22 +626,82 @@
 				"y": 4,
 				"w": 4,
 				"h": 4,
-				"name": "Actual Currents",
+				"name": "Special Voltages",
 				"queries": [
 					{
-						"query": "SELECT mean(\"od0I\") AS \"mean_od0I\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wreb\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"pClkL\") AS \"mean_pClkL\", mean(\"pClkU\") AS \"mean_pClkU\", mean(\"rGL\") AS \"mean_rGL\", mean(\"rGU\") AS \"mean_rGU\", mean(\"sClkL\") AS \"mean_sClkL\", mean(\"sClkU\") AS \"mean_sClkU\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.wreb",
+							"measurement": "lsst.sal.ATCamera.fp_Reb",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "mean_od0I",
+									"alias": "mean_pClkL",
 									"args": [
 										{
-											"value": "od0I",
+											"value": "pClkL",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_pClkU",
+									"args": [
+										{
+											"value": "pClkU",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_rGL",
+									"args": [
+										{
+											"value": "rGL",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_rGU",
+									"args": [
+										{
+											"value": "rGU",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_sClkL",
+									"args": [
+										{
+											"value": "sClkL",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_sClkU",
+									"args": [
+										{
+											"value": "sClkU",
 											"type": "field",
 											"alias": ""
 										}
@@ -238,9 +740,9 @@
 							"",
 							""
 						],
-						"label": "Current",
+						"label": "Voltage",
 						"prefix": "",
-						"suffix": " mA",
+						"suffix": " V",
 						"base": "raw",
 						"scale": "linear"
 					},
@@ -303,7 +805,7 @@
 					"isEnforced": true,
 					"digits": 2
 				},
-				"note": "",
+				"note": "These are measurements that are voltages but did NOT end in V in their name.",
 				"noteVisibility": "default",
 				"links": {
 					"self": "/chronograf/v1/dashboards/13/cells/f5e60184-6009-4ff7-8968-84fcafa691e1"
@@ -311,17 +813,17 @@
 			},
 			{
 				"i": "58286519-1b5c-4ec7-b88b-2c69277c30ad",
-				"x": 4,
+				"x": 0,
 				"y": 0,
 				"w": 4,
 				"h": 4,
-				"name": "Requested Voltages",
+				"name": "Standard Voltages",
 				"queries": [
 					{
-						"query": "SELECT mean(\"anaV\") AS \"mean_anaV\", mean(\"clkHV\") AS \"mean_clkHV\", mean(\"clkLV\") AS \"mean_clkLV\", mean(\"digV\") AS \"mean_digV\", mean(\"htrPS_V\") AS \"mean_htrPS_V\", mean(\"odPS_V\") AS \"mean_odPS_V\", mean(\"rgL_V\") AS \"mean_rgL_V\", mean(\"rgV\") AS \"mean_rgV\", mean(\"sckL_V\") AS \"mean_sckL_V\", mean(\"sckU_V\") AS \"mean_sckU_V\", mean(\"power\") AS \"mean_power\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wreb\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"anaV\") AS \"mean_anaV\", mean(\"clkHV\") AS \"mean_clkHV\", mean(\"clkLV\") AS \"mean_clkLV\", mean(\"digV\") AS \"mean_digV\", mean(\"htrPS_V\") AS \"mean_htrPS_V\", mean(\"odPS_V\") AS \"mean_odPS_V\", mean(\"rgL_V\") AS \"mean_rgL_V\", mean(\"rgV\") AS \"mean_rgV\", mean(\"sckL_V\") AS \"mean_sckL_V\", mean(\"sckU_V\") AS \"mean_sckU_V\", mean(\"htrV\") AS \"mean_htrV\", mean(\"oDV\") AS \"mean_oDV\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.wreb",
+							"measurement": "lsst.sal.ATCamera.fp_Reb",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
@@ -447,10 +949,22 @@
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "mean_power",
+									"alias": "mean_htrV",
 									"args": [
 										{
-											"value": "power",
+											"value": "htrV",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_oDV",
+									"args": [
+										{
+											"value": "oDV",
 											"type": "field",
 											"alias": ""
 										}
@@ -554,7 +1068,7 @@
 					"isEnforced": true,
 					"digits": 2
 				},
-				"note": "",
+				"note": "These are measurements that ended in V in their name.",
 				"noteVisibility": "default",
 				"links": {
 					"self": "/chronograf/v1/dashboards/13/cells/58286519-1b5c-4ec7-b88b-2c69277c30ad"
@@ -562,26 +1076,26 @@
 			},
 			{
 				"i": "e1448a36-74a7-45e1-9d1c-473362516ae4",
-				"x": 0,
-				"y": 0,
+				"x": 4,
+				"y": 4,
 				"w": 4,
 				"h": 4,
-				"name": "Actual Voltages",
+				"name": "Powers",
 				"queries": [
 					{
-						"query": "SELECT mean(\"cks0V\") AS \"mean_cks0V\", mean(\"gd0V\") AS \"mean_gd0V\", mean(\"og0V\") AS \"mean_og0V\", mean(\"rg0V\") AS \"mean_rg0V\", mean(\"rd0V\") AS \"mean_rd0V\", mean(\"od0V\") AS \"mean_od0V\", mean(\"pClk0\") AS \"mean_pClk0\", mean(\"rg0\") AS \"mean_rg0\", mean(\"sClk0\") AS \"mean_sClk0\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wreb\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"power\") AS \"mean_power\", mean(\"htrW\") AS \"mean_htrW\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.wreb",
+							"measurement": "lsst.sal.ATCamera.fp_Reb",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "mean_cks0V",
+									"alias": "mean_power",
 									"args": [
 										{
-											"value": "cks0V",
+											"value": "power",
 											"type": "field",
 											"alias": ""
 										}
@@ -590,94 +1104,10 @@
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "mean_gd0V",
+									"alias": "mean_htrW",
 									"args": [
 										{
-											"value": "gd0V",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_og0V",
-									"args": [
-										{
-											"value": "og0V",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_rg0V",
-									"args": [
-										{
-											"value": "rg0V",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_rd0V",
-									"args": [
-										{
-											"value": "rd0V",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_od0V",
-									"args": [
-										{
-											"value": "od0V",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_pClk0",
-									"args": [
-										{
-											"value": "pClk0",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_rg0",
-									"args": [
-										{
-											"value": "rg0",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_sClk0",
-									"args": [
-										{
-											"value": "sClk0",
+											"value": "htrW",
 											"type": "field",
 											"alias": ""
 										}
@@ -716,9 +1146,9 @@
 							"",
 							""
 						],
-						"label": "Voltage",
+						"label": "Power",
 						"prefix": "",
-						"suffix": " V",
+						"suffix": " W",
 						"base": "10",
 						"scale": "linear"
 					},

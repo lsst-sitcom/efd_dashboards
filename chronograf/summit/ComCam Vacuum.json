@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.4",
+		"chronografVersion": "1.8.8",
 		"sources": {
-			"2": {
-				"name": "EFD",
-				"link": "/chronograf/v1/sources/2"
+			"1": {
+				"name": "Summit EFD",
+				"link": "/chronograf/v1/sources/1"
 			}
 		}
 	},
 	"dashboard": {
-		"id": "35",
+		"id": "49",
 		"cells": [
 			{
-				"i": "0dc3e591-5559-4b2b-82a4-6e75b4705bf1",
+				"i": "ea4c8eac-3d1a-41c9-a541-f916ed886614",
 				"x": 0,
 				"y": 4,
 				"w": 4,
@@ -36,7 +36,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -125,11 +125,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/35/cells/0dc3e591-5559-4b2b-82a4-6e75b4705bf1"
+					"self": "/chronograf/v1/dashboards/49/cells/ea4c8eac-3d1a-41c9-a541-f916ed886614"
 				}
 			},
 			{
-				"i": "1c286e70-9bf6-4e5e-ae85-46ac16480132",
+				"i": "65f8e982-ad5b-4609-9ddb-556aa1c8b12b",
 				"x": 0,
 				"y": 0,
 				"w": 4,
@@ -159,7 +159,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -248,11 +248,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/35/cells/1c286e70-9bf6-4e5e-ae85-46ac16480132"
+					"self": "/chronograf/v1/dashboards/49/cells/65f8e982-ad5b-4609-9ddb-556aa1c8b12b"
 				}
 			},
 			{
-				"i": "d4ebb8b3-44bc-4655-8877-78f09ac88e2d",
+				"i": "ebf6fe7e-3088-4188-81c5-e4cd3e848a43",
 				"x": 4,
 				"y": 0,
 				"w": 4,
@@ -276,7 +276,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -365,11 +365,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/35/cells/d4ebb8b3-44bc-4655-8877-78f09ac88e2d"
+					"self": "/chronograf/v1/dashboards/49/cells/ebf6fe7e-3088-4188-81c5-e4cd3e848a43"
 				}
 			},
 			{
-				"i": "ec6972a1-ccb6-4013-85be-03ab66919287",
+				"i": "1448f560-8598-47be-be5a-cdf310a01fc2",
 				"x": 8,
 				"y": 0,
 				"w": 4,
@@ -393,7 +393,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -482,7 +482,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/35/cells/ec6972a1-ccb6-4013-85be-03ab66919287"
+					"self": "/chronograf/v1/dashboards/49/cells/1448f560-8598-47be-be5a-cdf310a01fc2"
 				}
 			}
 		],
@@ -490,9 +490,9 @@
 		"name": "ComCam Vacuum",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/35",
-			"cells": "/chronograf/v1/dashboards/35/cells",
-			"templates": "/chronograf/v1/dashboards/35/templates"
+			"self": "/chronograf/v1/dashboards/49",
+			"cells": "/chronograf/v1/dashboards/49/cells",
+			"templates": "/chronograf/v1/dashboards/49/templates"
 		}
 	}
 }

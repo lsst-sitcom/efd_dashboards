@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.4",
+		"chronografVersion": "1.8.8",
 		"sources": {
-			"2": {
-				"name": "EFD",
-				"link": "/chronograf/v1/sources/2"
+			"1": {
+				"name": "Summit EFD",
+				"link": "/chronograf/v1/sources/1"
 			}
 		}
 	},
 	"dashboard": {
-		"id": "37",
+		"id": "51",
 		"cells": [
 			{
-				"i": "cacff389-9a98-42ec-8f5b-63075bd65ac0",
+				"i": "d063cb77-8f54-49e0-af88-fc876db3e98d",
 				"x": 3,
 				"y": 0,
 				"w": 3,
@@ -36,7 +36,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -146,11 +146,11 @@
 				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/37/cells/cacff389-9a98-42ec-8f5b-63075bd65ac0"
+					"self": "/chronograf/v1/dashboards/51/cells/d063cb77-8f54-49e0-af88-fc876db3e98d"
 				}
 			},
 			{
-				"i": "9b662746-16f3-4d9a-a80d-51f693f8a255",
+				"i": "091ed7da-f082-44e4-bf81-3f4c7b4e4198",
 				"x": 6,
 				"y": 0,
 				"w": 3,
@@ -174,7 +174,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -284,11 +284,11 @@
 				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/37/cells/9b662746-16f3-4d9a-a80d-51f693f8a255"
+					"self": "/chronograf/v1/dashboards/51/cells/091ed7da-f082-44e4-bf81-3f4c7b4e4198"
 				}
 			},
 			{
-				"i": "671f6d3e-8439-40a0-b6c7-c0c86cd9343c",
+				"i": "a98669ad-bad0-4056-b75a-20b6e3d00583",
 				"x": 0,
 				"y": 0,
 				"w": 3,
@@ -312,7 +312,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -422,7 +422,7 @@
 				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/37/cells/671f6d3e-8439-40a0-b6c7-c0c86cd9343c"
+					"self": "/chronograf/v1/dashboards/51/cells/a98669ad-bad0-4056-b75a-20b6e3d00583"
 				}
 			}
 		],
@@ -430,9 +430,9 @@
 		"name": "CC Summary State Monitor",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/37",
-			"cells": "/chronograf/v1/dashboards/37/cells",
-			"templates": "/chronograf/v1/dashboards/37/templates"
+			"self": "/chronograf/v1/dashboards/51",
+			"cells": "/chronograf/v1/dashboards/51/cells",
+			"templates": "/chronograf/v1/dashboards/51/templates"
 		}
 	}
 }

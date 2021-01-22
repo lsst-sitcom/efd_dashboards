@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.4",
+		"chronografVersion": "1.8.8",
 		"sources": {
-			"2": {
-				"name": "EFD",
-				"link": "/chronograf/v1/sources/2"
+			"1": {
+				"name": "Summit EFD",
+				"link": "/chronograf/v1/sources/1"
 			}
 		}
 	},
 	"dashboard": {
-		"id": "42",
+		"id": "53",
 		"cells": [
 			{
-				"i": "bde94ac6-d9ff-4a0a-b5f8-30f43888ea4a",
+				"i": "a4e6a84b-017e-4f39-ac45-fd07503e5ca4",
 				"x": 0,
 				"y": 0,
 				"w": 11,
@@ -36,7 +36,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -103,14 +103,14 @@
 				"note": "Last images taken with CCCamera.\n\nSelect an appropriate time window (e.g. `Past 24h`)\n\n",
 				"noteVisibility": "showWhenNoData",
 				"links": {
-					"self": "/chronograf/v1/dashboards/42/cells/bde94ac6-d9ff-4a0a-b5f8-30f43888ea4a"
+					"self": "/chronograf/v1/dashboards/53/cells/a4e6a84b-017e-4f39-ac45-fd07503e5ca4"
 				}
 			},
 			{
-				"i": "77720f26-f94a-43e0-b3a8-eb0b453a3f9a",
+				"i": "012f9281-f5ec-4315-ad32-dc46c3c7429a",
 				"x": 0,
 				"y": 2,
-				"w": 11,
+				"w": 12,
 				"h": 5,
 				"name": "Exposure sequence",
 				"queries": [
@@ -157,7 +157,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "/chronograf/v1/sources/2",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -257,7 +257,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/42/cells/77720f26-f94a-43e0-b3a8-eb0b453a3f9a"
+					"self": "/chronograf/v1/dashboards/53/cells/012f9281-f5ec-4315-ad32-dc46c3c7429a"
 				}
 			}
 		],
@@ -265,9 +265,9 @@
 		"name": "ComCam Exposure table",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/42",
-			"cells": "/chronograf/v1/dashboards/42/cells",
-			"templates": "/chronograf/v1/dashboards/42/templates"
+			"self": "/chronograf/v1/dashboards/53",
+			"cells": "/chronograf/v1/dashboards/53/cells",
+			"templates": "/chronograf/v1/dashboards/53/templates"
 		}
 	}
 }

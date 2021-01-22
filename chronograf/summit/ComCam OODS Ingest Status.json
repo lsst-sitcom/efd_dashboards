@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.4",
+		"chronografVersion": "1.8.8",
 		"sources": {
-			"2": {
-				"name": "EFD",
-				"link": "/chronograf/v1/sources/2"
+			"1": {
+				"name": "Summit EFD",
+				"link": "/chronograf/v1/sources/1"
 			}
 		}
 	},
 	"dashboard": {
-		"id": "40",
+		"id": "54",
 		"cells": [
 			{
-				"i": "951ff36f-8646-4073-b692-240c47dd833d",
+				"i": "28d1a2f3-afdc-4ebc-9ac2-e5be60002605",
 				"x": 0,
 				"y": 0,
 				"w": 9,
@@ -36,7 +36,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -103,11 +103,11 @@
 				"note": "Last images ingested into the OODS.\n\nSelect an appropriate time window (e.g. `Past 24h`)\n\n",
 				"noteVisibility": "showWhenNoData",
 				"links": {
-					"self": "/chronograf/v1/dashboards/40/cells/951ff36f-8646-4073-b692-240c47dd833d"
+					"self": "/chronograf/v1/dashboards/54/cells/28d1a2f3-afdc-4ebc-9ac2-e5be60002605"
 				}
 			},
 			{
-				"i": "61cbf324-4c2f-4e7e-a217-6c6f5071ec24",
+				"i": "6a59b08f-d450-41c7-8bd3-65d3388c0bd5",
 				"x": 0,
 				"y": 2,
 				"w": 11,
@@ -147,7 +147,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "/chronograf/v1/sources/2",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -222,7 +222,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/40/cells/61cbf324-4c2f-4e7e-a217-6c6f5071ec24"
+					"self": "/chronograf/v1/dashboards/54/cells/6a59b08f-d450-41c7-8bd3-65d3388c0bd5"
 				}
 			}
 		],
@@ -230,9 +230,9 @@
 		"name": "ComCam OODS Ingest Status",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/40",
-			"cells": "/chronograf/v1/dashboards/40/cells",
-			"templates": "/chronograf/v1/dashboards/40/templates"
+			"self": "/chronograf/v1/dashboards/54",
+			"cells": "/chronograf/v1/dashboards/54/cells",
+			"templates": "/chronograf/v1/dashboards/54/templates"
 		}
 	}
 }

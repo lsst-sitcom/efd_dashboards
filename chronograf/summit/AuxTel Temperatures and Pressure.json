@@ -556,10 +556,10 @@
 				"name": "WREB On-Board",
 				"queries": [
 					{
-						"query": "SELECT mean(\"temp1\") AS \"mean_temp1\", mean(\"temp2\") AS \"mean_temp2\", mean(\"temp3\") AS \"mean_temp3\", mean(\"temp4\") AS \"mean_temp4\", mean(\"temp5\") AS \"mean_temp5\", mean(\"temp6\") AS \"mean_temp6\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wreb\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"temp1\") AS \"mean_temp1\", mean(\"temp2\") AS \"mean_temp2\", mean(\"temp3\") AS \"mean_temp3\", mean(\"temp4\") AS \"mean_temp4\", mean(\"temp5\") AS \"mean_temp5\", mean(\"temp6\") AS \"mean_temp6\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_Reb\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.wreb",
+							"measurement": "lsst.sal.ATCamera.fp_Reb",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
@@ -747,44 +747,49 @@
 				"name": "ASPIC",
 				"queries": [
 					{
-						"query": "SELECT mean(\"atemp0L\") AS \"mean_atemp0L\", mean(\"atemp0U\") AS \"mean_atemp0U\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wreb\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT \"aspicl_Temp0\", \"aspicu_Temp0\", \"aspicl_Temp1\", \"aspicu_Temp1\", \"aspicl_Temp2\", \"aspicu_Temp2\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_Reb\" WHERE time > :dashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.wreb",
+							"measurement": "lsst.sal.ATCamera.fp_Reb",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_atemp0L",
-									"args": [
-										{
-											"value": "atemp0L",
-											"type": "field",
-											"alias": ""
-										}
-									]
+									"value": "aspicl_Temp0",
+									"type": "field",
+									"alias": ""
 								},
 								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_atemp0U",
-									"args": [
-										{
-											"value": "atemp0U",
-											"type": "field",
-											"alias": ""
-										}
-									]
+									"value": "aspicu_Temp0",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "aspicl_Temp1",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "aspicu_Temp1",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "aspicl_Temp2",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "aspicu_Temp2",
+									"type": "field",
+									"alias": ""
 								}
 							],
 							"tags": {},
 							"groupBy": {
-								"time": "auto",
+								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"fill": "null",
 							"rawText": null,
 							"range": null,
 							"shifts": null

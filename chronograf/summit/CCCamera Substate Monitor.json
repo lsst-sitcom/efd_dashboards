@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.4",
+		"chronografVersion": "1.8.8",
 		"sources": {
-			"2": {
-				"name": "EFD",
-				"link": "/chronograf/v1/sources/2"
+			"1": {
+				"name": "Summit EFD",
+				"link": "/chronograf/v1/sources/1"
 			}
 		}
 	},
 	"dashboard": {
-		"id": "39",
+		"id": "52",
 		"cells": [
 			{
-				"i": "63def965-6afe-4b80-a982-10f4e8de138b",
+				"i": "0387e998-cea7-4efe-b7fd-ece544d1a225",
 				"x": 0,
 				"y": 0,
 				"w": 3,
@@ -36,7 +36,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -125,11 +125,11 @@
 				"note": "OFFLINE AVAILABLE = 1\n\nOFFLINE PUBLISH ONLY = 2",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/39/cells/63def965-6afe-4b80-a982-10f4e8de138b"
+					"self": "/chronograf/v1/dashboards/52/cells/0387e998-cea7-4efe-b7fd-ece544d1a225"
 				}
 			},
 			{
-				"i": "959ab54c-4cb3-4c94-b753-1c68923b2830",
+				"i": "643f4504-c577-42f3-9b6e-9810a9651ce9",
 				"x": 3,
 				"y": 0,
 				"w": 3,
@@ -153,7 +153,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -249,11 +249,11 @@
 				"note": "READY         = 1\n\nNOT_READY     = 2\n\nGETTING_READY = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/39/cells/959ab54c-4cb3-4c94-b753-1c68923b2830"
+					"self": "/chronograf/v1/dashboards/52/cells/643f4504-c577-42f3-9b6e-9810a9651ce9"
 				}
 			},
 			{
-				"i": "f9505e52-9900-4efc-81bf-1e00cab38d8b",
+				"i": "0c9b3076-1ead-4c7a-b745-280e9bdba66b",
 				"x": 0,
 				"y": 3,
 				"w": 3,
@@ -277,7 +277,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -387,11 +387,11 @@
 				"note": "NEEDS_CLEAR = 1\n\nCLEARING    = 2\n\nINTEGRATING = 3\n\nREADING_OUT = 4\n\nQUIESCENT   = 5",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/39/cells/f9505e52-9900-4efc-81bf-1e00cab38d8b"
+					"self": "/chronograf/v1/dashboards/52/cells/0c9b3076-1ead-4c7a-b745-280e9bdba66b"
 				}
 			},
 			{
-				"i": "286a060a-32e5-4d88-8806-f64c6284e67e",
+				"i": "21d4872d-9fd8-43bd-9cfb-5681b7332b5c",
 				"x": 6,
 				"y": 0,
 				"w": 3,
@@ -415,7 +415,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -511,11 +511,11 @@
 				"note": "DISABLED    = 1\n\nENABLED     = 2\n\nINTEGRATING = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/39/cells/286a060a-32e5-4d88-8806-f64c6284e67e"
+					"self": "/chronograf/v1/dashboards/52/cells/21d4872d-9fd8-43bd-9cfb-5681b7332b5c"
 				}
 			},
 			{
-				"i": "f08310f3-2527-4d2e-8f49-cf02cd96df06",
+				"i": "f5fbe2f7-652f-4cca-a120-16f0633ec1ed",
 				"x": 3,
 				"y": 3,
 				"w": 3,
@@ -539,7 +539,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -642,11 +642,11 @@
 				"note": "CLOSED  = 1\n\nOPEN    = 2\n\nCLOSING = 3\n\nOPENING = 4",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/39/cells/f08310f3-2527-4d2e-8f49-cf02cd96df06"
+					"self": "/chronograf/v1/dashboards/52/cells/f5fbe2f7-652f-4cca-a120-16f0633ec1ed"
 				}
 			},
 			{
-				"i": "dbf6433c-8b30-4250-8e7f-1c8e80714478",
+				"i": "893e5e02-c7bd-486b-a59b-f320bd4977ed",
 				"x": 6,
 				"y": 3,
 				"w": 3,
@@ -654,7 +654,7 @@
 				"name": "Ready To Take Images",
 				"queries": [
 					{
-						"query": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_readyToTakeImage\" ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.logevent_ccsCommandState\" ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -666,11 +666,11 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_readyToTakeImage\" ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.logevent_ccsCommandState\" ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
-						"source": "",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -773,7 +773,7 @@
 				"note": "IDLE = 1\n\nBUSY = 2",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/39/cells/dbf6433c-8b30-4250-8e7f-1c8e80714478"
+					"self": "/chronograf/v1/dashboards/52/cells/893e5e02-c7bd-486b-a59b-f320bd4977ed"
 				}
 			}
 		],
@@ -781,9 +781,9 @@
 		"name": "CCCamera Substate Monitor",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/39",
-			"cells": "/chronograf/v1/dashboards/39/cells",
-			"templates": "/chronograf/v1/dashboards/39/templates"
+			"self": "/chronograf/v1/dashboards/52",
+			"cells": "/chronograf/v1/dashboards/52/cells",
+			"templates": "/chronograf/v1/dashboards/52/templates"
 		}
 	}
 }
