@@ -20,7 +20,7 @@
 				"name": "MTMount-Tracking",
 				"queries": [
 					{
-						"query": "SELECT \"state\" FROM \"efd\".\"autogen\".\"lsst.sal.NewMTMount.logevent_atMountState\" ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"state\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.logevent_atMountState\" ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"state\" FROM \"efd\".\"autogen\".\"lsst.sal.NewMTMount.logevent_atMountState\" ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"state\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.logevent_atMountState\" ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -158,7 +158,7 @@
 				"name": "Elevation",
 				"queries": [
 					{
-						"query": "SELECT \"Elevation_Angle_Actual\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.Elevation\" ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"angleActual\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.elevation\" ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -170,7 +170,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"Elevation_Angle_Actual\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.Elevation\" ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"angleActual\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.elevation\" ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -282,7 +282,7 @@
 				"name": "Azimuth",
 				"queries": [
 					{
-						"query": "SELECT \"Azimuth_Angle_Actual\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.Azimuth\" ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"angleActual\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.azimuth\" ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -294,7 +294,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"Azimuth_Angle_Actual\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.Azimuth\" ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"angleActual\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.azimuth\" ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1248,7 +1248,7 @@
 				"name": "MTMount",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.NewMTMount.logevent_summaryState\" ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.logevent_summaryState\" ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1260,7 +1260,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.NewMTMount.logevent_summaryState\" ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.logevent_summaryState\" ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},

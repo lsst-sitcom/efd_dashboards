@@ -1501,7 +1501,7 @@
 				"query": {
 					"influxql": "SHOW TAG VALUES ON :database: FROM :measurement: WITH KEY=:tagKey:",
 					"db": "telegraf",
-					"measurement": "cpu",
+					"measurement": "mem",
 					"tagKey": "host",
 					"fieldKey": ""
 				},

@@ -20,14 +20,14 @@
 				"name": "Elevation",
 				"queries": [
 					{
-						"query": "SELECT \"Elevation_Angle_Actual\", \"Elevation_Angle_Set\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.Elevation\" WHERE time > :dashboardTime: ",
+						"query": "SELECT \"angleActual\", \"Elevation_Angle_Set\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.elevation\" WHERE time > :dashboardTime: ",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.MTMount.Elevation",
+							"measurement": "lsst.sal.MTMount.elevation",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "Elevation_Angle_Actual",
+									"value": "angleActual",
 									"type": "field",
 									"alias": ""
 								},
@@ -148,14 +148,14 @@
 				"name": "Azimuth",
 				"queries": [
 					{
-						"query": "SELECT \"Azimuth_Angle_Actual\", \"Azimuth_Angle_Set\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.Azimuth\" WHERE time > :dashboardTime: ",
+						"query": "SELECT \"angleActual\", \"Azimuth_Angle_Set\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.azimuth\" WHERE time > :dashboardTime: ",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.MTMount.Azimuth",
+							"measurement": "lsst.sal.MTMount.azimuth",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "Azimuth_Angle_Actual",
+									"value": "angleActual",
 									"type": "field",
 									"alias": ""
 								},
@@ -522,7 +522,7 @@
 				"name": "Mount Status",
 				"queries": [
 					{
-						"query": "SELECT \"elevation\", \"azimuth\" FROM \"efd\".\"autogen\".\"lsst.sal.NewMTMount.logevent_axesInPosition\" ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"elevation\", \"azimuth\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.logevent_axesInPosition\" ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -534,7 +534,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"elevation\", \"azimuth\" FROM \"efd\".\"autogen\".\"lsst.sal.NewMTMount.logevent_axesInPosition\" ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"elevation\", \"azimuth\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.logevent_axesInPosition\" ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -605,12 +605,12 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.NewMTMount.logevent_axesInPosition.azimuth",
+						"internalName": "lsst.sal.MTMount.logevent_axesInPosition.azimuth",
 						"displayName": "Azimuth",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.NewMTMount.logevent_axesInPosition.elevation",
+						"internalName": "lsst.sal.MTMount.logevent_axesInPosition.elevation",
 						"displayName": "Elevation",
 						"visible": true
 					}

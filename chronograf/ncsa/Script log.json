@@ -1,0 +1,152 @@
+{
+	"meta": {
+		"chronografVersion": "1.8.8",
+		"sources": {
+			"1": {
+				"name": "EFD",
+				"link": "/chronograf/v1/sources/1"
+			}
+		}
+	},
+	"dashboard": {
+		"id": "52",
+		"cells": [
+			{
+				"i": "252c10e0-0a1c-42f1-93e7-d701aa425257",
+				"x": 0,
+				"y": 0,
+				"w": 12,
+				"h": 7,
+				"name": "Logging",
+				"queries": [
+					{
+						"query": "SELECT \"ScriptID\", \"message\", \"traceback\", \"functionName\", \"filePath\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\"  ORDER BY DESC LIMIT 100",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"ScriptID\", \"message\", \"traceback\", \"functionName\", \"filePath\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\"  ORDER BY DESC LIMIT 100",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/1",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.Script.logevent_logMessage.ScriptID",
+						"displayName": "ScriptID",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.Script.logevent_logMessage.message",
+						"displayName": "Message",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.Script.logevent_logMessage.traceback",
+						"displayName": "Traceback",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.Script.logevent_logMessage.functionName",
+						"displayName": "Function",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.Script.logevent_logMessage.filePath",
+						"displayName": "File",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/52/cells/252c10e0-0a1c-42f1-93e7-d701aa425257"
+				}
+			}
+		],
+		"templates": [],
+		"name": "Script log",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/52",
+			"cells": "/chronograf/v1/dashboards/52/cells",
+			"templates": "/chronograf/v1/dashboards/52/templates"
+		}
+	}
+}
