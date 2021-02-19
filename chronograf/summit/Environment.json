@@ -20,6 +20,32 @@
 				"name": "Wind Speed - Average 2min",
 				"queries": [
 					{
+						"query": "SELECT \"min2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windSpeed\" WHERE time > :dashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.WeatherStation.windSpeed",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "min2M",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
+					{
 						"query": "SELECT \"min2M\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.windSpeed\" WHERE time > :dashboardTime:",
 						"queryConfig": {
 							"database": "efd",
@@ -143,7 +169,7 @@
 				"name": "Min Temperature",
 				"queries": [
 					{
-						"query": "SELECT \"min24H\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.airTemperature\" WHERE \"EnvironmentID\" = 1 ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"min24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -155,7 +181,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"min24H\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.airTemperature\" WHERE \"EnvironmentID\" = 1 ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"min24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -246,7 +272,7 @@
 				"name": "Heartbeat (DIMM)",
 				"queries": [
 					{
-						"query": "SELECT \"time\", count(\"heartbeat\") FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_heartbeat\" WHERE time > :dashboardTime: group by time(5s) order by desc limit 1",
+						"query": "SELECT count(\"heartbeat\") FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_heartbeat\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(5s) ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -258,7 +284,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"time\", count(\"heartbeat\") FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_heartbeat\" WHERE time > :dashboardTime: group by time(5s) order by desc limit 1",
+							"rawText": "SELECT count(\"heartbeat\") FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_heartbeat\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(5s) ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -492,7 +518,7 @@
 				"name": "DIMM Seeing",
 				"queries": [
 					{
-						"query": "SELECT \"fwhm\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_dimmMeasurement\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"fwhm\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_dimmMeasurement\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.DIMM.logevent_dimmMeasurement",
@@ -615,7 +641,7 @@
 				"name": "Heartbeat",
 				"queries": [
 					{
-						"query": "SELECT \"time\", count(\"heartbeat\") FROM \"efd\".\"autogen\".\"lsst.sal.Environment.logevent_heartbeat\" WHERE time > :dashboardTime: group by time(10s) order by desc limit 1",
+						"query": "SELECT count(\"heartbeat\") FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.logevent_heartbeat\" WHERE time > :dashboardTime: and time < :upperDashboardTime: GROUP BY time(5s) ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -627,7 +653,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"time\", count(\"heartbeat\") FROM \"efd\".\"autogen\".\"lsst.sal.Environment.logevent_heartbeat\" WHERE time > :dashboardTime: group by time(10s) order by desc limit 1",
+							"rawText": "SELECT count(\"heartbeat\") FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.logevent_heartbeat\" WHERE time > :dashboardTime: and time < :upperDashboardTime: GROUP BY time(5s) ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -736,6 +762,40 @@
 				"h": 2,
 				"name": "Wind Direction Average 10min",
 				"queries": [
+					{
+						"query": "SELECT mean(\"avg10M\") AS \"mean_avg10M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windDirection\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.WeatherStation.windDirection",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_avg10M",
+									"args": [
+										{
+											"value": "avg10M",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
 					{
 						"query": "SELECT mean(\"avg10M\") AS \"mean_avg10M\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.windDirection\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
@@ -868,7 +928,7 @@
 				"name": "Dewpoint",
 				"queries": [
 					{
-						"query": "SELECT \"avg1M\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.dewPoint\" WHERE \"EnvironmentID\" = 1 ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"avg1M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.dewPoint\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -880,7 +940,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"avg1M\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.dewPoint\" WHERE \"EnvironmentID\" = 1 ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"avg1M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.dewPoint\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -970,6 +1030,32 @@
 				"h": 2,
 				"name": "Relative Humidity",
 				"queries": [
+					{
+						"query": "SELECT \"avg1M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.relativeHumidity\" WHERE time > :dashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.WeatherStation.relativeHumidity",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "avg1M",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
 					{
 						"query": "SELECT \"avg1M\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.relativeHumidity\" WHERE time > :dashboardTime:",
 						"queryConfig": {
@@ -1094,7 +1180,7 @@
 				"name": "Wind Direction (avg2M)",
 				"queries": [
 					{
-						"query": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.windDirection\" WHERE \"EnvironmentID\" =1 ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windDirection\" WHERE \"WeatherStationID\" =1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1106,7 +1192,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.windDirection\" WHERE \"EnvironmentID\" =1 ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windDirection\" WHERE \"WeatherStationID\" =1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1197,7 +1283,7 @@
 				"name": "Wind Speed (avg2M)",
 				"queries": [
 					{
-						"query": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.windSpeed\" WHERE \"EnvironmentID\" = 1 ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windSpeed\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1209,7 +1295,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.windSpeed\" WHERE \"EnvironmentID\" = 1 ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windSpeed\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1313,6 +1399,40 @@
 				"h": 2,
 				"name": "Pressure",
 				"queries": [
+					{
+						"query": "SELECT mean(\"paAvg1M\") AS \"mean_paAvg1M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airPressure\" WHERE time > :dashboardTime:  GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.WeatherStation.airPressure",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_paAvg1M",
+									"args": [
+										{
+											"value": "paAvg1M",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
 					{
 						"query": "SELECT mean(\"paAvg1M\") AS \"mean_paAvg1M\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.airPressure\" WHERE time > :dashboardTime:  GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
@@ -1445,7 +1565,7 @@
 				"name": "Humidity",
 				"queries": [
 					{
-						"query": "SELECT \"humidity\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.weather\" WHERE \"EnvironmentID\" = 1 ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"humidity\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.weather\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1457,7 +1577,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"humidity\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.weather\" WHERE \"EnvironmentID\" = 1 ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"humidity\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.weather\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1569,7 +1689,7 @@
 				"name": "Max Temperature",
 				"queries": [
 					{
-						"query": "SELECT \"max24H\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.airTemperature\" WHERE \"EnvironmentID\" = 1 ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"max24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1581,7 +1701,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"max24H\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.airTemperature\" WHERE \"EnvironmentID\" = 1 ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"max24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1672,10 +1792,10 @@
 				"name": "Average Temperatures",
 				"queries": [
 					{
-						"query": "SELECT \"avg1M\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.airTemperature\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"avg1M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE time > :dashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.Environment.airTemperature",
+							"measurement": "lsst.sal.WeatherStation.airTemperature",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
@@ -1698,10 +1818,10 @@
 						"type": "influxql"
 					},
 					{
-						"query": "SELECT \"avg1M\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.dewPoint\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"avg1M\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.airTemperature\" WHERE time > :dashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.Environment.dewPoint",
+							"measurement": "lsst.sal.Environment.airTemperature",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{

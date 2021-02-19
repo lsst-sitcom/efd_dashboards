@@ -115,7 +115,7 @@
 				"name": "Exposure sequence",
 				"queries": [
 					{
-						"query": "SELECT \"expTime\", \"numImages\", \"shutter\", \"keyValueMap\", \"obsNote\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.command_takeImages\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"expTime\", \"numImages\", \"shutter\", \"keyValueMap\", \"obsNote\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.command_takeImages\" WHERE time > :dashboardTime: ",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.ATCamera.command_takeImages",
@@ -158,6 +158,58 @@
 							"shifts": null
 						},
 						"source": "/chronograf/v1/sources/1",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT \"targetName\" FROM \"efd\".\"autogen\".\"lsst.sal.ATPtg.logevent_currentTarget\" WHERE time > :dashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ATPtg.logevent_currentTarget",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "targetName",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT \"imageName\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.logevent_endReadout\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ATCamera.logevent_endReadout",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "imageName",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
 						"type": "influxql"
 					}
 				],
@@ -239,13 +291,18 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.obsNote",
+						"internalName": "lsst.sal.ATCamera.command_takeImages.shutter",
 						"displayName": "Shutter",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.shutter",
+						"internalName": "lsst.sal.ATCamera.command_takeImages.obsNote",
 						"displayName": "Obs Note",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATCamera.logevent_endReadout.imageName",
+						"displayName": "Image Name",
 						"visible": true
 					}
 				],

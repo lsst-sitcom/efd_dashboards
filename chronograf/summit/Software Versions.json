@@ -9,18 +9,18 @@
 		}
 	},
 	"dashboard": {
-		"id": "28",
+		"id": "61",
 		"cells": [
 			{
-				"i": "b49a9e73-a822-4e84-97c8-789b741ee81e",
+				"i": "354a2c2d-7f5c-4a71-aeaf-2b5a79325123",
 				"x": 0,
 				"y": 0,
-				"w": 12,
+				"w": 11,
 				"h": 4,
-				"name": "Fault Reports",
+				"name": "Settings",
 				"queries": [
 					{
-						"query": "SELECT \"errorCode\", \"errorReport\", \"traceback\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_errorCode\" ORDER BY time DESC LIMIT 10",
+						"query": "SELECT \"cscVersion\", \"xmlVersion\", \"salVersion\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_softwareVersions\" ORDER BY time DESC LIMIT 10",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"errorCode\", \"errorReport\", \"traceback\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_errorCode\" ORDER BY time DESC LIMIT 10",
+							"rawText": "SELECT \"cscVersion\", \"xmlVersion\", \"salVersion\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_softwareVersions\" ORDER BY time DESC LIMIT 10",
 							"range": null,
 							"shifts": null
 						},
@@ -103,18 +103,18 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATMCS.logevent_errorCode.errorCode",
-						"displayName": "",
+						"internalName": "lsst.sal.ATAOS.logevent_softwareVersions.cscVersion",
+						"displayName": "CSC Version",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATMCS.logevent_errorCode.errorReport",
-						"displayName": "",
+						"internalName": "lsst.sal.ATAOS.logevent_softwareVersions.salVersion",
+						"displayName": "XML Version",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATMCS.logevent_errorCode.traceback",
-						"displayName": "",
+						"internalName": "lsst.sal.ATAOS.logevent_softwareVersions.xmlVersion",
+						"displayName": "SAL Version",
 						"visible": true
 					}
 				],
@@ -126,7 +126,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/28/cells/b49a9e73-a822-4e84-97c8-789b741ee81e"
+					"self": "/chronograf/v1/dashboards/61/cells/354a2c2d-7f5c-4a71-aeaf-2b5a79325123"
 				}
 			}
 		],
@@ -190,27 +190,12 @@
 						"selected": false
 					},
 					{
-						"value": "CCArchiver",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "CCHeaderService",
-						"type": "csv",
-						"selected": false
-					},
-					{
 						"value": "DIMM",
 						"type": "csv",
 						"selected": false
 					},
 					{
 						"value": "DSM",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "Dome",
 						"type": "csv",
 						"selected": false
 					},
@@ -226,16 +211,6 @@
 					},
 					{
 						"value": "Hexapod",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "MTAOS",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "MTDomeTrajectory",
 						"type": "csv",
 						"selected": false
 					},
@@ -261,11 +236,6 @@
 					},
 					{
 						"value": "MTVMS",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "NewMTMount",
 						"type": "csv",
 						"selected": false
 					},
@@ -306,16 +276,16 @@
 				},
 				"sourceID": "dynamic",
 				"links": {
-					"self": "/chronograf/v1/dashboards/28/templates/7d4d7854-86c8-4811-8d99-23bb99f06901"
+					"self": "/chronograf/v1/dashboards/61/templates/7d4d7854-86c8-4811-8d99-23bb99f06901"
 				}
 			}
 		],
-		"name": "Fault State Report",
+		"name": "Software Versions",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/28",
-			"cells": "/chronograf/v1/dashboards/28/cells",
-			"templates": "/chronograf/v1/dashboards/28/templates"
+			"self": "/chronograf/v1/dashboards/61",
+			"cells": "/chronograf/v1/dashboards/61/cells",
+			"templates": "/chronograf/v1/dashboards/61/templates"
 		}
 	}
 }

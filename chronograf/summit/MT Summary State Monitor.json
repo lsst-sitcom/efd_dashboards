@@ -831,10 +831,10 @@
 				"y": 3,
 				"w": 3,
 				"h": 1,
-				"name": "Dome",
+				"name": "MTDome",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Dome.logevent_summaryState\" ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTDome.logevent_summaryState\" ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -846,7 +846,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Dome.logevent_summaryState\" ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTDome.logevent_summaryState\" ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},

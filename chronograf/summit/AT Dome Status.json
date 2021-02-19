@@ -9,10 +9,10 @@
 		}
 	},
 	"dashboard": {
-		"id": "22",
+		"id": "65",
 		"cells": [
 			{
-				"i": "9fc3f4a4-8e9e-417e-affb-59d9197e5789",
+				"i": "06cd1b9f-0df7-4ba6-817f-2a39f88489dc",
 				"x": 4,
 				"y": 2,
 				"w": 3,
@@ -139,11 +139,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/22/cells/9fc3f4a4-8e9e-417e-affb-59d9197e5789"
+					"self": "/chronograf/v1/dashboards/65/cells/06cd1b9f-0df7-4ba6-817f-2a39f88489dc"
 				}
 			},
 			{
-				"i": "1143434d-54a2-45a6-bb96-21facbb8edbe",
+				"i": "e0b232a9-94f3-4344-9351-877cb28c7109",
 				"x": 7,
 				"y": 0,
 				"w": 4,
@@ -247,11 +247,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/22/cells/1143434d-54a2-45a6-bb96-21facbb8edbe"
+					"self": "/chronograf/v1/dashboards/65/cells/e0b232a9-94f3-4344-9351-877cb28c7109"
 				}
 			},
 			{
-				"i": "f715d8c2-f4c0-4866-b2f9-3819ceb591f2",
+				"i": "646bca1f-b873-4b6c-b119-47c7cca8d563",
 				"x": 0,
 				"y": 0,
 				"w": 4,
@@ -357,11 +357,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/22/cells/f715d8c2-f4c0-4866-b2f9-3819ceb591f2"
+					"self": "/chronograf/v1/dashboards/65/cells/646bca1f-b873-4b6c-b119-47c7cca8d563"
 				}
 			},
 			{
-				"i": "53a0bd8a-039d-4e0f-8b7f-9952a886fa19",
+				"i": "33712538-80ba-42b6-a76e-265deecda2d6",
 				"x": 4,
 				"y": 0,
 				"w": 3,
@@ -488,7 +488,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/22/cells/53a0bd8a-039d-4e0f-8b7f-9952a886fa19"
+					"self": "/chronograf/v1/dashboards/65/cells/33712538-80ba-42b6-a76e-265deecda2d6"
 				}
 			}
 		],
@@ -496,9 +496,9 @@
 		"name": "AT Dome Status",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/22",
-			"cells": "/chronograf/v1/dashboards/22/cells",
-			"templates": "/chronograf/v1/dashboards/22/templates"
+			"self": "/chronograf/v1/dashboards/65",
+			"cells": "/chronograf/v1/dashboards/65/cells",
+			"templates": "/chronograf/v1/dashboards/65/templates"
 		}
 	}
 }

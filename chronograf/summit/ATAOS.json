@@ -9,12 +9,268 @@
 		}
 	},
 	"dashboard": {
-		"id": "17",
+		"id": "68",
 		"cells": [
 			{
-				"i": "1f98ca07-2d6b-4ae8-9300-9c81f0319ff7",
+				"i": "bad89f82-9c1e-4c73-a71c-8f1f81647943",
 				"x": 6,
 				"y": 6,
+				"w": 6,
+				"h": 3,
+				"name": "Pointing Offsets",
+				"queries": [
+					{
+						"query": "SELECT \"disperser0\", \"disperser1\", \"filter0\", \"filter1\", \"total0\", \"total1\" FROM \"efd\".\"autogen\".\"lsst.sal.ATAOS.logevent_pointingOffsetSummary\" ORDER BY DESC LIMIT 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"disperser0\", \"disperser1\", \"filter0\", \"filter1\", \"total0\", \"total1\" FROM \"efd\".\"autogen\".\"lsst.sal.ATAOS.logevent_pointingOffsetSummary\" ORDER BY DESC LIMIT 1",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATAOS.logevent_pointingOffsetSummary.disperser0",
+						"displayName": "disperser0",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATAOS.logevent_pointingOffsetSummary.disperser1",
+						"displayName": "disperser1",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATAOS.logevent_pointingOffsetSummary.filter0",
+						"displayName": "filter0",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATAOS.logevent_pointingOffsetSummary.filter1",
+						"displayName": "filter1",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATAOS.logevent_pointingOffsetSummary.total0",
+						"displayName": "total0",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATAOS.logevent_pointingOffsetSummary.total1",
+						"displayName": "total1",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/68/cells/bad89f82-9c1e-4c73-a71c-8f1f81647943"
+				}
+			},
+			{
+				"i": "ec85218b-04f4-4f47-b0f4-779549e47e6b",
+				"x": 6,
+				"y": 3,
+				"w": 6,
+				"h": 3,
+				"name": "Focus Offset Summary",
+				"queries": [
+					{
+						"query": "SELECT \"filter\", \"disperser\", \"userApplied\", \"total\" FROM \"efd\".\"autogen\".\"lsst.sal.ATAOS.logevent_focusOffsetSummary\"  ORDER BY DESC LIMIT 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"filter\", \"disperser\", \"userApplied\", \"total\" FROM \"efd\".\"autogen\".\"lsst.sal.ATAOS.logevent_focusOffsetSummary\"  ORDER BY DESC LIMIT 1",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATAOS.logevent_focusOffsetSummary.disperser",
+						"displayName": "disperser",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATAOS.logevent_focusOffsetSummary.filter",
+						"displayName": "filter",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATAOS.logevent_focusOffsetSummary.total",
+						"displayName": "total",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATAOS.logevent_focusOffsetSummary.userApplied",
+						"displayName": "userApplied",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/68/cells/ec85218b-04f4-4f47-b0f4-779549e47e6b"
+				}
+			},
+			{
+				"i": "c1cf4d64-691a-4466-9e8e-20828b153150",
+				"x": 6,
+				"y": 0,
 				"w": 6,
 				"h": 3,
 				"name": "Enabled Corrections",
@@ -131,11 +387,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/cells/1f98ca07-2d6b-4ae8-9300-9c81f0319ff7"
+					"self": "/chronograf/v1/dashboards/68/cells/c1cf4d64-691a-4466-9e8e-20828b153150"
 				}
 			},
 			{
-				"i": "064f48d8-b052-40c8-b251-ad30461325c6",
+				"i": "cef2cb38-9f9b-4690-8fd2-bc842c9e5d81",
 				"x": 0,
 				"y": 7,
 				"w": 6,
@@ -290,11 +546,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/cells/064f48d8-b052-40c8-b251-ad30461325c6"
+					"self": "/chronograf/v1/dashboards/68/cells/cef2cb38-9f9b-4690-8fd2-bc842c9e5d81"
 				}
 			},
 			{
-				"i": "5a286366-4d14-487e-888b-74864a64e79a",
+				"i": "81d8f313-1274-4110-992f-92f1b2e634d7",
 				"x": 0,
 				"y": 5,
 				"w": 6,
@@ -449,11 +705,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/cells/5a286366-4d14-487e-888b-74864a64e79a"
+					"self": "/chronograf/v1/dashboards/68/cells/81d8f313-1274-4110-992f-92f1b2e634d7"
 				}
 			},
 			{
-				"i": "d01d4a75-a22d-42d0-b9e7-d55da4fddb06",
+				"i": "3e5d8f00-8f02-4427-bbb2-91275798931e",
 				"x": 0,
 				"y": 3,
 				"w": 6,
@@ -608,13 +864,13 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/cells/d01d4a75-a22d-42d0-b9e7-d55da4fddb06"
+					"self": "/chronograf/v1/dashboards/68/cells/3e5d8f00-8f02-4427-bbb2-91275798931e"
 				}
 			},
 			{
-				"i": "510e52c2-4053-49a2-8b95-7b316121a0e5",
+				"i": "4a429c70-c640-4fe0-9e37-1ef575be7dc0",
 				"x": 9,
-				"y": 3,
+				"y": 9,
 				"w": 3,
 				"h": 3,
 				"name": "AOSM1",
@@ -718,13 +974,13 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/cells/510e52c2-4053-49a2-8b95-7b316121a0e5"
+					"self": "/chronograf/v1/dashboards/68/cells/4a429c70-c640-4fe0-9e37-1ef575be7dc0"
 				}
 			},
 			{
-				"i": "0f87f213-07e1-49f4-b8d8-2cca1dec9b09",
+				"i": "8509a3af-d2a4-4f01-b250-f867168a6b11",
 				"x": 9,
-				"y": 0,
+				"y": 12,
 				"w": 3,
 				"h": 3,
 				"name": "M1",
@@ -828,13 +1084,13 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/cells/0f87f213-07e1-49f4-b8d8-2cca1dec9b09"
+					"self": "/chronograf/v1/dashboards/68/cells/8509a3af-d2a4-4f01-b250-f867168a6b11"
 				}
 			},
 			{
-				"i": "031f7a51-e735-4d7d-9630-e1d1525fde9b",
-				"x": 6,
-				"y": 3,
+				"i": "e170149f-e613-401d-9714-187a79ca2bb9",
+				"x": 0,
+				"y": 12,
 				"w": 3,
 				"h": 3,
 				"name": "AOS-X",
@@ -938,13 +1194,13 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/cells/031f7a51-e735-4d7d-9630-e1d1525fde9b"
+					"self": "/chronograf/v1/dashboards/68/cells/e170149f-e613-401d-9714-187a79ca2bb9"
 				}
 			},
 			{
-				"i": "07bbc2cb-56c8-4a0d-848f-8226976e654e",
-				"x": 6,
-				"y": 0,
+				"i": "b2895269-ed9e-4457-81b8-0150a3d5268b",
+				"x": 0,
+				"y": 9,
 				"w": 3,
 				"h": 3,
 				"name": "HexX",
@@ -1048,11 +1304,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/cells/07bbc2cb-56c8-4a0d-848f-8226976e654e"
+					"self": "/chronograf/v1/dashboards/68/cells/b2895269-ed9e-4457-81b8-0150a3d5268b"
 				}
 			},
 			{
-				"i": "5f152ade-c330-4562-ad59-b888aa889147",
+				"i": "359ba298-30c2-4a6c-83b5-2bc41e684620",
 				"x": 3,
 				"y": 12,
 				"w": 3,
@@ -1158,11 +1414,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/cells/5f152ade-c330-4562-ad59-b888aa889147"
+					"self": "/chronograf/v1/dashboards/68/cells/359ba298-30c2-4a6c-83b5-2bc41e684620"
 				}
 			},
 			{
-				"i": "25f3281f-5100-41ae-9de2-a6bde45569f9",
+				"i": "02729ca8-4682-4d91-9b9b-30b19ab3538c",
 				"x": 3,
 				"y": 9,
 				"w": 3,
@@ -1268,12 +1524,12 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/cells/25f3281f-5100-41ae-9de2-a6bde45569f9"
+					"self": "/chronograf/v1/dashboards/68/cells/02729ca8-4682-4d91-9b9b-30b19ab3538c"
 				}
 			},
 			{
-				"i": "13455e4f-69a8-4a1f-8922-ab68ab03ee7e",
-				"x": 0,
+				"i": "5c3e045e-f76b-4e29-83fa-bc94e4f91ab0",
+				"x": 6,
 				"y": 12,
 				"w": 3,
 				"h": 3,
@@ -1378,12 +1634,12 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/cells/13455e4f-69a8-4a1f-8922-ab68ab03ee7e"
+					"self": "/chronograf/v1/dashboards/68/cells/5c3e045e-f76b-4e29-83fa-bc94e4f91ab0"
 				}
 			},
 			{
-				"i": "0ed02dd3-5608-4484-92bd-d498aac9ace0",
-				"x": 0,
+				"i": "e011367b-f4ab-4875-bbb8-863cda1e5ba1",
+				"x": 6,
 				"y": 9,
 				"w": 3,
 				"h": 3,
@@ -1488,11 +1744,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/cells/0ed02dd3-5608-4484-92bd-d498aac9ace0"
+					"self": "/chronograf/v1/dashboards/68/cells/e011367b-f4ab-4875-bbb8-863cda1e5ba1"
 				}
 			},
 			{
-				"i": "afbb01b4-81a3-4e04-a935-d22ab29bae18",
+				"i": "d9f540e9-54f3-42f1-b69d-24e0221ea290",
 				"x": 0,
 				"y": 0,
 				"w": 6,
@@ -1548,7 +1804,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -1637,7 +1893,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/17/cells/afbb01b4-81a3-4e04-a935-d22ab29bae18"
+					"self": "/chronograf/v1/dashboards/68/cells/d9f540e9-54f3-42f1-b69d-24e0221ea290"
 				}
 			}
 		],
@@ -1645,9 +1901,9 @@
 		"name": "ATAOS",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/17",
-			"cells": "/chronograf/v1/dashboards/17/cells",
-			"templates": "/chronograf/v1/dashboards/17/templates"
+			"self": "/chronograf/v1/dashboards/68",
+			"cells": "/chronograf/v1/dashboards/68/cells",
+			"templates": "/chronograf/v1/dashboards/68/templates"
 		}
 	}
 }
