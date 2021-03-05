@@ -9,13 +9,13 @@
 		}
 	},
 	"dashboard": {
-		"id": "7",
+		"id": "63",
 		"cells": [
 			{
-				"i": "060212e7-d7ea-47b5-a409-feb1d62bbcfc",
+				"i": "aa024528-045a-4761-b081-a6e404b9ce9f",
 				"x": 0,
 				"y": 0,
-				"w": 9,
+				"w": 11,
 				"h": 2,
 				"name": "Info",
 				"queries": [
@@ -36,7 +36,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -103,29 +103,24 @@
 				"note": "Last images taken with ATCamera.\n\nSelect an appropriate time window (e.g. `Past 24h`)\n\n",
 				"noteVisibility": "showWhenNoData",
 				"links": {
-					"self": "/chronograf/v1/dashboards/7/cells/060212e7-d7ea-47b5-a409-feb1d62bbcfc"
+					"self": "/chronograf/v1/dashboards/63/cells/aa024528-045a-4761-b081-a6e404b9ce9f"
 				}
 			},
 			{
-				"i": "64cfe4fd-285b-4af4-8fa2-32321be55591",
+				"i": "3a696368-4255-43db-909e-496ef757bf3b",
 				"x": 0,
 				"y": 2,
-				"w": 11,
-				"h": 6,
+				"w": 12,
+				"h": 5,
 				"name": "Exposure sequence",
 				"queries": [
 					{
-						"query": "SELECT \"groupId\", \"expTime\", \"numImages\", \"shutter\", \"imageType\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.command_takeImages\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"expTime\", \"numImages\", \"shutter\", \"keyValueMap\", \"obsNote\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.command_takeImages\" WHERE time > :dashboardTime: ",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.ATCamera.command_takeImages",
 							"retentionPolicy": "autogen",
 							"fields": [
-								{
-									"value": "groupId",
-									"type": "field",
-									"alias": ""
-								},
 								{
 									"value": "expTime",
 									"type": "field",
@@ -142,7 +137,64 @@
 									"alias": ""
 								},
 								{
-									"value": "imageType",
+									"value": "keyValueMap",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "obsNote",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/1",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT \"targetName\" FROM \"efd\".\"autogen\".\"lsst.sal.ATPtg.logevent_currentTarget\" WHERE time > :dashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ATPtg.logevent_currentTarget",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "targetName",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/1",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT \"imageName\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.logevent_endReadout\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ATCamera.logevent_endReadout",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "imageName",
 									"type": "field",
 									"alias": ""
 								}
@@ -224,28 +276,33 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.groupId",
-						"displayName": "Group ID",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.imageType",
-						"displayName": "Image Type",
-						"visible": true
-					},
-					{
 						"internalName": "lsst.sal.ATCamera.command_takeImages.expTime",
-						"displayName": "ExpTime (s)",
+						"displayName": "ExpTime",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATCamera.command_takeImages.keyValueMap",
+						"displayName": "Key Value Map",
 						"visible": true
 					},
 					{
 						"internalName": "lsst.sal.ATCamera.command_takeImages.numImages",
-						"displayName": "# of Images",
+						"displayName": "Num Images",
 						"visible": true
 					},
 					{
 						"internalName": "lsst.sal.ATCamera.command_takeImages.shutter",
-						"displayName": "Is shutter open?",
+						"displayName": "Shutter",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATCamera.command_takeImages.obsNote",
+						"displayName": "Obs Note",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATCamera.logevent_endReadout.imageName",
+						"displayName": "Image Name",
 						"visible": true
 					}
 				],
@@ -257,7 +314,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/7/cells/64cfe4fd-285b-4af4-8fa2-32321be55591"
+					"self": "/chronograf/v1/dashboards/63/cells/3a696368-4255-43db-909e-496ef757bf3b"
 				}
 			}
 		],
@@ -265,9 +322,9 @@
 		"name": "LATISS Exposure Table",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/7",
-			"cells": "/chronograf/v1/dashboards/7/cells",
-			"templates": "/chronograf/v1/dashboards/7/templates"
+			"self": "/chronograf/v1/dashboards/63",
+			"cells": "/chronograf/v1/dashboards/63/cells",
+			"templates": "/chronograf/v1/dashboards/63/templates"
 		}
 	}
 }

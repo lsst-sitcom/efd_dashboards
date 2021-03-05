@@ -20,7 +20,7 @@
 				"name": "Filter Names",
 				"queries": [
 					{
-						"query": "SELECT \"filterNames\" FROM \"efd\".\"autogen\".\"lsst.sal.ATSpectrograph.logevent_settingsApplied\" ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"filterNames\" FROM \"efd\".\"autogen\".\"lsst.sal.ATSpectrograph.logevent_settingsAppliedValues\" ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"filterNames\" FROM \"efd\".\"autogen\".\"lsst.sal.ATSpectrograph.logevent_settingsApplied\" ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"filterNames\" FROM \"efd\".\"autogen\".\"lsst.sal.ATSpectrograph.logevent_settingsAppliedValues\" ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -103,7 +103,7 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATSpectrograph.logevent_settingsApplied.filterNames",
+						"internalName": "lsst.sal.ATSpectrograph.logevent_settingsAppliedValues.filterNames",
 						"displayName": "",
 						"visible": true
 					}
@@ -771,7 +771,7 @@
 				"name": "Grating Names",
 				"queries": [
 					{
-						"query": "SELECT \"gratingNames\" FROM \"efd\".\"autogen\".\"lsst.sal.ATSpectrograph.logevent_settingsApplied\" ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"gratingNames\" FROM \"efd\".\"autogen\".\"lsst.sal.ATSpectrograph.logevent_settingsAppliedValues\" ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -783,7 +783,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"gratingNames\" FROM \"efd\".\"autogen\".\"lsst.sal.ATSpectrograph.logevent_settingsApplied\" ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"gratingNames\" FROM \"efd\".\"autogen\".\"lsst.sal.ATSpectrograph.logevent_settingsAppliedValues\" ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -854,7 +854,7 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATSpectrograph.logevent_settingsApplied.gratingNames",
+						"internalName": "lsst.sal.ATSpectrograph.logevent_settingsAppliedValues.gratingNames",
 						"displayName": "",
 						"visible": true
 					}
