@@ -276,13 +276,18 @@
 						"visible": true
 					},
 					{
+						"internalName": "lsst.sal.ATPtg.logevent_currentTarget.targetName",
+						"displayName": "Current Target",
+						"visible": true
+					},
+					{
 						"internalName": "lsst.sal.ATCamera.command_takeImages.expTime",
-						"displayName": "ExpTime",
+						"displayName": "Exposure Time",
 						"visible": true
 					},
 					{
 						"internalName": "lsst.sal.ATCamera.command_takeImages.keyValueMap",
-						"displayName": "Key Value Map",
+						"displayName": "Exposure Params",
 						"visible": true
 					},
 					{
@@ -291,13 +296,13 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.shutter",
-						"displayName": "Shutter",
+						"internalName": "lsst.sal.ATCamera.command_takeImages.obsNote",
+						"displayName": "Obs Note",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.obsNote",
-						"displayName": "Obs Note",
+						"internalName": "lsst.sal.ATCamera.command_takeImages.shutter",
+						"displayName": "Shutter",
 						"visible": true
 					},
 					{

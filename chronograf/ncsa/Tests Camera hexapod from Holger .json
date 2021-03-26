@@ -20,7 +20,7 @@
 				"name": "Untitled Graph",
 				"queries": [
 					{
-						"query": "SELECT \"ScriptID\", \"message\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\" WHERE ScriptID=1. ORDER BY DESC LIMIT 100 ",
+						"query": "SELECT \"ScriptID\", \"message\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\" ORDER BY DESC LIMIT 100 ",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"ScriptID\", \"message\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\" WHERE ScriptID=1. ORDER BY DESC LIMIT 100 ",
+							"rawText": "SELECT \"ScriptID\", \"message\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\" ORDER BY DESC LIMIT 100 ",
 							"range": null,
 							"shifts": null
 						},

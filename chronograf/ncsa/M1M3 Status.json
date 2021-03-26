@@ -679,7 +679,7 @@
 				"name": "mount elevation",
 				"queries": [
 					{
-						"query": "SELECT mean(\"angleActual\") AS \"mean_angleActual\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.elevation\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"actualPosition\") AS \"mean_actualPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.elevation\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.MTMount.elevation",
@@ -688,10 +688,10 @@
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "mean_angleActual",
+									"alias": "mean_actualPosition",
 									"args": [
 										{
-											"value": "angleActual",
+											"value": "actualPosition",
 											"type": "field",
 											"alias": ""
 										}
@@ -810,7 +810,7 @@
 				"name": "mount azimuth",
 				"queries": [
 					{
-						"query": "SELECT mean(\"angleActual\") AS \"mean_angleActual\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.azimuth\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"actualPosition\") AS \"mean_actualPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.azimuth\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.MTMount.azimuth",
@@ -819,10 +819,10 @@
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "mean_angleActual",
+									"alias": "mean_actualPosition",
 									"args": [
 										{
-											"value": "angleActual",
+											"value": "actualPosition",
 											"type": "field",
 											"alias": ""
 										}

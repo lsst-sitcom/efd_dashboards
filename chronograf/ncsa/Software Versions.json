@@ -103,18 +103,18 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATAOS.logevent_softwareVersions.cscVersion",
-						"displayName": "CSC Version",
+						"internalName": "lsst.sal.ATCamera.logevent_softwareVersions.cscVersion",
+						"displayName": "",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATAOS.logevent_softwareVersions.salVersion",
-						"displayName": "XML Version",
+						"internalName": "lsst.sal.ATCamera.logevent_softwareVersions.salVersion",
+						"displayName": "",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATAOS.logevent_softwareVersions.xmlVersion",
-						"displayName": "SAL Version",
+						"internalName": "lsst.sal.ATCamera.logevent_softwareVersions.xmlVersion",
+						"displayName": "",
 						"visible": true
 					}
 				],
@@ -141,6 +141,11 @@
 					},
 					{
 						"value": "ATArchiver",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "ATCamera",
 						"type": "csv",
 						"selected": false
 					},
@@ -281,11 +286,6 @@
 					},
 					{
 						"value": "ScriptQueue",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "Test",
 						"type": "csv",
 						"selected": false
 					},
