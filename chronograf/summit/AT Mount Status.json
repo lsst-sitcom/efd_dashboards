@@ -259,7 +259,7 @@
 			},
 			{
 				"i": "c2d64ce9-7299-4624-9614-5eaf15dcac45",
-				"x": 0,
+				"x": 4,
 				"y": 4,
 				"w": 4,
 				"h": 2,
@@ -1004,7 +1004,31 @@
 				}
 			}
 		],
-		"templates": [],
+		"templates": [
+			{
+				"tempVar": ":azimuth:",
+				"values": [
+					{
+						"value": "_internal",
+						"type": "database",
+						"selected": true
+					}
+				],
+				"id": "2891c44a-79a7-4740-85b0-5623ece60ad2",
+				"type": "databases",
+				"label": "",
+				"query": {
+					"influxql": "SHOW DATABASES",
+					"measurement": "",
+					"tagKey": "",
+					"fieldKey": ""
+				},
+				"sourceID": "dynamic",
+				"links": {
+					"self": "/chronograf/v1/dashboards/66/templates/2891c44a-79a7-4740-85b0-5623ece60ad2"
+				}
+			}
+		],
 		"name": "AT Mount Status",
 		"organization": "default",
 		"links": {

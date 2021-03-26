@@ -195,6 +195,11 @@
 						"selected": false
 					},
 					{
+						"value": "CCCamera",
+						"type": "csv",
+						"selected": false
+					},
+					{
 						"value": "CCHeaderService",
 						"type": "csv",
 						"selected": false
@@ -235,7 +240,17 @@
 						"selected": false
 					},
 					{
+						"value": "MTDome",
+						"type": "csv",
+						"selected": false
+					},
+					{
 						"value": "MTDomeTrajectory",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTHexapod",
 						"type": "csv",
 						"selected": false
 					},
@@ -256,6 +271,11 @@
 					},
 					{
 						"value": "MTPtg",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTRotator",
 						"type": "csv",
 						"selected": false
 					},
@@ -291,6 +311,11 @@
 					},
 					{
 						"value": "Watcher",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "WeatherStation",
 						"type": "csv",
 						"selected": false
 					}

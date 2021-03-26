@@ -9,30 +9,36 @@
 		}
 	},
 	"dashboard": {
-		"id": "56",
+		"id": "60",
 		"cells": [
 			{
-				"i": "a2cc34a9-550b-4e8c-97f0-2da54ca73105",
+				"i": "8512165f-1375-4206-a1ab-1306993c3985",
 				"x": 0,
 				"y": 0,
 				"w": 12,
-				"h": 7,
-				"name": "Logging",
+				"h": 5,
+				"name": "CCW",
 				"queries": [
 					{
-						"query": "SELECT \"ScriptID\", \"message\", \"traceback\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\"  ORDER BY DESC LIMIT 100",
+						"query": "SELECT \"positionError\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.ccwFollowingError\" WHERE time > :dashboardTime:",
 						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
+							"database": "efd",
+							"measurement": "lsst.sal.MTRotator.ccwFollowingError",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "positionError",
+									"type": "field",
+									"alias": ""
+								}
+							],
 							"tags": {},
 							"groupBy": {
 								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"ScriptID\", \"message\", \"traceback\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\"  ORDER BY DESC LIMIT 100",
+							"rawText": null,
 							"range": null,
 							"shifts": null
 						},
@@ -75,14 +81,28 @@
 						"scale": "linear"
 					}
 				},
-				"type": "table",
+				"type": "line",
 				"colors": [
 					{
-						"id": "base",
-						"type": "text",
-						"hex": "#00C9FF",
-						"name": "laser",
-						"value": "-1000000000000000000"
+						"id": "f90810d0-1a1e-48af-bd2e-b559af559729",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "5ddfb71c-1d4f-4745-942b-e4191fb2b958",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "a2b33191-d936-4381-8864-33c98dfb6aa9",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
 					}
 				],
 				"legend": {},
@@ -103,17 +123,12 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.Script.logevent_logMessage.ScriptID",
+						"internalName": "lsst.sal.MTRotator.rotation.actualPosition",
 						"displayName": "",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.Script.logevent_logMessage.message",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.Script.logevent_logMessage.traceback",
+						"internalName": "lsst.sal.MTRotator.rotation.demandPosition",
 						"displayName": "",
 						"visible": true
 					}
@@ -126,17 +141,17 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/56/cells/a2cc34a9-550b-4e8c-97f0-2da54ca73105"
+					"self": "/chronograf/v1/dashboards/60/cells/8512165f-1375-4206-a1ab-1306993c3985"
 				}
 			}
 		],
 		"templates": [],
-		"name": "Script log",
+		"name": "CCW Following Error",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/56",
-			"cells": "/chronograf/v1/dashboards/56/cells",
-			"templates": "/chronograf/v1/dashboards/56/templates"
+			"self": "/chronograf/v1/dashboards/60",
+			"cells": "/chronograf/v1/dashboards/60/cells",
+			"templates": "/chronograf/v1/dashboards/60/templates"
 		}
 	}
 }

@@ -20,32 +20,24 @@
 				"name": "Position 1",
 				"queries": [
 					{
-						"query": "SELECT mean(\"CCW_Angle_1\") AS \"mean_CCW_Angle_1\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.Camera_Cable_Wrap\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT \"actualPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.cameraCableWrap\" WHERE time > :dashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.MTMount.Camera_Cable_Wrap",
+							"measurement": "lsst.sal.MTMount.cameraCableWrap",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_CCW_Angle_1",
-									"args": [
-										{
-											"value": "CCW_Angle_1",
-											"type": "field",
-											"alias": ""
-										}
-									]
+									"value": "actualPosition",
+									"type": "field",
+									"alias": ""
 								}
 							],
 							"tags": {},
 							"groupBy": {
-								"time": "auto",
+								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"fill": "null",
 							"rawText": null,
 							"range": null,
 							"shifts": null

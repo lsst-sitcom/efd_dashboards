@@ -104,32 +104,32 @@
 					},
 					{
 						"internalName": "lsst.sal.ATAOS.logevent_pointingOffsetSummary.disperser0",
-						"displayName": "disperser0",
+						"displayName": "disperserX",
 						"visible": true
 					},
 					{
 						"internalName": "lsst.sal.ATAOS.logevent_pointingOffsetSummary.disperser1",
-						"displayName": "disperser1",
+						"displayName": "disperserY",
 						"visible": true
 					},
 					{
 						"internalName": "lsst.sal.ATAOS.logevent_pointingOffsetSummary.filter0",
-						"displayName": "filter0",
+						"displayName": "filterX",
 						"visible": true
 					},
 					{
 						"internalName": "lsst.sal.ATAOS.logevent_pointingOffsetSummary.filter1",
-						"displayName": "filter1",
+						"displayName": "filterY",
 						"visible": true
 					},
 					{
 						"internalName": "lsst.sal.ATAOS.logevent_pointingOffsetSummary.total0",
-						"displayName": "total0",
+						"displayName": "totalX",
 						"visible": true
 					},
 					{
 						"internalName": "lsst.sal.ATAOS.logevent_pointingOffsetSummary.total1",
-						"displayName": "total1",
+						"displayName": "totalY",
 						"visible": true
 					}
 				],
@@ -717,7 +717,7 @@
 				"name": "Hexapod - X",
 				"queries": [
 					{
-						"query": "SELECT \"hexapod_x\" FROM \"efd\".\"autogen\".\"lsst.sal.ATAOS.logevent_hexapodCorrectionCompleted\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"hexapod_x\" FROM \"efd\".\"autogen\".\"lsst.sal.ATAOS.logevent_hexapodCorrectionCompleted\"  WHERE time > :dashboardTime:",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.ATAOS.logevent_hexapodCorrectionCompleted",
@@ -1756,25 +1756,19 @@
 				"name": "ATpneumatics",
 				"queries": [
 					{
-						"query": "SELECT \"pressure\" FROM \"efd\".\"autogen\".\"lsst.sal.ATPneumatics.m1AirPressure\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"pressure\" FROM \"efd\".\"autogen\".\"lsst.sal.ATPneumatics.m1AirPressure\" ORDER BY DESC LIMIT 1000",
 						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.ATPneumatics.m1AirPressure",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "pressure",
-									"type": "field",
-									"alias": ""
-								}
-							],
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
 							"tags": {},
 							"groupBy": {
 								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": null,
+							"rawText": "SELECT \"pressure\" FROM \"efd\".\"autogen\".\"lsst.sal.ATPneumatics.m1AirPressure\" ORDER BY DESC LIMIT 1000",
 							"range": null,
 							"shifts": null
 						},
@@ -1782,25 +1776,19 @@
 						"type": "influxql"
 					},
 					{
-						"query": "SELECT \"pressure\" FROM \"efd\".\"autogen\".\"lsst.sal.ATAOS.logevent_m1CorrectionStarted\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"pressure\" FROM \"efd\".\"autogen\".\"lsst.sal.ATAOS.logevent_m1CorrectionStarted\" ORDER BY DESC LIMIT 1000",
 						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.ATAOS.logevent_m1CorrectionStarted",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "pressure",
-									"type": "field",
-									"alias": ""
-								}
-							],
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
 							"tags": {},
 							"groupBy": {
 								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": null,
+							"rawText": "SELECT \"pressure\" FROM \"efd\".\"autogen\".\"lsst.sal.ATAOS.logevent_m1CorrectionStarted\" ORDER BY DESC LIMIT 1000",
 							"range": null,
 							"shifts": null
 						},

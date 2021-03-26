@@ -185,12 +185,32 @@
 						"selected": false
 					},
 					{
+						"value": "CCArchiver",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "CCCamera",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "CCHeaderService",
+						"type": "csv",
+						"selected": false
+					},
+					{
 						"value": "DIMM",
 						"type": "csv",
 						"selected": false
 					},
 					{
 						"value": "DSM",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "Dome",
 						"type": "csv",
 						"selected": false
 					},
@@ -206,6 +226,26 @@
 					},
 					{
 						"value": "Hexapod",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTAOS",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTDome",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTDomeTrajectory",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTHexapod",
 						"type": "csv",
 						"selected": false
 					},
@@ -230,7 +270,17 @@
 						"selected": false
 					},
 					{
+						"value": "MTRotator",
+						"type": "csv",
+						"selected": false
+					},
+					{
 						"value": "MTVMS",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "NewMTMount",
 						"type": "csv",
 						"selected": false
 					},
@@ -256,6 +306,11 @@
 					},
 					{
 						"value": "Watcher",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "WeatherStation",
 						"type": "csv",
 						"selected": false
 					}
