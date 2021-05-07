@@ -1,0 +1,363 @@
+{
+	"meta": {
+		"chronografVersion": "1.8.8",
+		"sources": {
+			"1": {
+				"name": "EFD",
+				"link": "/chronograf/v1/sources/1"
+			}
+		}
+	},
+	"dashboard": {
+		"id": "72",
+		"cells": [
+			{
+				"i": "fc0d961b-e917-4296-9415-78fa102a6645",
+				"x": 0,
+				"y": 0,
+				"w": 5,
+				"h": 3,
+				"name": "Last SetFilter Command",
+				"queries": [
+					{
+						"query": "SELECT \"name\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.command_setFilter\" ORDER BY time DESC LIMIT 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"name\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.command_setFilter\" ORDER BY time DESC LIMIT 1",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.CCCamera.command_setFilter.name",
+						"displayName": "Name",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/72/cells/fc0d961b-e917-4296-9415-78fa102a6645"
+				}
+			},
+			{
+				"i": "46fe4c57-b016-4cd2-bcac-dc0746652192",
+				"x": 5,
+				"y": 0,
+				"w": 7,
+				"h": 3,
+				"name": "Current Filter",
+				"queries": [
+					{
+						"query": "SELECT \"filterName\", \"filterPosition\", \"filterSlot\", \"filterType\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_endSetFilter\" ORDER BY time DESC LIMIT 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"filterName\", \"filterPosition\", \"filterSlot\", \"filterType\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_endSetFilter\" ORDER BY time DESC LIMIT 1",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.CCCamera.logevent_endSetFilter.filterName",
+						"displayName": "Name",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.CCCamera.logevent_endSetFilter.filterType",
+						"displayName": "Type",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.CCCamera.logevent_endSetFilter.filterSlot",
+						"displayName": "Slot",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.CCCamera.logevent_endSetFilter.filterPosition",
+						"displayName": "Position",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/72/cells/46fe4c57-b016-4cd2-bcac-dc0746652192"
+				}
+			},
+			{
+				"i": "39a1b8aa-9a97-4bd2-9faa-5162174c4014",
+				"x": 0,
+				"y": 3,
+				"w": 5,
+				"h": 3,
+				"name": "Available Filters",
+				"queries": [
+					{
+						"query": "SELECT \"filterNames\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_availableFilters\" ORDER BY time DESC LIMIT 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"filterNames\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_availableFilters\" ORDER BY time DESC LIMIT 1",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.CCCamera.logevent_availableFilters.filterNames",
+						"displayName": "Filter List",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/72/cells/39a1b8aa-9a97-4bd2-9faa-5162174c4014"
+				}
+			}
+		],
+		"templates": [],
+		"name": "ComCam Filter System",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/72",
+			"cells": "/chronograf/v1/dashboards/72/cells",
+			"templates": "/chronograf/v1/dashboards/72/templates"
+		}
+	}
+}

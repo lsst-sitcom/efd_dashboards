@@ -16,11 +16,11 @@
 				"x": 0,
 				"y": 0,
 				"w": 12,
-				"h": 7,
+				"h": 14,
 				"name": "Logging",
 				"queries": [
 					{
-						"query": "SELECT \"ScriptID\", \"message\", \"traceback\", \"functionName\", \"filePath\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\"  ORDER BY DESC LIMIT 100",
+						"query": "SELECT \"ScriptID\", \"level\", \"message\", \"traceback\", \"functionName\", \"filePath\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\"  ORDER BY DESC LIMIT 100",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"ScriptID\", \"message\", \"traceback\", \"functionName\", \"filePath\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\"  ORDER BY DESC LIMIT 100",
+							"rawText": "SELECT \"ScriptID\", \"level\", \"message\", \"traceback\", \"functionName\", \"filePath\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\"  ORDER BY DESC LIMIT 100",
 							"range": null,
 							"shifts": null
 						},
@@ -125,6 +125,11 @@
 					{
 						"internalName": "lsst.sal.Script.logevent_logMessage.filePath",
 						"displayName": "File",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.Script.logevent_logMessage.level",
+						"displayName": "",
 						"visible": true
 					}
 				],
