@@ -12,6 +12,109 @@
 		"id": "69",
 		"cells": [
 			{
+				"i": "384ac2f1-5531-4d0f-87ea-1e52269c0ec8",
+				"x": 4,
+				"y": 8,
+				"w": 4,
+				"h": 3,
+				"name": "rotator status",
+				"queries": [
+					{
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_summaryState\" order by desc limit 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_summaryState\" order by desc limit 1",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/69/cells/384ac2f1-5531-4d0f-87ea-1e52269c0ec8"
+				}
+			},
+			{
 				"i": "259f0526-6fc9-4879-950f-58028c285ac5",
 				"x": 2,
 				"y": 7,
@@ -357,60 +460,12 @@
 				"name": "balance forces",
 				"queries": [
 					{
-						"query": "SELECT mean(\"forceMagnitude\") AS \"mean_forceMagnitude\", mean(\"fz\") AS \"mean_fz\", mean(\"fy\") AS \"mean_fy\", mean(\"fx\") AS \"mean_fx\", mean(\"zForces0\") AS \"mean_zForces0\", mean(\"zForces1\") AS \"mean_zForces1\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM1M3.logevent_appliedBalanceForces\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"zForces0\") AS \"mean_zForces0\", mean(\"xForces4\") AS \"mean_xForces4\", mean(\"xForces9\") AS \"mean_xForces9\", mean(\"yForces18\") AS \"mean_yForces18\", mean(\"yForces41\") AS \"mean_yForces41\", mean(\"zForces118\") AS \"mean_zForces118\", mean(\"zForces58\") AS \"mean_zForces58\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM1M3.logevent_appliedBalanceForces\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.MTM1M3.logevent_appliedBalanceForces",
 							"retentionPolicy": "autogen",
 							"fields": [
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_forceMagnitude",
-									"args": [
-										{
-											"value": "forceMagnitude",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_fz",
-									"args": [
-										{
-											"value": "fz",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_fy",
-									"args": [
-										{
-											"value": "fy",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_fx",
-									"args": [
-										{
-											"value": "fx",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
 								{
 									"value": "mean",
 									"type": "func",
@@ -426,10 +481,70 @@
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "mean_zForces1",
+									"alias": "mean_xForces4",
 									"args": [
 										{
-											"value": "zForces1",
+											"value": "xForces4",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_xForces9",
+									"args": [
+										{
+											"value": "xForces9",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_yForces18",
+									"args": [
+										{
+											"value": "yForces18",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_yForces41",
+									"args": [
+										{
+											"value": "yForces41",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_zForces118",
+									"args": [
+										{
+											"value": "zForces118",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_zForces58",
+									"args": [
+										{
+											"value": "zForces58",
 											"type": "field",
 											"alias": ""
 										}
@@ -679,7 +794,7 @@
 				"name": "mount elevation",
 				"queries": [
 					{
-						"query": "SELECT mean(\"angleActual\") AS \"mean_angleActual\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.elevation\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"ctual\") AS \"mean_angleActual\", mean(\"actualPosition\") AS \"mean_actualPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.elevation\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.MTMount.elevation",
@@ -691,7 +806,19 @@
 									"alias": "mean_angleActual",
 									"args": [
 										{
-											"value": "angleActual",
+											"value": "ctual",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_actualPosition",
+									"args": [
+										{
+											"value": "actualPosition",
 											"type": "field",
 											"alias": ""
 										}
@@ -810,32 +937,29 @@
 				"name": "mount azimuth",
 				"queries": [
 					{
-						"query": "SELECT mean(\"angleActual\") AS \"mean_angleActual\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.azimuth\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT \"angleActual\", \"actualPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.azimuth\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.MTMount.azimuth",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_angleActual",
-									"args": [
-										{
-											"value": "angleActual",
-											"type": "field",
-											"alias": ""
-										}
-									]
+									"value": "angleActual",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "actualPosition",
+									"type": "field",
+									"alias": ""
 								}
 							],
 							"tags": {},
 							"groupBy": {
-								"time": "auto",
+								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"fill": "null",
 							"rawText": null,
 							"range": null,
 							"shifts": null
@@ -1278,7 +1402,7 @@
 				"name": "Force0",
 				"queries": [
 					{
-						"query": "SELECT mean(\"xForce0\") AS \"mean_xForce0\", mean(\"yForce0\") AS \"mean_yForce0\", mean(\"zForce0\") AS \"mean_zForce0\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM1M3.forceActuatorData\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"xForce0\") AS \"mean_xForce0\", mean(\"yForce0\") AS \"mean_yForce0\", mean(\"zForce0\") AS \"mean_zForce0\", mean(\"xForce6\") AS \"mean_xForce6\", mean(\"yForce48\") AS \"mean_yForce48\", mean(\"zForce138\") AS \"mean_zForce138\", mean(\"zForce49\") AS \"mean_zForce49\", mean(\"yForce88\") AS \"mean_yForce88\", mean(\"yForce29\") AS \"mean_yForce29\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM1M3.forceActuatorData\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.MTM1M3.forceActuatorData",
@@ -1315,6 +1439,78 @@
 									"args": [
 										{
 											"value": "zForce0",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_xForce6",
+									"args": [
+										{
+											"value": "xForce6",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_yForce48",
+									"args": [
+										{
+											"value": "yForce48",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_zForce138",
+									"args": [
+										{
+											"value": "zForce138",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_zForce49",
+									"args": [
+										{
+											"value": "zForce49",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_yForce88",
+									"args": [
+										{
+											"value": "yForce88",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_yForce29",
+									"args": [
+										{
+											"value": "yForce29",
 											"type": "field",
 											"alias": ""
 										}
@@ -1618,6 +1814,166 @@
 				"noteVisibility": "default",
 				"links": {
 					"self": "/chronograf/v1/dashboards/69/cells/f86875c8-14da-431e-bc76-1f6b18f55e75"
+				}
+			},
+			{
+				"i": "0d906e07-4c78-4bc8-87ff-59e96f91a70c",
+				"x": 8,
+				"y": 9,
+				"w": 4,
+				"h": 3,
+				"name": "DC accelerometers",
+				"queries": [
+					{
+						"query": "SELECT mean(\"angularAccelerationX\") AS \"mean_angularAccelerationX\", mean(\"angularAccelerationY\") AS \"mean_angularAccelerationY\", mean(\"angularAccelerationZ\") AS \"mean_angularAccelerationZ\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM1M3.accelerometerData\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.MTM1M3.accelerometerData",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_angularAccelerationX",
+									"args": [
+										{
+											"value": "angularAccelerationX",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_angularAccelerationY",
+									"args": [
+										{
+											"value": "angularAccelerationY",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_angularAccelerationZ",
+									"args": [
+										{
+											"value": "angularAccelerationZ",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/1",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "bar",
+				"colors": [
+					{
+						"id": "1085be58-ff51-43df-b22f-2152f2940cf3",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "108a9b1e-62e6-46d8-8c03-fea8f8d9e71c",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "e7c71c03-1b17-4001-b2f6-21928167a79f",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.MTM2.logevent_detailedState.mean_detailedState",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/69/cells/0d906e07-4c78-4bc8-87ff-59e96f91a70c"
 				}
 			}
 		],

@@ -417,7 +417,7 @@
 				"y": 3,
 				"w": 3,
 				"h": 1,
-				"name": "M2",
+				"name": "MTM2",
 				"queries": [
 					{
 						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM2.logevent_summaryState\" ORDER BY DESC LIMIT 1",
@@ -696,7 +696,7 @@
 				"name": "M2-Hexapod",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Hexapod.logevent_summaryState\" WHERE HexapodID = 2. ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_summaryState\" WHERE MTHexapodID = 2. ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -708,7 +708,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Hexapod.logevent_summaryState\" WHERE HexapodID = 2. ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_summaryState\" WHERE MTHexapodID = 2. ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1248,7 +1248,7 @@
 				"name": "MTMount",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.NewMTMount.logevent_summaryState\" ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.logevent_summaryState\" ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1260,7 +1260,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.NewMTMount.logevent_summaryState\" ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.logevent_summaryState\" ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1935,10 +1935,10 @@
 				"y": 0,
 				"w": 3,
 				"h": 1,
-				"name": "Rotator",
+				"name": "MTRotator",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Rotator.logevent_summaryState\" ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_summaryState\" ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1950,7 +1950,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Rotator.logevent_summaryState\" ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_summaryState\" ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -2076,7 +2076,7 @@
 				"name": "Cam-Hexapod",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Hexapod.logevent_summaryState\" WHERE HexapodID = 1. ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_summaryState\" WHERE MTHexapodID = 1. ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -2088,7 +2088,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Hexapod.logevent_summaryState\" WHERE HexapodID = 1. ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_summaryState\" WHERE MTHexapodID = 1. ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},

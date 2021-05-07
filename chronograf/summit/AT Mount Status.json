@@ -44,6 +44,32 @@
 						},
 						"source": "",
 						"type": "influxql"
+					},
+					{
+						"query": "SELECT \"azimuth\" FROM \"efd\".\"autogen\".\"lsst.sal.ATMCS.command_trackTarget\" WHERE time > :dashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ATMCS.command_trackTarget",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "azimuth",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
 					}
 				],
 				"axes": {
@@ -167,6 +193,32 @@
 						},
 						"source": "",
 						"type": "influxql"
+					},
+					{
+						"query": "SELECT \"elevation\" FROM \"efd\".\"autogen\".\"lsst.sal.ATMCS.command_trackTarget\" WHERE time > :dashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ATMCS.command_trackTarget",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "elevation",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
 					}
 				],
 				"axes": {
@@ -263,22 +315,43 @@
 				"y": 4,
 				"w": 4,
 				"h": 2,
-				"name": "Nasmyth target",
+				"name": "Nasmyth2 target",
 				"queries": [
 					{
-						"query": "SELECT \"nasmyth1CalculatedAngle0\", \"nasmyth2CalculatedAngle0\" FROM \"efd\".\"autogen\".\"lsst.sal.ATMCS.mount_Nasmyth_Encoders\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"nasmyth2CalculatedAngle0\" FROM \"efd\".\"autogen\".\"lsst.sal.ATMCS.mount_Nasmyth_Encoders\" WHERE time > :dashboardTime:",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.ATMCS.mount_Nasmyth_Encoders",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "nasmyth1CalculatedAngle0",
+									"value": "nasmyth2CalculatedAngle0",
 									"type": "field",
 									"alias": ""
-								},
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT \"nasmyth2RotatorAngle\" FROM \"efd\".\"autogen\".\"lsst.sal.ATMCS.command_trackTarget\" WHERE time > :dashboardTime: ",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ATMCS.command_trackTarget",
+							"retentionPolicy": "autogen",
+							"fields": [
 								{
-									"value": "nasmyth2CalculatedAngle0",
+									"value": "nasmyth2RotatorAngle",
 									"type": "field",
 									"alias": ""
 								}

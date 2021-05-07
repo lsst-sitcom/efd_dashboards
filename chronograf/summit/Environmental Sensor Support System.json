@@ -1,0 +1,258 @@
+{
+	"meta": {
+		"chronografVersion": "1.8.8",
+		"sources": {
+			"1": {
+				"name": "Summit EFD",
+				"link": "/chronograf/v1/sources/1"
+			}
+		}
+	},
+	"dashboard": {
+		"id": "82",
+		"cells": [
+			{
+				"i": "ce773092-4b35-47b0-bc5d-96a535e001db",
+				"x": 0,
+				"y": 6,
+				"w": 11,
+				"h": 6,
+				"name": "Camera Hexapod Temperatures",
+				"queries": [
+					{
+						"query": "SELECT \"temperatureC08\", \"temperatureC07\", \"temperatureC06\", \"temperatureC05\", \"temperatureC04\", \"temperatureC03\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"temperatureC08\", \"temperatureC07\", \"temperatureC06\", \"temperatureC05\", \"temperatureC04\", \"temperatureC03\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "Temperature",
+						"prefix": "",
+						"suffix": " ℃",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "923d0a87-8271-45a7-82e2-68138dd91da9",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "e42d7698-f71d-4890-a98b-97d0688d9b7c",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "31542090-fc6e-4757-acd0-613163a0961c",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/82/cells/ce773092-4b35-47b0-bc5d-96a535e001db"
+				}
+			},
+			{
+				"i": "451c13d3-24e3-4542-840c-185ed2209ae0",
+				"x": 0,
+				"y": 0,
+				"w": 11,
+				"h": 6,
+				"name": "MTRotator Temperatures",
+				"queries": [
+					{
+						"query": "SELECT \"temperatureC01\", \"temperatureC02\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"temperatureC01\", \"temperatureC02\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "Temperature",
+						"prefix": "",
+						"suffix": " ℃",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "923d0a87-8271-45a7-82e2-68138dd91da9",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "e42d7698-f71d-4890-a98b-97d0688d9b7c",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "31542090-fc6e-4757-acd0-613163a0961c",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/82/cells/451c13d3-24e3-4542-840c-185ed2209ae0"
+				}
+			}
+		],
+		"templates": [],
+		"name": "Environmental Sensor Support System",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/82",
+			"cells": "/chronograf/v1/dashboards/82/cells",
+			"templates": "/chronograf/v1/dashboards/82/templates"
+		}
+	}
+}

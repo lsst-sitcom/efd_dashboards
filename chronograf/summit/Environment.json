@@ -20,14 +20,14 @@
 				"name": "Wind Speed - Average 2min",
 				"queries": [
 					{
-						"query": "SELECT \"avg10M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windSpeed\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"value\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windSpeed\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.WeatherStation.windSpeed",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "avg10M",
+									"value": "value",
 									"type": "field",
 									"alias": ""
 								}

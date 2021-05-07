@@ -13,14 +13,14 @@
 		"cells": [
 			{
 				"i": "8277ad5e-7104-492e-a2ba-6a536a1ed4ca",
-				"x": 3,
+				"x": 2,
 				"y": 0,
-				"w": 2,
+				"w": 3,
 				"h": 2,
 				"name": "Detailed State",
 				"queries": [
 					{
-						"query": "SELECT \"detailedState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM2.logevent_detailedState\" ORDER BY DESC LIMIT 3",
+						"query": "SELECT \"detailedState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM2.logevent_detailedState\" ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"detailedState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM2.logevent_detailedState\" ORDER BY DESC LIMIT 3",
+							"rawText": "SELECT \"detailedState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM2.logevent_detailedState\" ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1122,7 +1122,7 @@
 				"name": "Applied Settings Match",
 				"queries": [
 					{
-						"query": "SELECT \"appliedSettingsMatchStartIsTrue\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM2.logevent_appliedSettingsMatchStart\" ORDER BY DESC LIMIT 3",
+						"query": "SELECT \"appliedSettingsMatchStartIsTrue\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM2.logevent_appliedSettingsMatchStart\" ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1134,7 +1134,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"appliedSettingsMatchStartIsTrue\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM2.logevent_appliedSettingsMatchStart\" ORDER BY DESC LIMIT 3",
+							"rawText": "SELECT \"appliedSettingsMatchStartIsTrue\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM2.logevent_appliedSettingsMatchStart\" ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1471,7 +1471,7 @@
 				"i": "490f78b6-f34f-4433-8766-6507890ef69f",
 				"x": 0,
 				"y": 0,
-				"w": 3,
+				"w": 2,
 				"h": 2,
 				"name": "Summary State",
 				"queries": [
@@ -1850,7 +1850,7 @@
 				"name": "Heartbeat",
 				"queries": [
 					{
-						"query": "SELECT \"heartbeat\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM2.logevent_heartbeat\" ORDER BY DESC LIMIT 3",
+						"query": "SELECT \"heartbeat\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM2.logevent_heartbeat\" ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1862,7 +1862,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"heartbeat\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM2.logevent_heartbeat\" ORDER BY DESC LIMIT 3",
+							"rawText": "SELECT \"heartbeat\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM2.logevent_heartbeat\" ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},

@@ -1,0 +1,273 @@
+{
+	"meta": {
+		"chronografVersion": "1.8.8",
+		"sources": {
+			"1": {
+				"name": "Summit EFD",
+				"link": "/chronograf/v1/sources/1"
+			}
+		}
+	},
+	"dashboard": {
+		"id": "83",
+		"cells": [
+			{
+				"i": "0eb2490d-99ab-44a9-8ab9-de9ae2e4d128",
+				"x": 0,
+				"y": 0,
+				"w": 6,
+				"h": 7,
+				"name": "How to make a scatter plot using Flux",
+				"queries": [
+					{
+						"query": "\nfrom(bucket: \"efd/autogen\")\n  |> range(start: -inf)\n  |> filter(fn: (r) => r._measurement =~ /lsst.sal.AT.*.logevent_summaryState/ and (r._field == \"summaryState\"))\n  |> map(fn: (r) => ({\n    r with\n    _time: r._value,\n    state: r._value\n  }))\n  |> group(columns: [\"_time\"])\n  |> keep(columns: [\"_time\", \"state\"])\n  ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "\nfrom(bucket: \"efd/autogen\")\n  |> range(start: -inf)\n  |> filter(fn: (r) => r._measurement =~ /lsst.sal.AT.*.logevent_summaryState/ and (r._field == \"summaryState\"))\n  |> map(fn: (r) => ({\n    r with\n    _time: r._value,\n    state: r._value\n  }))\n  |> group(columns: [\"_time\"])\n  |> keep(columns: [\"_time\", \"state\"])\n  ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "flux"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "34258b20-ce60-4728-b43e-9c5e4cfb753a",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "e6f5fb76-23ec-4abc-8a50-3f83776e9adb",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "c2df3f7a-94fd-4e23-a585-8f3937d67b8f",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "_time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "state",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "No state transitions for the selected time period.\n---",
+				"noteVisibility": "showWhenNoData",
+				"links": {
+					"self": "/chronograf/v1/dashboards/83/cells/0eb2490d-99ab-44a9-8ab9-de9ae2e4d128"
+				}
+			},
+			{
+				"i": "a7c967c1-199d-4028-ae8a-16b4990937bf",
+				"x": 6,
+				"y": 0,
+				"w": 6,
+				"h": 7,
+				"name": "Log scatter plot",
+				"queries": [
+					{
+						"query": "\nfrom(bucket: \"efd/autogen\")\n  |> range(start: -inf)\n  |> filter(fn: (r) => r._measurement =~ /lsst.sal.AT.*.logevent_summaryState/ and (r._field == \"summaryState\"))\n  |> map(fn: (r) => ({\n    r with\n    _time: r._value,\n    state: r._value\n  }))\n  |> group(columns: [\"_time\"])\n  |> keep(columns: [\"_time\", \"state\"])\n \n",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "\nfrom(bucket: \"efd/autogen\")\n  |> range(start: -inf)\n  |> filter(fn: (r) => r._measurement =~ /lsst.sal.AT.*.logevent_summaryState/ and (r._field == \"summaryState\"))\n  |> map(fn: (r) => ({\n    r with\n    _time: r._value,\n    state: r._value\n  }))\n  |> group(columns: [\"_time\"])\n  |> keep(columns: [\"_time\", \"state\"])\n \n",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "flux"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "log"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "34258b20-ce60-4728-b43e-9c5e4cfb753a",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "e6f5fb76-23ec-4abc-8a50-3f83776e9adb",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "c2df3f7a-94fd-4e23-a585-8f3937d67b8f",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "_time",
+						"displayName": "Last changed",
+						"visible": true
+					},
+					{
+						"internalName": "_value",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "_measurement",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "No state transitions for the selected time period.\n---",
+				"noteVisibility": "showWhenNoData",
+				"links": {
+					"self": "/chronograf/v1/dashboards/83/cells/a7c967c1-199d-4028-ae8a-16b4990937bf"
+				}
+			}
+		],
+		"templates": [],
+		"name": "Angelo's test",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/83",
+			"cells": "/chronograf/v1/dashboards/83/cells",
+			"templates": "/chronograf/v1/dashboards/83/templates"
+		}
+	}
+}
