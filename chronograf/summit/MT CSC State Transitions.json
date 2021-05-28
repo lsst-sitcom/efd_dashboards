@@ -160,7 +160,7 @@
 							"",
 							""
 						],
-						"label": "AT heartbeat counts",
+						"label": "MT CSC state",
 						"prefix": "",
 						"suffix": "",
 						"base": "10",

@@ -252,7 +252,7 @@
 					},
 					{
 						"internalName": "lsst.sal.ATAOS.logevent_focusOffsetSummary.userApplied",
-						"displayName": "userApplied",
+						"displayName": "user",
 						"visible": true
 					}
 				],

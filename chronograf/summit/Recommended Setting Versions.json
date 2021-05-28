@@ -185,6 +185,11 @@
 						"selected": false
 					},
 					{
+						"value": "AdamSensors",
+						"type": "csv",
+						"selected": false
+					},
+					{
 						"value": "CCArchiver",
 						"type": "csv",
 						"selected": false
@@ -211,6 +216,11 @@
 					},
 					{
 						"value": "Dome",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "ESS",
 						"type": "csv",
 						"selected": false
 					},
@@ -301,6 +311,11 @@
 					},
 					{
 						"value": "ScriptQueue",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "Test",
 						"type": "csv",
 						"selected": false
 					},

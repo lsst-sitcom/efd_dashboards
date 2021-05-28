@@ -212,6 +212,21 @@
 						"internalName": "time",
 						"displayName": "",
 						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.CCArchiver.logevent_imageInOODS.obsid",
+						"displayName": "ObsId",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.CCArchiver.logevent_imageInOODS.statusCode",
+						"displayName": "Status Code",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.CCArchiver.logevent_imageInOODS.description",
+						"displayName": "Description",
+						"visible": true
 					}
 				],
 				"timeFormat": "MM/DD/YYYY HH:mm:ss",

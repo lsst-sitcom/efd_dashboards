@@ -12,6 +12,137 @@
 		"id": "73",
 		"cells": [
 			{
+				"i": "1e66c6cb-e734-4d63-bdbe-b1642a28e4fc",
+				"x": 5,
+				"y": 18,
+				"w": 6,
+				"h": 2,
+				"name": "rotator rotation",
+				"queries": [
+					{
+						"query": "SELECT mean(\"actualPosition\") AS \"mean_actualPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.rotation\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.MTRotator.rotation",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_actualPosition",
+									"args": [
+										{
+											"value": "actualPosition",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "d602103f-1bf9-4594-9e83-31622c15bd4f",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "8947a1ce-4daf-432e-97ff-4dfb19108b96",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "090a118c-3b13-4c7f-bb05-41d0abb61a18",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/73/cells/1e66c6cb-e734-4d63-bdbe-b1642a28e4fc"
+				}
+			},
+			{
 				"i": "8277ad5e-7104-492e-a2ba-6a536a1ed4ca",
 				"x": 2,
 				"y": 0,
@@ -2272,7 +2403,7 @@
 				"i": "2d4ad59c-d685-4dbc-be64-fda7f48f8c09",
 				"x": 4,
 				"y": 14,
-				"w": 3,
+				"w": 5,
 				"h": 2,
 				"name": "Mount elevation",
 				"queries": [
@@ -2607,9 +2738,9 @@
 			},
 			{
 				"i": "167e039a-0d92-401c-8601-967ae13486a6",
-				"x": 7,
-				"y": 14,
-				"w": 2,
+				"x": 5,
+				"y": 16,
+				"w": 6,
 				"h": 2,
 				"name": "CCW position",
 				"queries": [
@@ -2739,7 +2870,7 @@
 			{
 				"i": "6927dc45-12f5-406a-a9af-79feebc16595",
 				"x": 0,
-				"y": 16,
+				"y": 20,
 				"w": 5,
 				"h": 2,
 				"name": "axial steps",
@@ -2887,7 +3018,7 @@
 			{
 				"i": "3ba9005a-116a-4df8-adff-c763ac37a679",
 				"x": 5,
-				"y": 16,
+				"y": 20,
 				"w": 6,
 				"h": 2,
 				"name": "tangent steps",
@@ -3035,7 +3166,7 @@
 			{
 				"i": "e2d77a39-9d92-4050-8a0b-5a3bae1fbe9c",
 				"x": 0,
-				"y": 18,
+				"y": 22,
 				"w": 5,
 				"h": 2,
 				"name": "axial encoder",
@@ -3195,7 +3326,7 @@
 			{
 				"i": "d4a1353d-617c-4480-b126-0b5e221df2c6",
 				"x": 5,
-				"y": 18,
+				"y": 22,
 				"w": 6,
 				"h": 2,
 				"name": "tangent encoder",
@@ -3343,7 +3474,7 @@
 			{
 				"i": "baee34a8-1274-4341-bc42-322db039b004",
 				"x": 0,
-				"y": 20,
+				"y": 18,
 				"w": 5,
 				"h": 2,
 				"name": "power",
@@ -3514,9 +3645,9 @@
 			},
 			{
 				"i": "77212d56-01cb-4388-acef-80dad475b2f8",
-				"x": 5,
-				"y": 20,
-				"w": 6,
+				"x": 0,
+				"y": 16,
+				"w": 5,
 				"h": 2,
 				"name": "FB",
 				"queries": [

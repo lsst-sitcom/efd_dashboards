@@ -12,11 +12,142 @@
 		"id": "69",
 		"cells": [
 			{
-				"i": "384ac2f1-5531-4d0f-87ea-1e52269c0ec8",
+				"i": "d8e91158-d664-4d9d-bd39-ed01caeecca3",
 				"x": 4,
-				"y": 8,
+				"y": 6,
 				"w": 4,
 				"h": 3,
+				"name": "mount elevation (target)",
+				"queries": [
+					{
+						"query": "SELECT mean(\"elevation\") AS \"mean_elevation\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.logevent_target\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.MTMount.logevent_target",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_elevation",
+									"args": [
+										{
+											"value": "elevation",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/1",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "bacb63a2-0884-416a-9fc3-240a15a669e3",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "f2a585b7-cae3-4762-b68c-9a06165bd4ef",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "6fe6428b-2860-4533-80f9-c5bdac68ebdf",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/69/cells/d8e91158-d664-4d9d-bd39-ed01caeecca3"
+				}
+			},
+			{
+				"i": "384ac2f1-5531-4d0f-87ea-1e52269c0ec8",
+				"x": 0,
+				"y": 11,
+				"w": 2,
+				"h": 1,
 				"name": "rotator status",
 				"queries": [
 					{
@@ -117,7 +248,7 @@
 			{
 				"i": "259f0526-6fc9-4879-950f-58028c285ac5",
 				"x": 2,
-				"y": 7,
+				"y": 9,
 				"w": 2,
 				"h": 2,
 				"name": "MTMount",
@@ -220,7 +351,7 @@
 			{
 				"i": "eb05ec77-0b17-48de-899c-7e4f69a5cd66",
 				"x": 0,
-				"y": 7,
+				"y": 9,
 				"w": 2,
 				"h": 2,
 				"name": "Ptg status",
@@ -1065,19 +1196,19 @@
 				"name": "rotator position",
 				"queries": [
 					{
-						"query": "SELECT mean(\"position\") AS \"mean_position\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.application\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"actualPosition\") AS \"mean_actualPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.rotation\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.MTRotator.application",
+							"measurement": "lsst.sal.MTRotator.rotation",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "mean_position",
+									"alias": "mean_actualPosition",
 									"args": [
 										{
-											"value": "position",
+											"value": "actualPosition",
 											"type": "field",
 											"alias": ""
 										}
@@ -1189,8 +1320,8 @@
 			},
 			{
 				"i": "ceba3d19-2a00-4381-9781-a1583dfbd0da",
-				"x": 4,
-				"y": 6,
+				"x": 0,
+				"y": 7,
 				"w": 2,
 				"h": 2,
 				"name": "MTM1M3",
@@ -1292,8 +1423,8 @@
 			},
 			{
 				"i": "2c881990-45f5-4217-8322-dbcf69f70e08",
-				"x": 6,
-				"y": 6,
+				"x": 2,
+				"y": 7,
 				"w": 2,
 				"h": 2,
 				"name": "M1M3 detailed state",
@@ -1974,6 +2105,120 @@
 				"noteVisibility": "default",
 				"links": {
 					"self": "/chronograf/v1/dashboards/69/cells/0d906e07-4c78-4bc8-87ff-59e96f91a70c"
+				}
+			},
+			{
+				"i": "bec0afab-5854-4993-bc8a-1178c8750e15",
+				"x": 4,
+				"y": 9,
+				"w": 4,
+				"h": 3,
+				"name": "errorReport",
+				"queries": [
+					{
+						"query": "SELECT \"errorReport\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM1M3.logevent_errorCode\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.MTM1M3.logevent_errorCode",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "errorReport",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/1",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.MTM1M3.logevent_errorCode.errorReport",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/69/cells/bec0afab-5854-4993-bc8a-1178c8750e15"
 				}
 			}
 		],
