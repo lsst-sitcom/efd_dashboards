@@ -103,18 +103,18 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATAOS.logevent_softwareVersions.cscVersion",
-						"displayName": "CSC Version",
+						"internalName": "lsst.sal.MTM1M3.logevent_softwareVersions.cscVersion",
+						"displayName": "",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATAOS.logevent_softwareVersions.salVersion",
-						"displayName": "XML Version",
+						"internalName": "lsst.sal.MTM1M3.logevent_softwareVersions.salVersion",
+						"displayName": "",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATAOS.logevent_softwareVersions.xmlVersion",
-						"displayName": "SAL Version",
+						"internalName": "lsst.sal.MTM1M3.logevent_softwareVersions.xmlVersion",
+						"displayName": "",
 						"visible": true
 					}
 				],
@@ -301,6 +301,11 @@
 					},
 					{
 						"value": "Rotator",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "OCPS",
 						"type": "csv",
 						"selected": false
 					},

@@ -115,7 +115,7 @@
 				"name": "Ingest sequence",
 				"queries": [
 					{
-						"query": "SELECT \"obsid\", \"statusCode\", \"description\" FROM \"efd\".\"autogen\".\"lsst.sal.CCArchiver.logevent_imageInOODS\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"obsid\", \"raft\", \"sensor\", \"statusCode\", \"description\" FROM \"efd\".\"autogen\".\"lsst.sal.CCArchiver.logevent_imageInOODS\" WHERE time > :dashboardTime:",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.CCArchiver.logevent_imageInOODS",
@@ -123,6 +123,16 @@
 							"fields": [
 								{
 									"value": "obsid",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "raft",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "sensor",
 									"type": "field",
 									"alias": ""
 								},
@@ -216,6 +226,16 @@
 					{
 						"internalName": "lsst.sal.CCArchiver.logevent_imageInOODS.obsid",
 						"displayName": "ObsId",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.CCArchiver.logevent_imageInOODS.sensor",
+						"displayName": "Sensor",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.CCArchiver.logevent_imageInOODS.raft",
+						"displayName": "Raft",
 						"visible": true
 					},
 					{

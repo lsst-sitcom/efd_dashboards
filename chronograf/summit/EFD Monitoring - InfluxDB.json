@@ -12,41 +12,28 @@
 		"id": "41",
 		"cells": [
 			{
-				"i": "8f607fad-f51a-4b49-b7a4-ae0caada6b2c",
-				"x": 0,
-				"y": 5,
-				"w": 2,
-				"h": 2,
-				"name": "# Series",
+				"i": "4593975a-0c2d-4a7f-89cf-31fa65733fd7",
+				"x": 6,
+				"y": 7,
+				"w": 6,
+				"h": 3,
+				"name": "InfluxDB - queries / min",
 				"queries": [
 					{
-						"query": "SELECT last(\"numSeries\") AS \"numSeries\" FROM \"_internal\".\"monitor\".\"database\" WHERE  time > :dashboardTime: GROUP BY time(:interval:) FILL(previous)",
+						"query": "SELECT non_negative_derivative(mean(\"queriesExecuted\"),1m) AS \"mean_queriesExecuted\" FROM \"_internal\".\"monitor\".\"queryExecutor\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"label": "points/s",
 						"queryConfig": {
-							"database": "_internal",
-							"measurement": "database",
-							"retentionPolicy": "monitor",
-							"fields": [
-								{
-									"value": "last",
-									"type": "func",
-									"alias": "numSeries",
-									"args": [
-										{
-											"value": "numSeries",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								}
-							],
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
 							"tags": {},
 							"groupBy": {
-								"time": "auto",
+								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"fill": "previous",
-							"rawText": null,
+							"rawText": "SELECT non_negative_derivative(mean(\"queriesExecuted\"),1m) AS \"mean_queriesExecuted\" FROM \"_internal\".\"monitor\".\"queryExecutor\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -71,7 +58,7 @@
 							"",
 							""
 						],
-						"label": "",
+						"label": "Queries/min",
 						"prefix": "",
 						"suffix": "",
 						"base": "10",
@@ -89,51 +76,59 @@
 						"scale": "linear"
 					}
 				},
-				"type": "single-stat",
+				"type": "line",
 				"colors": [
 					{
-						"id": "base",
-						"type": "text",
-						"hex": "#00C9FF",
-						"name": "laser",
-						"value": "-1000000000000000000"
+						"id": "e007a07e-ce79-421c-ba03-ea3ef7e76960",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "aa0bda1f-dc5b-4115-945b-711fd82213af",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "a25ccd78-c3bc-4d89-b2f1-e526dfd300e4",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
 					}
 				],
 				"legend": {},
 				"tableOptions": {
-					"verticalTimeAxis": true,
+					"verticalTimeAxis": false,
 					"sortBy": {
-						"internalName": "time",
+						"internalName": "",
 						"displayName": "",
-						"visible": true
+						"visible": false
 					},
-					"wrapping": "truncate",
-					"fixFirstColumn": true
+					"wrapping": "",
+					"fixFirstColumn": false
 				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					}
-				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"fieldOptions": [],
+				"timeFormat": "",
 				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 2
+					"isEnforced": false,
+					"digits": 0
 				},
 				"note": "To enable this graph, you will need to configure the Telegraf `influxdb` plugin. For more information, please visit the [Telegraf InfluxDB plugin documentation](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/influxdb).",
 				"noteVisibility": "showWhenNoData",
 				"links": {
-					"self": "/chronograf/v1/dashboards/41/cells/8f607fad-f51a-4b49-b7a4-ae0caada6b2c"
+					"self": "/chronograf/v1/dashboards/41/cells/4593975a-0c2d-4a7f-89cf-31fa65733fd7"
 				}
 			},
 			{
 				"i": "1c1f3a93-c352-47f7-9636-c567f2d1f1e2",
-				"x": 0,
-				"y": 3,
+				"x": 4,
+				"y": 1,
 				"w": 2,
-				"h": 2,
+				"h": 1,
 				"name": "# Measurements",
 				"queries": [
 					{
@@ -342,9 +337,9 @@
 			},
 			{
 				"i": "d6730b95-eb5a-4abb-8ac3-8558eda7df37",
-				"x": 8,
-				"y": 4,
-				"w": 4,
+				"x": 6,
+				"y": 1,
+				"w": 6,
 				"h": 3,
 				"name": "Filesystems usage",
 				"queries": [
@@ -475,10 +470,10 @@
 			},
 			{
 				"i": "17019c7b-5fc1-4e01-af9c-b4e1d370cf7b",
-				"x": 8,
-				"y": 1,
-				"w": 4,
-				"h": 3,
+				"x": 0,
+				"y": 2,
+				"w": 6,
+				"h": 2,
 				"name": "Memory usage",
 				"queries": [
 					{
@@ -709,9 +704,9 @@
 			},
 			{
 				"i": "6e7f7fc7-236f-48a1-998b-74ed9917a70a",
-				"x": 5,
-				"y": 1,
-				"w": 3,
+				"x": 0,
+				"y": 10,
+				"w": 6,
 				"h": 3,
 				"name": "Network",
 				"queries": [
@@ -826,7 +821,7 @@
 			},
 			{
 				"i": "63acc037-9848-4cf4-9608-5eacd66da6e7",
-				"x": 2,
+				"x": 0,
 				"y": 4,
 				"w": 6,
 				"h": 3,
@@ -997,9 +992,9 @@
 			},
 			{
 				"i": "dff7d116-b794-45de-b5a3-5033e79a9759",
-				"x": 2,
-				"y": 1,
-				"w": 3,
+				"x": 6,
+				"y": 4,
+				"w": 6,
 				"h": 3,
 				"name": "System Load",
 				"queries": [
@@ -1152,8 +1147,8 @@
 			},
 			{
 				"i": "10f297d7-2c9b-41dd-97e8-a259803cb103",
-				"x": 0,
-				"y": 2,
+				"x": 2,
+				"y": 1,
 				"w": 2,
 				"h": 1,
 				"name": "nCPU",
@@ -1270,7 +1265,7 @@
 				"i": "52ec4a68-f16f-4005-90b6-36069dcb6bbd",
 				"x": 0,
 				"y": 7,
-				"w": 8,
+				"w": 6,
 				"h": 3,
 				"name": "InfluxDB - written points / min",
 				"queries": [
