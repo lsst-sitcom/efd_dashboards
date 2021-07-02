@@ -12,27 +12,43 @@
 		"id": "44",
 		"cells": [
 			{
-				"i": "975837eb-b844-487b-a4c7-ac550c1d1e5c",
-				"x": 0,
-				"y": 4,
-				"w": 4,
+				"i": "0d779ae9-8bd5-4fd9-b396-e5fa4445422d",
+				"x": 6,
+				"y": 7,
+				"w": 6,
 				"h": 3,
-				"name": "Host memory usage (GB)",
+				"name": "Host memory usage",
 				"queries": [
 					{
-						"query": "SELECT mean(\"used\")/1024/1024/1024 AS \"mean_used\" FROM \"telegraf\".\"autogen\".\"mem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:interval:), \"host\" FILL(previous)",
+						"query": "SELECT mean(\"used\") AS \"last_used_percent\" FROM \"telegraf\".\"autogen\".\"mem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:), \"host\" FILL(previous)",
 						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
+							"database": "telegraf",
+							"measurement": "mem",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "last_used_percent",
+									"args": [
+										{
+											"value": "used",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
 							"tags": {},
 							"groupBy": {
-								"time": "",
-								"tags": []
+								"time": "auto",
+								"tags": [
+									"host"
+								]
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(\"used\")/1024/1024/1024 AS \"mean_used\" FROM \"telegraf\".\"autogen\".\"mem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:interval:), \"host\" FILL(previous)",
+							"fill": "previous",
+							"rawText": null,
 							"range": null,
 							"shifts": null
 						},
@@ -57,9 +73,243 @@
 							"",
 							""
 						],
-						"label": "Memory used GB",
+						"label": "Memory used %",
 						"prefix": "",
-						"suffix": " GB",
+						"suffix": " ",
+						"base": "2",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "base",
+						"type": "scale",
+						"hex": "#8F8AF4",
+						"name": "Do Androids Dream of Electric Sheep?",
+						"value": "0"
+					},
+					{
+						"id": "8314ff20-1158-4910-85fa-c880ca805611",
+						"type": "scale",
+						"hex": "#A51414",
+						"name": "Do Androids Dream of Electric Sheep?",
+						"value": "0"
+					},
+					{
+						"id": "84b07d37-6abe-461d-9e1e-fefbaa696368",
+						"type": "scale",
+						"hex": "#F4CF31",
+						"name": "Do Androids Dream of Electric Sheep?",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "To enable this graph, you will need to configure the Telegraf `mem` plugin. For more information, please visit the [Telegraf Mem plugin documentation](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mem).",
+				"noteVisibility": "showWhenNoData",
+				"links": {
+					"self": "/chronograf/v1/dashboards/44/cells/0d779ae9-8bd5-4fd9-b396-e5fa4445422d"
+				}
+			},
+			{
+				"i": "557b681a-63fe-4f6b-bffa-5ff373232a2c",
+				"x": 6,
+				"y": 10,
+				"w": 6,
+				"h": 3,
+				"name": "Queries per minute",
+				"queries": [
+					{
+						"query": "SELECT non_negative_derivative(mean(\"queriesExecuted\"),1m) AS \"mean_queriesExecuted\" FROM \"_internal\".\"monitor\".\"queryExecutor\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT non_negative_derivative(mean(\"queriesExecuted\"),1m) AS \"mean_queriesExecuted\" FROM \"_internal\".\"monitor\".\"queryExecutor\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "Queries/minute",
+						"prefix": "",
+						"suffix": " ",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "base",
+						"type": "scale",
+						"hex": "#8F8AF4",
+						"name": "Do Androids Dream of Electric Sheep?",
+						"value": "0"
+					},
+					{
+						"id": "8314ff20-1158-4910-85fa-c880ca805611",
+						"type": "scale",
+						"hex": "#A51414",
+						"name": "Do Androids Dream of Electric Sheep?",
+						"value": "0"
+					},
+					{
+						"id": "84b07d37-6abe-461d-9e1e-fefbaa696368",
+						"type": "scale",
+						"hex": "#F4CF31",
+						"name": "Do Androids Dream of Electric Sheep?",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "To enable this graph, you will need to configure the Telegraf `mem` plugin. For more information, please visit the [Telegraf Mem plugin documentation](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mem).",
+				"noteVisibility": "showWhenNoData",
+				"links": {
+					"self": "/chronograf/v1/dashboards/44/cells/557b681a-63fe-4f6b-bffa-5ff373232a2c"
+				}
+			},
+			{
+				"i": "975837eb-b844-487b-a4c7-ac550c1d1e5c",
+				"x": 0,
+				"y": 4,
+				"w": 6,
+				"h": 3,
+				"name": "Mallocs per minute",
+				"queries": [
+					{
+						"query": "SELECT non_negative_derivative(mean(\"Mallocs\"),1m) AS \"mean_Mallocs\" FROM \"_internal\".\"monitor\".\"runtime\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT non_negative_derivative(mean(\"Mallocs\"),1m) AS \"mean_Mallocs\" FROM \"_internal\".\"monitor\".\"runtime\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "Mallocs per min",
+						"prefix": "",
+						"suffix": "",
 						"base": "2",
 						"scale": "linear"
 					},
@@ -126,256 +376,6 @@
 				"noteVisibility": "showWhenNoData",
 				"links": {
 					"self": "/chronograf/v1/dashboards/44/cells/975837eb-b844-487b-a4c7-ac550c1d1e5c"
-				}
-			},
-			{
-				"i": "05e14546-227f-4bb4-9ff9-5c27c781b538",
-				"x": 8,
-				"y": 4,
-				"w": 4,
-				"h": 3,
-				"name": "Container memory usage (GB)",
-				"queries": [
-					{
-						"query": "SELECT mean(\"memory_usage_bytes\") AS \"mean_memory_usage_bytes\" FROM \"telegraf\".\"autogen\".\"kubernetes_pod_container\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:), \"container_name\" FILL(null)",
-						"queryConfig": {
-							"database": "telegraf",
-							"measurement": "kubernetes_pod_container",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_memory_usage_bytes",
-									"args": [
-										{
-											"value": "memory_usage_bytes",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "auto",
-								"tags": [
-									"container_name"
-								]
-							},
-							"areTagsAccepted": false,
-							"fill": "null",
-							"rawText": null,
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "Memory used GB",
-						"prefix": "",
-						"suffix": " GB",
-						"base": "2",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "line",
-				"colors": [
-					{
-						"id": "base",
-						"type": "scale",
-						"hex": "#8F8AF4",
-						"name": "Do Androids Dream of Electric Sheep?",
-						"value": "0"
-					},
-					{
-						"id": "8314ff20-1158-4910-85fa-c880ca805611",
-						"type": "scale",
-						"hex": "#A51414",
-						"name": "Do Androids Dream of Electric Sheep?",
-						"value": "0"
-					},
-					{
-						"id": "84b07d37-6abe-461d-9e1e-fefbaa696368",
-						"type": "scale",
-						"hex": "#F4CF31",
-						"name": "Do Androids Dream of Electric Sheep?",
-						"value": "0"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": true
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					}
-				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 0
-				},
-				"note": "To enable this graph, you will need to configure the Telegraf `mem` plugin. For more information, please visit the [Telegraf Mem plugin documentation](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mem).",
-				"noteVisibility": "showWhenNoData",
-				"links": {
-					"self": "/chronograf/v1/dashboards/44/cells/05e14546-227f-4bb4-9ff9-5c27c781b538"
-				}
-			},
-			{
-				"i": "af42e4bb-507b-4cdc-9bee-29f82c766ff7",
-				"x": 0,
-				"y": 7,
-				"w": 2,
-				"h": 2,
-				"name": "# Measurements",
-				"queries": [
-					{
-						"query": "SELECT last(\"numMeasurements\") AS \"mean_numMeasurements\" FROM \"_internal\".\"monitor\".\"database\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(previous)",
-						"queryConfig": {
-							"database": "_internal",
-							"measurement": "database",
-							"retentionPolicy": "monitor",
-							"fields": [
-								{
-									"value": "last",
-									"type": "func",
-									"alias": "mean_numMeasurements",
-									"args": [
-										{
-											"value": "numMeasurements",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "auto",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"fill": "previous",
-							"rawText": null,
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "single-stat",
-				"colors": [
-					{
-						"id": "base",
-						"type": "text",
-						"hex": "#00C9FF",
-						"name": "laser",
-						"value": "-1000000000000000000"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": true
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					}
-				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 2
-				},
-				"note": "To enable this graph, you will need to configure the Telegraf `influxdb` plugin. For more information, please visit the [Telegraf InfluxDB plugin documentation](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/influxdb).",
-				"noteVisibility": "showWhenNoData",
-				"links": {
-					"self": "/chronograf/v1/dashboards/44/cells/af42e4bb-507b-4cdc-9bee-29f82c766ff7"
 				}
 			},
 			{
@@ -475,9 +475,9 @@
 			},
 			{
 				"i": "65e86428-7087-492d-a9f3-98a3762a9968",
-				"x": 8,
+				"x": 6,
 				"y": 1,
-				"w": 4,
+				"w": 6,
 				"h": 3,
 				"name": "Filesystems usage",
 				"queries": [
@@ -608,9 +608,9 @@
 			},
 			{
 				"i": "f73a99bc-7d6a-4a34-90aa-1201e8e8e505",
-				"x": 4,
-				"y": 4,
-				"w": 4,
+				"x": 0,
+				"y": 7,
+				"w": 6,
 				"h": 3,
 				"name": "Host memory usage (%)",
 				"queries": [
@@ -740,111 +740,8 @@
 				}
 			},
 			{
-				"i": "36523c9a-08d5-4aa2-8e59-bc05bc92094c",
-				"x": 0,
-				"y": 1,
-				"w": 2,
-				"h": 1,
-				"name": "System Uptime",
-				"queries": [
-					{
-						"query": "SELECT last(\"uptime\")/86400 AS \"mean_uptime\" FROM \"telegraf\".\"autogen\".\"system\" WHERE time > :dashboardTime:   FILL(previous)",
-						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": "SELECT last(\"uptime\")/86400 AS \"mean_uptime\" FROM \"telegraf\".\"autogen\".\"system\" WHERE time > :dashboardTime:   FILL(previous)",
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": " days",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "single-stat",
-				"colors": [
-					{
-						"id": "base",
-						"type": "text",
-						"hex": "#00C9FF",
-						"name": "laser",
-						"value": "-1000000000000000000"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": true
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					}
-				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 2
-				},
-				"note": "To enable this graph, you will need to configure the Telegraf `system` plugin. For more information, please visit the [Telegraf System plugin documentation](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/system).",
-				"noteVisibility": "showWhenNoData",
-				"links": {
-					"self": "/chronograf/v1/dashboards/44/cells/36523c9a-08d5-4aa2-8e59-bc05bc92094c"
-				}
-			},
-			{
 				"i": "fa05afbd-89c1-4a0c-8ce1-d57b4d972be1",
-				"x": 5,
+				"x": 3,
 				"y": 1,
 				"w": 3,
 				"h": 3,
@@ -961,10 +858,10 @@
 			},
 			{
 				"i": "8b719b6c-46b2-44fc-b4fa-0545684f6d94",
-				"x": 2,
-				"y": 7,
-				"w": 10,
-				"h": 2,
+				"x": 6,
+				"y": 4,
+				"w": 6,
+				"h": 3,
 				"name": "CPU Utilization %",
 				"queries": [
 					{
@@ -1132,7 +1029,7 @@
 			},
 			{
 				"i": "d3e64776-2747-4e20-b835-553b785c6500",
-				"x": 2,
+				"x": 0,
 				"y": 1,
 				"w": 3,
 				"h": 3,
@@ -1286,128 +1183,12 @@
 				}
 			},
 			{
-				"i": "68455dc0-f533-4417-9ef5-738914d7a070",
-				"x": 0,
-				"y": 2,
-				"w": 2,
-				"h": 2,
-				"name": "nCPU",
-				"queries": [
-					{
-						"query": "SELECT last(\"n_cpus\") AS \"mean_n_cpus\" FROM \"telegraf\".\"autogen\".\"system\" WHERE time > :dashboardTime: fill(previous)",
-						"queryConfig": {
-							"database": "telegraf",
-							"measurement": "system",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "last",
-									"type": "func",
-									"alias": "mean_n_cpus",
-									"args": [
-										{
-											"value": "n_cpus",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": null,
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "Active requests count",
-						"prefix": "",
-						"suffix": "",
-						"base": "2",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "single-stat",
-				"colors": [
-					{
-						"id": "base",
-						"type": "text",
-						"hex": "#00C9FF",
-						"name": "laser",
-						"value": "-1000000000000000000"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": true
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					}
-				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 2
-				},
-				"note": "To enable this graph, you will need to configure the Telegraf `system` plugin. For more information, please visit the [Telegraf System plugin documentation](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/system).",
-				"noteVisibility": "showWhenNoData",
-				"links": {
-					"self": "/chronograf/v1/dashboards/44/cells/68455dc0-f533-4417-9ef5-738914d7a070"
-				}
-			},
-			{
 				"i": "af0f8781-bf58-46bd-8d69-bd57de24d3c1",
 				"x": 0,
-				"y": 9,
-				"w": 12,
-				"h": 2,
-				"name": "InfluxDB - written points / min",
+				"y": 10,
+				"w": 6,
+				"h": 3,
+				"name": "Writes per min",
 				"queries": [
 					{
 						"query": "SELECT non_negative_derivative(max(\"pointReq\"),1m) AS \"points_written\" FROM \"_internal\".\"monitor\".\"write\" WHERE time > :dashboardTime: GROUP BY time(:interval:)",
@@ -1511,6 +1292,157 @@
 				"noteVisibility": "showWhenNoData",
 				"links": {
 					"self": "/chronograf/v1/dashboards/44/cells/af0f8781-bf58-46bd-8d69-bd57de24d3c1"
+				}
+			},
+			{
+				"i": "e38b70fb-cac8-4956-8463-f9e4583bde63",
+				"x": 0,
+				"y": 13,
+				"w": 6,
+				"h": 3,
+				"name": "Query duration vs. memory usage",
+				"queries": [
+					{
+						"query": "SELECT mean(\"queryDurationNs\") AS \"mean_queryDurationNs\" FROM \"_internal\".\"monitor\".\"queryExecutor\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "_internal",
+							"measurement": "queryExecutor",
+							"retentionPolicy": "monitor",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_queryDurationNs",
+									"args": [
+										{
+											"value": "queryDurationNs",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/1",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT mean(\"Mallocs\")*10 AS \"mean_Mallocs\" FROM \"_internal\".\"monitor\".\"runtime\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT mean(\"Mallocs\")*10 AS \"mean_Mallocs\" FROM \"_internal\".\"monitor\".\"runtime\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "fe8adb16-d4df-4889-8864-a5611750d58e",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "8b22ca9c-c311-4cac-9d11-cf1ac1432a8b",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "6e032dc0-d03e-41fd-a653-4ec373bbe376",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/44/cells/e38b70fb-cac8-4956-8463-f9e4583bde63"
 				}
 			}
 		],

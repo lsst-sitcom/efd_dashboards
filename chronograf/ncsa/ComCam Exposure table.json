@@ -312,12 +312,12 @@
 					},
 					{
 						"internalName": "lsst.sal.CCCamera.logevent_startIntegration.imageName",
-						"displayName": "Image Name 1",
+						"displayName": "Image Name (SI)",
 						"visible": true
 					},
 					{
 						"internalName": "lsst.sal.CCCamera.logevent_endReadout.imageName",
-						"displayName": "Image Name 2",
+						"displayName": "Image Name (ER)",
 						"visible": true
 					}
 				],

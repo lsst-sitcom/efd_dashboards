@@ -16,7 +16,7 @@
 				"x": 7,
 				"y": 2,
 				"w": 2,
-				"h": 1,
+				"h": 2,
 				"name": "STANDBY",
 				"queries": [
 					{
@@ -117,7 +117,7 @@
 			{
 				"i": "b4be0a4e-6c85-448d-ad2e-b21fe699b834",
 				"x": 0,
-				"y": 7,
+				"y": 8,
 				"w": 9,
 				"h": 4,
 				"name": "AT CSC State transitions",
@@ -249,7 +249,7 @@
 				"x": 5,
 				"y": 2,
 				"w": 2,
-				"h": 1,
+				"h": 2,
 				"name": "ENABLED",
 				"queries": [
 					{
@@ -352,7 +352,7 @@
 				"x": 3,
 				"y": 2,
 				"w": 2,
-				"h": 1,
+				"h": 2,
 				"name": "FAULT",
 				"queries": [
 					{
@@ -455,7 +455,7 @@
 				"x": 0,
 				"y": 2,
 				"w": 3,
-				"h": 1,
+				"h": 2,
 				"name": "AT CSCs",
 				"queries": [
 					{
@@ -563,7 +563,7 @@
 			{
 				"i": "4a27f4b1-ad24-4729-b14f-cae1220977b6",
 				"x": 0,
-				"y": 3,
+				"y": 4,
 				"w": 9,
 				"h": 4,
 				"name": "AT CSCs Current State",
