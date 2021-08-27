@@ -9,10 +9,10 @@
 		}
 	},
 	"dashboard": {
-		"id": "80",
+		"id": "84",
 		"cells": [
 			{
-				"i": "3839f3b9-c2c8-4c2c-8606-b9ee21ee5530",
+				"i": "fcab2e6d-8e10-45eb-8138-5a0eb04b4c8d",
 				"x": 0,
 				"y": 0,
 				"w": 4,
@@ -28,8 +28,8 @@
 						"label": "",
 						"prefix": "",
 						"suffix": "",
-						"base": "10",
-						"scale": "linear"
+						"base": "",
+						"scale": ""
 					},
 					"y": {
 						"bounds": [
@@ -39,8 +39,8 @@
 						"label": "",
 						"prefix": "",
 						"suffix": "",
-						"base": "10",
-						"scale": "linear"
+						"base": "",
+						"scale": ""
 					},
 					"y2": {
 						"bounds": [
@@ -50,8 +50,8 @@
 						"label": "",
 						"prefix": "",
 						"suffix": "",
-						"base": "10",
-						"scale": "linear"
+						"base": "",
+						"scale": ""
 					}
 				},
 				"type": "line",
@@ -82,17 +82,17 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/80/cells/3839f3b9-c2c8-4c2c-8606-b9ee21ee5530"
+					"self": "/chronograf/v1/dashboards/84/cells/fcab2e6d-8e10-45eb-8138-5a0eb04b4c8d"
 				}
 			}
 		],
 		"templates": [],
-		"name": "MT Camera Cable Wrap",
+		"name": "Name This Dashboard",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/80",
-			"cells": "/chronograf/v1/dashboards/80/cells",
-			"templates": "/chronograf/v1/dashboards/80/templates"
+			"self": "/chronograf/v1/dashboards/84",
+			"cells": "/chronograf/v1/dashboards/84/cells",
+			"templates": "/chronograf/v1/dashboards/84/templates"
 		}
 	}
 }
