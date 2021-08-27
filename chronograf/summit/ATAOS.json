@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.8",
+		"chronografVersion": "1.9.0",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -259,7 +259,7 @@
 				"timeFormat": "MM/DD/YYYY HH:mm:ss",
 				"decimalPlaces": {
 					"isEnforced": true,
-					"digits": 2
+					"digits": 3
 				},
 				"note": "",
 				"noteVisibility": "default",
@@ -1299,7 +1299,7 @@
 				"timeFormat": "MM/DD/YYYY HH:mm:ss",
 				"decimalPlaces": {
 					"isEnforced": true,
-					"digits": 2
+					"digits": 3
 				},
 				"note": "",
 				"noteVisibility": "default",
@@ -1519,7 +1519,7 @@
 				"timeFormat": "MM/DD/YYYY HH:mm:ss",
 				"decimalPlaces": {
 					"isEnforced": true,
-					"digits": 2
+					"digits": 3
 				},
 				"note": "",
 				"noteVisibility": "default",
@@ -1739,7 +1739,7 @@
 				"timeFormat": "MM/DD/YYYY HH:mm:ss",
 				"decimalPlaces": {
 					"isEnforced": true,
-					"digits": 2
+					"digits": 3
 				},
 				"note": "",
 				"noteVisibility": "default",
@@ -1756,19 +1756,25 @@
 				"name": "ATpneumatics",
 				"queries": [
 					{
-						"query": "SELECT \"pressure\" FROM \"efd\".\"autogen\".\"lsst.sal.ATPneumatics.m1AirPressure\" ORDER BY DESC LIMIT 1000",
+						"query": "SELECT \"pressure\" FROM \"efd\".\"autogen\".\"lsst.sal.ATPneumatics.m1AirPressure\"  WHERE time > :dashboardTime:",
 						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
+							"database": "efd",
+							"measurement": "lsst.sal.ATPneumatics.m1AirPressure",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "pressure",
+									"type": "field",
+									"alias": ""
+								}
+							],
 							"tags": {},
 							"groupBy": {
 								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"pressure\" FROM \"efd\".\"autogen\".\"lsst.sal.ATPneumatics.m1AirPressure\" ORDER BY DESC LIMIT 1000",
+							"rawText": null,
 							"range": null,
 							"shifts": null
 						},
@@ -1776,7 +1782,7 @@
 						"type": "influxql"
 					},
 					{
-						"query": "SELECT \"pressure\" FROM \"efd\".\"autogen\".\"lsst.sal.ATAOS.logevent_m1CorrectionStarted\" ORDER BY DESC LIMIT 1000",
+						"query": "SELECT \"pressure\" FROM \"efd\".\"autogen\".\"lsst.sal.ATAOS.logevent_m1CorrectionStarted\" time > :dashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1788,7 +1794,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"pressure\" FROM \"efd\".\"autogen\".\"lsst.sal.ATAOS.logevent_m1CorrectionStarted\" ORDER BY DESC LIMIT 1000",
+							"rawText": "SELECT \"pressure\" FROM \"efd\".\"autogen\".\"lsst.sal.ATAOS.logevent_m1CorrectionStarted\" time > :dashboardTime:",
 							"range": null,
 							"shifts": null
 						},

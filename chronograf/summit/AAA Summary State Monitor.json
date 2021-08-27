@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.8",
+		"chronografVersion": "1.9.0",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -848,7 +848,7 @@
 			{
 				"i": "988fe8d0-739e-4cd6-8201-bda5f0d29ccb",
 				"x": 3,
-				"y": 3,
+				"y": 4,
 				"w": 3,
 				"h": 2,
 				"name": "Elevation",
@@ -2352,7 +2352,7 @@
 			{
 				"i": "cb072cde-bc48-4bb9-a247-c6e986ec5159",
 				"x": 3,
-				"y": 5,
+				"y": 3,
 				"w": 3,
 				"h": 1,
 				"name": "ScriptQueue",

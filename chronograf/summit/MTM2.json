@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.8",
+		"chronografVersion": "1.9.0",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -1550,7 +1550,7 @@
 						"visible": true
 					},
 					"wrapping": "truncate",
-					"fixFirstColumn": true
+					"fixFirstColumn": false
 				},
 				"fieldOptions": [
 					{

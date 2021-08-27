@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.8",
+		"chronografVersion": "1.9.0",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -1059,6 +1059,30 @@
 				"sourceID": "dynamic",
 				"links": {
 					"self": "/chronograf/v1/dashboards/38/templates/eae16869-a5a0-4190-a5de-32558964b725"
+				}
+			},
+			{
+				"tempVar": ":period:",
+				"values": [
+					{
+						"value": "Last Year --> time > now()-356d",
+						"type": "map",
+						"selected": true,
+						"key": "Last Month --> time > now()-30d"
+					}
+				],
+				"id": "e78fc43d-7c8d-4aba-a156-1789d843a2c3",
+				"type": "map",
+				"label": "",
+				"query": {
+					"influxql": "",
+					"measurement": "",
+					"tagKey": "",
+					"fieldKey": ""
+				},
+				"sourceID": "dynamic",
+				"links": {
+					"self": "/chronograf/v1/dashboards/38/templates/e78fc43d-7c8d-4aba-a156-1789d843a2c3"
 				}
 			}
 		],

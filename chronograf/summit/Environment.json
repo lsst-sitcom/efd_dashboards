@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.8",
+		"chronografVersion": "1.9.0",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -265,7 +265,7 @@
 			},
 			{
 				"i": "89054733-2f87-4cec-a4c4-4dd861454b53",
-				"x": 2,
+				"x": 0,
 				"y": 0,
 				"w": 2,
 				"h": 1,
@@ -511,7 +511,7 @@
 			},
 			{
 				"i": "694312ba-d9ec-4fce-bf32-1c3eb6b5f29a",
-				"x": 0,
+				"x": 6,
 				"y": 7,
 				"w": 6,
 				"h": 2,
@@ -634,7 +634,7 @@
 			},
 			{
 				"i": "81475363-2eeb-45d4-9729-e84e06378162",
-				"x": 0,
+				"x": 2,
 				"y": 0,
 				"w": 2,
 				"h": 1,
@@ -1025,9 +1025,9 @@
 			{
 				"i": "496483fb-9c5e-4623-9db1-0f37b03880e1",
 				"x": 0,
-				"y": 3,
+				"y": 4,
 				"w": 6,
-				"h": 2,
+				"h": 3,
 				"name": "Relative Humidity",
 				"queries": [
 					{
@@ -1131,7 +1131,7 @@
 				"timeFormat": "MM/DD/YYYY HH:mm:ss",
 				"decimalPlaces": {
 					"isEnforced": true,
-					"digits": 2
+					"digits": 0
 				},
 				"note": "",
 				"noteVisibility": "default",
@@ -1362,7 +1362,7 @@
 			{
 				"i": "0338fa46-d687-4bb5-b795-1494d721436b",
 				"x": 0,
-				"y": 5,
+				"y": 7,
 				"w": 6,
 				"h": 2,
 				"name": "Pressure",
@@ -1533,7 +1533,7 @@
 				"name": "Humidity",
 				"queries": [
 					{
-						"query": "SELECT \"humidity\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.weather\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"humidity\"/0.90 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.weather\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1545,7 +1545,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"humidity\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.weather\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"humidity\"/0.90 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.weather\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1588,35 +1588,14 @@
 						"scale": "linear"
 					}
 				},
-				"type": "gauge",
+				"type": "single-stat",
 				"colors": [
 					{
-						"id": "0",
-						"type": "min",
+						"id": "base",
+						"type": "text",
 						"hex": "#4ED8A0",
 						"name": "rainforest",
-						"value": "0"
-					},
-					{
-						"id": "3e138932-d996-4fa9-8c3c-50b7c795a98e",
-						"type": "threshold",
-						"hex": "#FFB94A",
-						"name": "pineapple",
-						"value": "75"
-					},
-					{
-						"id": "8cdd713f-58b4-4531-aa33-acaf6919737a",
-						"type": "threshold",
-						"hex": "#BF3D5E",
-						"name": "ruby",
-						"value": "85"
-					},
-					{
-						"id": "1",
-						"type": "max",
-						"hex": "#9394FF",
-						"name": "comet",
-						"value": "100"
+						"value": "-1000000000000000000"
 					}
 				],
 				"legend": {},
@@ -1756,7 +1735,7 @@
 				"x": 0,
 				"y": 1,
 				"w": 6,
-				"h": 2,
+				"h": 3,
 				"name": "Average Temperatures",
 				"queries": [
 					{

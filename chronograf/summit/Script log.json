@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.8",
+		"chronografVersion": "1.9.0",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -104,7 +104,7 @@
 					},
 					{
 						"internalName": "lsst.sal.Script.logevent_logMessage.ScriptID",
-						"displayName": "",
+						"displayName": "ID",
 						"visible": true
 					},
 					{

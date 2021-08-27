@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.8",
+		"chronografVersion": "1.9.0",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -17,7 +17,7 @@
 				"y": 2,
 				"w": 3,
 				"h": 3,
-				"name": "AT CSCs",
+				"name": "AuxTel Devices",
 				"queries": [
 					{
 						"query": "import \"strings\" \n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: dashboardTime)\n  |> filter(fn: (r) => r._measurement =~ /lsst.sal.AT.*.logevent_heartbeat/ and (r._field == \"heartbeat\"))\n  |> last()\n  |> group()\n  |> count()\n  \n ",
@@ -125,9 +125,9 @@
 				"i": "24b5a6b1-b5af-4e25-901a-e0691ce85ec9",
 				"x": 0,
 				"y": 5,
-				"w": 12,
+				"w": 7,
 				"h": 3,
-				"name": "AT heartbeat counts",
+				"name": "Heartbeat counts",
 				"queries": [
 					{
 						"query": "import \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: dashboardTime)\n  |> filter(fn: (r) => r._measurement =~ /lsst.sal.AT.*.logevent_heartbeat/ and r._field == \"heartbeat\")\n  |> aggregateWindow(every: autoInterval, fn: count)\n  |> map(fn: (r) => ({\n    r with\n    csc: strings.split(v: r._measurement, t: \".\")[2],\n    })\n  )\n  |> group(columns: [\"csc\"])\n  |> keep(columns: [\"_time\", \"csc\", \"_value\"])\n \n",
@@ -167,7 +167,7 @@
 							"",
 							""
 						],
-						"label": "AT heartbeat counts",
+						"label": "Heartbeat counts",
 						"prefix": "",
 						"suffix": "",
 						"base": "10",
@@ -327,7 +327,7 @@
 					"isEnforced": true,
 					"digits": 2
 				},
-				"note": "AT CSC status\n=============\n\nUse heartbeat counts to monitor CSC status.\n\nSuggested dashboard time ``Past 24h``",
+				"note": "AuxTel status\n=============\n\nUse heartbeat counts to monitor AuxTel status.\n\nSuggested dashboard time ``Past 24h``",
 				"noteVisibility": "default",
 				"links": {
 					"self": "/chronograf/v1/dashboards/76/cells/4e26aee5-9d38-428a-ad78-0924da556de8"
@@ -339,7 +339,7 @@
 				"y": 2,
 				"w": 4,
 				"h": 3,
-				"name": "AT CSC status and downtime",
+				"name": "AuxTel status and downtime",
 				"queries": [
 					{
 						"query": "import \"strings\" \n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: dashboardTime)\n  |> filter(fn: (r) => r._measurement =~ /lsst.sal.AT.*.logevent_heartbeat/ and (r._field == \"heartbeat\"))\n  |> aggregateWindow(every: 1m, fn: count)\n  |> stateCount(fn: (r) => r._value == 0, \n  \tcolumn: \"downtime\"\n   )\n  |> last()\n  |> map(fn: (r) => ({\n    r with\n    csc: strings.split(v: r._measurement, t: \".\")[2],\n    status: if r._value > 1 then \"Up\" else \"Down\",\n    downtime: r.downtime + 1\n  }))\n  |> keep(columns:[\"csc\", \"status\", \"downtime\"])\n\n \n ",
@@ -428,7 +428,7 @@
 				"fieldOptions": [
 					{
 						"internalName": "csc",
-						"displayName": "CSC ",
+						"displayName": "AuxTel Device",
 						"visible": true
 					},
 					{

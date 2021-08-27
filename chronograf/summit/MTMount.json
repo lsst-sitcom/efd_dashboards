@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.8.8",
+		"chronografVersion": "1.9.0",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -12,12 +12,253 @@
 		"id": "72",
 		"cells": [
 			{
+				"i": "f159ef66-2f7f-45b3-90a4-9fd4ccb2e36c",
+				"x": 0,
+				"y": 15,
+				"w": 12,
+				"h": 3,
+				"name": "Mount logevent target",
+				"queries": [
+					{
+						"query": "SELECT elevation, azimuth, taiTime FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.logevent_target\" ORDER BY DESC LIMIT 20;",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT elevation, azimuth, taiTime FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.logevent_target\" ORDER BY DESC LIMIT 20;",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.MTMount.logevent_target.azimuth",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.MTMount.logevent_target.elevation",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.MTMount.logevent_target.taiTime",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/72/cells/f159ef66-2f7f-45b3-90a4-9fd4ccb2e36c"
+				}
+			},
+			{
+				"i": "0ec2dcb9-0ffa-46e9-a27a-c75b989f1482",
+				"x": 0,
+				"y": 9,
+				"w": 6,
+				"h": 3,
+				"name": "MTMount.elevation",
+				"queries": [
+					{
+						"query": "SELECT \"actualPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.elevation\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.MTMount.elevation",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "actualPosition",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "4011e16a-a0e4-4933-9285-3ec720d547d0",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "6f1ba177-0c55-4e7d-bf68-7a5176f74e16",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "820554ea-eab0-41fb-ae9f-c80612f93f72",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/72/cells/0ec2dcb9-0ffa-46e9-a27a-c75b989f1482"
+				}
+			},
+			{
 				"i": "cf0d5ce1-015b-4e5d-b5f8-6afbc209e230",
 				"x": 6,
 				"y": 9,
 				"w": 6,
 				"h": 3,
-				"name": "Untitled Graph",
+				"name": "MTMount.azimuth",
 				"queries": [
 					{
 						"query": "SELECT \"actualPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.azimuth\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
@@ -277,7 +518,7 @@
 			{
 				"i": "abed1ca4-d5da-46df-a3d4-f4e9658479c3",
 				"x": 0,
-				"y": 9,
+				"y": 12,
 				"w": 6,
 				"h": 3,
 				"name": "demand Position",
@@ -386,7 +627,7 @@
 			{
 				"i": "91d870da-bfc9-430a-bca5-867d267af052",
 				"x": 0,
-				"y": 12,
+				"y": 18,
 				"w": 6,
 				"h": 3,
 				"name": "MTMount.logevent_mountState",
@@ -731,7 +972,7 @@
 				"y": 0,
 				"w": 6,
 				"h": 3,
-				"name": "MTMount.logevent_target: Elevation ant TAI time",
+				"name": "MTMount.logevent_target: Elevation and TAI time",
 				"queries": [
 					{
 						"query": "SELECT elevation, taiTime FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.logevent_target\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: ",
