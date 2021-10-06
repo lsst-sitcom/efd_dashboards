@@ -9,34 +9,60 @@
 		}
 	},
 	"dashboard": {
-		"id": "52",
+		"id": "85",
 		"cells": [
 			{
-				"i": "252c10e0-0a1c-42f1-93e7-d701aa425257",
+				"i": "3782a98a-3ab3-4393-be3c-b24034ee75bd",
 				"x": 0,
 				"y": 0,
 				"w": 12,
-				"h": 14,
-				"name": "Logging",
+				"h": 6,
+				"name": "Fom syslog measurement",
 				"queries": [
 					{
-						"query": "SELECT \"ScriptID\", \"level\", \"message\", \"traceback\", \"functionName\", \"filePath\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\"  ORDER BY DESC LIMIT 100",
+						"query": "SELECT \"severity\", \"appname\", \"procid\", \"message\", \"topic\" FROM \"logviewer\".\"autogen\".\"syslog\"",
 						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
+							"database": "logviewer",
+							"measurement": "syslog",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "severity",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "appname",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "procid",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "message",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "topic",
+									"type": "field",
+									"alias": ""
+								}
+							],
 							"tags": {},
 							"groupBy": {
 								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"ScriptID\", \"level\", \"message\", \"traceback\", \"functionName\", \"filePath\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\"  ORDER BY DESC LIMIT 100",
+							"rawText": null,
 							"range": null,
 							"shifts": null
 						},
-						"source": "/chronograf/v1/sources/1",
+						"source": "",
 						"type": "influxql"
 					}
 				],
@@ -90,7 +116,7 @@
 					"verticalTimeAxis": true,
 					"sortBy": {
 						"internalName": "time",
-						"displayName": "",
+						"displayName": "Timestamp",
 						"visible": true
 					},
 					"wrapping": "truncate",
@@ -99,59 +125,54 @@
 				"fieldOptions": [
 					{
 						"internalName": "time",
-						"displayName": "",
+						"displayName": "Timestamp",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.Script.logevent_logMessage.ScriptID",
-						"displayName": "ScriptID",
+						"internalName": "syslog.severity",
+						"displayName": "Severity",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.Script.logevent_logMessage.message",
+						"internalName": "syslog.appname",
+						"displayName": "Name",
+						"visible": true
+					},
+					{
+						"internalName": "syslog.procid",
+						"displayName": "Process ID",
+						"visible": true
+					},
+					{
+						"internalName": "syslog.message",
 						"displayName": "Message",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.Script.logevent_logMessage.traceback",
-						"displayName": "Traceback",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.Script.logevent_logMessage.functionName",
-						"displayName": "Function",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.Script.logevent_logMessage.filePath",
-						"displayName": "File",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.Script.logevent_logMessage.level",
-						"displayName": "",
+						"internalName": "syslog.topic",
+						"displayName": "Topic",
 						"visible": true
 					}
 				],
-				"timeFormat": "YYYY-MM-DD HH:mm:ss",
+				"timeFormat": "MM/DD/YYYY HH:mm:ss.SSS",
 				"decimalPlaces": {
 					"isEnforced": true,
-					"digits": 2
+					"digits": 0
 				},
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/52/cells/252c10e0-0a1c-42f1-93e7-d701aa425257"
+					"self": "/chronograf/v1/dashboards/85/cells/3782a98a-3ab3-4393-be3c-b24034ee75bd"
 				}
 			}
 		],
 		"templates": [],
-		"name": "Script log",
+		"name": "log viewer test (Angelo)",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/52",
-			"cells": "/chronograf/v1/dashboards/52/cells",
-			"templates": "/chronograf/v1/dashboards/52/templates"
+			"self": "/chronograf/v1/dashboards/85",
+			"cells": "/chronograf/v1/dashboards/85/cells",
+			"templates": "/chronograf/v1/dashboards/85/templates"
 		}
 	}
 }
