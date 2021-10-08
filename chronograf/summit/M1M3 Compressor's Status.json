@@ -1,0 +1,287 @@
+{
+	"meta": {
+		"chronografVersion": "1.9.0",
+		"sources": {
+			"1": {
+				"name": "Summit EFD",
+				"link": "/chronograf/v1/sources/1"
+			}
+		}
+	},
+	"dashboard": {
+		"id": "123",
+		"cells": [
+			{
+				"i": "a7970e78-c31d-4248-9e88-974ae781c12d",
+				"x": 0,
+				"y": 0,
+				"w": 12,
+				"h": 6,
+				"name": "M1M3 max and min pressures",
+				"queries": [
+					{
+						"query": "SELECT max(\"breakawayPressure1\") AS \"max_breakawayPressure1\", min(\"breakawayPressure1\") AS \"min_breakawayPressure1\", max(\"breakawayPressure3\") AS \"max_breakawayPressure3\", min(\"breakawayPressure3\") AS \"min_breakawayPressure3\", max(\"breakawayPressure5\") AS \"max_breakawayPressure5\", min(\"breakawayPressure5\") AS \"min_breakawayPressure5\", max(\"breakawayPressure4\") AS \"max_breakawayPressure4\", min(\"breakawayPressure4\") AS \"min_breakawayPressure4\", max(\"breakawayPressure2\") AS \"max_breakawayPressure2\", min(\"breakawayPressure2\") AS \"min_breakawayPressure2\", max(\"breakawayPressure0\") AS \"max_breakawayPressure0\", min(\"breakawayPressure0\") AS \"min_breakawayPressure0\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM1M3.hardpointMonitorData\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(1m) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.MTM1M3.hardpointMonitorData",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "max",
+									"type": "func",
+									"alias": "max_breakawayPressure1",
+									"args": [
+										{
+											"value": "breakawayPressure1",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "min",
+									"type": "func",
+									"alias": "min_breakawayPressure1",
+									"args": [
+										{
+											"value": "breakawayPressure1",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "max",
+									"type": "func",
+									"alias": "max_breakawayPressure3",
+									"args": [
+										{
+											"value": "breakawayPressure3",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "min",
+									"type": "func",
+									"alias": "min_breakawayPressure3",
+									"args": [
+										{
+											"value": "breakawayPressure3",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "max",
+									"type": "func",
+									"alias": "max_breakawayPressure5",
+									"args": [
+										{
+											"value": "breakawayPressure5",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "min",
+									"type": "func",
+									"alias": "min_breakawayPressure5",
+									"args": [
+										{
+											"value": "breakawayPressure5",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "max",
+									"type": "func",
+									"alias": "max_breakawayPressure4",
+									"args": [
+										{
+											"value": "breakawayPressure4",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "min",
+									"type": "func",
+									"alias": "min_breakawayPressure4",
+									"args": [
+										{
+											"value": "breakawayPressure4",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "max",
+									"type": "func",
+									"alias": "max_breakawayPressure2",
+									"args": [
+										{
+											"value": "breakawayPressure2",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "min",
+									"type": "func",
+									"alias": "min_breakawayPressure2",
+									"args": [
+										{
+											"value": "breakawayPressure2",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "max",
+									"type": "func",
+									"alias": "max_breakawayPressure0",
+									"args": [
+										{
+											"value": "breakawayPressure0",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "min",
+									"type": "func",
+									"alias": "min_breakawayPressure0",
+									"args": [
+										{
+											"value": "breakawayPressure0",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "1m",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/1",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "c3208dad-8566-4427-8571-afe0f2931065",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "cc5a12df-a07a-40f9-84cb-fe778b0692c9",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "e66d23eb-0ce5-45d8-b8a3-a60c85c1c4fc",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/123/cells/a7970e78-c31d-4248-9e88-974ae781c12d"
+				}
+			}
+		],
+		"templates": [],
+		"name": "M1M3 Compressor's Status",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/123",
+			"cells": "/chronograf/v1/dashboards/123/cells",
+			"templates": "/chronograf/v1/dashboards/123/templates"
+		}
+	}
+}

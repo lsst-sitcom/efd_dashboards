@@ -2636,7 +2636,7 @@
 				"i": "9e08aa76-235f-4db6-862d-5782f96b6b89",
 				"x": 0,
 				"y": 24,
-				"w": 5,
+				"w": 11,
 				"h": 5,
 				"name": "controllerState",
 				"queries": [
@@ -3391,28 +3391,14 @@
 						"scale": "linear"
 					}
 				},
-				"type": "line",
+				"type": "table",
 				"colors": [
 					{
-						"id": "19a0978e-9f87-4953-8953-c615fa9528bb",
-						"type": "scale",
-						"hex": "#31C0F6",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "f9cf0a38-cfb3-4896-920c-3c4ae7fd3835",
-						"type": "scale",
-						"hex": "#A500A5",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "bba6fafe-93f9-4944-9784-ded5af911960",
-						"type": "scale",
-						"hex": "#FF7E27",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
 					}
 				],
 				"legend": {},
@@ -3424,11 +3410,41 @@
 						"visible": true
 					},
 					"wrapping": "truncate",
-					"fixFirstColumn": true
+					"fixFirstColumn": false
 				},
 				"fieldOptions": [
 					{
 						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.MTHexapod.electrical.copleyStatusWordDrive0",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.MTHexapod.electrical.copleyStatusWordDrive1",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.MTHexapod.electrical.copleyStatusWordDrive2",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.MTHexapod.electrical.copleyStatusWordDrive3",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.MTHexapod.electrical.copleyStatusWordDrive4",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.MTHexapod.electrical.copleyStatusWordDrive5",
 						"displayName": "",
 						"visible": true
 					}

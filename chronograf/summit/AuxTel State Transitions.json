@@ -123,7 +123,7 @@
 				"name": "AuxTel State Transitions",
 				"queries": [
 					{
-						"query": "// CSC state\n// STANDBY = 5\n// OFFLINE = 4\n// FAULT = 3\n// ENABLED = 2\n// DISABLED = 1\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: dashboardTime)\n  |> filter(fn: (r) => r._measurement =~ /lsst.sal.AT.*.logevent_summaryState/ and (r._field == \"summaryState\"))\n  |> map(fn: (r) => ({\n    r with\n    csc: strings.split(v: r._measurement, t: \".\")[2],\n    state: r._value\n  }))\n  |> group(columns: [\"csc\"])\n  |> keep(columns: [\"_time\", \"csc\", \"state\"])\n \n",
+						"query": "\n\n// CSC state\n// STANDBY = 5\n// OFFLINE = 4\n// FAULT = 3\n// ENABLED = 2\n// DISABLED = 1\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: dashboardTime)\n  |> filter(fn: (r) => r._measurement =~ /lsst.sal.AT.*.logevent_summaryState/ and (r._field == \"summaryState\"))\n  |> map(fn: (r) => ({\n    r with\n    csc: strings.split(v: r._measurement, t: \".\")[2],\n    state: r._value,\n    state_name:\n      if r._value == 5 then \"5 (STANDBY)\"\n      else if r._value == 4 then \"4 (OFFLINE)\"\n      else if r._value == 3 then \"3 (FAULT)\"\n      else if r._value == 2 then \"2 (ENABLED)\"\n      else if r._value == 1 then \"1 (DISABLED)\"\n      else \"UNKNOWN\",\n  }))\n  |> group(columns: [\"csc\"])\n  |> keep(columns: [\"_time\", \"csc\", \"state\", \"state_name\"])\n \n",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -135,7 +135,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "// CSC state\n// STANDBY = 5\n// OFFLINE = 4\n// FAULT = 3\n// ENABLED = 2\n// DISABLED = 1\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: dashboardTime)\n  |> filter(fn: (r) => r._measurement =~ /lsst.sal.AT.*.logevent_summaryState/ and (r._field == \"summaryState\"))\n  |> map(fn: (r) => ({\n    r with\n    csc: strings.split(v: r._measurement, t: \".\")[2],\n    state: r._value\n  }))\n  |> group(columns: [\"csc\"])\n  |> keep(columns: [\"_time\", \"csc\", \"state\"])\n \n",
+							"rawText": "\n\n// CSC state\n// STANDBY = 5\n// OFFLINE = 4\n// FAULT = 3\n// ENABLED = 2\n// DISABLED = 1\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: dashboardTime)\n  |> filter(fn: (r) => r._measurement =~ /lsst.sal.AT.*.logevent_summaryState/ and (r._field == \"summaryState\"))\n  |> map(fn: (r) => ({\n    r with\n    csc: strings.split(v: r._measurement, t: \".\")[2],\n    state: r._value,\n    state_name:\n      if r._value == 5 then \"5 (STANDBY)\"\n      else if r._value == 4 then \"4 (OFFLINE)\"\n      else if r._value == 3 then \"3 (FAULT)\"\n      else if r._value == 2 then \"2 (ENABLED)\"\n      else if r._value == 1 then \"1 (DISABLED)\"\n      else \"UNKNOWN\",\n  }))\n  |> group(columns: [\"csc\"])\n  |> keep(columns: [\"_time\", \"csc\", \"state\", \"state_name\"])\n \n",
 							"range": null,
 							"shifts": null
 						},

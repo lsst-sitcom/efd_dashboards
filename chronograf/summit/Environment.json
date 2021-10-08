@@ -20,40 +20,24 @@
 				"name": "Wind Speed - Average 2min",
 				"queries": [
 					{
-						"query": "SELECT \"value\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windSpeed\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"max2M\", \"min2M\", \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windSpeed\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.WeatherStation.windSpeed",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "value",
+									"value": "max2M",
 									"type": "field",
 									"alias": ""
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": null,
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					},
-					{
-						"query": "SELECT \"min2M\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.windSpeed\" WHERE time > :dashboardTime:",
-						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.Environment.windSpeed",
-							"retentionPolicy": "autogen",
-							"fields": [
+								},
 								{
 									"value": "min2M",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "avg2M",
 									"type": "field",
 									"alias": ""
 								}
@@ -89,7 +73,7 @@
 							"",
 							""
 						],
-						"label": "",
+						"label": "Wind Speed",
 						"prefix": "",
 						"suffix": "m/s",
 						"base": "10",
@@ -559,7 +543,7 @@
 					"y": {
 						"bounds": [
 							"0",
-							"3"
+							""
 						],
 						"label": "",
 						"prefix": "",

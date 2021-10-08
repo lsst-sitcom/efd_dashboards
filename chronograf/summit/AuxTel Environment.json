@@ -1,0 +1,375 @@
+{
+	"meta": {
+		"chronografVersion": "1.9.0",
+		"sources": {
+			"1": {
+				"name": "Summit EFD",
+				"link": "/chronograf/v1/sources/1"
+			}
+		}
+	},
+	"dashboard": {
+		"id": "91",
+		"cells": [
+			{
+				"i": "59b0d472-c966-42ca-8c42-707174b5d8d2",
+				"x": 0,
+				"y": 0,
+				"w": 11,
+				"h": 5,
+				"name": "AuxTel-ESS - ESSID 201 Temperatures",
+				"queries": [
+					{
+						"query": "SELECT \"temperatureC02\" as \"Air\", \"temperatureC03\" as \"Truss\", \"temperatureC04\" as \"M2\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature4Ch\" WHERE ESSID = 201 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"temperatureC02\" as \"Air\", \"temperatureC03\" as \"Truss\", \"temperatureC04\" as \"M2\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature4Ch\" WHERE ESSID = 201 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "c781fa6a-7a81-4ec1-b22d-63a70c54e178",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "724c7bb0-0032-42ac-a8f6-3d37be82a2ea",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "bc1536fb-047e-42ef-b99f-f8ef4801bfb3",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/91/cells/59b0d472-c966-42ca-8c42-707174b5d8d2"
+				}
+			},
+			{
+				"i": "2ed866c6-0d61-4e59-a255-d3d46e92bee4",
+				"x": 0,
+				"y": 5,
+				"w": 11,
+				"h": 5,
+				"name": "AuxTel-ESS - ESSID 201 Humidity",
+				"queries": [
+					{
+						"query": "SELECT \"airTemperature\", \"relativeHumidity\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE ESSID = 201 and time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"airTemperature\", \"relativeHumidity\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE ESSID = 201 and time > :dashboardTime: AND time < :upperDashboardTime:",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "c781fa6a-7a81-4ec1-b22d-63a70c54e178",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "724c7bb0-0032-42ac-a8f6-3d37be82a2ea",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "bc1536fb-047e-42ef-b99f-f8ef4801bfb3",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/91/cells/2ed866c6-0d61-4e59-a255-d3d46e92bee4"
+				}
+			},
+			{
+				"i": "5a9a1fe9-3dd9-41ae-a1b8-9c6bc6ccafb5",
+				"x": 0,
+				"y": 10,
+				"w": 11,
+				"h": 5,
+				"name": "AuxTel-ESS - ESSID 201 Air Pressure",
+				"queries": [
+					{
+						"query": "SELECT \"barometricPressure\" as \"barometricPressure [mbar]\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE ESSID = 103 and time > :dashboardTime: AND time < :upperDashboardTime: and \"barometricPressure\" > 710",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"barometricPressure\" as \"barometricPressure [mbar]\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE ESSID = 103 and time > :dashboardTime: AND time < :upperDashboardTime: and \"barometricPressure\" > 710",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "c781fa6a-7a81-4ec1-b22d-63a70c54e178",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "724c7bb0-0032-42ac-a8f6-3d37be82a2ea",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "bc1536fb-047e-42ef-b99f-f8ef4801bfb3",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/91/cells/5a9a1fe9-3dd9-41ae-a1b8-9c6bc6ccafb5"
+				}
+			}
+		],
+		"templates": [],
+		"name": "AuxTel Environment",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/91",
+			"cells": "/chronograf/v1/dashboards/91/cells",
+			"templates": "/chronograf/v1/dashboards/91/templates"
+		}
+	}
+}

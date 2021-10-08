@@ -9,45 +9,408 @@
 		}
 	},
 	"dashboard": {
-		"id": "3",
+		"id": "121",
 		"cells": [
 			{
-				"i": "12c9354b-7fa4-49b6-b6aa-95d024e717c8",
-				"x": 0,
-				"y": 27,
-				"w": 12,
+				"i": "609ff982-3035-4688-84e5-4af789dddfc7",
+				"x": 6,
+				"y": 4,
+				"w": 6,
+				"h": 2,
+				"name": "Wind Speed - Average 2min",
+				"queries": [
+					{
+						"query": "SELECT \"value\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windSpeed\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.WeatherStation.windSpeed",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "value",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT \"min2M\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.windSpeed\" WHERE time > :dashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.Environment.windSpeed",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "min2M",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "m/s",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line-plus-single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "ff73298e-6b63-4ba8-92e7-95d224115dd9",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "25fa83d0-5752-4773-b56b-433d68320808",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/121/cells/609ff982-3035-4688-84e5-4af789dddfc7"
+				}
+			},
+			{
+				"i": "10c077df-09b5-4fe3-937e-5a7256919b1e",
+				"x": 2,
+				"y": 0,
+				"w": 2,
+				"h": 1,
+				"name": "Min Temperature",
+				"queries": [
+					{
+						"query": "SELECT \"min24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"min24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "℃",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 1
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/121/cells/10c077df-09b5-4fe3-937e-5a7256919b1e"
+				}
+			},
+			{
+				"i": "0706e10d-781c-457d-9157-f2d96446cda5",
+				"x": 10,
+				"y": 0,
+				"w": 2,
+				"h": 2,
+				"name": "Seeing",
+				"queries": [
+					{
+						"query": "SELECT mean(\"fwhm\") AS \"mean_fwhm\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_dimmMeasurement\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(previous)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.DIMM.logevent_dimmMeasurement",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_fwhm",
+									"args": [
+										{
+											"value": "fwhm",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "previous",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "gauge",
+				"colors": [
+					{
+						"id": "0",
+						"type": "min",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "0"
+					},
+					{
+						"id": "8cdd713f-58b4-4531-aa33-acaf6919737a",
+						"type": "threshold",
+						"hex": "#BF3D5E",
+						"name": "ruby",
+						"value": "1.5"
+					},
+					{
+						"id": "1",
+						"type": "max",
+						"hex": "#9394FF",
+						"name": "comet",
+						"value": "3"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 1
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/121/cells/0706e10d-781c-457d-9157-f2d96446cda5"
+				}
+			},
+			{
+				"i": "fdce1ec5-3667-4a2d-a3a2-208fb43d7fe2",
+				"x": 6,
+				"y": 6,
+				"w": 6,
 				"h": 3,
-				"name": "Fault_command",
+				"name": "DIMM Seeing",
 				"queries": [
 					{
-						"query": "SELECT \"private_origin\", \"private_sndStamp\", \"private_efdStamp\", \"private_kafkaStamp\", \"private_rcvStamp\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.command_fault\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"fwhm\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_dimmMeasurement\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.MTRotator.command_fault",
+							"measurement": "lsst.sal.DIMM.logevent_dimmMeasurement",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "private_origin",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "private_sndStamp",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "private_efdStamp",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "private_kafkaStamp",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "private_rcvStamp",
+									"value": "fwhm",
 									"type": "field",
 									"alias": ""
 								}
@@ -80,12 +443,12 @@
 					},
 					"y": {
 						"bounds": [
-							"",
-							""
+							"0",
+							"3"
 						],
 						"label": "",
 						"prefix": "",
-						"suffix": "",
+						"suffix": "\"",
 						"base": "10",
 						"scale": "linear"
 					},
@@ -101,460 +464,24 @@
 						"scale": "linear"
 					}
 				},
-				"type": "table",
+				"type": "line-plus-single-stat",
 				"colors": [
 					{
 						"id": "base",
-						"type": "text",
-						"hex": "#00C9FF",
-						"name": "laser",
-						"value": "-1000000000000000000"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": false
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.MTRotator.command_fault.private_origin",
-						"displayName": "",
-						"visible": true
-					}
-				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss.SSS",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 2
-				},
-				"note": "",
-				"noteVisibility": "default",
-				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/12c9354b-7fa4-49b6-b6aa-95d024e717c8"
-				}
-			},
-			{
-				"i": "70e56ddb-1be3-4f64-8f57-8efdcfc1ab50",
-				"x": 0,
-				"y": 23,
-				"w": 12,
-				"h": 4,
-				"name": "Following Error Rotator-CCW",
-				"queries": [
-					{
-						"query": "SELECT \"actualPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.rotation\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
-						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.MTRotator.rotation",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "actualPosition",
-									"type": "field",
-									"alias": ""
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": null,
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					},
-					{
-						"query": "SELECT \"positionError\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.ccwFollowingError\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
-						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.MTRotator.ccwFollowingError",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "positionError",
-									"type": "field",
-									"alias": ""
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": null,
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					},
-					{
-						"query": "SELECT \"actualPosition\", \"actualAcceleration\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.cameraCableWrap\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
-						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.MTMount.cameraCableWrap",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "actualPosition",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "actualAcceleration",
-									"type": "field",
-									"alias": ""
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": null,
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					},
-					{
-						"query": "SELECT \"actualVelocity\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.rotation\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
-						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.MTRotator.rotation",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "actualVelocity",
-									"type": "field",
-									"alias": ""
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": null,
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "line",
-				"colors": [
-					{
-						"id": "1d5490e1-620f-47e1-9066-e3fe491d963d",
 						"type": "scale",
 						"hex": "#31C0F6",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "95321b9a-020f-46f1-9420-12f1216034bd",
+						"id": "642178e2-5dfa-4153-b905-a03e0ff8d116",
 						"type": "scale",
 						"hex": "#A500A5",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "b05021eb-f02e-451b-b9c1-e96c546a93c9",
-						"type": "scale",
-						"hex": "#FF7E27",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					}
-				],
-				"legend": {
-					"type": "static",
-					"orientation": "bottom"
-				},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": true
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					}
-				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 2
-				},
-				"note": "",
-				"noteVisibility": "default",
-				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/70e56ddb-1be3-4f64-8f57-8efdcfc1ab50"
-				}
-			},
-			{
-				"i": "8886b087-af70-4e8f-b8c2-d17b60418028",
-				"x": 3,
-				"y": 0,
-				"w": 5,
-				"h": 2,
-				"name": "CCW followingErrorThreshold",
-				"queries": [
-					{
-						"query": "SELECT \"followingErrorThreshold\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_configuration\" ORDER BY DESC LIMIT 1",
-						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": "SELECT \"followingErrorThreshold\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_configuration\" ORDER BY DESC LIMIT 1",
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "table",
-				"colors": [
-					{
-						"id": "base",
-						"type": "text",
-						"hex": "#00C9FF",
-						"name": "laser",
-						"value": "-1000000000000000000"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": false
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.MTRotator.logevent_configuration.followingErrorThreshold",
-						"displayName": "followingErrorThreshold",
-						"visible": true
-					}
-				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 2
-				},
-				"note": "",
-				"noteVisibility": "default",
-				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/8886b087-af70-4e8f-b8c2-d17b60418028"
-				}
-			},
-			{
-				"i": "420841cd-0775-4baf-a1a2-a9d3435ed412",
-				"x": 0,
-				"y": 9,
-				"w": 9,
-				"h": 2,
-				"name": "Rot Motors calibrated motor current?",
-				"queries": [
-					{
-						"query": "SELECT \"calibrated1\", \"calibrated0\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.motors\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
-						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.MTRotator.motors",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "calibrated1",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "calibrated0",
-									"type": "field",
-									"alias": ""
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": null,
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "line",
-				"colors": [
-					{
-						"id": "4e3fe2c2-eddc-4ebf-ba87-280f86b8bd8d",
-						"type": "scale",
-						"hex": "#31C0F6",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "1ef670f4-0ac9-4625-9e34-eb679702a73a",
-						"type": "scale",
-						"hex": "#A500A5",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "29bd3905-6268-4124-bf89-5d56ba863371",
+						"id": "9885c36f-bd23-45bc-a310-100f1c172cfd",
 						"type": "scale",
 						"hex": "#FF7E27",
 						"name": "Nineteen Eighty Four",
@@ -587,41 +514,78 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/420841cd-0775-4baf-a1a2-a9d3435ed412"
+					"self": "/chronograf/v1/dashboards/121/cells/fdce1ec5-3667-4a2d-a3a2-208fb43d7fe2"
 				}
 			},
 			{
-				"i": "6c510345-bc15-4bb1-9a0b-1519303595d4",
-				"x": 0,
-				"y": 7,
-				"w": 9,
+				"i": "540ee3b0-e8e7-4f16-aa64-3115b7fc4a86",
+				"x": 6,
+				"y": 2,
+				"w": 6,
 				"h": 2,
-				"name": "Rotator Velocity",
+				"name": "Wind Direction Average 10min",
 				"queries": [
 					{
-						"query": "SELECT \"actualVelocity\", \"demandVelocity\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.rotation\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT mean(\"avg10M\") AS \"mean_avg10M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windDirection\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.MTRotator.rotation",
+							"measurement": "lsst.sal.WeatherStation.windDirection",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "actualVelocity",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "demandVelocity",
-									"type": "field",
-									"alias": ""
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_avg10M",
+									"args": [
+										{
+											"value": "avg10M",
+											"type": "field",
+											"alias": ""
+										}
+									]
 								}
 							],
 							"tags": {},
 							"groupBy": {
-								"time": "",
+								"time": "auto",
 								"tags": []
 							},
 							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT mean(\"avg10M\") AS \"mean_avg10M\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.windDirection\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.Environment.windDirection",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_avg10M",
+									"args": [
+										{
+											"value": "avg10M",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
 							"rawText": null,
 							"range": null,
 							"shifts": null
@@ -644,8 +608,8 @@
 					},
 					"y": {
 						"bounds": [
-							"",
-							""
+							"0",
+							"360"
 						],
 						"label": "",
 						"prefix": "",
@@ -668,21 +632,21 @@
 				"type": "line",
 				"colors": [
 					{
-						"id": "aa69adaf-9cef-493f-91f0-e596cb6840ef",
+						"id": "5d25e985-2e5e-4426-a37a-9d6161f9cd82",
 						"type": "scale",
 						"hex": "#31C0F6",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "ec65a84b-c289-46cc-b10b-e84ce263c036",
+						"id": "ff73298e-6b63-4ba8-92e7-95d224115dd9",
 						"type": "scale",
 						"hex": "#A500A5",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "11bcc01a-8051-41c2-aebc-dc55325d5ded",
+						"id": "25fa83d0-5752-4773-b56b-433d68320808",
 						"type": "scale",
 						"hex": "#FF7E27",
 						"name": "Nineteen Eighty Four",
@@ -715,472 +679,19 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/6c510345-bc15-4bb1-9a0b-1519303595d4"
+					"self": "/chronograf/v1/dashboards/121/cells/540ee3b0-e8e7-4f16-aa64-3115b7fc4a86"
 				}
 			},
 			{
-				"i": "1da67be9-cb88-4ebb-9a14-21e280545279",
-				"x": 0,
-				"y": 11,
-				"w": 9,
-				"h": 2,
-				"name": "Error Code",
-				"queries": [
-					{
-						"query": "SELECT \"errorCode\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_errorCode\" ORDER BY DESC LIMIT 3",
-						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": "SELECT \"errorCode\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_errorCode\" ORDER BY DESC LIMIT 3",
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "table",
-				"colors": [
-					{
-						"id": "base",
-						"type": "text",
-						"hex": "#00C9FF",
-						"name": "laser",
-						"value": "-1000000000000000000"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": false
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.MTRotator.logevent_errorCode.errorCode",
-						"displayName": "errorCode",
-						"visible": true
-					}
-				],
-				"timeFormat": "YYYY-MM-DD HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 2
-				},
-				"note": "",
-				"noteVisibility": "default",
-				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/1da67be9-cb88-4ebb-9a14-21e280545279"
-				}
-			},
-			{
-				"i": "a595fc29-43c2-42fc-8113-c972fb22bcfa",
-				"x": 0,
-				"y": 13,
-				"w": 9,
-				"h": 2,
-				"name": "Controller State",
-				"queries": [
-					{
-						"query": "SELECT \"controllerState\", \"offlineSubstate\", \"enabledSubstate\", \"applicationStatus\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_controllerState\" ORDER BY DESC LIMIT 10",
-						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": "SELECT \"controllerState\", \"offlineSubstate\", \"enabledSubstate\", \"applicationStatus\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_controllerState\" ORDER BY DESC LIMIT 10",
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "table",
-				"colors": [
-					{
-						"id": "base",
-						"type": "text",
-						"hex": "#00C9FF",
-						"name": "laser",
-						"value": "-1000000000000000000"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": false
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.MTRotator.logevent_controllerState.applicationStatus",
-						"displayName": "applicationStatus",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.MTRotator.logevent_controllerState.controllerState",
-						"displayName": "controllerStatus",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.MTRotator.logevent_controllerState.enabledSubstate",
-						"displayName": "enabledSubstate",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.MTRotator.logevent_controllerState.offlineSubstate",
-						"displayName": "offlineSubstate",
-						"visible": true
-					}
-				],
-				"timeFormat": "YYYY-MM-DD HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 2
-				},
-				"note": "",
-				"noteVisibility": "default",
-				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/a595fc29-43c2-42fc-8113-c972fb22bcfa"
-				}
-			},
-			{
-				"i": "a9cd1c43-9a60-4741-9e53-33825c3e4f7f",
-				"x": 9,
-				"y": 3,
-				"w": 3,
-				"h": 2,
-				"name": "Commandable by DDS",
-				"queries": [
-					{
-						"query": "SELECT \"state\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_commandableByDDS\" ORDER BY DESC LIMIT 3",
-						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": "SELECT \"state\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_commandableByDDS\" ORDER BY DESC LIMIT 3",
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "table",
-				"colors": [
-					{
-						"id": "base",
-						"type": "text",
-						"hex": "#00C9FF",
-						"name": "laser",
-						"value": "-1000000000000000000"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": false
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.MTRotator.logevent_commandableByDDS.state",
-						"displayName": "commandableByDDS",
-						"visible": true
-					}
-				],
-				"timeFormat": "YYYY-MM-DD HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 2
-				},
-				"note": "",
-				"noteVisibility": "default",
-				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/a9cd1c43-9a60-4741-9e53-33825c3e4f7f"
-				}
-			},
-			{
-				"i": "ee171f2c-7577-40ee-b0db-8820189c296a",
-				"x": 9,
+				"i": "89817768-50bd-4517-8b25-323542384292",
+				"x": 4,
 				"y": 0,
-				"w": 3,
-				"h": 3,
-				"name": "In Position",
+				"w": 2,
+				"h": 1,
+				"name": "Dewpoint",
 				"queries": [
 					{
-						"query": "SELECT \"inPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_inPosition\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
-						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.MTRotator.logevent_inPosition",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "inPosition",
-									"type": "field",
-									"alias": ""
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": null,
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "table",
-				"colors": [
-					{
-						"id": "base",
-						"type": "text",
-						"hex": "#00C9FF",
-						"name": "laser",
-						"value": "-1000000000000000000"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": false
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.MTRotator.logevent_inPosition.inPosition",
-						"displayName": "inPosition",
-						"visible": true
-					}
-				],
-				"timeFormat": "YYYY-MM-DD HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 2
-				},
-				"note": "",
-				"noteVisibility": "default",
-				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/ee171f2c-7577-40ee-b0db-8820189c296a"
-				}
-			},
-			{
-				"i": "3bcf25e7-021b-4777-ac77-b955326a4fc7",
-				"x": 0,
-				"y": 0,
-				"w": 3,
-				"h": 2,
-				"name": "Summary State",
-				"queries": [
-					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_summaryState\" ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"avg1M\"+1.4 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.dewPoint\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1192,7 +703,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_summaryState\" ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"avg1M\"+1.4 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.dewPoint\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1219,7 +730,7 @@
 						],
 						"label": "",
 						"prefix": "",
-						"suffix": "",
+						"suffix": "℃",
 						"base": "10",
 						"scale": "linear"
 					},
@@ -1271,45 +782,31 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/3bcf25e7-021b-4777-ac77-b955326a4fc7"
+					"self": "/chronograf/v1/dashboards/121/cells/89817768-50bd-4517-8b25-323542384292"
 				}
 			},
 			{
-				"i": "706136e1-85e9-4737-90fc-b9eea2078471",
+				"i": "4b6c66b6-0d34-4003-a7fb-b7031dc0efcd",
 				"x": 0,
-				"y": 2,
-				"w": 9,
-				"h": 5,
-				"name": "Position",
+				"y": 4,
+				"w": 6,
+				"h": 3,
+				"name": "Relative Humidity",
 				"queries": [
 					{
-						"query": "SELECT mean(\"actualPosition\") AS \"mean_actualPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.rotation\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT \"avg1M\"/0.90 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.relativeHumidity\" WHERE time > :dashboardTime:",
 						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.MTRotator.rotation",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_actualPosition",
-									"args": [
-										{
-											"value": "actualPosition",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								}
-							],
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
 							"tags": {},
 							"groupBy": {
-								"time": "auto",
+								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"fill": "null",
-							"rawText": null,
+							"rawText": "SELECT \"avg1M\"/0.90 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.relativeHumidity\" WHERE time > :dashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -1331,12 +828,12 @@
 					},
 					"y": {
 						"bounds": [
-							"",
-							""
+							"0",
+							"100"
 						],
 						"label": "",
 						"prefix": "",
-						"suffix": " deg",
+						"suffix": "%",
 						"base": "10",
 						"scale": "linear"
 					},
@@ -1362,24 +859,21 @@
 						"value": "0"
 					},
 					{
-						"id": "3cb87c6e-bceb-497e-8487-8732be8b97b8",
+						"id": "3636195c-a2bd-47be-abc9-0db9c5bef321",
 						"type": "scale",
 						"hex": "#A500A5",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "93ab3ff1-08c6-43d5-ba32-5bd31deb4631",
+						"id": "c4d59d98-aa6b-44f7-87b7-1afb3ae17b91",
 						"type": "scale",
 						"hex": "#FF7E27",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					}
 				],
-				"legend": {
-					"type": "static",
-					"orientation": "bottom"
-				},
+				"legend": {},
 				"tableOptions": {
 					"verticalTimeAxis": true,
 					"sortBy": {
@@ -1395,39 +889,29 @@
 						"internalName": "time",
 						"displayName": "",
 						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.Rotator.Application.Error",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.Rotator.Application.Position",
-						"displayName": "",
-						"visible": true
 					}
 				],
 				"timeFormat": "MM/DD/YYYY HH:mm:ss",
 				"decimalPlaces": {
 					"isEnforced": true,
-					"digits": 5
+					"digits": 0
 				},
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/706136e1-85e9-4737-90fc-b9eea2078471"
+					"self": "/chronograf/v1/dashboards/121/cells/4b6c66b6-0d34-4003-a7fb-b7031dc0efcd"
 				}
 			},
 			{
-				"i": "32e71feb-71e9-46e7-8868-886f7f7dc89c",
-				"x": 0,
-				"y": 15,
-				"w": 12,
-				"h": 2,
-				"name": "Logevent_target: position",
+				"i": "f4f8401c-5e59-437d-8eae-89da4bd4eb00",
+				"x": 6,
+				"y": 0,
+				"w": 2,
+				"h": 1,
+				"name": "Wind Direction (avg2M)",
 				"queries": [
 					{
-						"query": "SELECT position FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_target\" ORDER BY DESC LIMIT 20;",
+						"query": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windDirection\" WHERE \"WeatherStationID\" =1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1439,7 +923,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT position FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_target\" ORDER BY DESC LIMIT 20;",
+							"rawText": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windDirection\" WHERE \"WeatherStationID\" =1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1466,7 +950,7 @@
 						],
 						"label": "",
 						"prefix": "",
-						"suffix": "",
+						"suffix": "°",
 						"base": "10",
 						"scale": "linear"
 					},
@@ -1482,7 +966,7 @@
 						"scale": "linear"
 					}
 				},
-				"type": "table",
+				"type": "single-stat",
 				"colors": [
 					{
 						"id": "base",
@@ -1508,11 +992,6 @@
 						"internalName": "time",
 						"displayName": "",
 						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.MTRotator.logevent_target.position",
-						"displayName": "",
-						"visible": true
 					}
 				],
 				"timeFormat": "MM/DD/YYYY HH:mm:ss",
@@ -1523,19 +1002,19 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/32e71feb-71e9-46e7-8868-886f7f7dc89c"
+					"self": "/chronograf/v1/dashboards/121/cells/f4f8401c-5e59-437d-8eae-89da4bd4eb00"
 				}
 			},
 			{
-				"i": "b10172f2-6ace-4b1b-9fe0-948626965909",
-				"x": 0,
-				"y": 17,
-				"w": 9,
-				"h": 6,
-				"name": "Last Error Code",
+				"i": "6b5304d2-60a8-444b-8219-3557a69e1b42",
+				"x": 6,
+				"y": 1,
+				"w": 2,
+				"h": 1,
+				"name": "Wind Speed (avg2M)",
 				"queries": [
 					{
-						"query": "SELECT \"errorCode\", \"errorReport\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_errorCode\" ORDER BY DESC LIMIT 100",
+						"query": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windSpeed\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1547,7 +1026,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"errorCode\", \"errorReport\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_errorCode\" ORDER BY DESC LIMIT 100",
+							"rawText": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windSpeed\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1574,7 +1053,7 @@
 						],
 						"label": "",
 						"prefix": "",
-						"suffix": "",
+						"suffix": "m/s",
 						"base": "10",
 						"scale": "linear"
 					},
@@ -1590,7 +1069,7 @@
 						"scale": "linear"
 					}
 				},
-				"type": "table",
+				"type": "single-stat",
 				"colors": [
 					{
 						"id": "base",
@@ -1609,21 +1088,11 @@
 						"visible": true
 					},
 					"wrapping": "truncate",
-					"fixFirstColumn": false
+					"fixFirstColumn": true
 				},
 				"fieldOptions": [
 					{
 						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.MTRotator.logevent_errorCode.errorCode",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.MTRotator.logevent_errorCode.errorReport",
 						"displayName": "",
 						"visible": true
 					}
@@ -1631,36 +1100,84 @@
 				"timeFormat": "MM/DD/YYYY HH:mm:ss",
 				"decimalPlaces": {
 					"isEnforced": true,
-					"digits": 2
+					"digits": 1
 				},
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/b10172f2-6ace-4b1b-9fe0-948626965909"
+					"self": "/chronograf/v1/dashboards/121/cells/6b5304d2-60a8-444b-8219-3557a69e1b42"
 				}
 			},
 			{
-				"i": "4c7e35ec-7d7c-447f-bd2f-d26b9c6e3444",
+				"i": "3b462da2-baa9-429d-a26f-0abbe11b45ea",
 				"x": 0,
-				"y": 30,
-				"w": 9,
+				"y": 7,
+				"w": 6,
 				"h": 2,
-				"name": "Rotator Temperatures",
+				"name": "Pressure",
 				"queries": [
 					{
-						"query": "SELECT \"temperatureC07\", \"temperatureC08\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT mean(\"paAvg1M\") AS \"mean_paAvg1M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airPressure\" WHERE time > :dashboardTime:  GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
+							"database": "efd",
+							"measurement": "lsst.sal.WeatherStation.airPressure",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_paAvg1M",
+									"args": [
+										{
+											"value": "paAvg1M",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
 							"tags": {},
 							"groupBy": {
-								"time": "",
+								"time": "auto",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"temperatureC07\", \"temperatureC08\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT mean(\"paAvg1M\") AS \"mean_paAvg1M\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.airPressure\" WHERE time > :dashboardTime:  GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.Environment.airPressure",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_paAvg1M",
+									"args": [
+										{
+											"value": "paAvg1M",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
 							"range": null,
 							"shifts": null
 						},
@@ -1706,21 +1223,21 @@
 				"type": "line",
 				"colors": [
 					{
-						"id": "b35f189f-c15a-49b8-8c0f-8c3284a33546",
+						"id": "ed1c1e7b-f7bb-4384-a063-8f3eaa68d466",
 						"type": "scale",
 						"hex": "#31C0F6",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "c7bda01a-926c-441a-9f9a-2da18ea425cd",
+						"id": "3636195c-a2bd-47be-abc9-0db9c5bef321",
 						"type": "scale",
 						"hex": "#A500A5",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "3ea8a085-ef3c-4ed9-a90d-9aa0500f3f18",
+						"id": "c4d59d98-aa6b-44f7-87b7-1afb3ae17b91",
 						"type": "scale",
 						"hex": "#FF7E27",
 						"name": "Nineteen Eighty Four",
@@ -1753,17 +1270,366 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/4c7e35ec-7d7c-447f-bd2f-d26b9c6e3444"
+					"self": "/chronograf/v1/dashboards/121/cells/3b462da2-baa9-429d-a26f-0abbe11b45ea"
+				}
+			},
+			{
+				"i": "7e0ce1f2-1831-488c-9276-772cd054bcf1",
+				"x": 8,
+				"y": 0,
+				"w": 2,
+				"h": 2,
+				"name": "Humidity",
+				"queries": [
+					{
+						"query": "SELECT \"humidity\"/0.90 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.weather\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"humidity\"/0.90 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.weather\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#4ED8A0",
+						"name": "rainforest",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 1
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/121/cells/7e0ce1f2-1831-488c-9276-772cd054bcf1"
+				}
+			},
+			{
+				"i": "c43deecc-6988-4347-941a-64306d4c7a50",
+				"x": 0,
+				"y": 0,
+				"w": 2,
+				"h": 1,
+				"name": "Max Temperature",
+				"queries": [
+					{
+						"query": "SELECT \"max24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"max24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "℃",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 1
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/121/cells/c43deecc-6988-4347-941a-64306d4c7a50"
+				}
+			},
+			{
+				"i": "b5119e13-b4ee-4bd4-b115-38b049aa5edf",
+				"x": 0,
+				"y": 1,
+				"w": 6,
+				"h": 3,
+				"name": "Average Temperatures",
+				"queries": [
+					{
+						"query": "SELECT \"avg1M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE time > :dashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.WeatherStation.airTemperature",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "avg1M",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT \"avg1M\"+1.4 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.dewPoint\" WHERE time > :dashboardTime: ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"avg1M\"+1.4 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.dewPoint\" WHERE time > :dashboardTime: ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "℃",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line-plus-single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "3636195c-a2bd-47be-abc9-0db9c5bef321",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "c4d59d98-aa6b-44f7-87b7-1afb3ae17b91",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/121/cells/b5119e13-b4ee-4bd4-b115-38b049aa5edf"
 				}
 			}
 		],
 		"templates": [],
-		"name": "MTRotator",
+		"name": "Leash Weather 2",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/3",
-			"cells": "/chronograf/v1/dashboards/3/cells",
-			"templates": "/chronograf/v1/dashboards/3/templates"
+			"self": "/chronograf/v1/dashboards/121",
+			"cells": "/chronograf/v1/dashboards/121/cells",
+			"templates": "/chronograf/v1/dashboards/121/templates"
 		}
 	}
 }

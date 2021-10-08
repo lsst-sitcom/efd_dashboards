@@ -115,34 +115,19 @@
 				"name": "Exposure sequence",
 				"queries": [
 					{
-						"query": "SELECT \"expTime\", \"numImages\", \"shutter\", \"keyValueMap\", \"obsNote\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.command_takeImages\" WHERE time > :dashboardTime: ",
+						"query": "SELECT \"imageName\", \"exposureTime\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.logevent_endReadout\" WHERE  time > :dashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.command_takeImages",
+							"measurement": "lsst.sal.ATCamera.logevent_endReadout",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "expTime",
+									"value": "imageName",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "numImages",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "shutter",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "keyValueMap",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "obsNote",
+									"value": "exposureTime",
 									"type": "field",
 									"alias": ""
 								}
@@ -187,14 +172,40 @@
 						"type": "influxql"
 					},
 					{
-						"query": "SELECT \"imageName\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.logevent_endReadout\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"name\" FROM \"efd\".\"autogen\".\"lsst.sal.ATSpectrograph.logevent_reportedDisperserPosition\" WHERE time > :dashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.logevent_endReadout",
+							"measurement": "lsst.sal.ATSpectrograph.logevent_reportedDisperserPosition",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "imageName",
+									"value": "name",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT \"name\" FROM \"efd\".\"autogen\".\"lsst.sal.ATSpectrograph.logevent_reportedFilterPosition\" WHERE  time > :dashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ATSpectrograph.logevent_reportedFilterPosition",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "name",
 									"type": "field",
 									"alias": ""
 								}
@@ -276,33 +287,28 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.expTime",
-						"displayName": "ExpTime",
+						"internalName": "lsst.sal.ATPtg.logevent_currentTarget.targetName",
+						"displayName": "",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.keyValueMap",
-						"displayName": "Key Value Map",
+						"internalName": "lsst.sal.ATSpectrograph.logevent_reportedDisperserPosition.name",
+						"displayName": "",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.numImages",
-						"displayName": "Num Images",
+						"internalName": "lsst.sal.ATSpectrograph.logevent_reportedFilterPosition.name",
+						"displayName": "",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.shutter",
-						"displayName": "Shutter",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.ATCamera.command_takeImages.obsNote",
-						"displayName": "Obs Note",
+						"internalName": "lsst.sal.ATCamera.logevent_endReadout.exposureTime",
+						"displayName": "",
 						"visible": true
 					},
 					{
 						"internalName": "lsst.sal.ATCamera.logevent_endReadout.imageName",
-						"displayName": "Image Name",
+						"displayName": "",
 						"visible": true
 					}
 				],
