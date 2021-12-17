@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.0",
+		"chronografVersion": "1.9.1",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -677,32 +677,6 @@
 							},
 							"areTagsAccepted": false,
 							"rawText": "SELECT \"temperatureC03\", \"temperatureC05\", \"temperatureC06\", \"temperatureC01\", \"temperatureC04\", \"temperatureC02\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					},
-					{
-						"query": "SELECT avg1M FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: ",
-						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.WeatherStation.airTemperature",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "avg1M",
-									"type": "field",
-									"alias": ""
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": null,
 							"range": null,
 							"shifts": null
 						},

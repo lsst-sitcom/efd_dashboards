@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.0",
+		"chronografVersion": "1.9.1",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -20,14 +20,14 @@
 				"name": "Position 4  (Z)",
 				"queries": [
 					{
-						"query": "SELECT \"position4\" FROM \"efd\".\"autogen\".\"lsst.sal.PMD.position\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"position5\" FROM \"efd\".\"autogen\".\"lsst.sal.PMD.position\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.PMD.position",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "position4",
+									"value": "position5",
 									"type": "field",
 									"alias": ""
 								}

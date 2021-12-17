@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.0",
+		"chronografVersion": "1.9.1",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -54,7 +54,7 @@
 						"type": "influxql"
 					},
 					{
-						"query": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE ESSID = 103 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\", mean(\"temperature\") AS \"mean_temperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE ESSID = 101 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -66,7 +66,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE ESSID = 103 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+							"rawText": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\", mean(\"temperature\") AS \"mean_temperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE ESSID = 101 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -74,7 +74,7 @@
 						"type": "influxql"
 					},
 					{
-						"query": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE ESSID = 101 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\", mean(\"temperature\") AS \"mean_temperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE ESSID = 102 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -86,7 +86,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE ESSID = 101 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+							"rawText": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\", mean(\"temperature\") AS \"mean_temperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE ESSID = 102 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -94,7 +94,7 @@
 						"type": "influxql"
 					},
 					{
-						"query": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE ESSID = 102 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\", mean(\"temperature\") AS \"mean_temperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE ESSID = 103 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -106,7 +106,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE ESSID = 102 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+							"rawText": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\", mean(\"temperature\") AS \"mean_temperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE ESSID = 103 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -737,7 +737,7 @@
 				"i": "0b7aa3b5-fdc4-4191-bc0d-b24a4da211a7",
 				"x": 4,
 				"y": 8,
-				"w": 4,
+				"w": 8,
 				"h": 4,
 				"name": "MTDome-ESS03 - ESSID 103 Air Pressure",
 				"queries": [
@@ -776,8 +776,8 @@
 					},
 					"y": {
 						"bounds": [
-							"",
-							""
+							"735",
+							"745"
 						],
 						"label": "",
 						"prefix": "",

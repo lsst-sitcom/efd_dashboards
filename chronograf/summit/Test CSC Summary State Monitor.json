@@ -9,18 +9,18 @@
 		}
 	},
 	"dashboard": {
-		"id": "56",
+		"id": "126",
 		"cells": [
 			{
-				"i": "a2cc34a9-550b-4e8c-97f0-2da54ca73105",
+				"i": "7ebbf814-d4bb-4548-a431-93af7600649c",
 				"x": 0,
 				"y": 0,
-				"w": 12,
-				"h": 11,
-				"name": "Logging",
+				"w": 3,
+				"h": 2,
+				"name": "Test 42",
 				"queries": [
 					{
-						"query": "SELECT \"ScriptID\", \"message\", \"traceback\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\"  ORDER BY DESC LIMIT 100",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Test.logevent_summaryState\" WHERE TestID = 42 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,11 +32,11 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"ScriptID\", \"message\", \"traceback\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\"  ORDER BY DESC LIMIT 100",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Test.logevent_summaryState\" WHERE TestID = 42 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
-						"source": "/chronograf/v1/sources/1",
+						"source": "",
 						"type": "influxql"
 					}
 				],
@@ -75,14 +75,49 @@
 						"scale": "linear"
 					}
 				},
-				"type": "table",
+				"type": "single-stat",
 				"colors": [
 					{
 						"id": "base",
-						"type": "text",
+						"type": "background",
 						"hex": "#00C9FF",
 						"name": "laser",
 						"value": "-1000000000000000000"
+					},
+					{
+						"id": "ce18afb0-d615-4093-bc3f-e13c459a4f61",
+						"type": "background",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "0.9"
+					},
+					{
+						"id": "abfee8ea-882a-4cff-8ea6-e1eb3dd554d1",
+						"type": "background",
+						"hex": "#4ED8A0",
+						"name": "rainforest",
+						"value": "1.9"
+					},
+					{
+						"id": "89a4870b-c4eb-4781-accc-426f8bc97c73",
+						"type": "background",
+						"hex": "#BF3D5E",
+						"name": "ruby",
+						"value": "2.9"
+					},
+					{
+						"id": "bc968944-be67-498c-ae88-2c872643890c",
+						"type": "background",
+						"hex": "#545667",
+						"name": "graphite",
+						"value": "3.9"
+					},
+					{
+						"id": "963310b2-50db-462e-a9d1-8795908a4912",
+						"type": "background",
+						"hex": "#FFB94A",
+						"name": "pineapple",
+						"value": "4.9"
 					}
 				],
 				"legend": {},
@@ -101,42 +136,27 @@
 						"internalName": "time",
 						"displayName": "",
 						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.Script.logevent_logMessage.ScriptID",
-						"displayName": "ID",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.Script.logevent_logMessage.message",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.Script.logevent_logMessage.traceback",
-						"displayName": "",
-						"visible": true
 					}
 				],
 				"timeFormat": "MM/DD/YYYY HH:mm:ss",
 				"decimalPlaces": {
-					"isEnforced": true,
+					"isEnforced": false,
 					"digits": 2
 				},
-				"note": "",
+				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/56/cells/a2cc34a9-550b-4e8c-97f0-2da54ca73105"
+					"self": "/chronograf/v1/dashboards/126/cells/7ebbf814-d4bb-4548-a431-93af7600649c"
 				}
 			}
 		],
 		"templates": [],
-		"name": "Script log",
+		"name": "Test CSC Summary State Monitor",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/56",
-			"cells": "/chronograf/v1/dashboards/56/cells",
-			"templates": "/chronograf/v1/dashboards/56/templates"
+			"self": "/chronograf/v1/dashboards/126",
+			"cells": "/chronograf/v1/dashboards/126/cells",
+			"templates": "/chronograf/v1/dashboards/126/templates"
 		}
 	}
 }

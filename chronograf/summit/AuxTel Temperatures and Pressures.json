@@ -9,12 +9,407 @@
 		}
 	},
 	"dashboard": {
-		"id": "31",
+		"id": "14",
 		"cells": [
 			{
-				"i": "1bd04c44-572d-4852-8468-2b45a4f79e2b",
-				"x": 4,
+				"i": "1a5e7c46-47ab-4b86-9a1d-a0985e773588",
+				"x": 8,
+				"y": 12,
+				"w": 4,
+				"h": 4,
+				"name": "Polycold Return Pressure",
+				"queries": [
+					{
+						"query": "SELECT mean(\"pressure_ch5\") AS \"mean_pressure_ch5\" FROM \"efd\".\"autogen\".\"lsst.sal.AdamSensors.pressure\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.AdamSensors.pressure",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_pressure_ch5",
+									"args": [
+										{
+											"value": "pressure_ch5",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "Return Pressure (Pa)",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "5de1f2d2-ea8d-429c-af30-6bdf278bb29f",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "d38a2527-06df-4ebc-8701-4bffc12f8b79",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "8711b8ed-6062-4fed-bf87-e2f0780f49c2",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/14/cells/1a5e7c46-47ab-4b86-9a1d-a0985e773588"
+				}
+			},
+			{
+				"i": "3fab87d2-c0db-4f5d-bcb8-674cc8e1687b",
+				"x": 8,
+				"y": 8,
+				"w": 4,
+				"h": 4,
+				"name": "Polycold Supply Pressure",
+				"queries": [
+					{
+						"query": "SELECT mean(\"pressure_ch3\") AS \"mean_pressure_ch3\" FROM \"efd\".\"autogen\".\"lsst.sal.AdamSensors.pressure\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.AdamSensors.pressure",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_pressure_ch3",
+									"args": [
+										{
+											"value": "pressure_ch3",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "Supply Pressure (Pa)",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "5de1f2d2-ea8d-429c-af30-6bdf278bb29f",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "d38a2527-06df-4ebc-8701-4bffc12f8b79",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "8711b8ed-6062-4fed-bf87-e2f0780f49c2",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/14/cells/3fab87d2-c0db-4f5d-bcb8-674cc8e1687b"
+				}
+			},
+			{
+				"i": "3b850305-e0f5-4273-8ff5-9535b2514fdd",
+				"x": 0,
 				"y": 0,
+				"w": 8,
+				"h": 7,
+				"name": "Cryocon Temperatures",
+				"queries": [
+					{
+						"query": "SELECT \"tempCCD\", \"tempColdPlate\", \"tempCryoHead\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.vacuum\" WHERE time > :dashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ATCamera.vacuum",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "tempCCD",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "tempColdPlate",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "tempCryoHead",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "7d9ad263-5c59-43ae-adab-3933c6d7f57d",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "8a3a77c9-5f9a-4671-bfcd-570621b44e81",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "c0ee6260-9a19-432c-a27e-44d1800f0980",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/14/cells/3b850305-e0f5-4273-8ff5-9535b2514fdd"
+				}
+			},
+			{
+				"i": "1ad5ade7-2beb-49a2-9a3e-7c459420f7eb",
+				"x": 4,
+				"y": 7,
 				"w": 4,
 				"h": 4,
 				"name": "Cryohead Temperature",
@@ -131,11 +526,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/31/cells/1bd04c44-572d-4852-8468-2b45a4f79e2b"
+					"self": "/chronograf/v1/dashboards/14/cells/1ad5ade7-2beb-49a2-9a3e-7c459420f7eb"
 				}
 			},
 			{
-				"i": "8328704d-f1c5-4dbd-a0ea-b6de281d9f29",
+				"i": "fe9b7847-82ca-4eeb-b219-f227ff4fffe8",
 				"x": 8,
 				"y": 4,
 				"w": 4,
@@ -186,7 +581,7 @@
 							"",
 							""
 						],
-						"label": "",
+						"label": "Dewar Vacuum Pressure (Torr)",
 						"prefix": "",
 						"suffix": "",
 						"base": "10",
@@ -254,13 +649,13 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/31/cells/8328704d-f1c5-4dbd-a0ea-b6de281d9f29"
+					"self": "/chronograf/v1/dashboards/14/cells/fe9b7847-82ca-4eeb-b219-f227ff4fffe8"
 				}
 			},
 			{
-				"i": "a8b446f1-42c8-49f7-8a79-cc68756f105d",
+				"i": "eda9cbbb-99b5-49cd-95f1-c6aa7175adfa",
 				"x": 0,
-				"y": 4,
+				"y": 11,
 				"w": 4,
 				"h": 4,
 				"name": "CCD",
@@ -411,22 +806,22 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/31/cells/a8b446f1-42c8-49f7-8a79-cc68756f105d"
+					"self": "/chronograf/v1/dashboards/14/cells/eda9cbbb-99b5-49cd-95f1-c6aa7175adfa"
 				}
 			},
 			{
-				"i": "0af5b127-235d-484c-89b5-bc692ae2897b",
+				"i": "449923c6-bdd7-4add-9089-5dddb94c10e1",
 				"x": 4,
-				"y": 4,
+				"y": 11,
 				"w": 4,
 				"h": 4,
 				"name": "WREB On-Board",
 				"queries": [
 					{
-						"query": "SELECT mean(\"temp1\") AS \"mean_temp1\", mean(\"temp2\") AS \"mean_temp2\", mean(\"temp3\") AS \"mean_temp3\", mean(\"temp4\") AS \"mean_temp4\", mean(\"temp5\") AS \"mean_temp5\", mean(\"temp6\") AS \"mean_temp6\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wreb\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"temp1\") AS \"mean_temp1\", mean(\"temp2\") AS \"mean_temp2\", mean(\"temp3\") AS \"mean_temp3\", mean(\"temp4\") AS \"mean_temp4\", mean(\"temp5\") AS \"mean_temp5\", mean(\"temp6\") AS \"mean_temp6\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_Reb\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.wreb",
+							"measurement": "lsst.sal.ATCamera.fp_Reb",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
@@ -602,11 +997,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/31/cells/0af5b127-235d-484c-89b5-bc692ae2897b"
+					"self": "/chronograf/v1/dashboards/14/cells/449923c6-bdd7-4add-9089-5dddb94c10e1"
 				}
 			},
 			{
-				"i": "a9db828d-2867-4a34-b5d8-aa89ebe3e71f",
+				"i": "f3c232b2-d442-475c-838f-273eeef81480",
 				"x": 8,
 				"y": 0,
 				"w": 4,
@@ -614,44 +1009,49 @@
 				"name": "ASPIC",
 				"queries": [
 					{
-						"query": "SELECT mean(\"atemp0L\") AS \"mean_atemp0L\", mean(\"atemp0U\") AS \"mean_atemp0U\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wreb\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT \"aspicl_Temp0\", \"aspicu_Temp0\", \"aspicl_Temp1\", \"aspicu_Temp1\", \"aspicl_Temp2\", \"aspicu_Temp2\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_Reb\" WHERE time > :dashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.wreb",
+							"measurement": "lsst.sal.ATCamera.fp_Reb",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_atemp0L",
-									"args": [
-										{
-											"value": "atemp0L",
-											"type": "field",
-											"alias": ""
-										}
-									]
+									"value": "aspicl_Temp0",
+									"type": "field",
+									"alias": ""
 								},
 								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_atemp0U",
-									"args": [
-										{
-											"value": "atemp0U",
-											"type": "field",
-											"alias": ""
-										}
-									]
+									"value": "aspicu_Temp0",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "aspicl_Temp1",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "aspicu_Temp1",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "aspicl_Temp2",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "aspicu_Temp2",
+									"type": "field",
+									"alias": ""
 								}
 							],
 							"tags": {},
 							"groupBy": {
-								"time": "auto",
+								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"fill": "null",
 							"rawText": null,
 							"range": null,
 							"shifts": null
@@ -745,13 +1145,13 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/31/cells/a9db828d-2867-4a34-b5d8-aa89ebe3e71f"
+					"self": "/chronograf/v1/dashboards/14/cells/f3c232b2-d442-475c-838f-273eeef81480"
 				}
 			},
 			{
-				"i": "967b5803-edf5-4e7c-aa14-337b46506f97",
+				"i": "f5bd66c3-a10d-4032-b366-2b7af4e1d2ae",
 				"x": 0,
-				"y": 0,
+				"y": 7,
 				"w": 4,
 				"h": 4,
 				"name": "ColdPlate Temperature",
@@ -868,17 +1268,17 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/31/cells/967b5803-edf5-4e7c-aa14-337b46506f97"
+					"self": "/chronograf/v1/dashboards/14/cells/f5bd66c3-a10d-4032-b366-2b7af4e1d2ae"
 				}
 			}
 		],
 		"templates": [],
-		"name": "sBrownsberger's",
+		"name": "AuxTel Temperatures and Pressures",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/31",
-			"cells": "/chronograf/v1/dashboards/31/cells",
-			"templates": "/chronograf/v1/dashboards/31/templates"
+			"self": "/chronograf/v1/dashboards/14",
+			"cells": "/chronograf/v1/dashboards/14/cells",
+			"templates": "/chronograf/v1/dashboards/14/templates"
 		}
 	}
 }

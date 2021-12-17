@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.0",
+		"chronografVersion": "1.9.1",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -20,7 +20,7 @@
 				"name": "Camera Hexapod Temperatures",
 				"queries": [
 					{
-						"query": "SELECT \"temperatureC08\" as \"Strut 12 temp\", \"temperatureC07\" as \"Strut 11 temp\", \"temperatureC06\" as \"Strut 10 temp\", \"temperatureC05\" as \"Strut 9 temp\", \"temperatureC04\" as \"Strut 8 temp\", \"temperatureC03\" as \"Strut 7 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"temperature5\" as \"Strut 12 temp\", \"temperature4\" as \"Strut 11 temp\", \"temperature3\" as \"Strut 10 temp\", \"temperature2\" as \"Strut 9 temp\", \"temperature1\" as \"Strut 8 temp\", \"temperature0\" as \"Strut 7 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"temperatureC08\" as \"Strut 12 temp\", \"temperatureC07\" as \"Strut 11 temp\", \"temperatureC06\" as \"Strut 10 temp\", \"temperatureC05\" as \"Strut 9 temp\", \"temperatureC04\" as \"Strut 8 temp\", \"temperatureC03\" as \"Strut 7 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"rawText": "SELECT \"temperature5\" as \"Strut 12 temp\", \"temperature4\" as \"Strut 11 temp\", \"temperature3\" as \"Strut 10 temp\", \"temperature2\" as \"Strut 9 temp\", \"temperature1\" as \"Strut 8 temp\", \"temperature0\" as \"Strut 7 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -137,7 +137,7 @@
 				"name": "MTRotator Temperatures",
 				"queries": [
 					{
-						"query": "SELECT \"temperatureC01\" as \"Motor 1 temp\", \"temperatureC02\" as \"Motor 2 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"temperature6\" as \"Motor 1 temp\", \"temperature7\" as \"Motor 2 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -149,7 +149,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"temperatureC01\" as \"Motor 1 temp\", \"temperatureC02\" as \"Motor 2 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"rawText": "SELECT \"temperature6\" as \"Motor 1 temp\", \"temperature7\" as \"Motor 2 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},

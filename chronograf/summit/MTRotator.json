@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.0",
+		"chronografVersion": "1.9.1",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -468,7 +468,7 @@
 				"y": 9,
 				"w": 9,
 				"h": 2,
-				"name": "Rot Motors calibrated motor current?",
+				"name": "Rot Motors calibrated motor position [deg]",
 				"queries": [
 					{
 						"query": "SELECT \"calibrated1\", \"calibrated0\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.motors\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
@@ -1283,32 +1283,24 @@
 				"name": "Position",
 				"queries": [
 					{
-						"query": "SELECT mean(\"actualPosition\") AS \"mean_actualPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.rotation\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT \"actualPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.rotation\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.MTRotator.rotation",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_actualPosition",
-									"args": [
-										{
-											"value": "actualPosition",
-											"type": "field",
-											"alias": ""
-										}
-									]
+									"value": "actualPosition",
+									"type": "field",
+									"alias": ""
 								}
 							],
 							"tags": {},
 							"groupBy": {
-								"time": "auto",
+								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"fill": "null",
 							"rawText": null,
 							"range": null,
 							"shifts": null
@@ -1530,7 +1522,7 @@
 				"i": "b10172f2-6ace-4b1b-9fe0-948626965909",
 				"x": 0,
 				"y": 17,
-				"w": 9,
+				"w": 12,
 				"h": 6,
 				"name": "Last Error Code",
 				"queries": [

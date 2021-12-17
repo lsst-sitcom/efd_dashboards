@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.0",
+		"chronografVersion": "1.9.1",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -9,10 +9,10 @@
 		}
 	},
 	"dashboard": {
-		"id": "114",
+		"id": "128",
 		"cells": [
 			{
-				"i": "682ea78b-00a2-4fdf-a8cb-4b4869c3d665",
+				"i": "95b1be66-e1d5-446c-9581-27e821bd4dc2",
 				"x": 0,
 				"y": 0,
 				"w": 4,
@@ -82,7 +82,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/114/cells/682ea78b-00a2-4fdf-a8cb-4b4869c3d665"
+					"self": "/chronograf/v1/dashboards/128/cells/95b1be66-e1d5-446c-9581-27e821bd4dc2"
 				}
 			}
 		],
@@ -90,9 +90,9 @@
 		"name": "Name This Dashboard",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/114",
-			"cells": "/chronograf/v1/dashboards/114/cells",
-			"templates": "/chronograf/v1/dashboards/114/templates"
+			"self": "/chronograf/v1/dashboards/128",
+			"cells": "/chronograf/v1/dashboards/128/cells",
+			"templates": "/chronograf/v1/dashboards/128/templates"
 		}
 	}
 }

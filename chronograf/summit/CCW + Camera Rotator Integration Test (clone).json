@@ -9,12 +9,12 @@
 		}
 	},
 	"dashboard": {
-		"id": "6",
+		"id": "124",
 		"cells": [
 			{
-				"i": "0a2808e0-9ad8-40cc-8a42-43244f80f0f5",
+				"i": "8fe511a0-a283-43a4-b904-7da08b6919e3",
 				"x": 3,
-				"y": 15,
+				"y": 14,
 				"w": 6,
 				"h": 2,
 				"name": "Rotator Status",
@@ -111,15 +111,15 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/6/cells/0a2808e0-9ad8-40cc-8a42-43244f80f0f5"
+					"self": "/chronograf/v1/dashboards/124/cells/8fe511a0-a283-43a4-b904-7da08b6919e3"
 				}
 			},
 			{
-				"i": "d2ff06fe-63f7-428a-a33d-47fa0338fa5d",
+				"i": "620a7b96-04af-44cf-81c1-6a7dadc98ddb",
 				"x": 0,
 				"y": 12,
 				"w": 11,
-				"h": 3,
+				"h": 2,
 				"name": "CCW Status",
 				"queries": [
 					{
@@ -197,7 +197,7 @@
 						"visible": true
 					},
 					"wrapping": "truncate",
-					"fixFirstColumn": false
+					"fixFirstColumn": true
 				},
 				"fieldOptions": [
 					{
@@ -219,11 +219,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/6/cells/d2ff06fe-63f7-428a-a33d-47fa0338fa5d"
+					"self": "/chronograf/v1/dashboards/124/cells/620a7b96-04af-44cf-81c1-6a7dadc98ddb"
 				}
 			},
 			{
-				"i": "9b105660-8218-4828-a784-03f7305adc8a",
+				"i": "0d59d82f-7297-4105-816f-7331f67703ac",
 				"x": 0,
 				"y": 10,
 				"w": 12,
@@ -336,11 +336,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/6/cells/9b105660-8218-4828-a784-03f7305adc8a"
+					"self": "/chronograf/v1/dashboards/124/cells/0d59d82f-7297-4105-816f-7331f67703ac"
 				}
 			},
 			{
-				"i": "6f3496c7-9114-4970-92ae-423c623833fd",
+				"i": "6a863f4f-4c08-46a6-8399-411641a2ec9a",
 				"x": 0,
 				"y": 0,
 				"w": 12,
@@ -431,11 +431,11 @@
 				"note": "Example of dashboard using template variables to constraint the visualization in a time window. Click on `Variables` to redefine the `:test_start:`, `:test_end:` time window based on the time logged on the tables.\n",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/6/cells/6f3496c7-9114-4970-92ae-423c623833fd"
+					"self": "/chronograf/v1/dashboards/124/cells/6a863f4f-4c08-46a6-8399-411641a2ec9a"
 				}
 			},
 			{
-				"i": "1ae76ab7-eb50-41e1-9fe3-210db188e938",
+				"i": "3ce18a26-58ae-4c76-9871-74b0da053d8c",
 				"x": 0,
 				"y": 8,
 				"w": 12,
@@ -548,11 +548,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/6/cells/1ae76ab7-eb50-41e1-9fe3-210db188e938"
+					"self": "/chronograf/v1/dashboards/124/cells/3ce18a26-58ae-4c76-9871-74b0da053d8c"
 				}
 			},
 			{
-				"i": "fa25ce0d-d76c-4b0b-92f0-4878aac1ce4f",
+				"i": "5ded621b-90be-4a10-b930-37f2ca49bb60",
 				"x": 0,
 				"y": 6,
 				"w": 12,
@@ -670,11 +670,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/6/cells/fa25ce0d-d76c-4b0b-92f0-4878aac1ce4f"
+					"self": "/chronograf/v1/dashboards/124/cells/5ded621b-90be-4a10-b930-37f2ca49bb60"
 				}
 			},
 			{
-				"i": "2ec32acc-3a2e-4ae9-aad5-5647b607c363",
+				"i": "f70ff1f7-a408-4507-a1bd-9484548d7524",
 				"x": 6,
 				"y": 1,
 				"w": 6,
@@ -773,11 +773,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/6/cells/2ec32acc-3a2e-4ae9-aad5-5647b607c363"
+					"self": "/chronograf/v1/dashboards/124/cells/f70ff1f7-a408-4507-a1bd-9484548d7524"
 				}
 			},
 			{
-				"i": "de5155d7-b363-4b8b-9008-c69587aa46f4",
+				"i": "409c58ba-bf2d-490c-8525-c61d48913ac5",
 				"x": 0,
 				"y": 1,
 				"w": 6,
@@ -881,7 +881,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/6/cells/de5155d7-b363-4b8b-9008-c69587aa46f4"
+					"self": "/chronograf/v1/dashboards/124/cells/409c58ba-bf2d-490c-8525-c61d48913ac5"
 				}
 			}
 		],
@@ -937,7 +937,7 @@
 				},
 				"sourceID": "dynamic",
 				"links": {
-					"self": "/chronograf/v1/dashboards/6/templates/3e6e1366-d908-4c06-a018-f1a770736251"
+					"self": "/chronograf/v1/dashboards/124/templates/3e6e1366-d908-4c06-a018-f1a770736251"
 				}
 			},
 			{
@@ -991,16 +991,16 @@
 				},
 				"sourceID": "dynamic",
 				"links": {
-					"self": "/chronograf/v1/dashboards/6/templates/28ce827c-c924-4022-8bd4-e102cb81a2c7"
+					"self": "/chronograf/v1/dashboards/124/templates/28ce827c-c924-4022-8bd4-e102cb81a2c7"
 				}
 			}
 		],
-		"name": "CCW + Camera Rotator Integration Test",
+		"name": "CCW + Camera Rotator Integration Test (clone)",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/6",
-			"cells": "/chronograf/v1/dashboards/6/cells",
-			"templates": "/chronograf/v1/dashboards/6/templates"
+			"self": "/chronograf/v1/dashboards/124",
+			"cells": "/chronograf/v1/dashboards/124/cells",
+			"templates": "/chronograf/v1/dashboards/124/templates"
 		}
 	}
 }

@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.0",
+		"chronografVersion": "1.9.1",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -11,6 +11,142 @@
 	"dashboard": {
 		"id": "71",
 		"cells": [
+			{
+				"i": "889bc7aa-d45c-4577-8fb6-034acb20f7a2",
+				"x": 0,
+				"y": 8,
+				"w": 12,
+				"h": 2,
+				"name": "ATAOS (clone 1)",
+				"queries": [
+					{
+						"query": "SELECT count(\"heartbeat\") AS \"count_heartbeat\" FROM \"efd\".\"autogen\".\"lsst.sal.ATAOS.logevent_heartbeat\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ATAOS.logevent_heartbeat",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "count",
+									"type": "func",
+									"alias": "count_heartbeat",
+									"args": [
+										{
+											"value": "heartbeat",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/1",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line-stepplot",
+				"colors": [
+					{
+						"id": "e5a83a74-0836-4731-aec7-6665f11b3cf3",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "0ba45a1b-810b-4c58-915e-043a5d965224",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9665241b-31e3-48c9-a314-257ef9cfde03",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATMCS.logevent_heartbeat.count_heartbeat",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/71/cells/889bc7aa-d45c-4577-8fb6-034acb20f7a2"
+				}
+			},
 			{
 				"i": "f0ba3333-f324-4678-af47-22b833b18922",
 				"x": 0,
@@ -131,7 +267,7 @@
 			{
 				"i": "6b7bd834-3662-4424-a995-faad0987edaf",
 				"x": 0,
-				"y": 58,
+				"y": 60,
 				"w": 12,
 				"h": 2,
 				"name": "OCPS",
@@ -267,7 +403,7 @@
 			{
 				"i": "c3b8f4cd-ec18-48de-8e4b-411a416d7074",
 				"x": 0,
-				"y": 56,
+				"y": 58,
 				"w": 12,
 				"h": 2,
 				"name": "AdamSensors",
@@ -403,7 +539,7 @@
 			{
 				"i": "68605073-5a9f-4b8f-8872-563924c54352",
 				"x": 0,
-				"y": 28,
+				"y": 30,
 				"w": 12,
 				"h": 2,
 				"name": "ESS",
@@ -539,7 +675,7 @@
 			{
 				"i": "cfff5b3a-a461-40fb-be92-82c5d2146309",
 				"x": 0,
-				"y": 52,
+				"y": 54,
 				"w": 12,
 				"h": 2,
 				"name": "Watcher",
@@ -675,7 +811,7 @@
 			{
 				"i": "0b606b44-a76a-4cb2-8874-261a7483e7d8",
 				"x": 0,
-				"y": 50,
+				"y": 52,
 				"w": 12,
 				"h": 2,
 				"name": "Script",
@@ -811,7 +947,7 @@
 			{
 				"i": "44826186-c455-4f6b-953e-062a4143d5b7",
 				"x": 0,
-				"y": 48,
+				"y": 50,
 				"w": 12,
 				"h": 2,
 				"name": "Scheduler",
@@ -947,7 +1083,7 @@
 			{
 				"i": "06c0a4d5-012b-4db8-9f3a-bf2e56615cef",
 				"x": 0,
-				"y": 46,
+				"y": 48,
 				"w": 12,
 				"h": 2,
 				"name": "MTRotator",
@@ -1083,7 +1219,7 @@
 			{
 				"i": "316b2986-b7ec-4fd1-8bbe-c098e1906257",
 				"x": 0,
-				"y": 62,
+				"y": 64,
 				"w": 12,
 				"h": 2,
 				"name": "MTVMS",
@@ -1219,7 +1355,7 @@
 			{
 				"i": "203310ea-f407-4ee6-83e6-28e10e5ead6a",
 				"x": 0,
-				"y": 60,
+				"y": 62,
 				"w": 12,
 				"h": 2,
 				"name": "Rotator",
@@ -1355,7 +1491,7 @@
 			{
 				"i": "3484f09f-7453-4ace-92b9-5965cc3eae7d",
 				"x": 0,
-				"y": 44,
+				"y": 46,
 				"w": 12,
 				"h": 2,
 				"name": "MTPtg",
@@ -1491,7 +1627,7 @@
 			{
 				"i": "ff12f765-0d12-485d-ab92-da01de2153c4",
 				"x": 0,
-				"y": 42,
+				"y": 44,
 				"w": 12,
 				"h": 2,
 				"name": "MTMount",
@@ -1627,7 +1763,7 @@
 			{
 				"i": "0750dc08-74bb-4a5a-b01c-024c8d71f75c",
 				"x": 0,
-				"y": 34,
+				"y": 36,
 				"w": 12,
 				"h": 2,
 				"name": "MTM2",
@@ -1763,7 +1899,7 @@
 			{
 				"i": "fad4c09e-8308-4499-8df7-d427299aa9a6",
 				"x": 0,
-				"y": 32,
+				"y": 34,
 				"w": 12,
 				"h": 2,
 				"name": "MTM1M3",
@@ -1899,7 +2035,7 @@
 			{
 				"i": "706256fd-3b3e-4a6b-a859-d1758834bf41",
 				"x": 0,
-				"y": 30,
+				"y": 32,
 				"w": 12,
 				"h": 2,
 				"name": "MTHexapod",
@@ -2035,7 +2171,7 @@
 			{
 				"i": "c5cba514-1295-4c1f-ae5e-7b757770da33",
 				"x": 0,
-				"y": 40,
+				"y": 42,
 				"w": 12,
 				"h": 2,
 				"name": "MTAOS",
@@ -2171,7 +2307,7 @@
 			{
 				"i": "4c4a88e5-5d4d-4889-abb4-4c273fc2ae46",
 				"x": 0,
-				"y": 64,
+				"y": 66,
 				"w": 12,
 				"h": 2,
 				"name": "DSM",
@@ -2307,7 +2443,7 @@
 			{
 				"i": "16a54007-061a-4975-876c-268d0bc92292",
 				"x": 0,
-				"y": 26,
+				"y": 28,
 				"w": 12,
 				"h": 2,
 				"name": "DIMM",
@@ -2443,7 +2579,7 @@
 			{
 				"i": "b614945b-26ea-41a7-a659-935d1db1d3f5",
 				"x": 0,
-				"y": 24,
+				"y": 26,
 				"w": 12,
 				"h": 2,
 				"name": "CCHeaderService",
@@ -2674,7 +2810,7 @@
 			{
 				"i": "56503505-f80d-484d-aa2a-58e667079080",
 				"x": 0,
-				"y": 22,
+				"y": 24,
 				"w": 12,
 				"h": 2,
 				"name": "CCCamera",
@@ -2810,7 +2946,7 @@
 			{
 				"i": "fe210215-5780-4532-be28-7d2618255898",
 				"x": 0,
-				"y": 20,
+				"y": 22,
 				"w": 12,
 				"h": 2,
 				"name": "CCArchiver",
@@ -2946,7 +3082,7 @@
 			{
 				"i": "5e1b86e7-2f6b-4033-8799-1661a74e0064",
 				"x": 0,
-				"y": 18,
+				"y": 20,
 				"w": 12,
 				"h": 2,
 				"name": "ATSpectrograph",
@@ -3082,7 +3218,7 @@
 			{
 				"i": "cc6ef5d9-8ef1-480a-9a0a-cc1719335497",
 				"x": 0,
-				"y": 16,
+				"y": 18,
 				"w": 12,
 				"h": 2,
 				"name": "ATPtg",
@@ -3218,7 +3354,7 @@
 			{
 				"i": "f4525963-ecd4-4fb8-8109-75b0f3ebe034",
 				"x": 0,
-				"y": 14,
+				"y": 16,
 				"w": 12,
 				"h": 2,
 				"name": "ATPneumatics",
@@ -3354,7 +3490,7 @@
 			{
 				"i": "2704bb36-679d-42f2-8df7-0b657d4eabc8",
 				"x": 0,
-				"y": 10,
+				"y": 12,
 				"w": 12,
 				"h": 2,
 				"name": "ATHexapod",
@@ -3490,7 +3626,7 @@
 			{
 				"i": "e713a659-4329-4cda-956e-e407e47e8759",
 				"x": 0,
-				"y": 8,
+				"y": 10,
 				"w": 12,
 				"h": 2,
 				"name": "ATHeaderService",
@@ -3626,7 +3762,7 @@
 			{
 				"i": "4d791c51-bbed-4c23-b0a7-263f1bc4a639",
 				"x": 0,
-				"y": 36,
+				"y": 38,
 				"w": 12,
 				"h": 2,
 				"name": "ATCamera",
@@ -3879,7 +4015,7 @@
 			{
 				"i": "5e78e89e-1777-4d05-bd49-d65dd59dd8ef",
 				"x": 0,
-				"y": 38,
+				"y": 40,
 				"w": 12,
 				"h": 2,
 				"name": "ATArchiver",
@@ -4151,7 +4287,7 @@
 			{
 				"i": "8a55c80f-4a06-4857-bb0e-2980d07a4336",
 				"x": 0,
-				"y": 54,
+				"y": 56,
 				"w": 12,
 				"h": 2,
 				"name": "WeatherStation",
@@ -4287,7 +4423,7 @@
 			{
 				"i": "c8a9ab8b-304a-4007-b3c8-13429605a43f",
 				"x": 0,
-				"y": 12,
+				"y": 14,
 				"w": 12,
 				"h": 2,
 				"name": "ATMCS",
@@ -4423,7 +4559,7 @@
 			{
 				"i": "eab62cc4-6705-4e44-8eb9-004ee69151d8",
 				"x": 0,
-				"y": 66,
+				"y": 68,
 				"w": 12,
 				"h": 2,
 				"name": "PMD",
@@ -4554,6 +4690,142 @@
 				"noteVisibility": "default",
 				"links": {
 					"self": "/chronograf/v1/dashboards/71/cells/eab62cc4-6705-4e44-8eb9-004ee69151d8"
+				}
+			},
+			{
+				"i": "de11a240-4f96-4b6e-8a4d-ec653d9dc878",
+				"x": 0,
+				"y": 70,
+				"w": 12,
+				"h": 2,
+				"name": "HVAC",
+				"queries": [
+					{
+						"query": "SELECT count(\"heartbeat\") AS \"count_heartbeat\" FROM \"efd\".\"autogen\".\"lsst.sal.HVAC.logevent_heartbeat\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.HVAC.logevent_heartbeat",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "count",
+									"type": "func",
+									"alias": "count_heartbeat",
+									"args": [
+										{
+											"value": "heartbeat",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/1",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line-stepplot",
+				"colors": [
+					{
+						"id": "e5a83a74-0836-4731-aec7-6665f11b3cf3",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "0ba45a1b-810b-4c58-915e-043a5d965224",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9665241b-31e3-48c9-a314-257ef9cfde03",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATMCS.logevent_heartbeat.count_heartbeat",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/71/cells/de11a240-4f96-4b6e-8a4d-ec653d9dc878"
 				}
 			}
 		],

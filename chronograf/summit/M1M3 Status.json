@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.0",
+		"chronografVersion": "1.9.1",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -145,7 +145,7 @@
 			{
 				"i": "d8e91158-d664-4d9d-bd39-ed01caeecca3",
 				"x": 4,
-				"y": 6,
+				"y": 11,
 				"w": 4,
 				"h": 3,
 				"name": "mount elevation (target)",
@@ -276,7 +276,7 @@
 			{
 				"i": "384ac2f1-5531-4d0f-87ea-1e52269c0ec8",
 				"x": 0,
-				"y": 11,
+				"y": 15,
 				"w": 2,
 				"h": 2,
 				"name": "rotator status",
@@ -393,7 +393,7 @@
 			{
 				"i": "259f0526-6fc9-4879-950f-58028c285ac5",
 				"x": 2,
-				"y": 9,
+				"y": 13,
 				"w": 2,
 				"h": 2,
 				"name": "MTMount",
@@ -510,7 +510,7 @@
 			{
 				"i": "eb05ec77-0b17-48de-899c-7e4f69a5cd66",
 				"x": 0,
-				"y": 9,
+				"y": 13,
 				"w": 2,
 				"h": 2,
 				"name": "Ptg status",
@@ -1092,7 +1092,7 @@
 			{
 				"i": "4ede4b3b-1e4d-43c2-b053-6392a3aa29a4",
 				"x": 0,
-				"y": 4,
+				"y": 8,
 				"w": 4,
 				"h": 3,
 				"name": "mount elevation",
@@ -1235,7 +1235,7 @@
 			{
 				"i": "2a360d1b-9321-424e-a1fd-0cec37ec65ca",
 				"x": 4,
-				"y": 3,
+				"y": 8,
 				"w": 4,
 				"h": 3,
 				"name": "mount azimuth",
@@ -1494,7 +1494,7 @@
 			{
 				"i": "ceba3d19-2a00-4381-9781-a1583dfbd0da",
 				"x": 0,
-				"y": 7,
+				"y": 11,
 				"w": 2,
 				"h": 2,
 				"name": "MTM1M3",
@@ -1611,7 +1611,7 @@
 			{
 				"i": "2c881990-45f5-4217-8322-dbcf69f70e08",
 				"x": 2,
-				"y": 7,
+				"y": 11,
 				"w": 2,
 				"h": 2,
 				"name": "M1M3 detailed state",
@@ -1955,9 +1955,9 @@
 			{
 				"i": "f86875c8-14da-431e-bc76-1f6b18f55e75",
 				"x": 0,
-				"y": 2,
-				"w": 4,
-				"h": 2,
+				"y": 3,
+				"w": 8,
+				"h": 5,
 				"name": "IMS",
 				"queries": [
 					{
@@ -2311,7 +2311,7 @@
 			{
 				"i": "bec0afab-5854-4993-bc8a-1178c8750e15",
 				"x": 4,
-				"y": 9,
+				"y": 14,
 				"w": 4,
 				"h": 3,
 				"name": "errorReport",
@@ -2425,7 +2425,7 @@
 			{
 				"i": "d6aee18c-bf58-4ab9-9d19-1c2c9d6e38c5",
 				"x": 0,
-				"y": 13,
+				"y": 17,
 				"w": 4,
 				"h": 3,
 				"name": "M1M3 max and min pressures",
