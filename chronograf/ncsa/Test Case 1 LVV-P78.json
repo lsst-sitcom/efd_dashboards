@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.0",
+		"chronografVersion": "1.9.1",
 		"sources": {
 			"1": {
 				"name": "EFD",
@@ -151,14 +151,14 @@
 				"name": "Lower Mirror",
 				"queries": [
 					{
-						"query": "SELECT \"lowerM1M3\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM1M3.command_lowerM1M3\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"private_sndStamp\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM1M3.command_lowerM1M3\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.MTM1M3.command_lowerM1M3",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "lowerM1M3",
+									"value": "private_sndStamp",
 									"type": "field",
 									"alias": ""
 								}
@@ -240,7 +240,7 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.MTM1M3.command_lowerM1M3.lowerM1M3",
+						"internalName": "lsst.sal.MTM1M3.command_lowerM1M3.private_sndStamp",
 						"displayName": "",
 						"visible": true
 					}
@@ -265,14 +265,14 @@
 				"name": "Raise Mirror",
 				"queries": [
 					{
-						"query": "SELECT \"raiseM1M3\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM1M3.command_raiseM1M3\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"private_sndStamp\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM1M3.command_raiseM1M3\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.MTM1M3.command_raiseM1M3",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "raiseM1M3",
+									"value": "private_sndStamp",
 									"type": "field",
 									"alias": ""
 								}
@@ -534,14 +534,14 @@
 				"name": "Hardpoint Corrections",
 				"queries": [
 					{
-						"query": "SELECT \"enableHardpointCorrections\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM1M3.command_enableHardpointCorrections\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"private_sndStamp\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM1M3.command_enableHardpointCorrections\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.MTM1M3.command_enableHardpointCorrections",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "enableHardpointCorrections",
+									"value": "private_sndStamp",
 									"type": "field",
 									"alias": ""
 								}
@@ -623,7 +623,7 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.MTM1M3.command_enableHardpointCorrections.enableHardpointCorrections",
+						"internalName": "lsst.sal.MTM1M3.command_enableHardpointCorrections.private_sndStamp",
 						"displayName": "",
 						"visible": true
 					}

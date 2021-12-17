@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.0",
+		"chronografVersion": "1.9.1",
 		"sources": {
 			"1": {
 				"name": "EFD",
@@ -466,7 +466,7 @@
 			{
 				"i": "89062d6d-5828-453d-83fe-aa68e94cdf03",
 				"x": 6,
-				"y": 11,
+				"y": 14,
 				"w": 6,
 				"h": 3,
 				"name": "InfluxDB write errors",
@@ -597,7 +597,7 @@
 			{
 				"i": "0d779ae9-8bd5-4fd9-b396-e5fa4445422d",
 				"x": 6,
-				"y": 8,
+				"y": 11,
 				"w": 6,
 				"h": 3,
 				"name": "Host memory usage",
@@ -729,7 +729,7 @@
 			},
 			{
 				"i": "557b681a-63fe-4f6b-bffa-5ff373232a2c",
-				"x": 6,
+				"x": 0,
 				"y": 14,
 				"w": 6,
 				"h": 3,
@@ -959,139 +959,6 @@
 				"noteVisibility": "showWhenNoData",
 				"links": {
 					"self": "/chronograf/v1/dashboards/44/cells/975837eb-b844-487b-a4c7-ac550c1d1e5c"
-				}
-			},
-			{
-				"i": "65e86428-7087-492d-a9f3-98a3762a9968",
-				"x": 6,
-				"y": 2,
-				"w": 6,
-				"h": 3,
-				"name": "Filesystems usage",
-				"queries": [
-					{
-						"query": "SELECT mean(\"used_percent\") AS \"used\" FROM \"telegraf\".\"autogen\".\"disk\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:), \"host\" FILL(null)",
-						"queryConfig": {
-							"database": "telegraf",
-							"measurement": "disk",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "used",
-									"args": [
-										{
-											"value": "used_percent",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "auto",
-								"tags": [
-									"host"
-								]
-							},
-							"areTagsAccepted": false,
-							"fill": "null",
-							"rawText": null,
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "percentage",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "line",
-				"colors": [
-					{
-						"id": "6e174025-1e66-42d6-affe-626907a59d96",
-						"type": "scale",
-						"hex": "#DA6FF1",
-						"name": "Ectoplasm",
-						"value": "0"
-					},
-					{
-						"id": "b3ac1a8e-6fce-4c02-8ee8-f87a15b1f2b8",
-						"type": "scale",
-						"hex": "#00717A",
-						"name": "Ectoplasm",
-						"value": "0"
-					},
-					{
-						"id": "68a4b22d-0599-4f34-89ee-c8e4354ad2af",
-						"type": "scale",
-						"hex": "#ACFF76",
-						"name": "Ectoplasm",
-						"value": "0"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": true
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					}
-				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 2
-				},
-				"note": "To enable this graph, you will need to configure the Telegraf `disk` plugin. For more information, please visit the [Telegraf Disk plugin documentation](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/disk).",
-				"noteVisibility": "showWhenNoData",
-				"links": {
-					"self": "/chronograf/v1/dashboards/44/cells/65e86428-7087-492d-a9f3-98a3762a9968"
 				}
 			},
 			{
@@ -1347,7 +1214,7 @@
 			{
 				"i": "8b719b6c-46b2-44fc-b4fa-0545684f6d94",
 				"x": 6,
-				"y": 5,
+				"y": 8,
 				"w": 6,
 				"h": 3,
 				"name": "CPU Utilization %",
@@ -1785,7 +1652,7 @@
 			{
 				"i": "e38b70fb-cac8-4956-8463-f9e4583bde63",
 				"x": 0,
-				"y": 14,
+				"y": 17,
 				"w": 6,
 				"h": 3,
 				"name": "Query duration vs. memory usage",
@@ -1931,6 +1798,293 @@
 				"noteVisibility": "default",
 				"links": {
 					"self": "/chronograf/v1/dashboards/44/cells/e38b70fb-cac8-4956-8463-f9e4583bde63"
+				}
+			},
+			{
+				"i": "c203f944-1422-40ce-8b94-d8a6f69f24e2",
+				"x": 6,
+				"y": 2,
+				"w": 6,
+				"h": 3,
+				"name": "/data on the NFS server (lsst-l1-cl-efd)",
+				"queries": [
+					{
+						"query": "SELECT mean(\"total\") AS \"mean_total\", mean(\"used\") AS \"mean_used\" FROM \"telegraf\".\"autogen\".\"disk\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"device\"='lsst-l1-cl-efd:/data/efd' GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "disk",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_total",
+									"args": [
+										{
+											"value": "total",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_used",
+									"args": [
+										{
+											"value": "used",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"device": [
+									"lsst-l1-cl-efd:/data/efd"
+								]
+							},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/1",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "2",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "7ef5a6db-5c80-4622-8a4e-9928fcc2c10c",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "f7113fc0-f2f3-4280-bdf1-870e81bb8491",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "0ef58c7c-373b-4cb7-944e-d89ced280407",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/44/cells/c203f944-1422-40ce-8b94-d8a6f69f24e2"
+				}
+			},
+			{
+				"i": "cd7e6c76-9cf7-4a4a-ae14-18ff2926c6c0",
+				"x": 6,
+				"y": 5,
+				"w": 6,
+				"h": 3,
+				"name": "kafka partitions on each node (% used)",
+				"queries": [
+					{
+						"query": "SELECT mean(\"used_percent\") AS \"mean_used_percent\" FROM \"telegraf\".\"autogen\".\"disk\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"path\"='/data' AND \"device\"='mapper/VGhdd-LVefd' GROUP BY time(:interval:), \"host\" FILL(null)",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "disk",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_used_percent",
+									"args": [
+										{
+											"value": "used_percent",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"device": [
+									"mapper/VGhdd-LVefd"
+								],
+								"path": [
+									"/data"
+								]
+							},
+							"groupBy": {
+								"time": "auto",
+								"tags": [
+									"host"
+								]
+							},
+							"areTagsAccepted": true,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/1",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "7ef5a6db-5c80-4622-8a4e-9928fcc2c10c",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "f7113fc0-f2f3-4280-bdf1-870e81bb8491",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "0ef58c7c-373b-4cb7-944e-d89ced280407",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/44/cells/cd7e6c76-9cf7-4a4a-ae14-18ff2926c6c0"
 				}
 			}
 		],

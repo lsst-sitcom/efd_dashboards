@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.0",
+		"chronografVersion": "1.9.1",
 		"sources": {
 			"1": {
 				"name": "EFD",
@@ -200,6 +200,11 @@
 						"selected": false
 					},
 					{
+						"value": "DIMM",
+						"type": "csv",
+						"selected": false
+					},
+					{
 						"value": "Hexapod",
 						"type": "csv",
 						"selected": false
@@ -245,6 +250,11 @@
 						"selected": false
 					},
 					{
+						"value": "Scheduler",
+						"type": "csv",
+						"selected": false
+					},
+					{
 						"value": "Script",
 						"type": "csv",
 						"selected": false
@@ -261,6 +271,11 @@
 					},
 					{
 						"value": "Watcher",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "WeatherStation",
 						"type": "csv",
 						"selected": false
 					}
