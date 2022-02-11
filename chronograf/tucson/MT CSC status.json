@@ -9,18 +9,18 @@
 		}
 	},
 	"dashboard": {
-		"id": "34",
+		"id": "39",
 		"cells": [
 			{
-				"i": "ad6ee596-26c8-446c-884c-7258729a8d26",
+				"i": "5a42be03-bb1c-4730-93e3-ca7967f866cd",
 				"x": 0,
-				"y": 4,
-				"w": 4,
-				"h": 4,
-				"name": "Reil CryoTel Temperatures",
+				"y": 2,
+				"w": 3,
+				"h": 3,
+				"name": "MT CSCs",
 				"queries": [
 					{
-						"query": "SELECT \"temperature\", \"temp\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold1\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold2\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cryo\" WHERE time > :dashboardTime: ",
+						"query": "import \"strings\" \n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: dashboardTime)\n  |> filter(fn: (r) => r._measurement =~ /lsst.sal.MT.*.logevent_heartbeat/ and (r._field == \"heartbeat\"))\n  |> last()\n  |> group()\n  |> count()\n  \n ",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,12 +32,12 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"temperature\", \"temp\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold1\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold2\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cryo\" WHERE time > :dashboardTime: ",
+							"rawText": "import \"strings\" \n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: dashboardTime)\n  |> filter(fn: (r) => r._measurement =~ /lsst.sal.MT.*.logevent_heartbeat/ and (r._field == \"heartbeat\"))\n  |> last()\n  |> group()\n  |> count()\n  \n ",
 							"range": null,
 							"shifts": null
 						},
 						"source": "",
-						"type": "influxql"
+						"type": "flux"
 					}
 				],
 				"axes": {
@@ -57,7 +57,117 @@
 							"",
 							""
 						],
-						"label": "(℃)",
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					},
+					{
+						"id": "e8c94595-c7ab-4923-aae8-806ef3565739",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "1"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "subsystem",
+						"displayName": "Subsystem",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/39/cells/5a42be03-bb1c-4730-93e3-ca7967f866cd"
+				}
+			},
+			{
+				"i": "ae3ade4c-b042-40aa-bc25-0acd793e22f9",
+				"x": 0,
+				"y": 5,
+				"w": 7,
+				"h": 4,
+				"name": "AT heartbeat counts",
+				"queries": [
+					{
+						"query": "import \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: dashboardTime)\n  |> filter(fn: (r) => r._measurement =~ /lsst.sal.MT.*.logevent_heartbeat/ and r._field == \"heartbeat\")\n  |> aggregateWindow(every: 1m, fn: count)\n  |> map(fn: (r) => ({\n    r with\n    status: if r._value > 1 then 1 else 0,\n    csc: strings.split(v: r._measurement, t: \".\")[2],\n    })\n  )\n  |> group(columns: [\"csc\"])\n  |> keep(columns: [\"_time\", \"csc\", \"status\"])\n \n",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "import \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: dashboardTime)\n  |> filter(fn: (r) => r._measurement =~ /lsst.sal.MT.*.logevent_heartbeat/ and r._field == \"heartbeat\")\n  |> aggregateWindow(every: 1m, fn: count)\n  |> map(fn: (r) => ({\n    r with\n    status: if r._value > 1 then 1 else 0,\n    csc: strings.split(v: r._measurement, t: \".\")[2],\n    })\n  )\n  |> group(columns: [\"csc\"])\n  |> keep(columns: [\"_time\", \"csc\", \"status\"])\n \n",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "flux"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "CSC Status",
 						"prefix": "",
 						"suffix": "",
 						"base": "10",
@@ -78,28 +188,31 @@
 				"type": "line",
 				"colors": [
 					{
-						"id": "9c817dba-83af-4150-8f85-59528aba723f",
+						"id": "a2795cfd-a66a-42e0-a67b-4afc9f88992a",
 						"type": "scale",
 						"hex": "#31C0F6",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "a88a1620-8d18-48dd-ab1a-1e80d01efcb3",
+						"id": "d2e20622-f62b-479a-afef-2bca227c1b9b",
 						"type": "scale",
 						"hex": "#A500A5",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "90ee8341-5a1a-4ba5-864e-46d16626204c",
+						"id": "e399926d-e045-480e-b690-a406568fab0f",
 						"type": "scale",
 						"hex": "#FF7E27",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					}
 				],
-				"legend": {},
+				"legend": {
+					"type": "static",
+					"orientation": "bottom"
+				},
 				"tableOptions": {
 					"verticalTimeAxis": true,
 					"sortBy": {
@@ -125,142 +238,19 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/34/cells/ad6ee596-26c8-446c-884c-7258729a8d26"
+					"self": "/chronograf/v1/dashboards/39/cells/ae3ade4c-b042-40aa-bc25-0acd793e22f9"
 				}
 			},
 			{
-				"i": "9d520385-673f-41e6-9d52-c3e064b297c5",
+				"i": "000974fa-5f88-4cba-9bca-2032f4cf91d8",
 				"x": 0,
 				"y": 0,
-				"w": 4,
-				"h": 4,
-				"name": "VQ Monitor Pressure",
+				"w": 7,
+				"h": 2,
+				"name": "Usage",
 				"queries": [
 					{
-						"query": "SELECT \"vqmpressure\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_VQMonitor\" WHERE time > :dashboardTime:",
-						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.CCCamera.vacuum_VQMonitor",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "vqmpressure",
-									"type": "field",
-									"alias": ""
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": null,
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "(Torr)",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "line",
-				"colors": [
-					{
-						"id": "9c817dba-83af-4150-8f85-59528aba723f",
-						"type": "scale",
-						"hex": "#31C0F6",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "a88a1620-8d18-48dd-ab1a-1e80d01efcb3",
-						"type": "scale",
-						"hex": "#A500A5",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "90ee8341-5a1a-4ba5-864e-46d16626204c",
-						"type": "scale",
-						"hex": "#FF7E27",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": true
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					}
-				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 2
-				},
-				"note": "",
-				"noteVisibility": "default",
-				"links": {
-					"self": "/chronograf/v1/dashboards/34/cells/9d520385-673f-41e6-9d52-c3e064b297c5"
-				}
-			},
-			{
-				"i": "28527512-463d-4065-a764-2e093db7c65a",
-				"x": 4,
-				"y": 0,
-				"w": 4,
-				"h": 4,
-				"name": "CryoTel Temperatures",
-				"queries": [
-					{
-						"query": "SELECT \"temperature\", \"temp\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold1\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold2\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cryo\" WHERE time > :dashboardTime: ",
+						"query": "",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -272,7 +262,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"temperature\", \"temp\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold1\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold2\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cryo\" WHERE time > :dashboardTime: ",
+							"rawText": "",
 							"range": null,
 							"shifts": null
 						},
@@ -297,7 +287,7 @@
 							"",
 							""
 						],
-						"label": "(℃)",
+						"label": "",
 						"prefix": "",
 						"suffix": "",
 						"base": "10",
@@ -315,30 +305,8 @@
 						"scale": "linear"
 					}
 				},
-				"type": "line",
-				"colors": [
-					{
-						"id": "9c817dba-83af-4150-8f85-59528aba723f",
-						"type": "scale",
-						"hex": "#31C0F6",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "a88a1620-8d18-48dd-ab1a-1e80d01efcb3",
-						"type": "scale",
-						"hex": "#A500A5",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "90ee8341-5a1a-4ba5-864e-46d16626204c",
-						"type": "scale",
-						"hex": "#FF7E27",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					}
-				],
+				"type": "note",
+				"colors": [],
 				"legend": {},
 				"tableOptions": {
 					"verticalTimeAxis": true,
@@ -362,22 +330,22 @@
 					"isEnforced": true,
 					"digits": 2
 				},
-				"note": "",
+				"note": "MT CSC status\n=============\n\nUse heartbeat counts to monitor CSC status.\n\nSuggested dashboard time ``Past 24h``",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/34/cells/28527512-463d-4065-a764-2e093db7c65a"
+					"self": "/chronograf/v1/dashboards/39/cells/000974fa-5f88-4cba-9bca-2032f4cf91d8"
 				}
 			},
 			{
-				"i": "121749a4-f10d-42c1-96b1-019c17f4a3c4",
-				"x": 8,
-				"y": 0,
+				"i": "7eaeba74-728c-4eb1-89c5-a05b7b65bbc1",
+				"x": 3,
+				"y": 2,
 				"w": 4,
-				"h": 4,
-				"name": "CryoTel Powers",
+				"h": 3,
+				"name": "MT CSC status and downtime",
 				"queries": [
 					{
-						"query": "SELECT \"power\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold1\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold2\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cryo\" WHERE time > :dashboardTime: ",
+						"query": "import \"strings\" \n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: dashboardTime)\n  |> filter(fn: (r) => r._measurement =~ /lsst.sal.MT.*.logevent_heartbeat/ and (r._field == \"heartbeat\"))\n  |> aggregateWindow(every: 1m, fn: count)\n  |> stateCount(\n  \tfn: (r) => r._value == 0,\n  \tcolumn: \"down_counts\"\n  )\n  |> last()\n  |> map(fn: (r) => ({\n    r with\n    csc: strings.split(v: r._measurement, t: \".\")[2],\n    status: if r._value > 1 then \"Up\" else \"Down\",\n    downtime:  r.down_counts + 1\n  }))\n  |> keep(columns:[\"csc\", \"status\", \"downtime\"])\n\n \n ",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -389,12 +357,12 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"power\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold1\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold2\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cryo\" WHERE time > :dashboardTime: ",
+							"rawText": "import \"strings\" \n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: dashboardTime)\n  |> filter(fn: (r) => r._measurement =~ /lsst.sal.MT.*.logevent_heartbeat/ and (r._field == \"heartbeat\"))\n  |> aggregateWindow(every: 1m, fn: count)\n  |> stateCount(\n  \tfn: (r) => r._value == 0,\n  \tcolumn: \"down_counts\"\n  )\n  |> last()\n  |> map(fn: (r) => ({\n    r with\n    csc: strings.split(v: r._measurement, t: \".\")[2],\n    status: if r._value > 1 then \"Up\" else \"Down\",\n    downtime:  r.down_counts + 1\n  }))\n  |> keep(columns:[\"csc\", \"status\", \"downtime\"])\n\n \n ",
 							"range": null,
 							"shifts": null
 						},
 						"source": "",
-						"type": "influxql"
+						"type": "flux"
 					}
 				],
 				"axes": {
@@ -414,7 +382,7 @@
 							"",
 							""
 						],
-						"label": "(W)",
+						"label": "",
 						"prefix": "",
 						"suffix": "",
 						"base": "10",
@@ -432,36 +400,29 @@
 						"scale": "linear"
 					}
 				},
-				"type": "line",
+				"type": "table",
 				"colors": [
 					{
-						"id": "9c817dba-83af-4150-8f85-59528aba723f",
-						"type": "scale",
-						"hex": "#31C0F6",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
 					},
 					{
-						"id": "a88a1620-8d18-48dd-ab1a-1e80d01efcb3",
-						"type": "scale",
-						"hex": "#A500A5",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "90ee8341-5a1a-4ba5-864e-46d16626204c",
-						"type": "scale",
-						"hex": "#FF7E27",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
+						"id": "e8c94595-c7ab-4923-aae8-806ef3565739",
+						"type": "text",
+						"hex": "#BF3D5E",
+						"name": "ruby",
+						"value": "1"
 					}
 				],
 				"legend": {},
 				"tableOptions": {
 					"verticalTimeAxis": true,
 					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
+						"internalName": "subsystem",
+						"displayName": "Subsystem",
 						"visible": true
 					},
 					"wrapping": "truncate",
@@ -469,30 +430,40 @@
 				},
 				"fieldOptions": [
 					{
-						"internalName": "time",
-						"displayName": "",
+						"internalName": "csc",
+						"displayName": "CSC ",
+						"visible": true
+					},
+					{
+						"internalName": "status",
+						"displayName": "Status",
+						"visible": true
+					},
+					{
+						"internalName": "downtime",
+						"displayName": "Downtime (min)",
 						"visible": true
 					}
 				],
 				"timeFormat": "MM/DD/YYYY HH:mm:ss",
 				"decimalPlaces": {
 					"isEnforced": true,
-					"digits": 2
+					"digits": 0
 				},
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/34/cells/121749a4-f10d-42c1-96b1-019c17f4a3c4"
+					"self": "/chronograf/v1/dashboards/39/cells/7eaeba74-728c-4eb1-89c5-a05b7b65bbc1"
 				}
 			}
 		],
 		"templates": [],
-		"name": "ComCam Vacuum",
+		"name": "MT CSC status",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/34",
-			"cells": "/chronograf/v1/dashboards/34/cells",
-			"templates": "/chronograf/v1/dashboards/34/templates"
+			"self": "/chronograf/v1/dashboards/39",
+			"cells": "/chronograf/v1/dashboards/39/cells",
+			"templates": "/chronograf/v1/dashboards/39/templates"
 		}
 	}
 }

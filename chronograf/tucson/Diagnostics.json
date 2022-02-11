@@ -9,18 +9,18 @@
 		}
 	},
 	"dashboard": {
-		"id": "34",
+		"id": "40",
 		"cells": [
 			{
-				"i": "ad6ee596-26c8-446c-884c-7258729a8d26",
+				"i": "a26e6062-f543-42f3-b630-bb17cafff7c8",
 				"x": 0,
 				"y": 4,
 				"w": 4,
 				"h": 4,
-				"name": "Reil CryoTel Temperatures",
+				"name": "Clock Difference (Topic)",
 				"queries": [
 					{
-						"query": "SELECT \"temperature\", \"temp\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold1\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold2\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cryo\" WHERE time > :dashboardTime: ",
+						"query": "SELECT (\"private_rcvStamp\" - \"private_sndStamp\") * 1000 FROM \"efd\".\"autogen\".\":topic:\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"temperature\", \"temp\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold1\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold2\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cryo\" WHERE time > :dashboardTime: ",
+							"rawText": "SELECT (\"private_rcvStamp\" - \"private_sndStamp\") * 1000 FROM \"efd\".\"autogen\".\":topic:\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -57,7 +57,7 @@
 							"",
 							""
 						],
-						"label": "(℃)",
+						"label": "Rcv - Snd (ms)",
 						"prefix": "",
 						"suffix": "",
 						"base": "10",
@@ -78,21 +78,21 @@
 				"type": "line",
 				"colors": [
 					{
-						"id": "9c817dba-83af-4150-8f85-59528aba723f",
+						"id": "64db1482-4f3e-4fa0-a243-b7b9beb25c42",
 						"type": "scale",
 						"hex": "#31C0F6",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "a88a1620-8d18-48dd-ab1a-1e80d01efcb3",
+						"id": "7b13fb50-3a14-43d6-90a8-3bc138b2cfda",
 						"type": "scale",
 						"hex": "#A500A5",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "90ee8341-5a1a-4ba5-864e-46d16626204c",
+						"id": "15a11c8c-05bf-4c5f-a523-9fb825314828",
 						"type": "scale",
 						"hex": "#FF7E27",
 						"name": "Nineteen Eighty Four",
@@ -125,26 +125,26 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/34/cells/ad6ee596-26c8-446c-884c-7258729a8d26"
+					"self": "/chronograf/v1/dashboards/40/cells/a26e6062-f543-42f3-b630-bb17cafff7c8"
 				}
 			},
 			{
-				"i": "9d520385-673f-41e6-9d52-c3e064b297c5",
-				"x": 0,
+				"i": "620fec04-cf72-41d0-8f07-5b59ac58f950",
+				"x": 4,
 				"y": 0,
 				"w": 4,
 				"h": 4,
-				"name": "VQ Monitor Pressure",
+				"name": "Sequence Numbers (Heartbeat)",
 				"queries": [
 					{
-						"query": "SELECT \"vqmpressure\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_VQMonitor\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"private_seqNum\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_heartbeat\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.CCCamera.vacuum_VQMonitor",
+							"measurement": "lsst.sal.:CSCList:.logevent_heartbeat",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "vqmpressure",
+									"value": "private_seqNum",
 									"type": "field",
 									"alias": ""
 								}
@@ -180,7 +180,7 @@
 							"",
 							""
 						],
-						"label": "(Torr)",
+						"label": "Sequence Numbers",
 						"prefix": "",
 						"suffix": "",
 						"base": "10",
@@ -201,21 +201,21 @@
 				"type": "line",
 				"colors": [
 					{
-						"id": "9c817dba-83af-4150-8f85-59528aba723f",
+						"id": "64db1482-4f3e-4fa0-a243-b7b9beb25c42",
 						"type": "scale",
 						"hex": "#31C0F6",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "a88a1620-8d18-48dd-ab1a-1e80d01efcb3",
+						"id": "7b13fb50-3a14-43d6-90a8-3bc138b2cfda",
 						"type": "scale",
 						"hex": "#A500A5",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "90ee8341-5a1a-4ba5-864e-46d16626204c",
+						"id": "15a11c8c-05bf-4c5f-a523-9fb825314828",
 						"type": "scale",
 						"hex": "#FF7E27",
 						"name": "Nineteen Eighty Four",
@@ -248,31 +248,154 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/34/cells/9d520385-673f-41e6-9d52-c3e064b297c5"
+					"self": "/chronograf/v1/dashboards/40/cells/620fec04-cf72-41d0-8f07-5b59ac58f950"
 				}
 			},
 			{
-				"i": "28527512-463d-4065-a764-2e093db7c65a",
+				"i": "b8ccd13b-de7c-4d80-9bb9-ef5dc0e453c8",
+				"x": 0,
+				"y": 0,
+				"w": 4,
+				"h": 4,
+				"name": "Clock Difference (Heartbeat)",
+				"queries": [
+					{
+						"query": "SELECT (\"private_rcvStamp\" - \"private_sndStamp\") * 1000 FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_heartbeat\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT (\"private_rcvStamp\" - \"private_sndStamp\") * 1000 FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_heartbeat\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "Rcv - Snd (ms)",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "64db1482-4f3e-4fa0-a243-b7b9beb25c42",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "7b13fb50-3a14-43d6-90a8-3bc138b2cfda",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "15a11c8c-05bf-4c5f-a523-9fb825314828",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/40/cells/b8ccd13b-de7c-4d80-9bb9-ef5dc0e453c8"
+				}
+			},
+			{
+				"i": "3b8f920e-2b82-4298-8925-ec9eccf776bc",
 				"x": 4,
-				"y": 0,
+				"y": 4,
 				"w": 4,
 				"h": 4,
-				"name": "CryoTel Temperatures",
+				"name": "Sequence Numbers (Topic)",
 				"queries": [
 					{
-						"query": "SELECT \"temperature\", \"temp\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold1\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold2\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cryo\" WHERE time > :dashboardTime: ",
+						"query": "SELECT \"private_seqNum\" FROM \"efd\".\"autogen\".\":topic:\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
+							"database": "efd",
+							"measurement": ":topic:",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "private_seqNum",
+									"type": "field",
+									"alias": ""
+								}
+							],
 							"tags": {},
 							"groupBy": {
 								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"temperature\", \"temp\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold1\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold2\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cryo\" WHERE time > :dashboardTime: ",
+							"rawText": null,
 							"range": null,
 							"shifts": null
 						},
@@ -297,7 +420,7 @@
 							"",
 							""
 						],
-						"label": "(℃)",
+						"label": "Rcv - Snd (ms)",
 						"prefix": "",
 						"suffix": "",
 						"base": "10",
@@ -318,21 +441,21 @@
 				"type": "line",
 				"colors": [
 					{
-						"id": "9c817dba-83af-4150-8f85-59528aba723f",
+						"id": "64db1482-4f3e-4fa0-a243-b7b9beb25c42",
 						"type": "scale",
 						"hex": "#31C0F6",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "a88a1620-8d18-48dd-ab1a-1e80d01efcb3",
+						"id": "7b13fb50-3a14-43d6-90a8-3bc138b2cfda",
 						"type": "scale",
 						"hex": "#A500A5",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "90ee8341-5a1a-4ba5-864e-46d16626204c",
+						"id": "15a11c8c-05bf-4c5f-a523-9fb825314828",
 						"type": "scale",
 						"hex": "#FF7E27",
 						"name": "Nineteen Eighty Four",
@@ -365,134 +488,214 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/34/cells/28527512-463d-4065-a764-2e093db7c65a"
-				}
-			},
-			{
-				"i": "121749a4-f10d-42c1-96b1-019c17f4a3c4",
-				"x": 8,
-				"y": 0,
-				"w": 4,
-				"h": 4,
-				"name": "CryoTel Powers",
-				"queries": [
-					{
-						"query": "SELECT \"power\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold1\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold2\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cryo\" WHERE time > :dashboardTime: ",
-						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": "SELECT \"power\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold1\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cold2\", \"efd\".\"autogen\".\"lsst.sal.CCCamera.vacuum_Cryo\" WHERE time > :dashboardTime: ",
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "(W)",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "line",
-				"colors": [
-					{
-						"id": "9c817dba-83af-4150-8f85-59528aba723f",
-						"type": "scale",
-						"hex": "#31C0F6",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "a88a1620-8d18-48dd-ab1a-1e80d01efcb3",
-						"type": "scale",
-						"hex": "#A500A5",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "90ee8341-5a1a-4ba5-864e-46d16626204c",
-						"type": "scale",
-						"hex": "#FF7E27",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": true
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					}
-				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 2
-				},
-				"note": "",
-				"noteVisibility": "default",
-				"links": {
-					"self": "/chronograf/v1/dashboards/34/cells/121749a4-f10d-42c1-96b1-019c17f4a3c4"
+					"self": "/chronograf/v1/dashboards/40/cells/3b8f920e-2b82-4298-8925-ec9eccf776bc"
 				}
 			}
 		],
-		"templates": [],
-		"name": "ComCam Vacuum",
+		"templates": [
+			{
+				"tempVar": ":CSCList:",
+				"values": [
+					{
+						"value": "ATAOS",
+						"type": "csv",
+						"selected": true
+					},
+					{
+						"value": "ATArchiver",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "ATCamera",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "ATDome",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "ATDomeTrajectory",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "ATHeaderService",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "ATHexapod",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "ATMCS",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "ATPneumatics",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "ATPtg",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "ATSpectrograph",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "CCArchiver",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "CCCamera",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "CCHeaderService",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "DIMM",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "DSM",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "Electrometer",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTAOS",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTDome",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTDomeTrajectory",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTHexapod",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTM1M3",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTM2",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTMount",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTPtg",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTRotator",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "Script",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "ScriptQueue",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "Test",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "Watcher",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "WeatherStation",
+						"type": "csv",
+						"selected": false
+					}
+				],
+				"id": "d6a59267-f9a3-4662-b263-90683ba938a0",
+				"type": "csv",
+				"label": "",
+				"query": {
+					"influxql": "",
+					"measurement": "",
+					"tagKey": "",
+					"fieldKey": ""
+				},
+				"sourceID": "dynamic",
+				"links": {
+					"self": "/chronograf/v1/dashboards/40/templates/d6a59267-f9a3-4662-b263-90683ba938a0"
+				}
+			},
+			{
+				"tempVar": ":topic:",
+				"values": [
+					{
+						"value": "lsst.sal.ATAOS.ackcmd",
+						"type": "influxql",
+						"selected": true
+					}
+				],
+				"id": "db2c8475-9c6b-4ec0-a33b-88a415776472",
+				"type": "influxql",
+				"label": "",
+				"query": {
+					"influxql": "SHOW MEASUREMENTS ON \"efd\" WITH MEASUREMENT =~ /:CSCList:/",
+					"measurement": "",
+					"tagKey": "",
+					"fieldKey": ""
+				},
+				"sourceID": "dynamic",
+				"links": {
+					"self": "/chronograf/v1/dashboards/40/templates/db2c8475-9c6b-4ec0-a33b-88a415776472"
+				}
+			}
+		],
+		"name": "Diagnostics",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/34",
-			"cells": "/chronograf/v1/dashboards/34/cells",
-			"templates": "/chronograf/v1/dashboards/34/templates"
+			"self": "/chronograf/v1/dashboards/40",
+			"cells": "/chronograf/v1/dashboards/40/cells",
+			"templates": "/chronograf/v1/dashboards/40/templates"
 		}
 	}
 }

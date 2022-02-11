@@ -9,10 +9,10 @@
 		}
 	},
 	"dashboard": {
-		"id": "25",
+		"id": "5",
 		"cells": [
 			{
-				"i": "42278cb8-e817-43dc-89a7-7070d5b05963",
+				"i": "1942a201-98b2-4d25-9ee1-2fbc5dde13fa",
 				"x": 0,
 				"y": 0,
 				"w": 3,
@@ -20,7 +20,7 @@
 				"name": "Offline State",
 				"queries": [
 					{
-						"query": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.logevent_offlineDetailedState\" ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_offlineDetailedState\" ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.logevent_offlineDetailedState\" ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_offlineDetailedState\" ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -125,11 +125,11 @@
 				"note": "OFFLINE AVAILABLE = 1\n\nOFFLINE PUBLISH ONLY = 2",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/25/cells/42278cb8-e817-43dc-89a7-7070d5b05963"
+					"self": "/chronograf/v1/dashboards/5/cells/1942a201-98b2-4d25-9ee1-2fbc5dde13fa"
 				}
 			},
 			{
-				"i": "32d4a518-551d-4da8-bd5f-eeadacc1e3e0",
+				"i": "2c12247e-a465-4923-9824-5ffcefde5c58",
 				"x": 3,
 				"y": 0,
 				"w": 3,
@@ -137,7 +137,7 @@
 				"name": "Image Readiness",
 				"queries": [
 					{
-						"query": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.logevent_imageReadinessDetailedState\" ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_imageReadinessDetailedState\" ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -149,7 +149,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.logevent_imageReadinessDetailedState\" ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_imageReadinessDetailedState\" ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -249,11 +249,11 @@
 				"note": "READY         = 1\n\nNOT_READY     = 2\n\nGETTING_READY = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/25/cells/32d4a518-551d-4da8-bd5f-eeadacc1e3e0"
+					"self": "/chronograf/v1/dashboards/5/cells/2c12247e-a465-4923-9824-5ffcefde5c58"
 				}
 			},
 			{
-				"i": "3782f3c4-5978-4606-b58e-e681822050f5",
+				"i": "4fcad441-6c41-411f-81e1-1eaa2dafcdd5",
 				"x": 0,
 				"y": 3,
 				"w": 3,
@@ -261,7 +261,7 @@
 				"name": "Rafts",
 				"queries": [
 					{
-						"query": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.logevent_raftsDetailedState\" ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_raftsDetailedState\" ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -273,7 +273,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.logevent_raftsDetailedState\" ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_raftsDetailedState\" ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -387,11 +387,11 @@
 				"note": "NEEDS_CLEAR = 1\n\nCLEARING    = 2\n\nINTEGRATING = 3\n\nREADING_OUT = 4\n\nQUIESCENT   = 5",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/25/cells/3782f3c4-5978-4606-b58e-e681822050f5"
+					"self": "/chronograf/v1/dashboards/5/cells/4fcad441-6c41-411f-81e1-1eaa2dafcdd5"
 				}
 			},
 			{
-				"i": "2cd14c6d-4763-4192-a89d-c38746769766",
+				"i": "3a91295b-2826-4016-a2ec-35b1ced7bb50",
 				"x": 6,
 				"y": 0,
 				"w": 3,
@@ -399,7 +399,7 @@
 				"name": "Calibration",
 				"queries": [
 					{
-						"query": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.logevent_calibrationDetailedState\" ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_calibrationDetailedState\" ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -411,7 +411,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.logevent_calibrationDetailedState\" ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_calibrationDetailedState\" ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -511,11 +511,11 @@
 				"note": "DISABLED    = 1\n\nENABLED     = 2\n\nINTEGRATING = 3",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/25/cells/2cd14c6d-4763-4192-a89d-c38746769766"
+					"self": "/chronograf/v1/dashboards/5/cells/3a91295b-2826-4016-a2ec-35b1ced7bb50"
 				}
 			},
 			{
-				"i": "435f81f1-66c1-4f39-87bd-8714c1087b6f",
+				"i": "5260477f-d9e4-4c94-b462-e90db94e4823",
 				"x": 3,
 				"y": 3,
 				"w": 3,
@@ -523,7 +523,7 @@
 				"name": "Shutter",
 				"queries": [
 					{
-						"query": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.logevent_shutterDetailedState\" ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_shutterDetailedState\" ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -535,7 +535,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.logevent_shutterDetailedState\" ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_shutterDetailedState\" ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -642,11 +642,11 @@
 				"note": "CLOSED  = 1\n\nOPEN    = 2\n\nCLOSING = 3\n\nOPENING = 4",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/25/cells/435f81f1-66c1-4f39-87bd-8714c1087b6f"
+					"self": "/chronograf/v1/dashboards/5/cells/5260477f-d9e4-4c94-b462-e90db94e4823"
 				}
 			},
 			{
-				"i": "bc48450e-8bb2-4fc8-95bd-95dc84251945",
+				"i": "87b57792-80b2-47ba-a174-63c0148da60b",
 				"x": 6,
 				"y": 3,
 				"w": 3,
@@ -654,7 +654,7 @@
 				"name": "Ready To Take Images",
 				"queries": [
 					{
-						"query": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.logevent_ccsCommandState\" ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_ccsCommandState\" ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -666,7 +666,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.logevent_ccsCommandState\" ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"substate\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_ccsCommandState\" ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -773,17 +773,17 @@
 				"note": "IDLE = 1\n\nBUSY = 2",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/25/cells/bc48450e-8bb2-4fc8-95bd-95dc84251945"
+					"self": "/chronograf/v1/dashboards/5/cells/87b57792-80b2-47ba-a174-63c0148da60b"
 				}
 			}
 		],
 		"templates": [],
-		"name": "ATCamera Substate Monitor",
+		"name": "CCCamera Substate Monitor",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/25",
-			"cells": "/chronograf/v1/dashboards/25/cells",
-			"templates": "/chronograf/v1/dashboards/25/templates"
+			"self": "/chronograf/v1/dashboards/5",
+			"cells": "/chronograf/v1/dashboards/5/cells",
+			"templates": "/chronograf/v1/dashboards/5/templates"
 		}
 	}
 }

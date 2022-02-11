@@ -9,13 +9,13 @@
 		}
 	},
 	"dashboard": {
-		"id": "2",
+		"id": "3",
 		"cells": [
 			{
-				"i": "90ecf838-6a1b-4281-a6a4-69f3514b9c98",
+				"i": "19a4d96c-867d-4f28-b18e-66e226f5ed54",
 				"x": 0,
 				"y": 0,
-				"w": 11,
+				"w": 9,
 				"h": 2,
 				"name": "Info",
 				"queries": [
@@ -100,106 +100,49 @@
 					"isEnforced": true,
 					"digits": 2
 				},
-				"note": "Last images taken with CCCamera.\n\nSelect an appropriate time window (e.g. `Past 24h`)\n\n",
+				"note": "Last images ingested into the OODS.\n\nSelect an appropriate time window (e.g. `Past 24h`)\n\n",
 				"noteVisibility": "showWhenNoData",
 				"links": {
-					"self": "/chronograf/v1/dashboards/2/cells/90ecf838-6a1b-4281-a6a4-69f3514b9c98"
+					"self": "/chronograf/v1/dashboards/3/cells/19a4d96c-867d-4f28-b18e-66e226f5ed54"
 				}
 			},
 			{
-				"i": "f5fe5614-753e-459d-8c4a-1a1d811c0013",
+				"i": "85b01202-665f-409a-a216-0c9671ec0364",
 				"x": 0,
 				"y": 2,
-				"w": 12,
-				"h": 5,
-				"name": "Exposure sequence",
+				"w": 11,
+				"h": 6,
+				"name": "Ingest sequence",
 				"queries": [
 					{
-						"query": "SELECT \"groupId\", \"expTime\", \"numImages\", \"shutter\", \"imageType\", \"keyValueMap\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.command_takeImages\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"obsid\", \"statusCode\", \"description\", \"raft\", \"sensor\" FROM \"efd\".\"autogen\".\"lsst.sal.CCArchiver.logevent_imageInOODS\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.CCCamera.command_takeImages",
+							"measurement": "lsst.sal.CCArchiver.logevent_imageInOODS",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "groupId",
+									"value": "obsid",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "expTime",
+									"value": "statusCode",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "numImages",
+									"value": "description",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "shutter",
+									"value": "raft",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "imageType",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "keyValueMap",
-									"type": "field",
-									"alias": ""
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": null,
-							"range": null,
-							"shifts": null
-						},
-						"source": "/chronograf/v1/sources/1",
-						"type": "influxql"
-					},
-					{
-						"query": "SELECT \"imageName\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_startIntegration\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
-						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.CCCamera.logevent_startIntegration",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "imageName",
-									"type": "field",
-									"alias": ""
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": null,
-							"range": null,
-							"shifts": null
-						},
-						"source": "/chronograf/v1/sources/1",
-						"type": "influxql"
-					},
-					{
-						"query": "SELECT \"imageName\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.logevent_endReadout\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
-						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.CCCamera.logevent_endReadout",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "imageName",
+									"value": "sensor",
 									"type": "field",
 									"alias": ""
 								}
@@ -281,43 +224,28 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.CCCamera.command_takeImages.expTime",
-						"displayName": "Exposure Time",
+						"internalName": "lsst.sal.CCArchiver.logevent_imageInOODS.obsid",
+						"displayName": "Obs ID",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.CCCamera.command_takeImages.keyValueMap",
-						"displayName": "Image Parameters",
+						"internalName": "lsst.sal.CCArchiver.logevent_imageInOODS.raft",
+						"displayName": "Raft",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.CCCamera.command_takeImages.groupId",
-						"displayName": "Group ID",
-						"visible": false
-					},
-					{
-						"internalName": "lsst.sal.CCCamera.command_takeImages.imageType",
-						"displayName": "Image Type",
-						"visible": false
-					},
-					{
-						"internalName": "lsst.sal.CCCamera.command_takeImages.numImages",
-						"displayName": "Num Images",
+						"internalName": "lsst.sal.CCArchiver.logevent_imageInOODS.sensor",
+						"displayName": "Sensor",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.CCCamera.command_takeImages.shutter",
-						"displayName": "Shutter",
+						"internalName": "lsst.sal.CCArchiver.logevent_imageInOODS.statusCode",
+						"displayName": "Status Code",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.CCCamera.logevent_startIntegration.imageName",
-						"displayName": "Image Name (SI)",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.CCCamera.logevent_endReadout.imageName",
-						"displayName": "Image Name (ER)",
+						"internalName": "lsst.sal.CCArchiver.logevent_imageInOODS.description",
+						"displayName": "Description",
 						"visible": true
 					}
 				],
@@ -329,17 +257,17 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/2/cells/f5fe5614-753e-459d-8c4a-1a1d811c0013"
+					"self": "/chronograf/v1/dashboards/3/cells/85b01202-665f-409a-a216-0c9671ec0364"
 				}
 			}
 		],
 		"templates": [],
-		"name": "ComCam Exposure table",
+		"name": "ComCam OODS Ingest Status",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/2",
-			"cells": "/chronograf/v1/dashboards/2/cells",
-			"templates": "/chronograf/v1/dashboards/2/templates"
+			"self": "/chronograf/v1/dashboards/3",
+			"cells": "/chronograf/v1/dashboards/3/cells",
+			"templates": "/chronograf/v1/dashboards/3/templates"
 		}
 	}
 }
