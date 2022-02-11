@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.1",
+		"chronografVersion": "1.9.3",
 		"sources": {
 			"1": {
 				"name": "EFD",
@@ -1956,7 +1956,7 @@
 				"name": "kafka partitions on each node (% used)",
 				"queries": [
 					{
-						"query": "SELECT mean(\"used_percent\") AS \"mean_used_percent\" FROM \"telegraf\".\"autogen\".\"disk\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"path\"='/data' AND \"device\"='mapper/VGhdd-LVefd' GROUP BY time(:interval:), \"host\" FILL(null)",
+						"query": "SELECT mean(\"used_percent\") AS \"mean_used_percent\" FROM \"telegraf\".\"autogen\".\"disk\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"path\"='/data' AND \"device\"='mapper/VGhdd-LVefd' GROUP BY time(:interval:), host FILL(null)",
 						"queryConfig": {
 							"database": "telegraf",
 							"measurement": "disk",

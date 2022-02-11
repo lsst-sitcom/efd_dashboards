@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.1",
+		"chronografVersion": "1.9.3",
 		"sources": {
 			"1": {
 				"name": "EFD",
@@ -20,7 +20,7 @@
 				"name": "Settings",
 				"queries": [
 					{
-						"query": "SELECT \"cscVersion\", \"xmlVersion\", \"salVersion\", \"subsystemVersions\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_softwareVersions\" ORDER BY time DESC LIMIT 10",
+						"query": "SELECT \"cscVersion\", \"xmlVersion\", \"salVersion\", \"openSpliceVersion\", \"subsystemVersions\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_softwareVersions\" ORDER BY time DESC LIMIT 10",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"cscVersion\", \"xmlVersion\", \"salVersion\", \"subsystemVersions\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_softwareVersions\" ORDER BY time DESC LIMIT 10",
+							"rawText": "SELECT \"cscVersion\", \"xmlVersion\", \"salVersion\", \"openSpliceVersion\", \"subsystemVersions\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_softwareVersions\" ORDER BY time DESC LIMIT 10",
 							"range": null,
 							"shifts": null
 						},
@@ -103,22 +103,27 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ScriptQueue.logevent_softwareVersions.cscVersion",
+						"internalName": "lsst.sal.CCCamera.logevent_softwareVersions.cscVersion",
 						"displayName": "",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ScriptQueue.logevent_softwareVersions.salVersion",
+						"internalName": "lsst.sal.CCCamera.logevent_softwareVersions.salVersion",
 						"displayName": "",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ScriptQueue.logevent_softwareVersions.xmlVersion",
+						"internalName": "lsst.sal.CCCamera.logevent_softwareVersions.subsystemVersions",
 						"displayName": "",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ScriptQueue.logevent_softwareVersions.subsystemVersions",
+						"internalName": "lsst.sal.CCCamera.logevent_softwareVersions.xmlVersion",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.CCCamera.logevent_softwareVersions.openSpliceVersion",
 						"displayName": "",
 						"visible": true
 					}

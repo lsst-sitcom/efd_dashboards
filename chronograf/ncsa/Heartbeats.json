@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.1",
+		"chronografVersion": "1.9.3",
 		"sources": {
 			"1": {
 				"name": "EFD",
@@ -694,7 +694,7 @@
 			{
 				"i": "5af3be24-de2d-419e-88ee-aaa262cfdf8f",
 				"x": 0,
-				"y": 56,
+				"y": 54,
 				"w": 12,
 				"h": 2,
 				"name": "MTVMS",
@@ -825,142 +825,6 @@
 				"noteVisibility": "default",
 				"links": {
 					"self": "/chronograf/v1/dashboards/77/cells/5af3be24-de2d-419e-88ee-aaa262cfdf8f"
-				}
-			},
-			{
-				"i": "06bc8aa4-0645-4955-a88b-ad6c54deadc9",
-				"x": 0,
-				"y": 54,
-				"w": 12,
-				"h": 2,
-				"name": "Rotator",
-				"queries": [
-					{
-						"query": "SELECT count(\"heartbeat\") AS \"count_heartbeat\" FROM \"efd\".\"autogen\".\"lsst.sal.Rotator.logevent_heartbeat\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
-						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.Rotator.logevent_heartbeat",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "count",
-									"type": "func",
-									"alias": "count_heartbeat",
-									"args": [
-										{
-											"value": "heartbeat",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "auto",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"fill": "null",
-							"rawText": null,
-							"range": null,
-							"shifts": null
-						},
-						"source": "/chronograf/v1/sources/1",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "line-stepplot",
-				"colors": [
-					{
-						"id": "e5a83a74-0836-4731-aec7-6665f11b3cf3",
-						"type": "scale",
-						"hex": "#31C0F6",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "0ba45a1b-810b-4c58-915e-043a5d965224",
-						"type": "scale",
-						"hex": "#A500A5",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "9665241b-31e3-48c9-a314-257ef9cfde03",
-						"type": "scale",
-						"hex": "#FF7E27",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": true
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.ATMCS.logevent_heartbeat.count_heartbeat",
-						"displayName": "",
-						"visible": true
-					}
-				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 2
-				},
-				"note": "",
-				"noteVisibility": "default",
-				"links": {
-					"self": "/chronograf/v1/dashboards/77/cells/06bc8aa4-0645-4955-a88b-ad6c54deadc9"
 				}
 			},
 			{
@@ -1097,142 +961,6 @@
 				"noteVisibility": "default",
 				"links": {
 					"self": "/chronograf/v1/dashboards/77/cells/b9e35388-7530-42e6-b402-9be0711ac141"
-				}
-			},
-			{
-				"i": "68a8a7d3-a4ad-4993-94f7-605648cf6baf",
-				"x": 0,
-				"y": 60,
-				"w": 12,
-				"h": 2,
-				"name": "Environment (now WeatherStation)",
-				"queries": [
-					{
-						"query": "SELECT count(\"heartbeat\") AS \"count_heartbeat\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.logevent_heartbeat\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
-						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.Environment.logevent_heartbeat",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "count",
-									"type": "func",
-									"alias": "count_heartbeat",
-									"args": [
-										{
-											"value": "heartbeat",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "auto",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"fill": "null",
-							"rawText": null,
-							"range": null,
-							"shifts": null
-						},
-						"source": "/chronograf/v1/sources/1",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "line-stepplot",
-				"colors": [
-					{
-						"id": "e5a83a74-0836-4731-aec7-6665f11b3cf3",
-						"type": "scale",
-						"hex": "#31C0F6",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "0ba45a1b-810b-4c58-915e-043a5d965224",
-						"type": "scale",
-						"hex": "#A500A5",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "9665241b-31e3-48c9-a314-257ef9cfde03",
-						"type": "scale",
-						"hex": "#FF7E27",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": true
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.ATMCS.logevent_heartbeat.count_heartbeat",
-						"displayName": "",
-						"visible": true
-					}
-				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 2
-				},
-				"note": "",
-				"noteVisibility": "default",
-				"links": {
-					"self": "/chronograf/v1/dashboards/77/cells/68a8a7d3-a4ad-4993-94f7-605648cf6baf"
 				}
 			},
 			{
@@ -1918,7 +1646,7 @@
 			{
 				"i": "c89f54cf-44cd-4fcf-9c99-4ce5dc3293c1",
 				"x": 0,
-				"y": 58,
+				"y": 56,
 				"w": 12,
 				"h": 2,
 				"name": "DSM",
@@ -4170,7 +3898,7 @@
 			{
 				"i": "c32c6cb1-5a32-4ffd-89c0-184d56d8887e",
 				"x": 0,
-				"y": 62,
+				"y": 58,
 				"w": 12,
 				"h": 2,
 				"name": "Test",
@@ -4306,7 +4034,7 @@
 			{
 				"i": "73a673d0-04ca-4231-91ba-0abc59be2a1c",
 				"x": 0,
-				"y": 64,
+				"y": 60,
 				"w": 12,
 				"h": 2,
 				"name": "OCPS",
