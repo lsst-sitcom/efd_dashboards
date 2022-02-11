@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.1",
+		"chronografVersion": "1.9.3",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -818,10 +818,10 @@
 				"name": "WREB On-Board",
 				"queries": [
 					{
-						"query": "SELECT mean(\"temp1\") AS \"mean_temp1\", mean(\"temp2\") AS \"mean_temp2\", mean(\"temp3\") AS \"mean_temp3\", mean(\"temp4\") AS \"mean_temp4\", mean(\"temp5\") AS \"mean_temp5\", mean(\"temp6\") AS \"mean_temp6\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_Reb\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"temp1\") AS \"mean_temp1\", mean(\"temp2\") AS \"mean_temp2\", mean(\"temp3\") AS \"mean_temp3\", mean(\"temp4\") AS \"mean_temp4\", mean(\"temp5\") AS \"mean_temp5\", mean(\"temp6\") AS \"mean_temp6\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Reb\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.fp_Reb",
+							"measurement": "lsst.sal.ATCamera.focal_plane_Reb",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
@@ -1009,10 +1009,10 @@
 				"name": "ASPIC",
 				"queries": [
 					{
-						"query": "SELECT \"aspicl_Temp0\", \"aspicu_Temp0\", \"aspicl_Temp1\", \"aspicu_Temp1\", \"aspicl_Temp2\", \"aspicu_Temp2\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_Reb\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"aspicl_Temp0\", \"aspicu_Temp0\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Reb\" WHERE time > :dashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.fp_Reb",
+							"measurement": "lsst.sal.ATCamera.focal_plane_Reb",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
@@ -1022,26 +1022,6 @@
 								},
 								{
 									"value": "aspicu_Temp0",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "aspicl_Temp1",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "aspicu_Temp1",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "aspicl_Temp2",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "aspicu_Temp2",
 									"type": "field",
 									"alias": ""
 								}

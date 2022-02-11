@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.1",
+		"chronografVersion": "1.9.3",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -17,10 +17,10 @@
 				"y": 0,
 				"w": 6,
 				"h": 3,
-				"name": "AuxTel-ESS - ESSID 201 Temperatures",
+				"name": "AuxTel-ESS - ESSID 201 Temperatures (with Outside Temp)",
 				"queries": [
 					{
-						"query": "SELECT \"temperatureC02\" as \"Air\", \"temperatureC03\" as \"Truss\", \"temperatureC04\" as \"M2\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature4Ch\" WHERE ESSID = 201 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"temperature1\" as \"Air\", \"temperature2\" as \"Truss\", \"temperature3\" as \"M2\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 201 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,41 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"temperatureC02\" as \"Air\", \"temperatureC03\" as \"Truss\", \"temperatureC04\" as \"M2\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature4Ch\" WHERE ESSID = 201 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"rawText": "SELECT \"temperature1\" as \"Air\", \"temperature2\" as \"Truss\", \"temperature3\" as \"M2\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 201 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT mean(\"avg1M\") AS \"mean_avg1M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.WeatherStation.airTemperature",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_avg1M",
+									"args": [
+										{
+											"value": "avg1M",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
 							"range": null,
 							"shifts": null
 						},

@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.1",
+		"chronografVersion": "1.9.3",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -293,7 +293,7 @@
 				"y": 9,
 				"w": 4,
 				"h": 4,
-				"name": "Position 3 (Z-motion)",
+				"name": "Position 2 (Z-motion)",
 				"queries": [
 					{
 						"query": "SELECT \"position2\" FROM \"efd\".\"autogen\".\"lsst.sal.PMD.position\" WHERE time > :dashboardTime:",

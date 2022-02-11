@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.1",
+		"chronografVersion": "1.9.3",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -14,16 +14,16 @@
 			{
 				"i": "f75678d3-8a2f-475d-8713-acd322726e7c",
 				"x": 8,
-				"y": 6,
+				"y": 2,
 				"w": 4,
 				"h": 2,
 				"name": "REB Total Power",
 				"queries": [
 					{
-						"query": "SELECT \"rebTotalPower\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_RebTotalPower\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: ",
+						"query": "SELECT \"rebTotalPower\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_RebTotalPower\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: ",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.fp_RebTotalPower",
+							"measurement": "lsst.sal.ATCamera.focal_plane_RebTotalPower",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
@@ -137,16 +137,16 @@
 			{
 				"i": "cbbe975d-a0f1-46ee-aa41-43b6eb690006",
 				"x": 8,
-				"y": 4,
+				"y": 0,
 				"w": 4,
 				"h": 2,
 				"name": "HV Bias Switch",
 				"queries": [
 					{
-						"query": "SELECT \"hVBiasSwitch\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"hVBiasSwitch\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.fp_Reb",
+							"measurement": "lsst.sal.ATCamera.focal_plane_Reb",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
@@ -251,197 +251,6 @@
 				}
 			},
 			{
-				"i": "0355f829-1575-4410-a8cc-7686a5fb501e",
-				"x": 8,
-				"y": 0,
-				"w": 4,
-				"h": 4,
-				"name": "Reference Voltages",
-				"queries": [
-					{
-						"query": "SELECT mean(\"ref05V\") AS \"mean_ref05V\", mean(\"ref125V\") AS \"mean_ref125V\", mean(\"ref15V\") AS \"mean_ref15V\", mean(\"ref25V\") AS \"mean_ref25V\", mean(\"refN12\") AS \"mean_refN12\", mean(\"refP12\") AS \"mean_refP12\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
-						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.fp_Reb",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_ref05V",
-									"args": [
-										{
-											"value": "ref05V",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_ref125V",
-									"args": [
-										{
-											"value": "ref125V",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_ref15V",
-									"args": [
-										{
-											"value": "ref15V",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_ref25V",
-									"args": [
-										{
-											"value": "ref25V",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_refN12",
-									"args": [
-										{
-											"value": "refN12",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_refP12",
-									"args": [
-										{
-											"value": "refP12",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "auto",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"fill": "null",
-							"rawText": null,
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "Voltage",
-						"prefix": "",
-						"suffix": " V",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "line",
-				"colors": [
-					{
-						"id": "61ffd8d3-e006-4479-92e7-5ba00469158b",
-						"type": "scale",
-						"hex": "#31C0F6",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "10e3088b-538a-4603-b634-83000302174d",
-						"type": "scale",
-						"hex": "#A500A5",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "97227fbd-f10e-49f9-91da-912b911262f4",
-						"type": "scale",
-						"hex": "#FF7E27",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": true
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					}
-				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 2
-				},
-				"note": "",
-				"noteVisibility": "default",
-				"links": {
-					"self": "/chronograf/v1/dashboards/13/cells/0355f829-1575-4410-a8cc-7686a5fb501e"
-				}
-			},
-			{
 				"i": "fed813e9-9733-4630-9a54-ed98a9b95b04",
 				"x": 4,
 				"y": 0,
@@ -450,10 +259,10 @@
 				"name": "Standard Currents",
 				"queries": [
 					{
-						"query": "SELECT mean(\"anaI\") AS \"mean_anaI\", mean(\"clkHI\") AS \"mean_clkHI\", mean(\"digI\") AS \"mean_digI\", mean(\"odI\") AS \"mean_odI\", mean(\"oDI\") AS \"mean_oDI\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"anaI\") AS \"mean_anaI\", mean(\"clkHI\") AS \"mean_clkHI\", mean(\"digI\") AS \"mean_digI\", mean(\"odI\") AS \"mean_odI\", mean(\"oDI\") AS \"mean_oDI\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.fp_Reb",
+							"measurement": "lsst.sal.ATCamera.focal_plane_Reb",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
@@ -629,10 +438,10 @@
 				"name": "Special Voltages",
 				"queries": [
 					{
-						"query": "SELECT mean(\"pClkL\") AS \"mean_pClkL\", mean(\"pClkU\") AS \"mean_pClkU\", mean(\"rGL\") AS \"mean_rGL\", mean(\"rGU\") AS \"mean_rGU\", mean(\"sClkL\") AS \"mean_sClkL\", mean(\"sClkU\") AS \"mean_sClkU\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"pClkL\") AS \"mean_pClkL\", mean(\"pClkU\") AS \"mean_pClkU\", mean(\"rGL\") AS \"mean_rGL\", mean(\"rGU\") AS \"mean_rGU\", mean(\"sClkL\") AS \"mean_sClkL\", mean(\"sClkU\") AS \"mean_sClkU\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.fp_Reb",
+							"measurement": "lsst.sal.ATCamera.focal_plane_Reb",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
@@ -820,10 +629,10 @@
 				"name": "Standard Voltages",
 				"queries": [
 					{
-						"query": "SELECT mean(\"anaV\") AS \"mean_anaV\", mean(\"clkHV\") AS \"mean_clkHV\", mean(\"clkLV\") AS \"mean_clkLV\", mean(\"digV\") AS \"mean_digV\", mean(\"htrPS_V\") AS \"mean_htrPS_V\", mean(\"odPS_V\") AS \"mean_odPS_V\", mean(\"rgL_V\") AS \"mean_rgL_V\", mean(\"rgV\") AS \"mean_rgV\", mean(\"sckL_V\") AS \"mean_sckL_V\", mean(\"sckU_V\") AS \"mean_sckU_V\", mean(\"htrV\") AS \"mean_htrV\", mean(\"oDV\") AS \"mean_oDV\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"anaV\") AS \"mean_anaV\", mean(\"clkHV\") AS \"mean_clkHV\", mean(\"clkLV\") AS \"mean_clkLV\", mean(\"digV\") AS \"mean_digV\", mean(\"htrPS_V\") AS \"mean_htrPS_V\", mean(\"odPS_V\") AS \"mean_odPS_V\", mean(\"rgL_V\") AS \"mean_rgL_V\", mean(\"rgV\") AS \"mean_rgV\", mean(\"sckL_V\") AS \"mean_sckL_V\", mean(\"sckU_V\") AS \"mean_sckU_V\", mean(\"htrV\") AS \"mean_htrV\", mean(\"oDV\") AS \"mean_oDV\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.fp_Reb",
+							"measurement": "lsst.sal.ATCamera.focal_plane_Reb",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
@@ -1083,10 +892,10 @@
 				"name": "Powers",
 				"queries": [
 					{
-						"query": "SELECT mean(\"power\") AS \"mean_power\", mean(\"htrW\") AS \"mean_htrW\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"power\") AS \"mean_power\", mean(\"htrW\") AS \"mean_htrW\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.fp_Reb",
+							"measurement": "lsst.sal.ATCamera.focal_plane_Reb",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{

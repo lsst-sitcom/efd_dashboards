@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.1",
+		"chronografVersion": "1.9.3",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -778,7 +778,7 @@
 				"name": "Mount Status",
 				"queries": [
 					{
-						"query": "SELECT \"elevation\", \"azimuth\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.logevent_axesInPosition\" ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"inPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.logevent_azimuthInPosition\" ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -790,7 +790,27 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"elevation\", \"azimuth\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.logevent_axesInPosition\" ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"inPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.logevent_azimuthInPosition\" ORDER BY time DESC LIMIT 1",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT \"inPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.logevent_elevationInPosition\" ORDER BY time DESC LIMIT 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"inPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.logevent_elevationInPosition\" ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -861,12 +881,12 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.MTMount.logevent_axesInPosition.azimuth",
+						"internalName": "lsst.sal.MTMount.logevent_azimuthInPosition.inPosition",
 						"displayName": "Azimuth",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.MTMount.logevent_axesInPosition.elevation",
+						"internalName": "lsst.sal.MTMount.logevent_elevationInPosition.inPosition",
 						"displayName": "Elevation",
 						"visible": true
 					}

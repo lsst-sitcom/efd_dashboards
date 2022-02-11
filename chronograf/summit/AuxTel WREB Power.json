@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.1",
+		"chronografVersion": "1.9.3",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -20,10 +20,10 @@
 				"name": "Voltages",
 				"queries": [
 					{
-						"query": "SELECT mean(\"analog_V\") AS \"mean_analog_V\", mean(\"clkHigh_V\") AS \"mean_clkHigh_V\", mean(\"clkLow_V\") AS \"mean_clkLow_V\", mean(\"digital_V\") AS \"mean_digital_V\", mean(\"dphi_V\") AS \"mean_dphi_V\", mean(\"heater_V\") AS \"mean_heater_V\", mean(\"hvbias_V\") AS \"mean_hvbias_V\", mean(\"od_V\") AS \"mean_od_V\", mean(\"otm_V\") AS \"mean_otm_V\", mean(\"aux_V\") AS \"mean_aux_V\", mean(\"fan_V\") AS \"mean_fan_V\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wrebPower\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"analog_V\") AS \"mean_analog_V\", mean(\"clkHigh_V\") AS \"mean_clkHigh_V\", mean(\"clkLow_V\") AS \"mean_clkLow_V\", mean(\"digital_V\") AS \"mean_digital_V\", mean(\"dphi_V\") AS \"mean_dphi_V\", mean(\"heater_V\") AS \"mean_heater_V\", mean(\"hvbias_V\") AS \"mean_hvbias_V\", mean(\"od_V\") AS \"mean_od_V\", mean(\"otm_V\") AS \"mean_otm_V\", mean(\"aux_V\") AS \"mean_aux_V\", mean(\"fan_V\") AS \"mean_fan_V\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.power\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.wrebPower",
+							"measurement": "lsst.sal.ATCamera.power",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
@@ -271,10 +271,10 @@
 				"name": "Currents",
 				"queries": [
 					{
-						"query": "SELECT mean(\"analog_I\") AS \"mean_analog_I\", mean(\"clkHigh_I\") AS \"mean_clkHigh_I\", mean(\"clkLow_I\") AS \"mean_clkLow_I\", mean(\"digital_I\") AS \"mean_digital_I\", mean(\"dphi_I\") AS \"mean_dphi_I\", mean(\"heater_I\") AS \"mean_heater_I\", mean(\"hvbias_I\") AS \"mean_hvbias_I\", mean(\"od_I\") AS \"mean_od_I\", mean(\"aux_I\") AS \"mean_aux_I\", mean(\"fan_I\") AS \"mean_fan_I\", mean(\"otm_I\") AS \"mean_otm_I\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wrebPower\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"analog_I\") AS \"mean_analog_I\", mean(\"clkHigh_I\") AS \"mean_clkHigh_I\", mean(\"clkLow_I\") AS \"mean_clkLow_I\", mean(\"digital_I\") AS \"mean_digital_I\", mean(\"dphi_I\") AS \"mean_dphi_I\", mean(\"heater_I\") AS \"mean_heater_I\", mean(\"hvbias_I\") AS \"mean_hvbias_I\", mean(\"od_I\") AS \"mean_od_I\", mean(\"aux_I\") AS \"mean_aux_I\", mean(\"fan_I\") AS \"mean_fan_I\", mean(\"otm_I\") AS \"mean_otm_I\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.power\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.wrebPower",
+							"measurement": "lsst.sal.ATCamera.power",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{

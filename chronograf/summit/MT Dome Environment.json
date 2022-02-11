@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.1",
+		"chronografVersion": "1.9.3",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -620,12 +620,12 @@
 				"i": "bde7ff39-6162-4668-a739-b5e275a1d78e",
 				"x": 0,
 				"y": 8,
-				"w": 4,
+				"w": 7,
 				"h": 4,
-				"name": "MTDome-ESS03 - ESSID 103 Humidity",
+				"name": "MTDome Humidity - ESSID 103",
 				"queries": [
 					{
-						"query": "SELECT \"airTemperature\", \"relativeHumidity\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE ESSID = 103 and time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"relativeHumidity\", \"dewPoint\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE ESSID = 103 and time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -637,7 +637,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"airTemperature\", \"relativeHumidity\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE ESSID = 103 and time > :dashboardTime: AND time < :upperDashboardTime:",
+							"rawText": "SELECT \"relativeHumidity\", \"dewPoint\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE ESSID = 103 and time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -704,7 +704,10 @@
 						"value": "0"
 					}
 				],
-				"legend": {},
+				"legend": {
+					"type": "static",
+					"orientation": "bottom"
+				},
 				"tableOptions": {
 					"verticalTimeAxis": true,
 					"sortBy": {
@@ -735,9 +738,9 @@
 			},
 			{
 				"i": "0b7aa3b5-fdc4-4191-bc0d-b24a4da211a7",
-				"x": 4,
+				"x": 7,
 				"y": 8,
-				"w": 8,
+				"w": 5,
 				"h": 4,
 				"name": "MTDome-ESS03 - ESSID 103 Air Pressure",
 				"queries": [

@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.1",
+		"chronografVersion": "1.9.3",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -11,6 +11,143 @@
 	"dashboard": {
 		"id": "96",
 		"cells": [
+			{
+				"i": "73d403f9-9c2f-4bb6-80e1-680588b8ede5",
+				"x": 6,
+				"y": 2,
+				"w": 6,
+				"h": 3,
+				"name": "Filesystems usage",
+				"queries": [
+					{
+						"query": "SELECT mean(\"used\") AS \"mean_used\" FROM \"telegraf\".\"autogen\".\"disk\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"device\"='mapper/centos_efd--temp--k3s-data' GROUP BY time(:interval:), \"host\" FILL(null)",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "disk",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_used",
+									"args": [
+										{
+											"value": "used",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"device": [
+									"mapper/centos_efd--temp--k3s-data"
+								]
+							},
+							"groupBy": {
+								"time": "auto",
+								"tags": [
+									"host"
+								]
+							},
+							"areTagsAccepted": true,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "percentage",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "6e174025-1e66-42d6-affe-626907a59d96",
+						"type": "scale",
+						"hex": "#DA6FF1",
+						"name": "Ectoplasm",
+						"value": "0"
+					},
+					{
+						"id": "b3ac1a8e-6fce-4c02-8ee8-f87a15b1f2b8",
+						"type": "scale",
+						"hex": "#00717A",
+						"name": "Ectoplasm",
+						"value": "0"
+					},
+					{
+						"id": "68a4b22d-0599-4f34-89ee-c8e4354ad2af",
+						"type": "scale",
+						"hex": "#ACFF76",
+						"name": "Ectoplasm",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "To enable this graph, you will need to configure the Telegraf `disk` plugin. For more information, please visit the [Telegraf Disk plugin documentation](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/disk).",
+				"noteVisibility": "showWhenNoData",
+				"links": {
+					"self": "/chronograf/v1/dashboards/96/cells/73d403f9-9c2f-4bb6-80e1-680588b8ede5"
+				}
+			},
 			{
 				"i": "f9c96642-c753-4a4e-a763-8e89b7397017",
 				"x": 9,
@@ -472,7 +609,7 @@
 				"name": "InfluxDB write errors",
 				"queries": [
 					{
-						"query": "SELECT mean(\"writeError\") AS \"mean_writeError\" FROM \"_internal\".\"monitor\".\"write\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"writeError\") AS \"mean_writeError\" FROM \"_internal\".\"monitor\".\"write\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(0)",
 						"queryConfig": {
 							"database": "_internal",
 							"measurement": "write",
@@ -497,7 +634,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"fill": "null",
+							"fill": "0",
 							"rawText": null,
 							"range": null,
 							"shifts": null
@@ -603,7 +740,7 @@
 				"name": "Host memory usage",
 				"queries": [
 					{
-						"query": "SELECT mean(\"used\") AS \"last_used_percent\" FROM \"telegraf\".\"autogen\".\"mem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:), \"host\" FILL(previous)",
+						"query": "SELECT mean(\"used\") AS \"last_used_percent\" FROM \"telegraf\".\"autogen\".\"mem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"!='efd-temp-k3s.cp.lsst.org' GROUP BY time(:interval:), \"host\" FILL(previous)",
 						"queryConfig": {
 							"database": "telegraf",
 							"measurement": "mem",
@@ -622,7 +759,11 @@
 									]
 								}
 							],
-							"tags": {},
+							"tags": {
+								"host": [
+									"efd-temp-k3s.cp.lsst.org"
+								]
+							},
 							"groupBy": {
 								"time": "auto",
 								"tags": [
@@ -847,13 +988,13 @@
 			{
 				"i": "d07209a6-4fbf-44c2-a80b-b28a74532178",
 				"x": 0,
-				"y": 5,
+				"y": 8,
 				"w": 6,
 				"h": 3,
 				"name": "Mallocs per minute",
 				"queries": [
 					{
-						"query": "SELECT non_negative_derivative(mean(\"Mallocs\"),1m) AS \"mean_Mallocs\" FROM \"_internal\".\"monitor\".\"runtime\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT non_negative_derivative(mean(\"Mallocs\"),60s) AS \"mean_Mallocs\" FROM \"_internal\".\"monitor\".\"runtime\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -865,7 +1006,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT non_negative_derivative(mean(\"Mallocs\"),1m) AS \"mean_Mallocs\" FROM \"_internal\".\"monitor\".\"runtime\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+							"rawText": "SELECT non_negative_derivative(mean(\"Mallocs\"),60s) AS \"mean_Mallocs\" FROM \"_internal\".\"monitor\".\"runtime\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -963,14 +1104,14 @@
 			},
 			{
 				"i": "a745011d-d92d-4b1d-ad1a-cc16ce398eb1",
-				"x": 6,
+				"x": 0,
 				"y": 2,
 				"w": 6,
 				"h": 3,
 				"name": "Filesystems usage %",
 				"queries": [
 					{
-						"query": "SELECT mean(\"used_percent\") AS \"used\" FROM \"telegraf\".\"autogen\".\"disk\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:), \"host\" FILL(null)",
+						"query": "SELECT mean(\"used_percent\") AS \"used\" FROM \"telegraf\".\"autogen\".\"disk\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"device\"='mapper/centos_efd--temp--k3s-data' GROUP BY time(:interval:), \"host\" FILL(null)",
 						"queryConfig": {
 							"database": "telegraf",
 							"measurement": "disk",
@@ -989,14 +1130,18 @@
 									]
 								}
 							],
-							"tags": {},
+							"tags": {
+								"device": [
+									"mapper/centos_efd--temp--k3s-data"
+								]
+							},
 							"groupBy": {
 								"time": "auto",
 								"tags": [
 									"host"
 								]
 							},
-							"areTagsAccepted": false,
+							"areTagsAccepted": true,
 							"fill": "null",
 							"rawText": null,
 							"range": null,
@@ -1097,7 +1242,7 @@
 			{
 				"i": "81b9b02b-69ec-4cde-9e4f-21d247672e77",
 				"x": 0,
-				"y": 8,
+				"y": 11,
 				"w": 6,
 				"h": 3,
 				"name": "Host memory usage (%)",
@@ -1230,7 +1375,7 @@
 			{
 				"i": "5845fe14-7392-4a4b-848f-143809205c7d",
 				"x": 3,
-				"y": 2,
+				"y": 5,
 				"w": 3,
 				"h": 3,
 				"name": "Network",
@@ -1518,7 +1663,7 @@
 			{
 				"i": "a8d5b9d0-4668-444f-aa54-267e9297a662",
 				"x": 0,
-				"y": 2,
+				"y": 5,
 				"w": 3,
 				"h": 3,
 				"name": "System Load",
@@ -1673,7 +1818,7 @@
 			{
 				"i": "1d2b32b6-1685-4da7-b1dc-9c53cae98daf",
 				"x": 0,
-				"y": 11,
+				"y": 14,
 				"w": 6,
 				"h": 3,
 				"name": "Writes per min",
@@ -1785,7 +1930,7 @@
 			{
 				"i": "805e2c10-b0c9-4e98-a83c-67038e98d11f",
 				"x": 0,
-				"y": 14,
+				"y": 17,
 				"w": 6,
 				"h": 3,
 				"name": "Query duration vs. memory usage",
@@ -1936,7 +2081,7 @@
 			{
 				"i": "21b68216-be7e-4281-a2ad-4ed89c3da8fc",
 				"x": 0,
-				"y": 17,
+				"y": 20,
 				"w": 6,
 				"h": 3,
 				"name": "diskBytes/s (_internal.monitor.shard)",
