@@ -1,0 +1,98 @@
+{
+	"meta": {
+		"chronografVersion": "1.9.3",
+		"sources": {
+			"1": {
+				"name": "Summit EFD",
+				"link": "/chronograf/v1/sources/1"
+			}
+		}
+	},
+	"dashboard": {
+		"id": "134",
+		"cells": [
+			{
+				"i": "4bef9843-d399-456a-a17a-98a16700c865",
+				"x": 0,
+				"y": 0,
+				"w": 4,
+				"h": 4,
+				"name": "Untitled Graph",
+				"queries": [],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/134/cells/4bef9843-d399-456a-a17a-98a16700c865"
+				}
+			}
+		],
+		"templates": [],
+		"name": "ComCam temperatures",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/134",
+			"cells": "/chronograf/v1/dashboards/134/cells",
+			"templates": "/chronograf/v1/dashboards/134/templates"
+		}
+	}
+}

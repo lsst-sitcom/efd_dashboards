@@ -664,7 +664,7 @@
 				"name": "Camera Hexapod Temperatures",
 				"queries": [
 					{
-						"query": "SELECT \"temperatureC03\", \"temperatureC05\", \"temperatureC06\", \"temperatureC01\", \"temperatureC04\", \"temperatureC02\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"temperature5\" as \"Strut 12 temp\", \"temperature4\" as \"Strut 11 temp\", \"temperature3\" as \"Strut 10 temp\", \"temperature2\" as \"Strut 9 temp\", \"temperature1\" as \"Strut 8 temp\", \"temperature0\" as \"Strut 7 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -676,7 +676,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"temperatureC03\", \"temperatureC05\", \"temperatureC06\", \"temperatureC01\", \"temperatureC04\", \"temperatureC02\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"rawText": "SELECT \"temperature5\" as \"Strut 12 temp\", \"temperature4\" as \"Strut 11 temp\", \"temperature3\" as \"Strut 10 temp\", \"temperature2\" as \"Strut 9 temp\", \"temperature1\" as \"Strut 8 temp\", \"temperature0\" as \"Strut 7 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},

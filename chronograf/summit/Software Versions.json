@@ -20,7 +20,7 @@
 				"name": "Settings",
 				"queries": [
 					{
-						"query": "SELECT \"cscVersion\", \"xmlVersion\", \"salVersion\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_softwareVersions\" ORDER BY time DESC LIMIT 10",
+						"query": "SELECT \"cscVersion\", \"xmlVersion\", \"salVersion\", \"openSpliceVersion\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_softwareVersions\" ORDER BY time DESC LIMIT 10",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"cscVersion\", \"xmlVersion\", \"salVersion\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_softwareVersions\" ORDER BY time DESC LIMIT 10",
+							"rawText": "SELECT \"cscVersion\", \"xmlVersion\", \"salVersion\", \"openSpliceVersion\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_softwareVersions\" ORDER BY time DESC LIMIT 10",
 							"range": null,
 							"shifts": null
 						},
@@ -103,17 +103,22 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.MTM1M3.logevent_softwareVersions.cscVersion",
+						"internalName": "lsst.sal.ATAOS.logevent_softwareVersions.cscVersion",
 						"displayName": "",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.MTM1M3.logevent_softwareVersions.salVersion",
+						"internalName": "lsst.sal.ATAOS.logevent_softwareVersions.salVersion",
 						"displayName": "",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.MTM1M3.logevent_softwareVersions.xmlVersion",
+						"internalName": "lsst.sal.ATAOS.logevent_softwareVersions.xmlVersion",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATAOS.logevent_softwareVersions.openSpliceVersion",
 						"displayName": "",
 						"visible": true
 					}
@@ -134,6 +139,11 @@
 			{
 				"tempVar": ":CSCList:",
 				"values": [
+					{
+						"value": "AdamSensors",
+						"type": "csv",
+						"selected": false
+					},
 					{
 						"value": "ATAOS",
 						"type": "csv",
