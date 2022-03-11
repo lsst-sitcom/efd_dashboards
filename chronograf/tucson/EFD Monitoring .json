@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "202201240738~nightly",
+		"chronografVersion": "1.9.3",
 		"sources": {
 			"1": {
 				"name": "Influx 1",
@@ -600,10 +600,10 @@
 				"y": 5,
 				"w": 6,
 				"h": 3,
-				"name": "Host memory usage",
+				"name": "Host memory used GB",
 				"queries": [
 					{
-						"query": "SELECT mean(\"used\") AS \"last_used_percent\" FROM \"telegraf\".\"autogen\".\"mem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:), \"host\" FILL(previous)",
+						"query": "SELECT mean(\"used\") AS \"mean_used\" FROM \"telegraf\".\"autogen\".\"mem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:), \"host\" FILL(previous)",
 						"queryConfig": {
 							"database": "telegraf",
 							"measurement": "mem",
@@ -612,7 +612,7 @@
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "last_used_percent",
+									"alias": "mean_used",
 									"args": [
 										{
 											"value": "used",
@@ -656,9 +656,9 @@
 							"",
 							""
 						],
-						"label": "Memory used %",
+						"label": "Memory used GB",
 						"prefix": "",
-						"suffix": " ",
+						"suffix": " GB",
 						"base": "2",
 						"scale": "linear"
 					},

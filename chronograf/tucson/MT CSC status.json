@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "202201240738~nightly",
+		"chronografVersion": "1.9.3",
 		"sources": {
 			"1": {
 				"name": "Influx 1",
