@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.3",
+		"chronografVersion": "1.9.4",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -115,10 +115,10 @@
 				"name": "Ingest sequence",
 				"queries": [
 					{
-						"query": "SELECT \"obsid\", \"raft\", \"sensor\", \"statusCode\", \"description\" FROM \"efd\".\"autogen\".\"lsst.sal.CCArchiver.logevent_imageInOODS\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"obsid\", \"raft\", \"sensor\", \"statusCode\", \"description\" FROM \"efd\".\"autogen\".\"lsst.sal.CCOODS.logevent_imageInOODS\" WHERE time > :dashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.CCArchiver.logevent_imageInOODS",
+							"measurement": "lsst.sal.CCOODS.logevent_imageInOODS",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{

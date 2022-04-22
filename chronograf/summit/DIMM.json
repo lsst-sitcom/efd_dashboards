@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.3",
+		"chronografVersion": "1.9.4",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -13,8 +13,8 @@
 		"cells": [
 			{
 				"i": "216301a8-f89f-4842-9412-2cb67113ccac",
-				"x": 8,
-				"y": 2,
+				"x": 10,
+				"y": 0,
 				"w": 2,
 				"h": 2,
 				"name": "DIMM Summary State",
@@ -151,8 +151,8 @@
 			},
 			{
 				"i": "da891c46-9c97-4656-a590-306d06321897",
-				"x": 8,
-				"y": 0,
+				"x": 10,
+				"y": 2,
 				"w": 2,
 				"h": 2,
 				"name": "Heartbeat (DIMM)",
@@ -268,7 +268,7 @@
 				"i": "48838e01-4dab-444f-aff9-fb977bf7bce1",
 				"x": 0,
 				"y": 0,
-				"w": 8,
+				"w": 10,
 				"h": 9,
 				"name": "DIMM FWHM",
 				"queries": [

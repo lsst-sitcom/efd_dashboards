@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.3",
+		"chronografVersion": "1.9.4",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -143,14 +143,14 @@
 				"name": "HV Bias Switch",
 				"queries": [
 					{
-						"query": "SELECT \"hVBiasSwitch\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"hVBiasSwitch0\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.ATCamera.focal_plane_Reb",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "hVBiasSwitch",
+									"value": "hVBiasSwitch0",
 									"type": "field",
 									"alias": ""
 								}
@@ -259,7 +259,7 @@
 				"name": "Standard Currents",
 				"queries": [
 					{
-						"query": "SELECT mean(\"anaI\") AS \"mean_anaI\", mean(\"clkHI\") AS \"mean_clkHI\", mean(\"digI\") AS \"mean_digI\", mean(\"odI\") AS \"mean_odI\", mean(\"oDI\") AS \"mean_oDI\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"anaI0\") AS \"mean_anaI\", mean(\"clkHI0\") AS \"mean_clkHI\", mean(\"digI0\") AS \"mean_digI\", mean(\"odI0\") AS \"mean_odI\", mean(\"oDI0\") AS \"mean_oDI\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.ATCamera.focal_plane_Reb",
@@ -271,7 +271,7 @@
 									"alias": "mean_anaI",
 									"args": [
 										{
-											"value": "anaI",
+											"value": "anaI0",
 											"type": "field",
 											"alias": ""
 										}
@@ -283,7 +283,7 @@
 									"alias": "mean_clkHI",
 									"args": [
 										{
-											"value": "clkHI",
+											"value": "clkHI0",
 											"type": "field",
 											"alias": ""
 										}
@@ -295,7 +295,7 @@
 									"alias": "mean_digI",
 									"args": [
 										{
-											"value": "digI",
+											"value": "digI0",
 											"type": "field",
 											"alias": ""
 										}
@@ -307,7 +307,7 @@
 									"alias": "mean_odI",
 									"args": [
 										{
-											"value": "odI",
+											"value": "odI0",
 											"type": "field",
 											"alias": ""
 										}
@@ -319,7 +319,7 @@
 									"alias": "mean_oDI",
 									"args": [
 										{
-											"value": "oDI",
+											"value": "oDI0",
 											"type": "field",
 											"alias": ""
 										}
@@ -438,7 +438,7 @@
 				"name": "Special Voltages",
 				"queries": [
 					{
-						"query": "SELECT mean(\"pClkL\") AS \"mean_pClkL\", mean(\"pClkU\") AS \"mean_pClkU\", mean(\"rGL\") AS \"mean_rGL\", mean(\"rGU\") AS \"mean_rGU\", mean(\"sClkL\") AS \"mean_sClkL\", mean(\"sClkU\") AS \"mean_sClkU\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"pClkL0\") AS \"mean_pClkL\", mean(\"pClkU0\") AS \"mean_pClkU\", mean(\"rGL0\") AS \"mean_rGL\", mean(\"rGU0\") AS \"mean_rGU\", mean(\"sClkL0\") AS \"mean_sClkL\", mean(\"sClkU0\") AS \"mean_sClkU\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.ATCamera.focal_plane_Reb",
@@ -450,7 +450,7 @@
 									"alias": "mean_pClkL",
 									"args": [
 										{
-											"value": "pClkL",
+											"value": "pClkL0",
 											"type": "field",
 											"alias": ""
 										}
@@ -462,7 +462,7 @@
 									"alias": "mean_pClkU",
 									"args": [
 										{
-											"value": "pClkU",
+											"value": "pClkU0",
 											"type": "field",
 											"alias": ""
 										}
@@ -474,7 +474,7 @@
 									"alias": "mean_rGL",
 									"args": [
 										{
-											"value": "rGL",
+											"value": "rGL0",
 											"type": "field",
 											"alias": ""
 										}
@@ -486,7 +486,7 @@
 									"alias": "mean_rGU",
 									"args": [
 										{
-											"value": "rGU",
+											"value": "rGU0",
 											"type": "field",
 											"alias": ""
 										}
@@ -498,7 +498,7 @@
 									"alias": "mean_sClkL",
 									"args": [
 										{
-											"value": "sClkL",
+											"value": "sClkL0",
 											"type": "field",
 											"alias": ""
 										}
@@ -510,7 +510,7 @@
 									"alias": "mean_sClkU",
 									"args": [
 										{
-											"value": "sClkU",
+											"value": "sClkU0",
 											"type": "field",
 											"alias": ""
 										}
@@ -629,7 +629,7 @@
 				"name": "Standard Voltages",
 				"queries": [
 					{
-						"query": "SELECT mean(\"anaV\") AS \"mean_anaV\", mean(\"clkHV\") AS \"mean_clkHV\", mean(\"clkLV\") AS \"mean_clkLV\", mean(\"digV\") AS \"mean_digV\", mean(\"htrPS_V\") AS \"mean_htrPS_V\", mean(\"odPS_V\") AS \"mean_odPS_V\", mean(\"rgL_V\") AS \"mean_rgL_V\", mean(\"rgV\") AS \"mean_rgV\", mean(\"sckL_V\") AS \"mean_sckL_V\", mean(\"sckU_V\") AS \"mean_sckU_V\", mean(\"htrV\") AS \"mean_htrV\", mean(\"oDV\") AS \"mean_oDV\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"anaV0\") AS \"mean_anaV\", mean(\"clkHV0\") AS \"mean_clkHV\", mean(\"clkLV0\") AS \"mean_clkLV\", mean(\"digV0\") AS \"mean_digV\", mean(\"htrPS_V0\") AS \"mean_htrPS_V\", mean(\"odPS_V0\") AS \"mean_odPS_V\", mean(\"rgL_V0\") AS \"mean_rgL_V\", mean(\"rgV0\") AS \"mean_rgV\", mean(\"sckL_V0\") AS \"mean_sckL_V\", mean(\"sckU_V0\") AS \"mean_sckU_V\", mean(\"htrV0\") AS \"mean_htrV\", mean(\"oDV0\") AS \"mean_oDV\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.ATCamera.focal_plane_Reb",
@@ -641,7 +641,7 @@
 									"alias": "mean_anaV",
 									"args": [
 										{
-											"value": "anaV",
+											"value": "anaV0",
 											"type": "field",
 											"alias": ""
 										}
@@ -653,7 +653,7 @@
 									"alias": "mean_clkHV",
 									"args": [
 										{
-											"value": "clkHV",
+											"value": "clkHV0",
 											"type": "field",
 											"alias": ""
 										}
@@ -665,7 +665,7 @@
 									"alias": "mean_clkLV",
 									"args": [
 										{
-											"value": "clkLV",
+											"value": "clkLV0",
 											"type": "field",
 											"alias": ""
 										}
@@ -677,7 +677,7 @@
 									"alias": "mean_digV",
 									"args": [
 										{
-											"value": "digV",
+											"value": "digV0",
 											"type": "field",
 											"alias": ""
 										}
@@ -689,7 +689,7 @@
 									"alias": "mean_htrPS_V",
 									"args": [
 										{
-											"value": "htrPS_V",
+											"value": "htrPS_V0",
 											"type": "field",
 											"alias": ""
 										}
@@ -701,7 +701,7 @@
 									"alias": "mean_odPS_V",
 									"args": [
 										{
-											"value": "odPS_V",
+											"value": "odPS_V0",
 											"type": "field",
 											"alias": ""
 										}
@@ -713,7 +713,7 @@
 									"alias": "mean_rgL_V",
 									"args": [
 										{
-											"value": "rgL_V",
+											"value": "rgL_V0",
 											"type": "field",
 											"alias": ""
 										}
@@ -725,7 +725,7 @@
 									"alias": "mean_rgV",
 									"args": [
 										{
-											"value": "rgV",
+											"value": "rgV0",
 											"type": "field",
 											"alias": ""
 										}
@@ -737,7 +737,7 @@
 									"alias": "mean_sckL_V",
 									"args": [
 										{
-											"value": "sckL_V",
+											"value": "sckL_V0",
 											"type": "field",
 											"alias": ""
 										}
@@ -749,7 +749,7 @@
 									"alias": "mean_sckU_V",
 									"args": [
 										{
-											"value": "sckU_V",
+											"value": "sckU_V0",
 											"type": "field",
 											"alias": ""
 										}
@@ -761,7 +761,7 @@
 									"alias": "mean_htrV",
 									"args": [
 										{
-											"value": "htrV",
+											"value": "htrV0",
 											"type": "field",
 											"alias": ""
 										}
@@ -773,7 +773,7 @@
 									"alias": "mean_oDV",
 									"args": [
 										{
-											"value": "oDV",
+											"value": "oDV0",
 											"type": "field",
 											"alias": ""
 										}
@@ -892,7 +892,7 @@
 				"name": "Powers",
 				"queries": [
 					{
-						"query": "SELECT mean(\"power\") AS \"mean_power\", mean(\"htrW\") AS \"mean_htrW\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"power0\") AS \"mean_power\", mean(\"htrW0\") AS \"mean_htrW\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.ATCamera.focal_plane_Reb",
@@ -904,7 +904,7 @@
 									"alias": "mean_power",
 									"args": [
 										{
-											"value": "power",
+											"value": "power0",
 											"type": "field",
 											"alias": ""
 										}
@@ -916,7 +916,7 @@
 									"alias": "mean_htrW",
 									"args": [
 										{
-											"value": "htrW",
+											"value": "htrW0",
 											"type": "field",
 											"alias": ""
 										}

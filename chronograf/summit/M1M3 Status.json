@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.3",
+		"chronografVersion": "1.9.4",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -629,7 +629,7 @@
 				"x": 0,
 				"y": 0,
 				"w": 4,
-				"h": 2,
+				"h": 3,
 				"name": "Mirror position",
 				"queries": [
 					{

@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.3",
+		"chronografVersion": "1.9.4",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -769,7 +769,7 @@
 				"name": "Camera Hexapod Temperatures",
 				"queries": [
 					{
-						"query": "SELECT mean(\"temperatureC03\") as mean_temp_C03, mean(\"temperatureC05\") as mean_temp_C05, mean(\"temperatureC06\") as mean_temp_C06, mean(\"temperatureC01\") as mean_temp_C01, mean(\"temperatureC04\") as mean_temp_C04, mean(\"temperatureC02\") as mean_temp_C02 FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
+						"query": "SELECT \"temperature5\" as \"Strut 12 temp\", \"temperature4\" as \"Strut 11 temp\", \"temperature3\" as \"Strut 10 temp\", \"temperature2\" as \"Strut 9 temp\", \"temperature1\" as \"Strut 8 temp\", \"temperature0\" as \"Strut 7 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -781,7 +781,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(\"temperatureC03\") as mean_temp_C03, mean(\"temperatureC05\") as mean_temp_C05, mean(\"temperatureC06\") as mean_temp_C06, mean(\"temperatureC01\") as mean_temp_C01, mean(\"temperatureC04\") as mean_temp_C04, mean(\"temperatureC02\") as mean_temp_C02 FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
+							"rawText": "SELECT \"temperature5\" as \"Strut 12 temp\", \"temperature4\" as \"Strut 11 temp\", \"temperature3\" as \"Strut 10 temp\", \"temperature2\" as \"Strut 9 temp\", \"temperature1\" as \"Strut 8 temp\", \"temperature0\" as \"Strut 7 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -1151,7 +1151,7 @@
 				"y": 41,
 				"w": 4,
 				"h": 4,
-				"name": "THexapod.command_setCompensationMode",
+				"name": "MTHexapod.command_setCompensationMode",
 				"queries": [
 					{
 						"query": "SELECT enable FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.command_setCompensationMode\" WHERE MTHexapodID = :SalIndex: ORDER BY DESC LIMIT 20",

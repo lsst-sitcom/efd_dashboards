@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.3",
+		"chronografVersion": "1.9.4",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -115,10 +115,10 @@
 				"name": "Ingest sequence",
 				"queries": [
 					{
-						"query": "SELECT \"obsid\", \"statusCode\", \"description\" FROM \"efd\".\"autogen\".\"lsst.sal.ATArchiver.logevent_imageInOODS\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"obsid\", \"statusCode\", \"description\" FROM \"efd\".\"autogen\".\"lsst.sal.ATOODS.logevent_imageInOODS\" WHERE time > :dashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATArchiver.logevent_imageInOODS",
+							"measurement": "lsst.sal.ATOODS.logevent_imageInOODS",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
@@ -214,18 +214,18 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATArchiver.logevent_imageInOODS.obsid",
-						"displayName": "ObsID",
+						"internalName": "lsst.sal.ATOODS.logevent_imageInOODS.description",
+						"displayName": "",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATArchiver.logevent_imageInOODS.statusCode",
-						"displayName": "Status",
+						"internalName": "lsst.sal.ATOODS.logevent_imageInOODS.obsid",
+						"displayName": "",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATArchiver.logevent_imageInOODS.description",
-						"displayName": "Description",
+						"internalName": "lsst.sal.ATOODS.logevent_imageInOODS.statusCode",
+						"displayName": "",
 						"visible": true
 					}
 				],

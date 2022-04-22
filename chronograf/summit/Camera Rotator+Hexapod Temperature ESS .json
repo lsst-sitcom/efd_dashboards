@@ -9,51 +9,30 @@
 		}
 	},
 	"dashboard": {
-		"id": "1",
+		"id": "82",
 		"cells": [
 			{
-				"i": "72b38b3c-f7c8-4eef-835c-d7c68ca326ec",
+				"i": "ce773092-4b35-47b0-bc5d-96a535e001db",
 				"x": 0,
-				"y": 0,
-				"w": 12,
-				"h": 3,
-				"name": "Wind Speed",
+				"y": 6,
+				"w": 11,
+				"h": 6,
+				"name": "Camera Hexapod Temperatures",
 				"queries": [
 					{
-						"query": "SELECT \"value\",\"min2M\",\"avg2M\",\"avg10M\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.windSpeed\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"temperature5\" as \"Strut 12 temp\", \"temperature4\" as \"Strut 11 temp\", \"temperature3\" as \"Strut 10 temp\", \"temperature2\" as \"Strut 9 temp\", \"temperature1\" as \"Strut 8 temp\", \"temperature0\" as \"Strut 7 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.Environment.windSpeed",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "value",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "min2M",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "avg2M",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "avg10M",
-									"type": "field",
-									"alias": ""
-								}
-							],
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
 							"tags": {},
 							"groupBy": {
 								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": null,
+							"rawText": "SELECT \"temperature5\" as \"Strut 12 temp\", \"temperature4\" as \"Strut 11 temp\", \"temperature3\" as \"Strut 10 temp\", \"temperature2\" as \"Strut 9 temp\", \"temperature1\" as \"Strut 8 temp\", \"temperature0\" as \"Strut 7 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -78,9 +57,9 @@
 							"",
 							""
 						],
-						"label": "",
+						"label": "Temperature",
 						"prefix": "",
-						"suffix": "",
+						"suffix": " ℃",
 						"base": "10",
 						"scale": "linear"
 					},
@@ -99,21 +78,21 @@
 				"type": "line",
 				"colors": [
 					{
-						"id": "7a15bebe-c1bf-46ee-b739-c6916066a41d",
+						"id": "923d0a87-8271-45a7-82e2-68138dd91da9",
 						"type": "scale",
 						"hex": "#31C0F6",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "adb3275e-7557-414c-9db0-a2b51cbcf000",
+						"id": "e42d7698-f71d-4890-a98b-97d0688d9b7c",
 						"type": "scale",
 						"hex": "#A500A5",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "f0c69719-3c3d-450d-b991-b9a0e32ecff8",
+						"id": "31542090-fc6e-4757-acd0-613163a0961c",
 						"type": "scale",
 						"hex": "#FF7E27",
 						"name": "Nineteen Eighty Four",
@@ -146,81 +125,31 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/1/cells/72b38b3c-f7c8-4eef-835c-d7c68ca326ec"
+					"self": "/chronograf/v1/dashboards/82/cells/ce773092-4b35-47b0-bc5d-96a535e001db"
 				}
 			},
 			{
-				"i": "7fc5a4eb-0d21-40eb-8c0f-c2fcd0057326",
+				"i": "451c13d3-24e3-4542-840c-185ed2209ae0",
 				"x": 0,
-				"y": 3,
-				"w": 12,
-				"h": 3,
-				"name": "Wind Speed (clone 1)",
+				"y": 0,
+				"w": 11,
+				"h": 6,
+				"name": "MTRotator Temperatures",
 				"queries": [
 					{
-						"query": "SELECT mean(\"avg10M\") AS \"mean_avg10M\", mean(\"avg2M\") AS \"mean_avg2M\", mean(\"min2M\") AS \"mean_min2M\", mean(\"value\") AS \"mean_value\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.windSpeed\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT \"temperature6\" as \"Motor 1 temp\", \"temperature7\" as \"Motor 2 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.Environment.windSpeed",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_avg10M",
-									"args": [
-										{
-											"value": "avg10M",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_avg2M",
-									"args": [
-										{
-											"value": "avg2M",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_min2M",
-									"args": [
-										{
-											"value": "min2M",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_value",
-									"args": [
-										{
-											"value": "value",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								}
-							],
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
 							"tags": {},
 							"groupBy": {
-								"time": "auto",
+								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"fill": "null",
-							"rawText": null,
+							"rawText": "SELECT \"temperature6\" as \"Motor 1 temp\", \"temperature7\" as \"Motor 2 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -245,9 +174,9 @@
 							"",
 							""
 						],
-						"label": "",
+						"label": "Temperature",
 						"prefix": "",
-						"suffix": "",
+						"suffix": " ℃",
 						"base": "10",
 						"scale": "linear"
 					},
@@ -266,21 +195,21 @@
 				"type": "line",
 				"colors": [
 					{
-						"id": "7a15bebe-c1bf-46ee-b739-c6916066a41d",
+						"id": "923d0a87-8271-45a7-82e2-68138dd91da9",
 						"type": "scale",
 						"hex": "#31C0F6",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "adb3275e-7557-414c-9db0-a2b51cbcf000",
+						"id": "e42d7698-f71d-4890-a98b-97d0688d9b7c",
 						"type": "scale",
 						"hex": "#A500A5",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "f0c69719-3c3d-450d-b991-b9a0e32ecff8",
+						"id": "31542090-fc6e-4757-acd0-613163a0961c",
 						"type": "scale",
 						"hex": "#FF7E27",
 						"name": "Nineteen Eighty Four",
@@ -313,17 +242,17 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/1/cells/7fc5a4eb-0d21-40eb-8c0f-c2fcd0057326"
+					"self": "/chronograf/v1/dashboards/82/cells/451c13d3-24e3-4542-840c-185ed2209ae0"
 				}
 			}
 		],
 		"templates": [],
-		"name": "Wind Speed check",
+		"name": "Camera Rotator+Hexapod Temperature ESS ",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/1",
-			"cells": "/chronograf/v1/dashboards/1/cells",
-			"templates": "/chronograf/v1/dashboards/1/templates"
+			"self": "/chronograf/v1/dashboards/82",
+			"cells": "/chronograf/v1/dashboards/82/cells",
+			"templates": "/chronograf/v1/dashboards/82/templates"
 		}
 	}
 }

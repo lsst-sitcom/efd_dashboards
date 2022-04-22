@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.3",
+		"chronografVersion": "1.9.4",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -20,19 +20,19 @@
 				"name": "5V PDU Currents",
 				"queries": [
 					{
-						"query": "SELECT \"otm_0_A_I\", \"otm_0_B_I\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.quadbox_PDU_5V\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"otm_3_A_I\", \"otm_3_B_I\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.quadbox_PDU_5V\" WHERE time > :dashboardTime:",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.CCCamera.quadbox_PDU_5V",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "otm_0_A_I",
+									"value": "otm_3_A_I",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "otm_0_B_I",
+									"value": "otm_3_B_I",
 									"type": "field",
 									"alias": ""
 								}
@@ -148,19 +148,19 @@
 				"name": "5V PDU Voltages",
 				"queries": [
 					{
-						"query": "SELECT \"otm_0_A_V\", \"otm_0_B_V\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.quadbox_PDU_5V\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"otm_3_A_V\", \"otm_3_B_V\" FROM \"efd\".\"autogen\".\"lsst.sal.CCCamera.quadbox_PDU_5V\" WHERE time > :dashboardTime:",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.CCCamera.quadbox_PDU_5V",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "otm_0_A_V",
+									"value": "otm_3_A_V",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "otm_0_B_V",
+									"value": "otm_3_B_V",
 									"type": "field",
 									"alias": ""
 								}

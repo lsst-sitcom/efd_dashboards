@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.3",
+		"chronografVersion": "1.9.4",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -20,29 +20,29 @@
 				"name": "Voltages",
 				"queries": [
 					{
-						"query": "SELECT \"gDV\", \"oDV\", \"oGV\", \"rDV\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Ccd\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"gDV0\", \"oDV0\", \"oGV0\", \"rDV0\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Ccd\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.ATCamera.focal_plane_Ccd",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "gDV",
+									"value": "gDV0",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "oDV",
+									"value": "oDV0",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "oGV",
+									"value": "oGV0",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "rDV",
+									"value": "rDV0",
 									"type": "field",
 									"alias": ""
 								}
@@ -158,14 +158,14 @@
 				"name": "Temperature",
 				"queries": [
 					{
-						"query": "SELECT \"temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Ccd\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"temp0\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Ccd\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.ATCamera.focal_plane_Ccd",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "temp",
+									"value": "temp0",
 									"type": "field",
 									"alias": ""
 								}

@@ -9,18 +9,18 @@
 		}
 	},
 	"dashboard": {
-		"id": "28",
+		"id": "141",
 		"cells": [
 			{
-				"i": "b49a9e73-a822-4e84-97c8-789b741ee81e",
+				"i": "95b3cd32-19ca-4bb2-98f9-bfc99305895f",
 				"x": 0,
 				"y": 0,
-				"w": 12,
+				"w": 11,
 				"h": 4,
-				"name": "Fault Reports",
+				"name": "Applied",
 				"queries": [
 					{
-						"query": "SELECT \"errorCode\", \"errorReport\", \"traceback\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_errorCode\" ORDER BY time DESC LIMIT 10",
+						"query": "SELECT \"configurations\", \"version\", \"url\", \"otherInfo\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_configurationApplied\" ORDER BY time DESC LIMIT 10",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"errorCode\", \"errorReport\", \"traceback\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_errorCode\" ORDER BY time DESC LIMIT 10",
+							"rawText": "SELECT \"configurations\", \"version\", \"url\", \"otherInfo\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_configurationApplied\" ORDER BY time DESC LIMIT 10",
 							"range": null,
 							"shifts": null
 						},
@@ -103,18 +103,23 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATMCS.logevent_errorCode.errorCode",
-						"displayName": "",
+						"internalName": "lsst.sal.Watcher.logevent_configurationApplied.configurations",
+						"displayName": "configurations",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATMCS.logevent_errorCode.errorReport",
-						"displayName": "",
+						"internalName": "lsst.sal.Watcher.logevent_configurationApplied.version",
+						"displayName": "version",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATMCS.logevent_errorCode.traceback",
-						"displayName": "",
+						"internalName": "lsst.sal.Watcher.logevent_configurationApplied.url",
+						"displayName": "url",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.Watcher.logevent_configurationApplied.otherInfo",
+						"displayName": "otherInfo",
 						"visible": true
 					}
 				],
@@ -126,7 +131,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/28/cells/b49a9e73-a822-4e84-97c8-789b741ee81e"
+					"self": "/chronograf/v1/dashboards/141/cells/95b3cd32-19ca-4bb2-98f9-bfc99305895f"
 				}
 			}
 		],
@@ -138,11 +143,6 @@
 						"value": "ATAOS",
 						"type": "csv",
 						"selected": true
-					},
-					{
-						"value": "ATArchiver",
-						"type": "csv",
-						"selected": false
 					},
 					{
 						"value": "ATCamera",
@@ -160,27 +160,7 @@
 						"selected": false
 					},
 					{
-						"value": "ATHeaderService",
-						"type": "csv",
-						"selected": false
-					},
-					{
 						"value": "ATHexapod",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "ATMCS",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "ATPneumatics",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "ATPtg",
 						"type": "csv",
 						"selected": false
 					},
@@ -190,22 +170,7 @@
 						"selected": false
 					},
 					{
-						"value": "AdamSensors",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "CCArchiver",
-						"type": "csv",
-						"selected": false
-					},
-					{
 						"value": "CCCamera",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "CCHeaderService",
 						"type": "csv",
 						"selected": false
 					},
@@ -215,12 +180,7 @@
 						"selected": false
 					},
 					{
-						"value": "DSM",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "Dome",
+						"value": "Electrometer",
 						"type": "csv",
 						"selected": false
 					},
@@ -230,32 +190,7 @@
 						"selected": false
 					},
 					{
-						"value": "Environment",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "GenericCamera",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "Hexapod",
-						"type": "csv",
-						"selected": false
-					},
-					{
 						"value": "MTAOS",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "MTDome",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "MTDomeTrajectory",
 						"type": "csv",
 						"selected": false
 					},
@@ -280,42 +215,17 @@
 						"selected": false
 					},
 					{
-						"value": "MTPtg",
-						"type": "csv",
-						"selected": false
-					},
-					{
 						"value": "MTRotator",
 						"type": "csv",
 						"selected": false
 					},
 					{
-						"value": "MTVMS",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "NewMTMount",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "Rotator",
+						"value": "OCPS",
 						"type": "csv",
 						"selected": false
 					},
 					{
 						"value": "Scheduler",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "Script",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "ScriptQueue",
 						"type": "csv",
 						"selected": false
 					},
@@ -346,16 +256,16 @@
 				},
 				"sourceID": "dynamic",
 				"links": {
-					"self": "/chronograf/v1/dashboards/28/templates/7d4d7854-86c8-4811-8d99-23bb99f06901"
+					"self": "/chronograf/v1/dashboards/141/templates/7d4d7854-86c8-4811-8d99-23bb99f06901"
 				}
 			}
 		],
-		"name": "Fault State Report",
+		"name": "Configuration Applied",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/28",
-			"cells": "/chronograf/v1/dashboards/28/cells",
-			"templates": "/chronograf/v1/dashboards/28/templates"
+			"self": "/chronograf/v1/dashboards/141",
+			"cells": "/chronograf/v1/dashboards/141/cells",
+			"templates": "/chronograf/v1/dashboards/141/templates"
 		}
 	}
 }

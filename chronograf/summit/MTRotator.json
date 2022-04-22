@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.3",
+		"chronografVersion": "1.9.4",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -12,9 +12,255 @@
 		"id": "3",
 		"cells": [
 			{
+				"i": "86b3e659-6168-40b6-85da-bfca3cecc004",
+				"x": 0,
+				"y": 32,
+				"w": 12,
+				"h": 5,
+				"name": "Rotator Torque Values",
+				"queries": [
+					{
+						"query": "SELECT torque0, torque1 FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.motors\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: ",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.MTRotator.motors",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "torque0",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "torque1",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "14c9844f-32f8-49c1-a982-37a9260b2366",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "fbcb4c53-23a0-41eb-b547-a6da7f0cc18d",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "6814093e-4415-4095-adaf-8cf9661e7601",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/3/cells/86b3e659-6168-40b6-85da-bfca3cecc004"
+				}
+			},
+			{
+				"i": "1a4ffb4c-19b7-4faf-8d5e-51e54e70c696",
+				"x": 0,
+				"y": 37,
+				"w": 12,
+				"h": 4,
+				"name": "Script Logevent",
+				"queries": [
+					{
+						"query": "SELECT \"ScriptID\", \"level\", \"message\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\" ORDER BY DESC LIMIT 100",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"ScriptID\", \"level\", \"message\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\" ORDER BY DESC LIMIT 100",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.Script.logevent_logMessage.ScriptID",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.Script.logevent_logMessage.level",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.Script.logevent_logMessage.message",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/3/cells/1a4ffb4c-19b7-4faf-8d5e-51e54e70c696"
+				}
+			},
+			{
 				"i": "12c9354b-7fa4-49b6-b6aa-95d024e717c8",
 				"x": 0,
-				"y": 27,
+				"y": 29,
 				"w": 12,
 				"h": 3,
 				"name": "Fault_command",
@@ -148,7 +394,7 @@
 			{
 				"i": "70e56ddb-1be3-4f64-8f57-8efdcfc1ab50",
 				"x": 0,
-				"y": 23,
+				"y": 25,
 				"w": 12,
 				"h": 4,
 				"name": "Following Error Rotator-CCW",
@@ -465,7 +711,7 @@
 			{
 				"i": "420841cd-0775-4baf-a1a2-a9d3435ed412",
 				"x": 0,
-				"y": 9,
+				"y": 11,
 				"w": 9,
 				"h": 2,
 				"name": "Rot Motors calibrated motor position [deg]",
@@ -593,7 +839,7 @@
 			{
 				"i": "6c510345-bc15-4bb1-9a0b-1519303595d4",
 				"x": 0,
-				"y": 7,
+				"y": 9,
 				"w": 9,
 				"h": 2,
 				"name": "Rotator Velocity",
@@ -721,7 +967,7 @@
 			{
 				"i": "1da67be9-cb88-4ebb-9a14-21e280545279",
 				"x": 0,
-				"y": 11,
+				"y": 13,
 				"w": 9,
 				"h": 2,
 				"name": "Error Code",
@@ -829,7 +1075,7 @@
 			{
 				"i": "a595fc29-43c2-42fc-8113-c972fb22bcfa",
 				"x": 0,
-				"y": 13,
+				"y": 15,
 				"w": 9,
 				"h": 2,
 				"name": "Controller State",
@@ -1413,7 +1659,7 @@
 			{
 				"i": "32e71feb-71e9-46e7-8868-886f7f7dc89c",
 				"x": 0,
-				"y": 15,
+				"y": 17,
 				"w": 12,
 				"h": 2,
 				"name": "Logevent_target: position",
@@ -1521,7 +1767,7 @@
 			{
 				"i": "b10172f2-6ace-4b1b-9fe0-948626965909",
 				"x": 0,
-				"y": 17,
+				"y": 19,
 				"w": 12,
 				"h": 6,
 				"name": "Last Error Code",
@@ -1634,13 +1880,13 @@
 			{
 				"i": "4c7e35ec-7d7c-447f-bd2f-d26b9c6e3444",
 				"x": 0,
-				"y": 30,
+				"y": 7,
 				"w": 9,
 				"h": 2,
 				"name": "Rotator Temperatures",
 				"queries": [
 					{
-						"query": "SELECT \"temperatureC07\", \"temperatureC08\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"temperature6\" as \"Motor 1 Temp\", \"temperature7\" as \"Motor 2 Temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1652,7 +1898,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"temperatureC07\", \"temperatureC08\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"rawText": "SELECT \"temperature6\" as \"Motor 1 Temp\", \"temperature7\" as \"Motor 2 Temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},

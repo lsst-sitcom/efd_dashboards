@@ -9,18 +9,18 @@
 		}
 	},
 	"dashboard": {
-		"id": "28",
+		"id": "29",
 		"cells": [
 			{
-				"i": "b49a9e73-a822-4e84-97c8-789b741ee81e",
+				"i": "427d1a7d-4ad2-4458-bd26-658525c74ed3",
 				"x": 0,
 				"y": 0,
-				"w": 12,
+				"w": 11,
 				"h": 4,
-				"name": "Fault Reports",
+				"name": "Settings",
 				"queries": [
 					{
-						"query": "SELECT \"errorCode\", \"errorReport\", \"traceback\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_errorCode\" ORDER BY time DESC LIMIT 10",
+						"query": "SELECT \"recommendedSettingsLabels\", \"recommendedSettingsVersion\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_settingVersions\" ORDER BY time DESC LIMIT 10",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"errorCode\", \"errorReport\", \"traceback\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_errorCode\" ORDER BY time DESC LIMIT 10",
+							"rawText": "SELECT \"recommendedSettingsLabels\", \"recommendedSettingsVersion\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_settingVersions\" ORDER BY time DESC LIMIT 10",
 							"range": null,
 							"shifts": null
 						},
@@ -103,18 +103,13 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATMCS.logevent_errorCode.errorCode",
-						"displayName": "",
+						"internalName": "lsst.sal.ATAOS.logevent_settingVersions.recommendedSettingsLabels",
+						"displayName": "Labels",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATMCS.logevent_errorCode.errorReport",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.ATMCS.logevent_errorCode.traceback",
-						"displayName": "",
+						"internalName": "lsst.sal.ATAOS.logevent_settingVersions.recommendedSettingsVersion",
+						"displayName": "Version",
 						"visible": true
 					}
 				],
@@ -126,7 +121,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/28/cells/b49a9e73-a822-4e84-97c8-789b741ee81e"
+					"self": "/chronograf/v1/dashboards/29/cells/427d1a7d-4ad2-4458-bd26-658525c74ed3"
 				}
 			}
 		],
@@ -346,16 +341,16 @@
 				},
 				"sourceID": "dynamic",
 				"links": {
-					"self": "/chronograf/v1/dashboards/28/templates/7d4d7854-86c8-4811-8d99-23bb99f06901"
+					"self": "/chronograf/v1/dashboards/29/templates/7d4d7854-86c8-4811-8d99-23bb99f06901"
 				}
 			}
 		],
-		"name": "Fault State Report",
+		"name": "Recommended Setting Versions (deprecated)",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/28",
-			"cells": "/chronograf/v1/dashboards/28/cells",
-			"templates": "/chronograf/v1/dashboards/28/templates"
+			"self": "/chronograf/v1/dashboards/29",
+			"cells": "/chronograf/v1/dashboards/29/cells",
+			"templates": "/chronograf/v1/dashboards/29/templates"
 		}
 	}
 }

@@ -1,0 +1,2766 @@
+{
+	"meta": {
+		"chronografVersion": "1.9.4",
+		"sources": {
+			"1": {
+				"name": "Summit EFD",
+				"link": "/chronograf/v1/sources/1"
+			}
+		}
+	},
+	"dashboard": {
+		"id": "139",
+		"cells": [
+			{
+				"i": "6b787b93-ffef-4d77-86c7-2dbd7b44b014",
+				"x": 0,
+				"y": 47,
+				"w": 8,
+				"h": 6,
+				"name": "Manejadora Lower Misc.",
+				"queries": [
+					{
+						"query": "// Manejadora Salas Misc Table\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) =>\n    strings.containsStr(v: r[\"_measurement\"], substr: \"manejadoraL\") and\n    strings.containsStr(v: r[\"_measurement\"], substr: \"P05\")\n  )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    })\n  )\n  |> keep(columns: [\n    \"hvac_unit\",\n    \"valorConsigna\",\n    \"setpointTrabajo\",\n    \"temperaturaAnticongelante\",\n    \"temperaturaInyeccion\",\n    \"temperaturaRetorno\",\n    \"estadoValvula\",\n    \"temperaturaAmbienteExterior\",\n    \"setpointVentiladorMin\",\n    \"setpointVentiladorMax\",\n    \"caudalVentiladorImpulsion\",\n    \"horometro\",\n  ])\n",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "// Manejadora Salas Misc Table\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) =>\n    strings.containsStr(v: r[\"_measurement\"], substr: \"manejadoraL\") and\n    strings.containsStr(v: r[\"_measurement\"], substr: \"P05\")\n  )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    })\n  )\n  |> keep(columns: [\n    \"hvac_unit\",\n    \"valorConsigna\",\n    \"setpointTrabajo\",\n    \"temperaturaAnticongelante\",\n    \"temperaturaInyeccion\",\n    \"temperaturaRetorno\",\n    \"estadoValvula\",\n    \"temperaturaAmbienteExterior\",\n    \"setpointVentiladorMin\",\n    \"setpointVentiladorMax\",\n    \"caudalVentiladorImpulsion\",\n    \"horometro\",\n  ])\n",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "flux"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": false,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "hvac_unit",
+						"displayName": "Unit Name",
+						"visible": true
+					},
+					{
+						"internalName": "valorConsigna",
+						"displayName": "Valor Cosigna [ºC]",
+						"visible": true
+					},
+					{
+						"internalName": "setpointTrabajo",
+						"displayName": "Setpoint Trabajo [ºC]",
+						"visible": true
+					},
+					{
+						"internalName": "temperaturaAnticongelante",
+						"displayName": "Temp Anticongelante [ºC]",
+						"visible": true
+					},
+					{
+						"internalName": "temperaturaInyeccion",
+						"displayName": "Temp Inyeccion [ºC]",
+						"visible": true
+					},
+					{
+						"internalName": "temperaturaRetorno",
+						"displayName": "Temp Retorno [ºC]",
+						"visible": true
+					},
+					{
+						"internalName": "estadoValvula",
+						"displayName": "Estado Valvula [%]",
+						"visible": true
+					},
+					{
+						"internalName": "temperaturaAmbienteExterior",
+						"displayName": "Temp Ambiente y Exterior [ºC]",
+						"visible": true
+					},
+					{
+						"internalName": "setpointVentiladorMin",
+						"displayName": "Setpoint Ventilador Min [%]",
+						"visible": true
+					},
+					{
+						"internalName": "setpointVentiladorMax",
+						"displayName": "Setpoint Ventilador Max [%]",
+						"visible": true
+					},
+					{
+						"internalName": "caudalVentiladorImpulsion",
+						"displayName": "Caudal Ventilador Impulsion [m3/h]",
+						"visible": true
+					},
+					{
+						"internalName": "horometro",
+						"displayName": "Horometro [hr]",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 1
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/139/cells/6b787b93-ffef-4d77-86c7-2dbd7b44b014"
+				}
+			},
+			{
+				"i": "b82067d9-c324-43c7-a700-dbf85a1f555b",
+				"x": 0,
+				"y": 41,
+				"w": 8,
+				"h": 6,
+				"name": "Manejadora Lower Summary State",
+				"queries": [
+					{
+						"query": "// Manejadora Lower Summary State\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) =>\n    strings.containsStr(v: r[\"_measurement\"], substr: \"manejadoraL\") and\n    strings.containsStr(v: r[\"_measurement\"], substr: \"P05\")\n  )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    alarmaGeneral:\n      if r.alarmaGeneral == true then 1 else 0,\n    alarmaFiltro:\n      if r.alarmaFiltro == true then 1 else 0,\n    estadoFuncionamiento:\n      if r.estadoFuncionamiento == true then 1 else 0,\n    estadoDamper:\n      if r.estadoDamper == true then 1 else 0,\n    resetAlarma:\n      if r.resetAlarma == true then 1 else 0,\n    calefaccionEtapa01:\n      if r.calefaccionEtapa01 == true then 1 else 0,\n    calefaccionEtapa02:\n      if r.calefaccionEtapa02 == true then 1 else 0,\n    comandoEncendido:\n      if r.comandoEncendido == true then 1 else 0,\n  }))\n  |> keep(columns: [\n    \"hvac_unit\",\n    \"alarmaGeneral\",\n    \"alarmaFiltro\",\n    \"estadoFuncionamiento\",\n    \"estadoDamper\",\n    \"resetAlarma\",\n    \"calefaccionEtapa01\",\n    \"calefaccionEtapa02\",\n    \"comandoEncendido\"\n  ])\n",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "// Manejadora Lower Summary State\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) =>\n    strings.containsStr(v: r[\"_measurement\"], substr: \"manejadoraL\") and\n    strings.containsStr(v: r[\"_measurement\"], substr: \"P05\")\n  )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    alarmaGeneral:\n      if r.alarmaGeneral == true then 1 else 0,\n    alarmaFiltro:\n      if r.alarmaFiltro == true then 1 else 0,\n    estadoFuncionamiento:\n      if r.estadoFuncionamiento == true then 1 else 0,\n    estadoDamper:\n      if r.estadoDamper == true then 1 else 0,\n    resetAlarma:\n      if r.resetAlarma == true then 1 else 0,\n    calefaccionEtapa01:\n      if r.calefaccionEtapa01 == true then 1 else 0,\n    calefaccionEtapa02:\n      if r.calefaccionEtapa02 == true then 1 else 0,\n    comandoEncendido:\n      if r.comandoEncendido == true then 1 else 0,\n  }))\n  |> keep(columns: [\n    \"hvac_unit\",\n    \"alarmaGeneral\",\n    \"alarmaFiltro\",\n    \"estadoFuncionamiento\",\n    \"estadoDamper\",\n    \"resetAlarma\",\n    \"calefaccionEtapa01\",\n    \"calefaccionEtapa02\",\n    \"comandoEncendido\"\n  ])\n",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "flux"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "background",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					},
+					{
+						"id": "4710d122-6111-49c0-a5cf-781e3d53251f",
+						"type": "background",
+						"hex": "#BF3D5E",
+						"name": "ruby",
+						"value": "0"
+					},
+					{
+						"id": "51912848-e480-4bda-918c-11de28816ab9",
+						"type": "background",
+						"hex": "#32B08C",
+						"name": "viridian",
+						"value": "1"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": false,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "hvac_unit",
+						"displayName": "Unit Name",
+						"visible": true
+					},
+					{
+						"internalName": "alarmaGeneral",
+						"displayName": "Alarma General",
+						"visible": true
+					},
+					{
+						"internalName": "alarmaFiltro",
+						"displayName": "Alaerma Filtro",
+						"visible": true
+					},
+					{
+						"internalName": "estadoFuncionamiento",
+						"displayName": "Funcionamiento",
+						"visible": true
+					},
+					{
+						"internalName": "estadoDamper",
+						"displayName": "Damper",
+						"visible": true
+					},
+					{
+						"internalName": "calefaccionEtapa01",
+						"displayName": "Calefacion Et 1",
+						"visible": true
+					},
+					{
+						"internalName": "calefaccionEtapa02",
+						"displayName": "Calefacion Et 2",
+						"visible": true
+					},
+					{
+						"internalName": "comandoEncendido",
+						"displayName": "Encendido",
+						"visible": true
+					},
+					{
+						"internalName": "resetAlarma",
+						"displayName": "Reset Alarma",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/139/cells/b82067d9-c324-43c7-a700-dbf85a1f555b"
+				}
+			},
+			{
+				"i": "c88bb8e9-31a8-4e68-a245-56cbefc28217",
+				"x": 6,
+				"y": 38,
+				"w": 6,
+				"h": 3,
+				"name": "Valvula Summary State",
+				"queries": [
+					{
+						"query": "// Valvula Summary State\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) =>\n    strings.containsStr(v: r[\"_measurement\"], substr: \"valvula\")\n  )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    estadoValvula12:\n      if r.estadoValvula12 == true then 1 else 0,\n    estadoValvula03:\n      if r.estadoValvula03 == true then 1 else 0,\n    estadoValvula04:\n      if r.estadoValvula04 == true then 1 else 0,\n    estadoValvula05:\n      if r.estadoValvula05 == true then 1 else 0,\n    estadoValvula06:\n      if r.estadoValvula06 == true then 1 else 0,\n  }))\n  |> keep(columns: [\n    \"hvac_unit\",\n    \"estadoValvula12\",\n    \"estadoValvula03\",\n    \"estadoValvula04\",\n    \"estadoValvula05\",\n    \"estadoValvula06\",\n  ])\n",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "// Valvula Summary State\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) =>\n    strings.containsStr(v: r[\"_measurement\"], substr: \"valvula\")\n  )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    estadoValvula12:\n      if r.estadoValvula12 == true then 1 else 0,\n    estadoValvula03:\n      if r.estadoValvula03 == true then 1 else 0,\n    estadoValvula04:\n      if r.estadoValvula04 == true then 1 else 0,\n    estadoValvula05:\n      if r.estadoValvula05 == true then 1 else 0,\n    estadoValvula06:\n      if r.estadoValvula06 == true then 1 else 0,\n  }))\n  |> keep(columns: [\n    \"hvac_unit\",\n    \"estadoValvula12\",\n    \"estadoValvula03\",\n    \"estadoValvula04\",\n    \"estadoValvula05\",\n    \"estadoValvula06\",\n  ])\n",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "flux"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "background",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					},
+					{
+						"id": "f1bb2c3f-7519-4b52-b660-50c9f60177fd",
+						"type": "background",
+						"hex": "#BF3D5E",
+						"name": "ruby",
+						"value": "0"
+					},
+					{
+						"id": "8ed9e90f-ae54-4233-80b5-869a509e1ce5",
+						"type": "background",
+						"hex": "#32B08C",
+						"name": "viridian",
+						"value": "1"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "hvac_unit",
+						"displayName": "Unit Name",
+						"visible": true
+					},
+					{
+						"internalName": "estadoValvula12",
+						"displayName": "Valvula 1, 2",
+						"visible": true
+					},
+					{
+						"internalName": "estadoValvula03",
+						"displayName": "Valvula 3",
+						"visible": true
+					},
+					{
+						"internalName": "estadoValvula04",
+						"displayName": "Valvula 4",
+						"visible": true
+					},
+					{
+						"internalName": "estadoValvula05",
+						"displayName": "Valvula 5",
+						"visible": true
+					},
+					{
+						"internalName": "estadoValvula06",
+						"displayName": "Valvula 6",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/139/cells/c88bb8e9-31a8-4e68-a245-56cbefc28217"
+				}
+			},
+			{
+				"i": "db686b78-60c1-44f9-8c60-acdb67eb26db",
+				"x": 6,
+				"y": 35,
+				"w": 6,
+				"h": 3,
+				"name": "General Temperature",
+				"queries": [
+					{
+						"query": "// General Summary State\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"lsst.sal.HVAC.generalP01\" )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n  }))\n  |> keep(columns: [\n    \"hvac_unit\",\n    \"temperaturaAmbiente\"\n  ])\n",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "// General Summary State\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"lsst.sal.HVAC.generalP01\" )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n  }))\n  |> keep(columns: [\n    \"hvac_unit\",\n    \"temperaturaAmbiente\"\n  ])\n",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "flux"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "hvac_unit",
+						"displayName": "Unit Name",
+						"visible": true
+					},
+					{
+						"internalName": "temperaturaAmbiente",
+						"displayName": "Temperatura Ambiente [ºC]",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 1
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/139/cells/db686b78-60c1-44f9-8c60-acdb67eb26db"
+				}
+			},
+			{
+				"i": "10097fae-c72b-4c2f-945b-7027361d2628",
+				"x": 0,
+				"y": 33,
+				"w": 6,
+				"h": 8,
+				"name": "Vea, Vec, Vex, Vin Summary State",
+				"queries": [
+					{
+						"query": "// Cracks Summary State\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) =>\n    strings.containsStr(v: r[\"_measurement\"], substr: \"vea\") or\n    strings.containsStr(v: r[\"_measurement\"], substr: \"vec\") or\n    strings.containsStr(v: r[\"_measurement\"], substr: \"vex\") or\n    strings.containsStr(v: r[\"_measurement\"], substr: \"vin0\")\n  )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    estadoFuncionamiento:\n      if r.estadoFuncionamiento == true then 1 else 0,\n    fallaTermica:\n      if r.fallaTermica == true then 1 else 0,\n    comandoEncendido:\n      if r.comandoEncendido == true then 1 else 0,\n    estadoSelector:\n      if r.estadoSelector == true then 1 else 0,\n    estadoValvula12:\n      if r.estadoValvula12 == true then 1 else 0,\n    estadoValvula03:\n      if r.estadoValvula03 == true then 1 else 0,\n    estadoValvula04:\n      if r.estadoValvula04 == true then 1 else 0,\n    estadoValvula05:\n      if r.estadoValvula05 == true then 1 else 0,\n    estadoValvula06:\n      if r.estadoValvula06 == true then 1 else 0,\n  }))\n  |> keep(columns: [\n    \"hvac_unit\",\n    \"estadoFuncionamiento\",\n    \"fallaTermica\",\n    \"comandoEncendido\",\n    \"estadoSelector\",\n  ])\n",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "// Cracks Summary State\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) =>\n    strings.containsStr(v: r[\"_measurement\"], substr: \"vea\") or\n    strings.containsStr(v: r[\"_measurement\"], substr: \"vec\") or\n    strings.containsStr(v: r[\"_measurement\"], substr: \"vex\") or\n    strings.containsStr(v: r[\"_measurement\"], substr: \"vin0\")\n  )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    estadoFuncionamiento:\n      if r.estadoFuncionamiento == true then 1 else 0,\n    fallaTermica:\n      if r.fallaTermica == true then 1 else 0,\n    comandoEncendido:\n      if r.comandoEncendido == true then 1 else 0,\n    estadoSelector:\n      if r.estadoSelector == true then 1 else 0,\n    estadoValvula12:\n      if r.estadoValvula12 == true then 1 else 0,\n    estadoValvula03:\n      if r.estadoValvula03 == true then 1 else 0,\n    estadoValvula04:\n      if r.estadoValvula04 == true then 1 else 0,\n    estadoValvula05:\n      if r.estadoValvula05 == true then 1 else 0,\n    estadoValvula06:\n      if r.estadoValvula06 == true then 1 else 0,\n  }))\n  |> keep(columns: [\n    \"hvac_unit\",\n    \"estadoFuncionamiento\",\n    \"fallaTermica\",\n    \"comandoEncendido\",\n    \"estadoSelector\",\n  ])\n",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "flux"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "background",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					},
+					{
+						"id": "7b34ee45-d42d-4b1d-a6c3-5d677bd5b1a7",
+						"type": "background",
+						"hex": "#BF3D5E",
+						"name": "ruby",
+						"value": "0"
+					},
+					{
+						"id": "dc01020e-9664-4b68-bad4-2fe0ef6c0dbb",
+						"type": "background",
+						"hex": "#32B08C",
+						"name": "viridian",
+						"value": "1"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "hvac_unit",
+						"displayName": "Unit Name",
+						"visible": true
+					},
+					{
+						"internalName": "comandoEncendido",
+						"displayName": "Encendido",
+						"visible": true
+					},
+					{
+						"internalName": "estadoFuncionamiento",
+						"displayName": "Funcionamiento",
+						"visible": true
+					},
+					{
+						"internalName": "fallaTermica",
+						"displayName": "Falla Termica",
+						"visible": true
+					},
+					{
+						"internalName": "estadoSelector",
+						"displayName": "Selector",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 1
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/139/cells/10097fae-c72b-4c2f-945b-7027361d2628"
+				}
+			},
+			{
+				"i": "b2c5ab73-edbd-46d5-b52c-aa8a8c22922f",
+				"x": 6,
+				"y": 27,
+				"w": 6,
+				"h": 6,
+				"name": "Crack Misc.",
+				"queries": [
+					{
+						"query": "// Crack Misc Table\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.crack*/ )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    })\n  )\n  |> keep(columns: [\n    \"hvac_unit\",\n    \"temperaturaInyeccion\",\n    \"temperaturaRetorno\",\n    \"humedadSala\",\n    \"aperturaValvula\",\n    \"setpointHumidificador\",\n    \"setpointDeshumidificador\",\n    \"setpointCooling\",\n    \"setpointHeating\",\n    \"modoOperacionUnidad\",\n    \"estadoDeUnidad\",\n    \"numeroCircuitos\",\n    \"horometro\"\n  ])\n",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "// Crack Misc Table\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.crack*/ )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    })\n  )\n  |> keep(columns: [\n    \"hvac_unit\",\n    \"temperaturaInyeccion\",\n    \"temperaturaRetorno\",\n    \"humedadSala\",\n    \"aperturaValvula\",\n    \"setpointHumidificador\",\n    \"setpointDeshumidificador\",\n    \"setpointCooling\",\n    \"setpointHeating\",\n    \"modoOperacionUnidad\",\n    \"estadoDeUnidad\",\n    \"numeroCircuitos\",\n    \"horometro\"\n  ])\n",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "flux"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": false,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "hvac_unit",
+						"displayName": "Unit Name",
+						"visible": true
+					},
+					{
+						"internalName": "temperaturaInyeccion",
+						"displayName": "Temp Inyeccion [ºC]",
+						"visible": true
+					},
+					{
+						"internalName": "temperaturaRetorno",
+						"displayName": "Temp Retorno [ºC]",
+						"visible": true
+					},
+					{
+						"internalName": "humedadSala",
+						"displayName": "Humedad Sala [%]",
+						"visible": true
+					},
+					{
+						"internalName": "aperturaValvula",
+						"displayName": "Apertura Valvula [%]",
+						"visible": true
+					},
+					{
+						"internalName": "setpointHumidificador",
+						"displayName": "Setpoint Humidificador [%]",
+						"visible": true
+					},
+					{
+						"internalName": "setpointDeshumidificador",
+						"displayName": "Setpoint Dehumidificador [%]",
+						"visible": true
+					},
+					{
+						"internalName": "setpointCooling",
+						"displayName": "Setpoint Cooling [ºC]",
+						"visible": true
+					},
+					{
+						"internalName": "setpointHeating",
+						"displayName": "Setpoint Heating [ºC]",
+						"visible": true
+					},
+					{
+						"internalName": "modoOperacionUnidad",
+						"displayName": "Modo Operacion",
+						"visible": true
+					},
+					{
+						"internalName": "estadoDeUnidad",
+						"displayName": "Estado",
+						"visible": true
+					},
+					{
+						"internalName": "numeroCircuitos",
+						"displayName": "Numero Circuitos",
+						"visible": true
+					},
+					{
+						"internalName": "horometro",
+						"displayName": "Horometro",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 1
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/139/cells/b2c5ab73-edbd-46d5-b52c-aa8a8c22922f"
+				}
+			},
+			{
+				"i": "0556c7d4-bd43-4e19-8b69-c346184cd39d",
+				"x": 0,
+				"y": 27,
+				"w": 6,
+				"h": 6,
+				"name": "Crack Summary State",
+				"queries": [
+					{
+						"query": "// Cracks Summary State\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.crack*/ )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    estadoFuncionamiento:\n      if r.estadoFuncionamiento == true then 1 else 0,\n    estadoPresenciaAlarma:\n      if r.estadoPresenciaAlarma == true then 1 else 0,\n    comandoEncendido:\n      if r.comandoEncendido == true then 1 else 0,\n  }))\n  |> keep(columns: [\n    \"hvac_unit\",\n    \"estadoFuncionamiento\",\n    \"estadoPresenciaAlarma\",\n    \"comandoEncendido\"\n  ])\n",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "// Cracks Summary State\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.crack*/ )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    estadoFuncionamiento:\n      if r.estadoFuncionamiento == true then 1 else 0,\n    estadoPresenciaAlarma:\n      if r.estadoPresenciaAlarma == true then 1 else 0,\n    comandoEncendido:\n      if r.comandoEncendido == true then 1 else 0,\n  }))\n  |> keep(columns: [\n    \"hvac_unit\",\n    \"estadoFuncionamiento\",\n    \"estadoPresenciaAlarma\",\n    \"comandoEncendido\"\n  ])\n",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "flux"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "background",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					},
+					{
+						"id": "54503699-744a-4aa3-9b60-da565cb29a9f",
+						"type": "background",
+						"hex": "#BF3D5E",
+						"name": "ruby",
+						"value": "0"
+					},
+					{
+						"id": "7cc27b89-c935-4bdb-9d23-06ccb6bf5a87",
+						"type": "background",
+						"hex": "#32B08C",
+						"name": "viridian",
+						"value": "1"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": false,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "hvac_unit",
+						"displayName": "Unit Name",
+						"visible": true
+					},
+					{
+						"internalName": "comandoEncendido",
+						"displayName": "Encendido",
+						"visible": true
+					},
+					{
+						"internalName": "estadoFuncionamiento",
+						"displayName": "Funcionamiento",
+						"visible": true
+					},
+					{
+						"internalName": "estadoPresenciaAlarma",
+						"displayName": "Presencia Alarma",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/139/cells/0556c7d4-bd43-4e19-8b69-c346184cd39d"
+				}
+			},
+			{
+				"i": "c96f8490-a25c-4d19-8c38-39c8d3f4f638",
+				"x": 0,
+				"y": 21,
+				"w": 6,
+				"h": 6,
+				"name": "Manejadora Sala Summary State",
+				"queries": [
+					{
+						"query": "// Manejadora Salas Summary State\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) =>\n    strings.containsStr(v: r[\"_measurement\"], substr: \"manejadoraS\")\n  )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    estadoFuncionamiento:\n      if r.estadoFuncionamiento == true then 1 else 0,\n    alarmaGeneral:\n      if r.alarmaGeneral == true then \"ALARM!!!\" else \"No Alarm\",\n    alarmaFiltro:\n      if r.alarmaFiltro == true then \"ALARM!!!\" else \"No Alarm\",\n    resetAlarma:\n      if r.resetAlarma == true then 1 else 0,\n    calefaccionEtapa01:\n      if r.calefaccionEtapa01 == true then 1 else 0,\n    calefaccionEtapa02:\n      if r.calefaccionEtapa02 == true then 1 else 0,\n    estadoDamper:\n      if r.estadoDamper == true then 1 else 0,\n    comandoEncendido:\n      if r.comandoEncendido == true then 1 else 0,\n  }))\n  |> keep(columns: [\n    \"hvac_unit\",\n    \"estadoFuncionamiento\",\n    \"alarmaGeneral\",\n    \"alarmaFiltro\",\n    \"resetAlarma\",\n    \"calefaccionEtapa01\",\n    \"calefaccionEtapa02\",\n    \"estadoDamper\",\n    \"comandoEncendido\"\n  ])\n",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "// Manejadora Salas Summary State\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) =>\n    strings.containsStr(v: r[\"_measurement\"], substr: \"manejadoraS\")\n  )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    estadoFuncionamiento:\n      if r.estadoFuncionamiento == true then 1 else 0,\n    alarmaGeneral:\n      if r.alarmaGeneral == true then \"ALARM!!!\" else \"No Alarm\",\n    alarmaFiltro:\n      if r.alarmaFiltro == true then \"ALARM!!!\" else \"No Alarm\",\n    resetAlarma:\n      if r.resetAlarma == true then 1 else 0,\n    calefaccionEtapa01:\n      if r.calefaccionEtapa01 == true then 1 else 0,\n    calefaccionEtapa02:\n      if r.calefaccionEtapa02 == true then 1 else 0,\n    estadoDamper:\n      if r.estadoDamper == true then 1 else 0,\n    comandoEncendido:\n      if r.comandoEncendido == true then 1 else 0,\n  }))\n  |> keep(columns: [\n    \"hvac_unit\",\n    \"estadoFuncionamiento\",\n    \"alarmaGeneral\",\n    \"alarmaFiltro\",\n    \"resetAlarma\",\n    \"calefaccionEtapa01\",\n    \"calefaccionEtapa02\",\n    \"estadoDamper\",\n    \"comandoEncendido\"\n  ])\n",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "flux"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "background",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					},
+					{
+						"id": "e23d436d-e775-4709-940a-f40f5e74d1cb",
+						"type": "background",
+						"hex": "#BF3D5E",
+						"name": "ruby",
+						"value": "0"
+					},
+					{
+						"id": "756cdc98-c3c5-49b7-92bd-6db5c75cbf3f",
+						"type": "background",
+						"hex": "#32B08C",
+						"name": "viridian",
+						"value": "1"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": false,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "hvac_unit",
+						"displayName": "Unit Name",
+						"visible": true
+					},
+					{
+						"internalName": "estadoFuncionamiento",
+						"displayName": "Funcionamiento",
+						"visible": true
+					},
+					{
+						"internalName": "alarmaGeneral",
+						"displayName": "Alarma General",
+						"visible": true
+					},
+					{
+						"internalName": "alarmaFiltro",
+						"displayName": "Alarma Filtro",
+						"visible": true
+					},
+					{
+						"internalName": "resetAlarma",
+						"displayName": "Reset Alarma",
+						"visible": true
+					},
+					{
+						"internalName": "calefaccionEtapa01",
+						"displayName": "Calefaccion Etapa 01",
+						"visible": true
+					},
+					{
+						"internalName": "calefaccionEtapa02",
+						"displayName": "Calefaccion Etapa 02",
+						"visible": true
+					},
+					{
+						"internalName": "estadoDamper",
+						"displayName": "Damper",
+						"visible": true
+					},
+					{
+						"internalName": "comandoEncendido",
+						"displayName": "Encendido",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/139/cells/c96f8490-a25c-4d19-8c38-39c8d3f4f638"
+				}
+			},
+			{
+				"i": "b81eaedc-9c65-47fd-a82e-605092757611",
+				"x": 6,
+				"y": 21,
+				"w": 6,
+				"h": 6,
+				"name": "Manejadora Sala Misc.",
+				"queries": [
+					{
+						"query": "// Manejadora Salas Misc Table\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) =>\n    strings.containsStr(v: r[\"_measurement\"], substr: \"manejadoraS\")\n  )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    })\n  )\n  |> keep(columns: [\n    \"hvac_unit\",\n    \"valorConsigna\",\n    \"estadoTemperaturaAmbiente\",\n    \"estadoTemperaturaExterior\",\n    \"estadoTemperaturaAnticongelante\",\n    \"setpointTrabajo\",\n    \"temperaturaInyeccion\",\n    \"temperaturaRetorno\",\n    \"caudalVentiladorImpulsion\",\n    \"setpointVentiladorMin\",\n    \"setpointVentiladorMax\",\n    \"estadoValvula\",\n    \"horometro\"\n  ])\n",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "// Manejadora Salas Misc Table\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) =>\n    strings.containsStr(v: r[\"_measurement\"], substr: \"manejadoraS\")\n  )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    })\n  )\n  |> keep(columns: [\n    \"hvac_unit\",\n    \"valorConsigna\",\n    \"estadoTemperaturaAmbiente\",\n    \"estadoTemperaturaExterior\",\n    \"estadoTemperaturaAnticongelante\",\n    \"setpointTrabajo\",\n    \"temperaturaInyeccion\",\n    \"temperaturaRetorno\",\n    \"caudalVentiladorImpulsion\",\n    \"setpointVentiladorMin\",\n    \"setpointVentiladorMax\",\n    \"estadoValvula\",\n    \"horometro\"\n  ])\n",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "flux"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": false,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "hvac_unit",
+						"displayName": "Unit Name",
+						"visible": true
+					},
+					{
+						"internalName": "setpointTrabajo",
+						"displayName": "Setpoint Trabajo [ºC]",
+						"visible": true
+					},
+					{
+						"internalName": "valorConsigna",
+						"displayName": "Valor Consigna [ºC]",
+						"visible": true
+					},
+					{
+						"internalName": "estadoTemperaturaAmbiente",
+						"displayName": "Temperatura Ambiente [ºC]",
+						"visible": true
+					},
+					{
+						"internalName": "estadoTemperaturaExterior",
+						"displayName": "Temperatura Exterior [ºC]",
+						"visible": true
+					},
+					{
+						"internalName": "estadoTemperaturaAnticongelante",
+						"displayName": "Temperatura Anticongelante [ºC]",
+						"visible": true
+					},
+					{
+						"internalName": "temperaturaInyeccion",
+						"displayName": "Temperatura Inyeccion [ºC]",
+						"visible": true
+					},
+					{
+						"internalName": "temperaturaRetorno",
+						"displayName": "Temperatura Retorno [ºC]",
+						"visible": true
+					},
+					{
+						"internalName": "caudalVentiladorImpulsion",
+						"displayName": "Caudal Ventilador Impulsion [%]",
+						"visible": true
+					},
+					{
+						"internalName": "estadoValvula",
+						"displayName": "Estado Valvula [%]",
+						"visible": true
+					},
+					{
+						"internalName": "setpointVentiladorMax",
+						"displayName": "Setpoint Ventilador Max  [%]",
+						"visible": true
+					},
+					{
+						"internalName": "setpointVentiladorMin",
+						"displayName": "Setpoint Ventilador Min [%]",
+						"visible": true
+					},
+					{
+						"internalName": "horometro",
+						"displayName": "Horometro [hr]",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 1
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/139/cells/b81eaedc-9c65-47fd-a82e-605092757611"
+				}
+			},
+			{
+				"i": "4fabb669-ea95-43c8-b353-d5a48d6e3a3e",
+				"x": 5,
+				"y": 2,
+				"w": 7,
+				"h": 7,
+				"name": "Chiller Misc.",
+				"queries": [
+					{
+						"query": "// Chillers Misc table\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.chiller*/ )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({r with hvac_unit: strings.split(v: r._measurement, t: \".\")[3], }))\n  |> keep(columns: [\n    \"hvac_unit\",\n\t\"horasCompresorPromedio\", \n    \"horasCompresor01\", \n    \"horasCompresor02\", \n    \"horasCompresor03\", \n    \"horasCompresor04\",\n    \"modoOperacion\",\n    \"estadoUnidad\",\n    \"potenciaDisponibleChiller\",\n    \"potenciaTrabajo\",\n    \"presionBajaCto1\",\n    \"presionBajaCto2\",\n    \"setpointActivo\",\n    \"temperaturaAguaRetornoEvaporador\",\n    \"temperaturaAguaImpulsionEvaporador\"\n  ])\n",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "// Chillers Misc table\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.chiller*/ )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({r with hvac_unit: strings.split(v: r._measurement, t: \".\")[3], }))\n  |> keep(columns: [\n    \"hvac_unit\",\n\t\"horasCompresorPromedio\", \n    \"horasCompresor01\", \n    \"horasCompresor02\", \n    \"horasCompresor03\", \n    \"horasCompresor04\",\n    \"modoOperacion\",\n    \"estadoUnidad\",\n    \"potenciaDisponibleChiller\",\n    \"potenciaTrabajo\",\n    \"presionBajaCto1\",\n    \"presionBajaCto2\",\n    \"setpointActivo\",\n    \"temperaturaAguaRetornoEvaporador\",\n    \"temperaturaAguaImpulsionEvaporador\"\n  ])\n",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "flux"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": false,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "hvac_unit",
+						"displayName": "Unit Name",
+						"visible": true
+					},
+					{
+						"internalName": "estadoUnidad",
+						"displayName": "Estado Unidad",
+						"visible": true
+					},
+					{
+						"internalName": "modoOperacion",
+						"displayName": "Modo Operacion",
+						"visible": true
+					},
+					{
+						"internalName": "potenciaDisponibleChiller",
+						"displayName": "Potencia Disponible [%]",
+						"visible": true
+					},
+					{
+						"internalName": "potenciaTrabajo",
+						"displayName": "Potencia Trabajo [%]",
+						"visible": true
+					},
+					{
+						"internalName": "presionBajaCto1",
+						"displayName": "Presion Baja Cto 1 [mbar]",
+						"visible": true
+					},
+					{
+						"internalName": "presionBajaCto2",
+						"displayName": "Presion Baja Cto 2 [mbar]",
+						"visible": true
+					},
+					{
+						"internalName": "setpointActivo",
+						"displayName": "Setpoint Activo [ºC]",
+						"visible": true
+					},
+					{
+						"internalName": "temperaturaAguaImpulsionEvaporador",
+						"displayName": "Temp Agua Impulsion [ºC]",
+						"visible": true
+					},
+					{
+						"internalName": "temperaturaAguaRetornoEvaporador",
+						"displayName": "Temp Agua Retorno [ºC]",
+						"visible": true
+					},
+					{
+						"internalName": "horasCompresor01",
+						"displayName": "Horas Compresor 01 [hr]",
+						"visible": true
+					},
+					{
+						"internalName": "horasCompresor02",
+						"displayName": "Horas Compresor 02 [hr]",
+						"visible": true
+					},
+					{
+						"internalName": "horasCompresor03",
+						"displayName": "Horas Compresor 03 [hr]",
+						"visible": true
+					},
+					{
+						"internalName": "horasCompresor04",
+						"displayName": "Horas Compresor 04 [hr]",
+						"visible": true
+					},
+					{
+						"internalName": "horasCompresorPromedio",
+						"displayName": "Horas Compresor Promedio [hr]",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 1
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/139/cells/4fabb669-ea95-43c8-b353-d5a48d6e3a3e"
+				}
+			},
+			{
+				"i": "accbb62e-db69-48d9-9615-9c984ef6afa7",
+				"x": 0,
+				"y": 2,
+				"w": 5,
+				"h": 7,
+				"name": "Chiller Summary State",
+				"queries": [
+					{
+						"query": "// Chillers Summary State\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.chiller*/ )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    compresor01Funcionando:\n      if r.compresor01Funcionando == true then 1 else 0,\n    compresor02Funcionando:\n      if r.compresor02Funcionando == true then 1 else 0,\n    compresor03Funcionando:\n      if r.compresor03Funcionando == true then 1 else 0,\n    compresor04Funcionando:\n      if r.compresor04Funcionando == true then 1 else 0,\n    compresor01Alarmado:\n      if r.compresor01Alarmado == true then \"ALARM!!!\" else \"No Alarm\",\n    compresor02Alarmado:\n      if r.compresor02Alarmado == true then \"ALARM!!!\" else \"No Alarm\",\n    compresor03Alarmado:\n      if r.compresor03Alarmado == true then \"ALARM!!!\" else \"No Alarm\",\n    compresor04Alarmado:\n      if r.compresor04Alarmado == true then \"ALARM!!!\" else \"No Alarm\",\n    alarmaGeneral:\n      if r.alarmaGeneral == true then \"ALARM!!!\" else \"No Alarm\",\n    comandoEncendido:\n      if r.comandoEncendido == true then 1 else 0,\n  }))\n  |> keep(columns: [\n    \"hvac_unit\", \n    \"compresor01Funcionando\", \n    \"compresor02Funcionando\", \n    \"compresor03Funcionando\", \n    \"compresor04Funcionando\", \n    \"compresor01Alarmado\", \n    \"compresor02Alarmado\", \n    \"compresor03Alarmado\", \n    \"compresor04Alarmado\", \n    \"alarmaGeneral\", \n    \"comandoEncendido\"\n  ])\n",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "// Chillers Summary State\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.chiller*/ )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    compresor01Funcionando:\n      if r.compresor01Funcionando == true then 1 else 0,\n    compresor02Funcionando:\n      if r.compresor02Funcionando == true then 1 else 0,\n    compresor03Funcionando:\n      if r.compresor03Funcionando == true then 1 else 0,\n    compresor04Funcionando:\n      if r.compresor04Funcionando == true then 1 else 0,\n    compresor01Alarmado:\n      if r.compresor01Alarmado == true then \"ALARM!!!\" else \"No Alarm\",\n    compresor02Alarmado:\n      if r.compresor02Alarmado == true then \"ALARM!!!\" else \"No Alarm\",\n    compresor03Alarmado:\n      if r.compresor03Alarmado == true then \"ALARM!!!\" else \"No Alarm\",\n    compresor04Alarmado:\n      if r.compresor04Alarmado == true then \"ALARM!!!\" else \"No Alarm\",\n    alarmaGeneral:\n      if r.alarmaGeneral == true then \"ALARM!!!\" else \"No Alarm\",\n    comandoEncendido:\n      if r.comandoEncendido == true then 1 else 0,\n  }))\n  |> keep(columns: [\n    \"hvac_unit\", \n    \"compresor01Funcionando\", \n    \"compresor02Funcionando\", \n    \"compresor03Funcionando\", \n    \"compresor04Funcionando\", \n    \"compresor01Alarmado\", \n    \"compresor02Alarmado\", \n    \"compresor03Alarmado\", \n    \"compresor04Alarmado\", \n    \"alarmaGeneral\", \n    \"comandoEncendido\"\n  ])\n",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "flux"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "background",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					},
+					{
+						"id": "72a88caf-d3b9-4a78-9528-0cae9fcced57",
+						"type": "background",
+						"hex": "#BF3D5E",
+						"name": "ruby",
+						"value": "0"
+					},
+					{
+						"id": "f702c176-c847-4e91-b1b7-ab9cdd7c5d2f",
+						"type": "background",
+						"hex": "#32B08C",
+						"name": "viridian",
+						"value": "1"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": false,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "hvac_unit",
+						"displayName": "Unit Name",
+						"visible": true
+					},
+					{
+						"internalName": "alarmaGeneral",
+						"displayName": "Alarma General",
+						"visible": true
+					},
+					{
+						"internalName": "comandoEncendido",
+						"displayName": "Encendido",
+						"visible": true
+					},
+					{
+						"internalName": "compresor01Alarmado",
+						"displayName": "Compressor 01 Alarma",
+						"visible": true
+					},
+					{
+						"internalName": "compresor02Alarmado",
+						"displayName": "Compressor 02 Alarma",
+						"visible": true
+					},
+					{
+						"internalName": "compresor03Alarmado",
+						"displayName": "Compressor 03 Alarma",
+						"visible": true
+					},
+					{
+						"internalName": "compresor04Alarmado",
+						"displayName": "Compressor 04 Alarma",
+						"visible": true
+					},
+					{
+						"internalName": "compresor01Funcionando",
+						"displayName": "Compressor 01 Funcionando",
+						"visible": true
+					},
+					{
+						"internalName": "compresor02Funcionando",
+						"displayName": "Compressor 02 Funcionando",
+						"visible": true
+					},
+					{
+						"internalName": "compresor03Funcionando",
+						"displayName": "Compressor 03 Funcionando",
+						"visible": true
+					},
+					{
+						"internalName": "compresor04Funcionando",
+						"displayName": "Compressor 04 Funcionando",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/139/cells/accbb62e-db69-48d9-9615-9c984ef6afa7"
+				}
+			},
+			{
+				"i": "00f20a4e-8d6e-4799-aeba-1989fd758604",
+				"x": 5,
+				"y": 9,
+				"w": 5,
+				"h": 6,
+				"name": "Fan Coil Temperature Summary ",
+				"queries": [
+					{
+						"query": "// Fan Coil Temperature Summary Table\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.fancoil*/ )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],  \n    })\n  )\n  |> keep(columns: [\"hvac_unit\",  \"temperaturaSala\", \"aperturaValvulaFrio\"])\n \n\n \n\n  \n  \n ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "// Fan Coil Temperature Summary Table\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.fancoil*/ )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],  \n    })\n  )\n  |> keep(columns: [\"hvac_unit\",  \"temperaturaSala\", \"aperturaValvulaFrio\"])\n \n\n \n\n  \n  \n ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/1",
+						"type": "flux"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": false
+				},
+				"fieldOptions": [
+					{
+						"internalName": "hvac_unit",
+						"displayName": "Unit Name",
+						"visible": true
+					},
+					{
+						"internalName": "temperaturaSala",
+						"displayName": "Temperatura Sala (°C)",
+						"visible": true
+					},
+					{
+						"internalName": "aperturaValvulaFrio",
+						"displayName": "Valvula Frio (%)",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 1
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/139/cells/00f20a4e-8d6e-4799-aeba-1989fd758604"
+				}
+			},
+			{
+				"i": "59808436-23c6-4b29-a5c1-582758b4bcd7",
+				"x": 0,
+				"y": 15,
+				"w": 9,
+				"h": 6,
+				"name": "Fan Coil Setpoint Temperatures",
+				"queries": [
+					{
+						"query": "// Fan Coil setpoint temperatures table\n\nimport \"strings\"\nimport \"math\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.fancoil*/ )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    // use the math flux package to round the float numbers before converting to string\n\t// use strings.joinStr() to display Day/Night setpoint temperatures in a single column \n    setpoint_cooling: strings.joinStr(arr: [string(v: math.round(x: r.setpointCoolingDay)), \"/\", string(v: math.round(x: r.setpointCoolingNight))], v: \"\"),\n    setpoint_heating: strings.joinStr(arr: [string(v: math.round(x: r.setpointHeatingDay)), \"/\", string(v: math.round(x: r.setpointHeatingNight))], v: \"\")\n    \n    })\n  )\n  |> keep(columns: [\"hvac_unit\", \"setpoint_cooling\", \"setpoint_heating\", \"setpointTrabajo\"])",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "// Fan Coil setpoint temperatures table\n\nimport \"strings\"\nimport \"math\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.fancoil*/ )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    // use the math flux package to round the float numbers before converting to string\n\t// use strings.joinStr() to display Day/Night setpoint temperatures in a single column \n    setpoint_cooling: strings.joinStr(arr: [string(v: math.round(x: r.setpointCoolingDay)), \"/\", string(v: math.round(x: r.setpointCoolingNight))], v: \"\"),\n    setpoint_heating: strings.joinStr(arr: [string(v: math.round(x: r.setpointHeatingDay)), \"/\", string(v: math.round(x: r.setpointHeatingNight))], v: \"\")\n    \n    })\n  )\n  |> keep(columns: [\"hvac_unit\", \"setpoint_cooling\", \"setpoint_heating\", \"setpointTrabajo\"])",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/1",
+						"type": "flux"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": false
+				},
+				"fieldOptions": [
+					{
+						"internalName": "hvac_unit",
+						"displayName": "Unit Name",
+						"visible": true
+					},
+					{
+						"internalName": "setpoint_cooling",
+						"displayName": "Cooling Day/Night (°C)",
+						"visible": true
+					},
+					{
+						"internalName": "setpoint_heating",
+						"displayName": "Heating Day/Night (°C)",
+						"visible": true
+					},
+					{
+						"internalName": "setpointTrabajo",
+						"displayName": "Trabajo (°C)",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 1
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/139/cells/59808436-23c6-4b29-a5c1-582758b4bcd7"
+				}
+			},
+			{
+				"i": "2d905030-7902-4ab5-b1ff-9fad5013cc3b",
+				"x": 4,
+				"y": 0,
+				"w": 2,
+				"h": 2,
+				"name": "Encendido",
+				"queries": [
+					{
+						"query": "// Count how many fancoil units are in the \"estadoEncendido\" state\n\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.fancoil*/ and r._field =~ /comandoEncendido*/ )\n  |> last()\n  |> map(fn: (r) => ({\n    r with\n    state:\n      if r._value == true then 1 else 0\n    })\n  )\n  |> group()\n  |> sum(column: \"state\")\n \n\n  \n\n  \n ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "// Count how many fancoil units are in the \"estadoEncendido\" state\n\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.fancoil*/ and r._field =~ /comandoEncendido*/ )\n  |> last()\n  |> map(fn: (r) => ({\n    r with\n    state:\n      if r._value == true then 1 else 0\n    })\n  )\n  |> group()\n  |> sum(column: \"state\")\n \n\n  \n\n  \n ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/1",
+						"type": "flux"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "_time",
+						"displayName": "",
+						"visible": false
+					},
+					{
+						"internalName": "_value",
+						"displayName": "",
+						"visible": false
+					},
+					{
+						"internalName": "_field",
+						"displayName": "",
+						"visible": false
+					},
+					{
+						"internalName": "_measurement",
+						"displayName": "",
+						"visible": false
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": false,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/139/cells/2d905030-7902-4ab5-b1ff-9fad5013cc3b"
+				}
+			},
+			{
+				"i": "0ed8b887-3f63-48e4-96aa-9836e79c79a1",
+				"x": 2,
+				"y": 0,
+				"w": 2,
+				"h": 2,
+				"name": "Operacion",
+				"queries": [
+					{
+						"query": "// Count how many fancoil units are in the \"estadoOperacion\" state\n\nfrom(bucket: \"efd/autogen\")\n  // get values for the \"estadoOperacion\" field from the all measurements in the efd that match \"lsst.sal.HVAC.fancoil*\"\n  |> range(start: v.timeRangeStart)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.fancoil*/ and r._field == \"estadoOperacion\" )\n  |> last()\n  // map that to a new column \"state\" and replace true/false with 1/0\n  |> map(fn: (r) => ({\n    r with\n    state:\n      if r._value == true then 1 else 0\n    })\n  )\n  // group the results from individual measurements (fancoil units) into a single table\n  |> group()\n  // and sum them to count how many fancoil units are in that state\n  |> sum(column: \"state\")\n \n\n  \n\n  \n ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "// Count how many fancoil units are in the \"estadoOperacion\" state\n\nfrom(bucket: \"efd/autogen\")\n  // get values for the \"estadoOperacion\" field from the all measurements in the efd that match \"lsst.sal.HVAC.fancoil*\"\n  |> range(start: v.timeRangeStart)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.fancoil*/ and r._field == \"estadoOperacion\" )\n  |> last()\n  // map that to a new column \"state\" and replace true/false with 1/0\n  |> map(fn: (r) => ({\n    r with\n    state:\n      if r._value == true then 1 else 0\n    })\n  )\n  // group the results from individual measurements (fancoil units) into a single table\n  |> group()\n  // and sum them to count how many fancoil units are in that state\n  |> sum(column: \"state\")\n \n\n  \n\n  \n ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/1",
+						"type": "flux"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "_time",
+						"displayName": "",
+						"visible": false
+					},
+					{
+						"internalName": "_value",
+						"displayName": "",
+						"visible": false
+					},
+					{
+						"internalName": "_field",
+						"displayName": "",
+						"visible": false
+					},
+					{
+						"internalName": "_measurement",
+						"displayName": "",
+						"visible": false
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": false,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/139/cells/0ed8b887-3f63-48e4-96aa-9836e79c79a1"
+				}
+			},
+			{
+				"i": "e2b25fcb-2dfc-41f9-ba19-769922d35aa6",
+				"x": 0,
+				"y": 9,
+				"w": 5,
+				"h": 6,
+				"name": "Fan Coil Summary State",
+				"queries": [
+					{
+						"query": "// Fan Coil summary state table\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  // get data from all the measurements that match \"lsst.sal.HVAC.fancoil*\"\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.fancoil*/ )\n  |> last()\n  // let the pivot function to do its magic https://docs.influxdata.com/flux/v0.x/stdlib/universe/pivot/\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n\n  |> map(fn: (r) => ({\n    r with\n    // use some string manipulation to display the name of the fancoil unit\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    // create new columns and replace true/false with 1/0 that's needed to configure thresholds \n    // and color the table cells\n    estadoVentilador:\n      if r.estadoVentilador == true then 1 else 0,\n    estadoOperacion:\n      if r.estadoOperacion == true then 1 else 0,\n    comandoEncendido:\n      if r.estadoEncendido == true then 1 else 0,\n    estadoCalefactor:\n      if r.estadoCalefactor == true then 1 else 0\n    })\n  )\n  // keep only the columns of interest\n  |> keep(columns: [\"hvac_unit\", \"estadoVentilador\", \"comandoEncendido\", \"estadoCalefactor\", \"estadoOperacion\"])\n\n  \n  \n ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "// Fan Coil summary state table\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  // get data from all the measurements that match \"lsst.sal.HVAC.fancoil*\"\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.fancoil*/ )\n  |> last()\n  // let the pivot function to do its magic https://docs.influxdata.com/flux/v0.x/stdlib/universe/pivot/\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n\n  |> map(fn: (r) => ({\n    r with\n    // use some string manipulation to display the name of the fancoil unit\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    // create new columns and replace true/false with 1/0 that's needed to configure thresholds \n    // and color the table cells\n    estadoVentilador:\n      if r.estadoVentilador == true then 1 else 0,\n    estadoOperacion:\n      if r.estadoOperacion == true then 1 else 0,\n    comandoEncendido:\n      if r.estadoEncendido == true then 1 else 0,\n    estadoCalefactor:\n      if r.estadoCalefactor == true then 1 else 0\n    })\n  )\n  // keep only the columns of interest\n  |> keep(columns: [\"hvac_unit\", \"estadoVentilador\", \"comandoEncendido\", \"estadoCalefactor\", \"estadoOperacion\"])\n\n  \n  \n ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/1",
+						"type": "flux"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "background",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					},
+					{
+						"id": "b50008e9-04ec-45dd-bbe3-00302ebefca3",
+						"type": "background",
+						"hex": "#BF3D5E",
+						"name": "ruby",
+						"value": "0"
+					},
+					{
+						"id": "0e883cef-3740-49ad-a55d-d3246f24e16b",
+						"type": "background",
+						"hex": "#32B08C",
+						"name": "viridian",
+						"value": "1"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": false
+				},
+				"fieldOptions": [
+					{
+						"internalName": "hvac_unit",
+						"displayName": "Unit Name",
+						"visible": true
+					},
+					{
+						"internalName": "estadoOperacion",
+						"displayName": "Operacion",
+						"visible": true
+					},
+					{
+						"internalName": "comandoEncendido",
+						"displayName": "Encendido",
+						"visible": true
+					},
+					{
+						"internalName": "estadoVentilador",
+						"displayName": "Ventilador",
+						"visible": true
+					},
+					{
+						"internalName": "estadoCalefactor",
+						"displayName": "Calefactor",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": false,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/139/cells/e2b25fcb-2dfc-41f9-ba19-769922d35aa6"
+				}
+			},
+			{
+				"i": "4f399db6-ce01-41d6-b1d8-a5666ca06f44",
+				"x": 0,
+				"y": 0,
+				"w": 2,
+				"h": 2,
+				"name": "Fan Coil Units",
+				"queries": [
+					{
+						"query": "// Count the number of fancoil units, I know this looks too complicated but bear with me :)\n\nfrom(bucket: \"efd/autogen\")\n  // get all measumerements that match the \"lsst.sal.HVAC.fancoil*\" expression in the efd since the time set in the dashboard \n  |> range(start: v.timeRangeStart)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.fancoil*/ )\n  // get the most recent point in the timeseries \n  |> last()\n  // because _measurement is a \"special\" column I'm mapping it to _value which is also the default name used by the unique() function\n  // see https://docs.influxdata.com/flux/v0.x/stdlib/universe/unique/\n  |> map(fn: (r) => ({\n    r with\n    _value: r._measurement\n    })\n  )\n  |> keep(columns:[\"_value\"])\n  // remove duplicate values\n  |> unique()\n  |> count()\n  \n \n ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "// Count the number of fancoil units, I know this looks too complicated but bear with me :)\n\nfrom(bucket: \"efd/autogen\")\n  // get all measumerements that match the \"lsst.sal.HVAC.fancoil*\" expression in the efd since the time set in the dashboard \n  |> range(start: v.timeRangeStart)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.fancoil*/ )\n  // get the most recent point in the timeseries \n  |> last()\n  // because _measurement is a \"special\" column I'm mapping it to _value which is also the default name used by the unique() function\n  // see https://docs.influxdata.com/flux/v0.x/stdlib/universe/unique/\n  |> map(fn: (r) => ({\n    r with\n    _value: r._measurement\n    })\n  )\n  |> keep(columns:[\"_value\"])\n  // remove duplicate values\n  |> unique()\n  |> count()\n  \n \n ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/1",
+						"type": "flux"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "_time",
+						"displayName": "",
+						"visible": false
+					},
+					{
+						"internalName": "_value",
+						"displayName": "",
+						"visible": false
+					},
+					{
+						"internalName": "_field",
+						"displayName": "",
+						"visible": false
+					},
+					{
+						"internalName": "_measurement",
+						"displayName": "",
+						"visible": false
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": false,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/139/cells/4f399db6-ce01-41d6-b1d8-a5666ca06f44"
+				}
+			},
+			{
+				"i": "1e9346af-af01-457c-9b82-ee82354d6f18",
+				"x": 6,
+				"y": 0,
+				"w": 2,
+				"h": 2,
+				"name": "Ventilador",
+				"queries": [
+					{
+						"query": "// Count how many fancoil units are in the \"estadoVentilador\" state\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.fancoil*/ and r._field == \"estadoVentilador\" )\n  |> last()\n  |> map(fn: (r) => ({\n    r with\n    state:\n      if r._value == true then 1 else 0\n    })\n  )\n  |> group()\n  |> sum(column: \"state\")\n \n\n  \n\n  \n ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "// Count how many fancoil units are in the \"estadoVentilador\" state\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.fancoil*/ and r._field == \"estadoVentilador\" )\n  |> last()\n  |> map(fn: (r) => ({\n    r with\n    state:\n      if r._value == true then 1 else 0\n    })\n  )\n  |> group()\n  |> sum(column: \"state\")\n \n\n  \n\n  \n ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/1",
+						"type": "flux"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "_time",
+						"displayName": "",
+						"visible": false
+					},
+					{
+						"internalName": "_value",
+						"displayName": "",
+						"visible": false
+					},
+					{
+						"internalName": "_field",
+						"displayName": "",
+						"visible": false
+					},
+					{
+						"internalName": "_measurement",
+						"displayName": "",
+						"visible": false
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": false,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/139/cells/1e9346af-af01-457c-9b82-ee82354d6f18"
+				}
+			},
+			{
+				"i": "9bbcffd0-e0bc-49fb-9718-62105d20a074",
+				"x": 8,
+				"y": 0,
+				"w": 2,
+				"h": 2,
+				"name": "Calefactor",
+				"queries": [
+					{
+						"query": "// Count how many fancoil units are in the \"estadoCalefactor\" state\n\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.fancoil*/ and r._field =~ /estadoCalefactor*/ )\n  |> last()\n  |> map(fn: (r) => ({\n    r with\n    state:\n      if r._value == true then 1 else 0\n    })\n  )\n  |> group()\n  |> sum(column: \"state\")\n \n\n\n  \n  \n\n  \n ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "// Count how many fancoil units are in the \"estadoCalefactor\" state\n\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.HVAC.fancoil*/ and r._field =~ /estadoCalefactor*/ )\n  |> last()\n  |> map(fn: (r) => ({\n    r with\n    state:\n      if r._value == true then 1 else 0\n    })\n  )\n  |> group()\n  |> sum(column: \"state\")\n \n\n\n  \n  \n\n  \n ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/1",
+						"type": "flux"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "_time",
+						"displayName": "",
+						"visible": false
+					},
+					{
+						"internalName": "_value",
+						"displayName": "",
+						"visible": false
+					},
+					{
+						"internalName": "_field",
+						"displayName": "",
+						"visible": false
+					},
+					{
+						"internalName": "_measurement",
+						"displayName": "",
+						"visible": false
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": false,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/139/cells/9bbcffd0-e0bc-49fb-9718-62105d20a074"
+				}
+			},
+			{
+				"i": "179dbf95-f0ba-4b02-9ff6-81c26e0d3e09",
+				"x": 6,
+				"y": 33,
+				"w": 6,
+				"h": 2,
+				"name": "Bomba Agua Fria Summary State",
+				"queries": [
+					{
+						"query": "// Misc Summary State\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"lsst.sal.HVAC.bombaAguaFriaP01\" )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    estadoFuncionando:\n      if r.estadoFuncionando == true then 1 else 0,\n    comandoEncendido:\n      if r.comandoEncendido == true then 1 else 0,\n  }))\n  |> keep(columns: [\n    \"hvac_unit\",\n    \"estadoFuncionando\",\n    \"comandoEncendido\"\n  ])\n",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "// Misc Summary State\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"lsst.sal.HVAC.bombaAguaFriaP01\" )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    hvac_unit: strings.split(v: r._measurement, t: \".\")[3],\n    estadoFuncionando:\n      if r.estadoFuncionando == true then 1 else 0,\n    comandoEncendido:\n      if r.comandoEncendido == true then 1 else 0,\n  }))\n  |> keep(columns: [\n    \"hvac_unit\",\n    \"estadoFuncionando\",\n    \"comandoEncendido\"\n  ])\n",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "flux"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "background",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					},
+					{
+						"id": "44d9d280-1757-4e9c-80f9-aacde5a303dc",
+						"type": "background",
+						"hex": "#BF3D5E",
+						"name": "ruby",
+						"value": "0"
+					},
+					{
+						"id": "f5043371-5122-4009-ab1d-06f32631559d",
+						"type": "background",
+						"hex": "#32B08C",
+						"name": "viridian",
+						"value": "1"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "hvac_unit",
+						"displayName": "Unit Name",
+						"visible": true
+					},
+					{
+						"internalName": "comandoEncendido",
+						"displayName": "Encendido",
+						"visible": true
+					},
+					{
+						"internalName": "estadoFuncionando",
+						"displayName": "Funcionando",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/139/cells/179dbf95-f0ba-4b02-9ff6-81c26e0d3e09"
+				}
+			}
+		],
+		"templates": [],
+		"name": "HVAC System monitoring",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/139",
+			"cells": "/chronograf/v1/dashboards/139/cells",
+			"templates": "/chronograf/v1/dashboards/139/templates"
+		}
+	}
+}

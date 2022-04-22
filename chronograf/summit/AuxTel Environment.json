@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.3",
+		"chronografVersion": "1.9.4",
 		"sources": {
 			"1": {
 				"name": "Summit EFD",
@@ -20,7 +20,7 @@
 				"name": "AuxTel-ESS - ESSID 201 Temperatures (with Outside Temp)",
 				"queries": [
 					{
-						"query": "SELECT \"temperature1\" as \"Air\", \"temperature2\" as \"Truss\", \"temperature3\" as \"M2\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 201 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"temperature1\" as \"Air\", \"temperature2\" as \"Truss\", \"temperature3\" as \"M2\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 201 AND \"sensorName\" = 'AuxTel-ESS01' AND time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"temperature1\" as \"Air\", \"temperature2\" as \"Truss\", \"temperature3\" as \"M2\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 201 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"rawText": "SELECT \"temperature1\" as \"Air\", \"temperature2\" as \"Truss\", \"temperature3\" as \"M2\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 201 AND \"sensorName\" = 'AuxTel-ESS01' AND time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -394,6 +394,123 @@
 				"noteVisibility": "default",
 				"links": {
 					"self": "/chronograf/v1/dashboards/91/cells/5a9a1fe9-3dd9-41ae-a1b8-9c6bc6ccafb5"
+				}
+			},
+			{
+				"i": "f04c7468-340f-4efe-a088-b2b11e0b4eed",
+				"x": 6,
+				"y": 3,
+				"w": 6,
+				"h": 3,
+				"name": "M1 Mirror Temperature",
+				"queries": [
+					{
+						"query": "SELECT \"temperature0\" as \"M1 sensor 1\", \"temperature1\" as \"M1 sensor 2\", \"temperature2\" as \"M1 sensor 3\", \"temperature3\" as \"M1 sensor 4\", \"temperature4\" as \"M1 sensor 5\", \"temperature5\" as \"M1 sensor 6\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 201 AND \"sensorName\" = 'AuxTel-ESS03' AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"temperature0\" as \"M1 sensor 1\", \"temperature1\" as \"M1 sensor 2\", \"temperature2\" as \"M1 sensor 3\", \"temperature3\" as \"M1 sensor 4\", \"temperature4\" as \"M1 sensor 5\", \"temperature5\" as \"M1 sensor 6\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 201 AND \"sensorName\" = 'AuxTel-ESS03' AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "1a114648-b478-45d0-bfa5-15991e43fa5c",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "457d8272-94f7-4946-b2fd-54e42858b850",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "fb1b9322-b609-4cf8-bace-ca20acf4b234",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/91/cells/f04c7468-340f-4efe-a088-b2b11e0b4eed"
 				}
 			}
 		],
