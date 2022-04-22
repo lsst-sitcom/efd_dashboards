@@ -747,39 +747,39 @@
 				"name": "ASPIC",
 				"queries": [
 					{
-						"query": "SELECT \"aspicl_Temp0\", \"aspicu_Temp0\", \"aspicl_Temp1\", \"aspicu_Temp1\", \"aspicl_Temp2\", \"aspicu_Temp2\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_Reb\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"aspicl_Temp00\", \"aspicu_Temp00\", \"aspicl_Temp10\", \"aspicu_Temp10\", \"aspicl_Temp20\", \"aspicu_Temp20\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Reb\" WHERE time > :dashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.fp_Reb",
+							"measurement": "lsst.sal.ATCamera.focal_plane_Reb",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "aspicl_Temp0",
+									"value": "aspicl_Temp00",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "aspicu_Temp0",
+									"value": "aspicu_Temp00",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "aspicl_Temp1",
+									"value": "aspicl_Temp10",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "aspicu_Temp1",
+									"value": "aspicu_Temp10",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "aspicl_Temp2",
+									"value": "aspicl_Temp20",
 									"type": "field",
 									"alias": ""
 								},
 								{
-									"value": "aspicu_Temp2",
+									"value": "aspicu_Temp20",
 									"type": "field",
 									"alias": ""
 								}

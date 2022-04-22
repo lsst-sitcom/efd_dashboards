@@ -115,10 +115,10 @@
 				"name": "Ingest sequence",
 				"queries": [
 					{
-						"query": "SELECT \"obsid\", \"statusCode\", \"description\", \"raft\", \"sensor\" FROM \"efd\".\"autogen\".\"lsst.sal.CCArchiver.logevent_imageInOODS\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"obsid\", \"statusCode\", \"description\", \"raft\", \"sensor\" FROM \"efd\".\"autogen\".\"lsst.sal.CCOODS.logevent_imageInOODS\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.CCArchiver.logevent_imageInOODS",
+							"measurement": "lsst.sal.CCOODS.logevent_imageInOODS",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{

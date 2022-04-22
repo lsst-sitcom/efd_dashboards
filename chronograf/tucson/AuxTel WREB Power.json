@@ -1,18 +1,18 @@
 {
 	"meta": {
-		"chronografVersion": "1.7.14",
+		"chronografVersion": "1.9.3",
 		"sources": {
-			"2": {
-				"name": "InfluxDB",
-				"link": "/chronograf/v1/sources/2"
+			"1": {
+				"name": "Influx 1",
+				"link": "/chronograf/v1/sources/1"
 			}
 		}
 	},
 	"dashboard": {
-		"id": 4,
+		"id": "48",
 		"cells": [
 			{
-				"i": "d8c68470-36d2-4b80-9d6a-3bcc32a3c584",
+				"i": "0cadfb15-5686-42dd-9ed7-e32be3c32b3f",
 				"x": 0,
 				"y": 0,
 				"w": 4,
@@ -20,10 +20,10 @@
 				"name": "Voltages",
 				"queries": [
 					{
-						"query": "SELECT mean(\"analog_V\") AS \"mean_analog_V\", mean(\"clkHigh_V\") AS \"mean_clkHigh_V\", mean(\"clkLow_V\") AS \"mean_clkLow_V\", mean(\"digital_V\") AS \"mean_digital_V\", mean(\"dphi_V\") AS \"mean_dphi_V\", mean(\"heater_V\") AS \"mean_heater_V\", mean(\"hvbias_V\") AS \"mean_hvbias_V\", mean(\"od_V\") AS \"mean_od_V\", mean(\"otm_V\") AS \"mean_otm_V\", mean(\"aux_V\") AS \"mean_aux_V\", mean(\"fan_V\") AS \"mean_fan_V\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wrebPower\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"analog_V\") AS \"mean_analog_V\", mean(\"clkHigh_V\") AS \"mean_clkHigh_V\", mean(\"clkLow_V\") AS \"mean_clkLow_V\", mean(\"digital_V\") AS \"mean_digital_V\", mean(\"dphi_V\") AS \"mean_dphi_V\", mean(\"heater_V\") AS \"mean_heater_V\", mean(\"hvbias_V\") AS \"mean_hvbias_V\", mean(\"od_V\") AS \"mean_od_V\", mean(\"otm_V\") AS \"mean_otm_V\", mean(\"aux_V\") AS \"mean_aux_V\", mean(\"fan_V\") AS \"mean_fan_V\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.power\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.wrebPower",
+							"measurement": "lsst.sal.ATCamera.power",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
@@ -259,11 +259,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/4/cells/d8c68470-36d2-4b80-9d6a-3bcc32a3c584"
+					"self": "/chronograf/v1/dashboards/48/cells/0cadfb15-5686-42dd-9ed7-e32be3c32b3f"
 				}
 			},
 			{
-				"i": "543e609d-77d3-423b-9309-b22b756834aa",
+				"i": "dbda81fa-4ae4-4097-b0e5-0d3059187a06",
 				"x": 4,
 				"y": 0,
 				"w": 4,
@@ -271,10 +271,10 @@
 				"name": "Currents",
 				"queries": [
 					{
-						"query": "SELECT mean(\"analog_I\") AS \"mean_analog_I\", mean(\"clkHigh_I\") AS \"mean_clkHigh_I\", mean(\"clkLow_I\") AS \"mean_clkLow_I\", mean(\"digital_I\") AS \"mean_digital_I\", mean(\"dphi_I\") AS \"mean_dphi_I\", mean(\"heater_I\") AS \"mean_heater_I\", mean(\"hvbias_I\") AS \"mean_hvbias_I\", mean(\"od_I\") AS \"mean_od_I\", mean(\"aux_I\") AS \"mean_aux_I\", mean(\"fan_I\") AS \"mean_fan_I\", mean(\"otm_I\") AS \"mean_otm_I\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wrebPower\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"analog_I\") AS \"mean_analog_I\", mean(\"clkHigh_I\") AS \"mean_clkHigh_I\", mean(\"clkLow_I\") AS \"mean_clkLow_I\", mean(\"digital_I\") AS \"mean_digital_I\", mean(\"dphi_I\") AS \"mean_dphi_I\", mean(\"heater_I\") AS \"mean_heater_I\", mean(\"hvbias_I\") AS \"mean_hvbias_I\", mean(\"od_I\") AS \"mean_od_I\", mean(\"aux_I\") AS \"mean_aux_I\", mean(\"fan_I\") AS \"mean_fan_I\", mean(\"otm_I\") AS \"mean_otm_I\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.power\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.wrebPower",
+							"measurement": "lsst.sal.ATCamera.power",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
@@ -510,7 +510,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/4/cells/543e609d-77d3-423b-9309-b22b756834aa"
+					"self": "/chronograf/v1/dashboards/48/cells/dbda81fa-4ae4-4097-b0e5-0d3059187a06"
 				}
 			}
 		],
@@ -518,9 +518,9 @@
 		"name": "AuxTel WREB Power",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/4",
-			"cells": "/chronograf/v1/dashboards/4/cells",
-			"templates": "/chronograf/v1/dashboards/4/templates"
+			"self": "/chronograf/v1/dashboards/48",
+			"cells": "/chronograf/v1/dashboards/48/cells",
+			"templates": "/chronograf/v1/dashboards/48/templates"
 		}
 	}
 }

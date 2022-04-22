@@ -9,10 +9,10 @@
 		}
 	},
 	"dashboard": {
-		"id": "6",
+		"id": "44",
 		"cells": [
 			{
-				"i": "7fedf2c9-eba5-45d7-8871-a36420786e8d",
+				"i": "f7b75323-7651-44d4-a3e1-7eae4c68cc60",
 				"x": 0,
 				"y": 0,
 				"w": 9,
@@ -36,7 +36,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -100,39 +100,29 @@
 					"isEnforced": true,
 					"digits": 2
 				},
-				"note": "Last images ingested into the OODS.\n\nSelect an appropriate time window (e.g. `Past 24h`)\n\n",
+				"note": "Last header producer by the HS.\n\nSelect an appropriate time window (e.g. `Past 24h`)\n\n",
 				"noteVisibility": "showWhenNoData",
 				"links": {
-					"self": "/chronograf/v1/dashboards/6/cells/7fedf2c9-eba5-45d7-8871-a36420786e8d"
+					"self": "/chronograf/v1/dashboards/44/cells/f7b75323-7651-44d4-a3e1-7eae4c68cc60"
 				}
 			},
 			{
-				"i": "dae3cc59-f834-407d-82b1-d031ac2b164c",
+				"i": "90d5bedd-0a21-4834-b454-af6e5d943751",
 				"x": 0,
 				"y": 2,
 				"w": 11,
 				"h": 6,
-				"name": "Ingest sequence",
+				"name": "Header sequence",
 				"queries": [
 					{
-						"query": "SELECT \"obsid\", \"statusCode\", \"description\" FROM \"efd\".\"autogen\".\"lsst.sal.ATOODS.logevent_imageInOODS\" WHERE time > :dashboardTime:",
+						"query": "SELECT \"url\" FROM \"efd\".\"autogen\".\"lsst.sal.ATHeaderService.logevent_largeFileObjectAvailable\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATOODS.logevent_imageInOODS",
+							"measurement": "lsst.sal.ATHeaderService.logevent_largeFileObjectAvailable",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "obsid",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "statusCode",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "description",
+									"value": "url",
 									"type": "field",
 									"alias": ""
 								}
@@ -147,7 +137,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "/chronograf/v1/sources/1",
+						"source": "",
 						"type": "influxql"
 					}
 				],
@@ -214,18 +204,8 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATOODS.logevent_imageInOODS.description",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.ATOODS.logevent_imageInOODS.obsid",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.ATOODS.logevent_imageInOODS.statusCode",
-						"displayName": "",
+						"internalName": "lsst.sal.CCHeaderService.logevent_largeFileObjectAvailable.url",
+						"displayName": "Header URL",
 						"visible": true
 					}
 				],
@@ -237,17 +217,17 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/6/cells/dae3cc59-f834-407d-82b1-d031ac2b164c"
+					"self": "/chronograf/v1/dashboards/44/cells/90d5bedd-0a21-4834-b454-af6e5d943751"
 				}
 			}
 		],
 		"templates": [],
-		"name": "LATISS OODS Ingest Status",
+		"name": "LATISS Header Status",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/6",
-			"cells": "/chronograf/v1/dashboards/6/cells",
-			"templates": "/chronograf/v1/dashboards/6/templates"
+			"self": "/chronograf/v1/dashboards/44",
+			"cells": "/chronograf/v1/dashboards/44/cells",
+			"templates": "/chronograf/v1/dashboards/44/templates"
 		}
 	}
 }
