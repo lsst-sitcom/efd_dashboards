@@ -9,30 +9,44 @@
 		}
 	},
 	"dashboard": {
-		"id": "20",
+		"id": "50",
 		"cells": [
 			{
-				"i": "6f733443-ab11-4eb0-b585-5cb2fd3ce3e6",
+				"i": "eb47b0c7-f7b3-41a9-9f7f-d5127c1f56d4",
 				"x": 0,
 				"y": 0,
-				"w": 7,
-				"h": 2,
-				"name": "",
+				"w": 4,
+				"h": 4,
+				"name": "Elevation",
 				"queries": [
 					{
-						"query": "SELECT \"targetName\", \"raString\", \"decString\", \"frame\" FROM \"efd\".\"autogen\".\"lsst.sal.MTPtg.logevent_currentTarget\" ORDER BY time DESC LIMIT 1",
+						"query": "SELECT mean(\"actualPosition\") AS \"mean_actualPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.elevation\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
+							"database": "efd",
+							"measurement": "lsst.sal.MTMount.elevation",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_actualPosition",
+									"args": [
+										{
+											"value": "actualPosition",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
 							"tags": {},
 							"groupBy": {
-								"time": "",
+								"time": "auto",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"targetName\", \"raString\", \"decString\", \"frame\" FROM \"efd\".\"autogen\".\"lsst.sal.MTPtg.logevent_currentTarget\" ORDER BY time DESC LIMIT 1",
+							"fill": "null",
+							"rawText": null,
 							"range": null,
 							"shifts": null
 						},
@@ -75,14 +89,28 @@
 						"scale": "linear"
 					}
 				},
-				"type": "table",
+				"type": "line",
 				"colors": [
 					{
-						"id": "base",
-						"type": "text",
-						"hex": "#00C9FF",
-						"name": "laser",
-						"value": "-1000000000000000000"
+						"id": "20a3f789-b997-4ecc-ba52-299398394108",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "c23de6b3-0f26-44cc-90c5-ff4ec944a713",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "14c2593e-20b6-4fe9-83d1-e8ccb9861707",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
 					}
 				],
 				"legend": {},
@@ -101,26 +129,6 @@
 						"internalName": "time",
 						"displayName": "",
 						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.MTPtg.logevent_currentTarget.targetName",
-						"displayName": "Target",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.MTPtg.logevent_currentTarget.decString",
-						"displayName": "Dec",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.MTPtg.logevent_currentTarget.raString",
-						"displayName": "RA",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.MTPtg.logevent_currentTarget.frame",
-						"displayName": "CoordFrame",
-						"visible": true
 					}
 				],
 				"timeFormat": "MM/DD/YYYY HH:mm:ss",
@@ -131,17 +139,17 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/20/cells/6f733443-ab11-4eb0-b585-5cb2fd3ce3e6"
+					"self": "/chronograf/v1/dashboards/50/cells/eb47b0c7-f7b3-41a9-9f7f-d5127c1f56d4"
 				}
 			}
 		],
 		"templates": [],
-		"name": "MT Current Target",
+		"name": "Someones Unfinished Idea",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/20",
-			"cells": "/chronograf/v1/dashboards/20/cells",
-			"templates": "/chronograf/v1/dashboards/20/templates"
+			"self": "/chronograf/v1/dashboards/50",
+			"cells": "/chronograf/v1/dashboards/50/cells",
+			"templates": "/chronograf/v1/dashboards/50/templates"
 		}
 	}
 }

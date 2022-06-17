@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.3",
+		"chronografVersion": "1.9.4",
 		"sources": {
 			"1": {
 				"name": "Influx 1",
@@ -266,25 +266,19 @@
 				"name": "SummaryState",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_summaryState\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_summaryState\" ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.MTRotator.logevent_summaryState",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "summaryState",
-									"type": "field",
-									"alias": ""
-								}
-							],
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
 							"tags": {},
 							"groupBy": {
 								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": null,
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_summaryState\" ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},

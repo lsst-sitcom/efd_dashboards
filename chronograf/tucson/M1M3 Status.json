@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"chronografVersion": "1.9.3",
+		"chronografVersion": "1.9.4",
 		"sources": {
 			"1": {
 				"name": "Influx 1",
@@ -151,33 +151,19 @@
 				"name": "mount elevation (target)",
 				"queries": [
 					{
-						"query": "SELECT mean(\"elevation\") AS \"mean_elevation\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.logevent_target\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT (\"elevation\") AS \"mean_elevation\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.logevent_target\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: ",
 						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.MTMount.logevent_target",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_elevation",
-									"args": [
-										{
-											"value": "elevation",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								}
-							],
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
 							"tags": {},
 							"groupBy": {
-								"time": "auto",
+								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"fill": "null",
-							"rawText": null,
+							"rawText": "SELECT (\"elevation\") AS \"mean_elevation\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.logevent_target\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: ",
 							"range": null,
 							"shifts": null
 						},
