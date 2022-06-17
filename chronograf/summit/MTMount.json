@@ -744,7 +744,7 @@
 				"y": 0,
 				"w": 6,
 				"h": 3,
-				"name": "Untitled Graph",
+				"name": "heartbeat",
 				"queries": [
 					{
 						"query": "SELECT heartbeat FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.logevent_heartbeat\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",

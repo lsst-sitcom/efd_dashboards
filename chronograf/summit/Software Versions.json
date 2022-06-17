@@ -20,7 +20,7 @@
 				"name": "Settings",
 				"queries": [
 					{
-						"query": "SELECT \"cscVersion\", \"xmlVersion\", \"salVersion\", \"openSpliceVersion\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_softwareVersions\" ORDER BY time DESC LIMIT 10",
+						"query": "SELECT \"cscVersion\", \"xmlVersion\", \"salVersion\", \"openSpliceVersion\", \"subsystemVersions\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_softwareVersions\" ORDER BY time DESC LIMIT 10",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"cscVersion\", \"xmlVersion\", \"salVersion\", \"openSpliceVersion\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_softwareVersions\" ORDER BY time DESC LIMIT 10",
+							"rawText": "SELECT \"cscVersion\", \"xmlVersion\", \"salVersion\", \"openSpliceVersion\", \"subsystemVersions\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_softwareVersions\" ORDER BY time DESC LIMIT 10",
 							"range": null,
 							"shifts": null
 						},
@@ -103,22 +103,27 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATAOS.logevent_softwareVersions.cscVersion",
+						"internalName": "lsst.sal.CCCamera.logevent_softwareVersions.cscVersion",
 						"displayName": "",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATAOS.logevent_softwareVersions.salVersion",
+						"internalName": "lsst.sal.CCCamera.logevent_softwareVersions.openSpliceVersion",
 						"displayName": "",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATAOS.logevent_softwareVersions.xmlVersion",
+						"internalName": "lsst.sal.CCCamera.logevent_softwareVersions.salVersion",
 						"displayName": "",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.ATAOS.logevent_softwareVersions.openSpliceVersion",
+						"internalName": "lsst.sal.CCCamera.logevent_softwareVersions.xmlVersion",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.CCCamera.logevent_softwareVersions.subsystemVersions",
 						"displayName": "",
 						"visible": true
 					}
@@ -251,6 +256,11 @@
 					},
 					{
 						"value": "Hexapod",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTAirCompressor",
 						"type": "csv",
 						"selected": false
 					},

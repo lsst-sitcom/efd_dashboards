@@ -12,9 +12,260 @@
 		"id": "3",
 		"cells": [
 			{
+				"i": "9bf47640-8057-44fc-ad13-a37aa82b92bc",
+				"x": 0,
+				"y": 45,
+				"w": 12,
+				"h": 2,
+				"name": "Bus Voltage",
+				"queries": [
+					{
+						"query": "SELECT \"busVoltage\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.motors\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.MTRotator.motors",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "busVoltage",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "2261acae-b669-4fd4-a82a-de4742fe1459",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "e3dfbeae-ed1a-49ce-87b7-0e73d393c83e",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "0858f371-deff-4875-bf71-6e3f6f42a7cd",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/3/cells/9bf47640-8057-44fc-ad13-a37aa82b92bc"
+				}
+			},
+			{
+				"i": "4cba4f34-12e0-40c3-92b3-f00cb7ff2fbe",
+				"x": 0,
+				"y": 43,
+				"w": 12,
+				"h": 2,
+				"name": "Rotator Currents",
+				"queries": [
+					{
+						"query": "SELECT \"current0\", \"current1\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.motors\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.MTRotator.motors",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "current0",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "current1",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "2261acae-b669-4fd4-a82a-de4742fe1459",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "e3dfbeae-ed1a-49ce-87b7-0e73d393c83e",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "0858f371-deff-4875-bf71-6e3f6f42a7cd",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/3/cells/4cba4f34-12e0-40c3-92b3-f00cb7ff2fbe"
+				}
+			},
+			{
 				"i": "86b3e659-6168-40b6-85da-bfca3cecc004",
 				"x": 0,
-				"y": 32,
+				"y": 34,
 				"w": 12,
 				"h": 5,
 				"name": "Rotator Torque Values",
@@ -142,7 +393,7 @@
 			{
 				"i": "1a4ffb4c-19b7-4faf-8d5e-51e54e70c696",
 				"x": 0,
-				"y": 37,
+				"y": 39,
 				"w": 12,
 				"h": 4,
 				"name": "Script Logevent",
@@ -260,7 +511,7 @@
 			{
 				"i": "12c9354b-7fa4-49b6-b6aa-95d024e717c8",
 				"x": 0,
-				"y": 29,
+				"y": 31,
 				"w": 12,
 				"h": 3,
 				"name": "Fault_command",
@@ -394,7 +645,7 @@
 			{
 				"i": "70e56ddb-1be3-4f64-8f57-8efdcfc1ab50",
 				"x": 0,
-				"y": 25,
+				"y": 27,
 				"w": 12,
 				"h": 4,
 				"name": "Following Error Rotator-CCW",
@@ -711,7 +962,7 @@
 			{
 				"i": "420841cd-0775-4baf-a1a2-a9d3435ed412",
 				"x": 0,
-				"y": 11,
+				"y": 13,
 				"w": 9,
 				"h": 2,
 				"name": "Rot Motors calibrated motor position [deg]",
@@ -840,8 +1091,8 @@
 				"i": "6c510345-bc15-4bb1-9a0b-1519303595d4",
 				"x": 0,
 				"y": 9,
-				"w": 9,
-				"h": 2,
+				"w": 10,
+				"h": 4,
 				"name": "Rotator Velocity",
 				"queries": [
 					{
@@ -967,7 +1218,7 @@
 			{
 				"i": "1da67be9-cb88-4ebb-9a14-21e280545279",
 				"x": 0,
-				"y": 13,
+				"y": 15,
 				"w": 9,
 				"h": 2,
 				"name": "Error Code",
@@ -1075,7 +1326,7 @@
 			{
 				"i": "a595fc29-43c2-42fc-8113-c972fb22bcfa",
 				"x": 0,
-				"y": 15,
+				"y": 17,
 				"w": 9,
 				"h": 2,
 				"name": "Controller State",
@@ -1529,7 +1780,7 @@
 				"name": "Position",
 				"queries": [
 					{
-						"query": "SELECT \"actualPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.rotation\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"actualPosition\", \"demandPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.rotation\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.MTRotator.rotation",
@@ -1537,6 +1788,11 @@
 							"fields": [
 								{
 									"value": "actualPosition",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "demandPosition",
 									"type": "field",
 									"alias": ""
 								}
@@ -1659,7 +1915,7 @@
 			{
 				"i": "32e71feb-71e9-46e7-8868-886f7f7dc89c",
 				"x": 0,
-				"y": 17,
+				"y": 19,
 				"w": 12,
 				"h": 2,
 				"name": "Logevent_target: position",
@@ -1767,7 +2023,7 @@
 			{
 				"i": "b10172f2-6ace-4b1b-9fe0-948626965909",
 				"x": 0,
-				"y": 19,
+				"y": 21,
 				"w": 12,
 				"h": 6,
 				"name": "Last Error Code",
@@ -1992,6 +2248,240 @@
 				"noteVisibility": "default",
 				"links": {
 					"self": "/chronograf/v1/dashboards/3/cells/4c7e35ec-7d7c-447f-bd2f-d26b9c6e3444"
+				}
+			},
+			{
+				"i": "cab2ab95-9b1a-42ba-9c4b-37c614dd09d2",
+				"x": 0,
+				"y": 47,
+				"w": 12,
+				"h": 2,
+				"name": "Difference between actual and demanded velocity",
+				"queries": [
+					{
+						"query": "SELECT \"demandVelocity\"-\"actualVelocity\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.rotation\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"demandVelocity\"-\"actualVelocity\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.rotation\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "",
+						"scale": ""
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "2261acae-b669-4fd4-a82a-de4742fe1459",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "e3dfbeae-ed1a-49ce-87b7-0e73d393c83e",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "0858f371-deff-4875-bf71-6e3f6f42a7cd",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/3/cells/cab2ab95-9b1a-42ba-9c4b-37c614dd09d2"
+				}
+			},
+			{
+				"i": "dc6b7f3a-8dc3-45e8-abfb-661f68234781",
+				"x": 0,
+				"y": 49,
+				"w": 12,
+				"h": 2,
+				"name": "Difference between demanded and actual position (arcsec)",
+				"queries": [
+					{
+						"query": "SELECT (\"actualPosition\"-\"demandPosition\") * 3600 FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.rotation\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT (\"actualPosition\"-\"demandPosition\") * 3600 FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.rotation\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "2261acae-b669-4fd4-a82a-de4742fe1459",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "e3dfbeae-ed1a-49ce-87b7-0e73d393c83e",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "0858f371-deff-4875-bf71-6e3f6f42a7cd",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/3/cells/dc6b7f3a-8dc3-45e8-abfb-661f68234781"
 				}
 			}
 		],
