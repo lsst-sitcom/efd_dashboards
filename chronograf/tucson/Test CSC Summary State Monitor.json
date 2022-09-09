@@ -3,7 +3,7 @@
 		"chronografVersion": "1.9.4",
 		"sources": {
 			"1": {
-				"name": "Influx 1",
+				"name": "Sasquatch InfluxDB",
 				"link": "/chronograf/v1/sources/1"
 			}
 		}
@@ -20,7 +20,7 @@
 				"name": "Test 42",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Test.logevent_summaryState\" WHERE TestID = 42 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Test.logevent_summaryState\" WHERE salIndex = 42 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Test.logevent_summaryState\" WHERE TestID = 42 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Test.logevent_summaryState\" WHERE salIndex = 42 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},

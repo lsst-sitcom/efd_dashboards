@@ -3,7 +3,7 @@
 		"chronografVersion": "1.9.4",
 		"sources": {
 			"1": {
-				"name": "Influx 1",
+				"name": "Sasquatch InfluxDB",
 				"link": "/chronograf/v1/sources/1"
 			}
 		}
@@ -11,6 +11,142 @@
 	"dashboard": {
 		"id": "8",
 		"cells": [
+			{
+				"i": "e21c3993-934b-4648-826d-701232287fc9",
+				"x": 0,
+				"y": 50,
+				"w": 12,
+				"h": 2,
+				"name": "ScriptQueue",
+				"queries": [
+					{
+						"query": "SELECT count(\"heartbeat\") AS \"count_heartbeat\" FROM \"efd\".\"autogen\".\"lsst.sal.ScriptQueue.logevent_heartbeat\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ScriptQueue.logevent_heartbeat",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "count",
+									"type": "func",
+									"alias": "count_heartbeat",
+									"args": [
+										{
+											"value": "heartbeat",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/1",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line-stepplot",
+				"colors": [
+					{
+						"id": "e5a83a74-0836-4731-aec7-6665f11b3cf3",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "0ba45a1b-810b-4c58-915e-043a5d965224",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9665241b-31e3-48c9-a314-257ef9cfde03",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATMCS.logevent_heartbeat.count_heartbeat",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/8/cells/e21c3993-934b-4648-826d-701232287fc9"
+				}
+			},
 			{
 				"i": "a01dc4be-5e1c-47ba-b4cb-174f636bee5a",
 				"x": 0,
@@ -558,7 +694,7 @@
 			{
 				"i": "23c38d69-27e2-4845-8889-a650bc8c6247",
 				"x": 0,
-				"y": 52,
+				"y": 54,
 				"w": 12,
 				"h": 2,
 				"name": "Watcher",
@@ -694,7 +830,7 @@
 			{
 				"i": "4c05ce20-ada7-4bf0-af7b-c2f0e7b9fcce",
 				"x": 0,
-				"y": 50,
+				"y": 52,
 				"w": 12,
 				"h": 2,
 				"name": "Script",
@@ -1918,7 +2054,7 @@
 			{
 				"i": "fce5f95b-59c1-4961-91fd-edd0c18f219c",
 				"x": 0,
-				"y": 56,
+				"y": 58,
 				"w": 12,
 				"h": 2,
 				"name": "DSM",
@@ -3626,7 +3762,7 @@
 			{
 				"i": "32c11def-22de-4c34-8842-a7a109fe284d",
 				"x": 0,
-				"y": 54,
+				"y": 56,
 				"w": 12,
 				"h": 2,
 				"name": "WeatherStation",
@@ -3898,7 +4034,7 @@
 			{
 				"i": "8a8901f0-b3d7-475a-811c-8dfd3b9051d9",
 				"x": 0,
-				"y": 58,
+				"y": 60,
 				"w": 12,
 				"h": 2,
 				"name": "Test",
@@ -4034,7 +4170,7 @@
 			{
 				"i": "b663d9d3-2bc2-44f6-ac63-12d192c83f04",
 				"x": 0,
-				"y": 60,
+				"y": 62,
 				"w": 12,
 				"h": 2,
 				"name": "OCPS",

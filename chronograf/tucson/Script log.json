@@ -3,7 +3,7 @@
 		"chronografVersion": "1.9.4",
 		"sources": {
 			"1": {
-				"name": "Influx 1",
+				"name": "Sasquatch InfluxDB",
 				"link": "/chronograf/v1/sources/1"
 			}
 		}
@@ -16,11 +16,11 @@
 				"x": 0,
 				"y": 0,
 				"w": 12,
-				"h": 14,
+				"h": 12,
 				"name": "Logging",
 				"queries": [
 					{
-						"query": "SELECT \"private_sndStamp\", \"ScriptID\", \"level\", \"message\", \"traceback\", \"functionName\", \"filePath\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\"  ORDER BY time DESC LIMIT 100",
+						"query": "SELECT \"private_sndStamp\", \"salIndex\", \"level\", \"message\", \"traceback\", \"functionName\", \"filePath\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\"  ORDER BY time DESC LIMIT 100",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"private_sndStamp\", \"ScriptID\", \"level\", \"message\", \"traceback\", \"functionName\", \"filePath\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\"  ORDER BY time DESC LIMIT 100",
+							"rawText": "SELECT \"private_sndStamp\", \"salIndex\", \"level\", \"message\", \"traceback\", \"functionName\", \"filePath\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\"  ORDER BY time DESC LIMIT 100",
 							"range": null,
 							"shifts": null
 						},
@@ -103,14 +103,14 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.Script.logevent_logMessage.ScriptID",
-						"displayName": "ScriptID",
-						"visible": true
-					},
-					{
 						"internalName": "lsst.sal.Script.logevent_logMessage.private_sndStamp",
 						"displayName": "SndStamp",
 						"visible": false
+					},
+					{
+						"internalName": "lsst.sal.Script.logevent_logMessage.salIndex",
+						"displayName": "Index",
+						"visible": true
 					},
 					{
 						"internalName": "lsst.sal.Script.logevent_logMessage.message",

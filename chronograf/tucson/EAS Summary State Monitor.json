@@ -3,7 +3,7 @@
 		"chronografVersion": "1.9.4",
 		"sources": {
 			"1": {
-				"name": "Influx 1",
+				"name": "Sasquatch InfluxDB",
 				"link": "/chronograf/v1/sources/1"
 			}
 		}
@@ -20,7 +20,7 @@
 				"name": "DSM:1",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE \"DSMID\" = 1 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE salIndex = 1 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE \"DSMID\" = 1 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE salIndex = 1 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -158,7 +158,7 @@
 				"name": "DIMM:1",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_summaryState\" WHERE \"DIMMID\" = 1 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_summaryState\" WHERE salIndex = 1 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -170,7 +170,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_summaryState\" WHERE \"DIMMID\" = 1 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_summaryState\" WHERE salIndex = 1 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -296,7 +296,7 @@
 				"name": "WeatherStation:1",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.logevent_summaryState\" WHERE \"WeatherStationID\" = 1 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.logevent_summaryState\" WHERE salIndex = 1 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -308,7 +308,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.logevent_summaryState\" WHERE \"WeatherStationID\" = 1 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.logevent_summaryState\" WHERE salIndex = 1 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -434,7 +434,7 @@
 				"name": "DSM:2",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE \"DSMID\" = 2 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE salIndex = 2 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -446,7 +446,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE \"DSMID\" = 2 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE salIndex = 2 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -572,7 +572,7 @@
 				"name": "DIMM:2",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_summaryState\" WHERE \"DIMMID\" = 2 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_summaryState\" WHERE salIndex = 2 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -584,7 +584,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_summaryState\" WHERE \"DIMMID\" = 2 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_summaryState\" WHERE salIndex = 2 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},

@@ -3,7 +3,7 @@
 		"chronografVersion": "1.9.4",
 		"sources": {
 			"1": {
-				"name": "Influx 1",
+				"name": "Sasquatch InfluxDB",
 				"link": "/chronograf/v1/sources/1"
 			}
 		}
@@ -150,11 +150,6 @@
 						"selected": true
 					},
 					{
-						"value": "ATArchiver",
-						"type": "csv",
-						"selected": false
-					},
-					{
 						"value": "ATCamera",
 						"type": "csv",
 						"selected": false
@@ -190,6 +185,11 @@
 						"selected": false
 					},
 					{
+						"value": "ATOODS",
+						"type": "csv",
+						"selected": false
+					},
+					{
 						"value": "ATPtg",
 						"type": "csv",
 						"selected": false
@@ -211,6 +211,11 @@
 					},
 					{
 						"value": "CCHeaderService",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "CCOODS",
 						"type": "csv",
 						"selected": false
 					},

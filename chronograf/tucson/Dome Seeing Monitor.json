@@ -3,7 +3,7 @@
 		"chronografVersion": "1.9.4",
 		"sources": {
 			"1": {
-				"name": "Influx 1",
+				"name": "Sasquatch InfluxDB",
 				"link": "/chronograf/v1/sources/1"
 			}
 		}
@@ -20,7 +20,7 @@
 				"name": "Mode:2",
 				"queries": [
 					{
-						"query": "SELECT \"mode\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_simulationMode\" WHERE DSMID = 2 ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"mode\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_simulationMode\" WHERE salIndex = 2 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"mode\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_simulationMode\" WHERE DSMID = 2 ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"mode\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_simulationMode\" WHERE salIndex = 2 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -137,7 +137,7 @@
 				"name": "Mode:1",
 				"queries": [
 					{
-						"query": "SELECT \"mode\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_simulationMode\" WHERE DSMID = 1 ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"mode\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_simulationMode\" WHERE salIndex = 1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -149,7 +149,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"mode\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_simulationMode\" WHERE DSMID = 1 ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"mode\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_simulationMode\" WHERE salIndex = 1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -254,7 +254,7 @@
 				"name": "FWHM:2",
 				"queries": [
 					{
-						"query": "SELECT \"fwhm\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 2 AND time > :dashboardTime:",
+						"query": "SELECT \"fwhm\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE salIndex = 2 AND time > :dashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -266,7 +266,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"fwhm\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 2 AND time > :dashboardTime:",
+							"rawText": "SELECT \"fwhm\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE salIndex = 2 AND time > :dashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -371,7 +371,7 @@
 				"name": "Flux:2",
 				"queries": [
 					{
-						"query": "SELECT \"flux\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 2 AND time > :dashboardTime:",
+						"query": "SELECT \"flux\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE salIndex = 2 AND time > :dashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -383,7 +383,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"flux\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 2 AND time > :dashboardTime:",
+							"rawText": "SELECT \"flux\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE salIndex = 2 AND time > :dashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -488,7 +488,7 @@
 				"name": "Max ADC:2",
 				"queries": [
 					{
-						"query": "SELECT \"maxADC\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 2 AND time > :dashboardTime:",
+						"query": "SELECT \"maxADC\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE salIndex = 2 AND time > :dashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -500,7 +500,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"maxADC\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 2 AND time > :dashboardTime:",
+							"rawText": "SELECT \"maxADC\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE salIndex = 2 AND time > :dashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -605,7 +605,7 @@
 				"name": "FWHM:1",
 				"queries": [
 					{
-						"query": "SELECT \"fwhm\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 1 AND time > :dashboardTime:",
+						"query": "SELECT \"fwhm\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE salIndex = 1 AND time > :dashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -617,7 +617,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"fwhm\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 1 AND time > :dashboardTime:",
+							"rawText": "SELECT \"fwhm\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE salIndex = 1 AND time > :dashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -722,7 +722,7 @@
 				"name": "Max ADC:1",
 				"queries": [
 					{
-						"query": "SELECT \"maxADC\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 1 AND time > :dashboardTime:",
+						"query": "SELECT \"maxADC\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE salIndex = 1 AND time > :dashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -734,7 +734,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"maxADC\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 1 AND time > :dashboardTime:",
+							"rawText": "SELECT \"maxADC\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE salIndex = 1 AND time > :dashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -839,7 +839,7 @@
 				"name": "Flux:1",
 				"queries": [
 					{
-						"query": "SELECT \"flux\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 1 AND time > :dashboardTime:",
+						"query": "SELECT \"flux\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE salIndex = 1 AND time > :dashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -851,7 +851,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"flux\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 1 AND time > :dashboardTime:",
+							"rawText": "SELECT \"flux\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE salIndex = 1 AND time > :dashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -956,7 +956,7 @@
 				"name": "DSM:2",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE DSMID = 2 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE salIndex = 2 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -968,7 +968,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE DSMID = 2 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE salIndex = 2 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1094,7 +1094,7 @@
 				"name": "DSM:1",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE DSMID = 1 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE salIndex = 1 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1106,7 +1106,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE DSMID = 1 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE salIndex = 1 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1232,7 +1232,7 @@
 				"name": "DSM:2 Configuration",
 				"queries": [
 					{
-						"query": "SELECT \"cameraFps\", \"cameraName\", \"dataAcquisitionTime\", \"dataBufferSize\", \"timestampConfigStart\", \"uiConfigFile\", \"uiVersionCode\", \"uiVersionConfig\", \"private_sndStamp\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_configuration\" WHERE DSMID = 2 ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"cameraFps\", \"cameraName\", \"dataAcquisitionTime\", \"dataBufferSize\", \"timestampConfigStart\", \"uiConfigFile\", \"uiVersionCode\", \"uiVersionConfig\", \"private_sndStamp\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_configuration\" WHERE salIndex = 2 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1244,7 +1244,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"cameraFps\", \"cameraName\", \"dataAcquisitionTime\", \"dataBufferSize\", \"timestampConfigStart\", \"uiConfigFile\", \"uiVersionCode\", \"uiVersionConfig\", \"private_sndStamp\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_configuration\" WHERE DSMID = 2 ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"cameraFps\", \"cameraName\", \"dataAcquisitionTime\", \"dataBufferSize\", \"timestampConfigStart\", \"uiConfigFile\", \"uiVersionCode\", \"uiVersionConfig\", \"private_sndStamp\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_configuration\" WHERE salIndex = 2 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1380,7 +1380,7 @@
 				"name": "RMS:2",
 				"queries": [
 					{
-						"query": "SELECT \"rmsX\", \"rmsY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 2 AND time > :dashboardTime: ",
+						"query": "SELECT \"rmsX\", \"rmsY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE salIndex = 2 AND time > :dashboardTime: ",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1392,7 +1392,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"rmsX\", \"rmsY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 2 AND time > :dashboardTime: ",
+							"rawText": "SELECT \"rmsX\", \"rmsY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE salIndex = 2 AND time > :dashboardTime: ",
 							"range": null,
 							"shifts": null
 						},
@@ -1497,7 +1497,7 @@
 				"name": "RMS:1",
 				"queries": [
 					{
-						"query": "SELECT \"rmsX\", \"rmsY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 1 AND time > :dashboardTime: ",
+						"query": "SELECT \"rmsX\", \"rmsY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE salIndex = 1 AND time > :dashboardTime: ",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1509,7 +1509,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"rmsX\", \"rmsY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 1 AND time > :dashboardTime: ",
+							"rawText": "SELECT \"rmsX\", \"rmsY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE salIndex = 1 AND time > :dashboardTime: ",
 							"range": null,
 							"shifts": null
 						},
@@ -1614,7 +1614,7 @@
 				"name": "Centroid:2",
 				"queries": [
 					{
-						"query": "SELECT \"centroidX\", \"centroidY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 2 AND time > :dashboardTime: ",
+						"query": "SELECT \"centroidX\", \"centroidY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE salIndex = 2 AND time > :dashboardTime: ",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1626,7 +1626,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"centroidX\", \"centroidY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 2 AND time > :dashboardTime: ",
+							"rawText": "SELECT \"centroidX\", \"centroidY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE salIndex = 2 AND time > :dashboardTime: ",
 							"range": null,
 							"shifts": null
 						},
@@ -1731,7 +1731,7 @@
 				"name": "Centroid:1",
 				"queries": [
 					{
-						"query": "SELECT \"centroidX\", \"centroidY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 1 AND time > :dashboardTime: ",
+						"query": "SELECT \"centroidX\", \"centroidY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE salIndex = 1 AND time > :dashboardTime: ",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1743,7 +1743,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"centroidX\", \"centroidY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE DSMID = 1 AND time > :dashboardTime: ",
+							"rawText": "SELECT \"centroidX\", \"centroidY\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.domeSeeing\" WHERE salIndex = 1 AND time > :dashboardTime: ",
 							"range": null,
 							"shifts": null
 						},
@@ -1848,7 +1848,7 @@
 				"name": "DSM:1 Configuration",
 				"queries": [
 					{
-						"query": "SELECT \"cameraFps\", \"cameraName\", \"dataAcquisitionTime\", \"dataBufferSize\", \"timestampConfigStart\", \"uiConfigFile\", \"uiVersionCode\", \"uiVersionConfig\", \"private_sndStamp\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_configuration\" WHERE DSMID = 1 ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"cameraFps\", \"cameraName\", \"dataAcquisitionTime\", \"dataBufferSize\", \"timestampConfigStart\", \"uiConfigFile\", \"uiVersionCode\", \"uiVersionConfig\", \"private_sndStamp\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_configuration\" WHERE salIndex = 1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1860,7 +1860,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"cameraFps\", \"cameraName\", \"dataAcquisitionTime\", \"dataBufferSize\", \"timestampConfigStart\", \"uiConfigFile\", \"uiVersionCode\", \"uiVersionConfig\", \"private_sndStamp\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_configuration\" WHERE DSMID = 1 ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"cameraFps\", \"cameraName\", \"dataAcquisitionTime\", \"dataBufferSize\", \"timestampConfigStart\", \"uiConfigFile\", \"uiVersionCode\", \"uiVersionConfig\", \"private_sndStamp\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_configuration\" WHERE salIndex = 1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},

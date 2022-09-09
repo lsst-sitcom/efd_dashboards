@@ -3,7 +3,7 @@
 		"chronografVersion": "1.9.4",
 		"sources": {
 			"1": {
-				"name": "Influx 1",
+				"name": "Sasquatch InfluxDB",
 				"link": "/chronograf/v1/sources/1"
 			}
 		}
@@ -153,7 +153,7 @@
 				"name": "Min Temperature",
 				"queries": [
 					{
-						"query": "SELECT \"min24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"min24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE salIndex = 1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -165,7 +165,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"min24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"min24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE salIndex = 1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -912,7 +912,7 @@
 				"name": "Dewpoint",
 				"queries": [
 					{
-						"query": "SELECT \"avg1M\"+1.4 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.dewPoint\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"avg1M\"+1.4 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.dewPoint\" WHERE salIndex = 1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -924,7 +924,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"avg1M\"+1.4 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.dewPoint\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"avg1M\"+1.4 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.dewPoint\" WHERE salIndex = 1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1132,7 +1132,7 @@
 				"name": "Wind Direction (avg2M)",
 				"queries": [
 					{
-						"query": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windDirection\" WHERE \"WeatherStationID\" =1 ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windDirection\" WHERE salIndex = 1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1144,7 +1144,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windDirection\" WHERE \"WeatherStationID\" =1 ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windDirection\" WHERE salIndex = 1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1235,7 +1235,7 @@
 				"name": "Wind Speed (avg2M)",
 				"queries": [
 					{
-						"query": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windSpeed\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windSpeed\" WHERE salIndex = 1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1247,7 +1247,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windSpeed\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windSpeed\" WHERE salIndex = 1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1517,7 +1517,7 @@
 				"name": "Humidity",
 				"queries": [
 					{
-						"query": "SELECT \"humidity\"/0.90 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.weather\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"humidity\"/0.90 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.weather\" WHERE salIndex = 1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1529,7 +1529,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"humidity\"/0.90 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.weather\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"humidity\"/0.90 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.weather\" WHERE salIndex = 1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1620,7 +1620,7 @@
 				"name": "Max Temperature",
 				"queries": [
 					{
-						"query": "SELECT \"max24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"max24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE salIndex = 1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1632,7 +1632,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"max24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"max24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE salIndex = 1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},

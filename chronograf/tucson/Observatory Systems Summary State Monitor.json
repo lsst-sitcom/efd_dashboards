@@ -3,7 +3,7 @@
 		"chronografVersion": "1.9.4",
 		"sources": {
 			"1": {
-				"name": "Influx 1",
+				"name": "Sasquatch InfluxDB",
 				"link": "/chronograf/v1/sources/1"
 			}
 		}
@@ -158,7 +158,7 @@
 				"name": "CCOCPS",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.OCPS.logevent_summaryState\" WHERE OCPSID = 2 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.OCPS.logevent_summaryState\" WHERE salIndex = 2 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -170,7 +170,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.OCPS.logevent_summaryState\" WHERE OCPSID = 2 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.OCPS.logevent_summaryState\" WHERE salIndex = 2 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -296,7 +296,7 @@
 				"name": "MTScriptQueue",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.ScriptQueue.logevent_summaryState\" WHERE \"ScriptQueueID\" = 1 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.ScriptQueue.logevent_summaryState\" WHERE salIndex = 1 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -308,7 +308,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.ScriptQueue.logevent_summaryState\" WHERE \"ScriptQueueID\" = 1 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.ScriptQueue.logevent_summaryState\" WHERE salIndex = 1 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -434,7 +434,7 @@
 				"name": "ATScheduler",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Scheduler.logevent_summaryState\" WHERE SchedulerID = 2 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Scheduler.logevent_summaryState\" WHERE salIndex = 2 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -446,7 +446,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Scheduler.logevent_summaryState\" WHERE SchedulerID = 2 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Scheduler.logevent_summaryState\" WHERE salIndex = 2 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -572,7 +572,7 @@
 				"name": "ATScriptQueue",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.ScriptQueue.logevent_summaryState\" WHERE \"ScriptQueueID\" = 2 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.ScriptQueue.logevent_summaryState\" WHERE salIndex = 2 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -584,7 +584,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.ScriptQueue.logevent_summaryState\" WHERE \"ScriptQueueID\" = 2 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.ScriptQueue.logevent_summaryState\" WHERE salIndex = 2 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -848,7 +848,7 @@
 				"name": "MTScheduler",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Scheduler.logevent_summaryState\" WHERE SchedulerID = 1 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Scheduler.logevent_summaryState\" WHERE salIndex = 1 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -860,7 +860,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Scheduler.logevent_summaryState\" WHERE SchedulerID = 1 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Scheduler.logevent_summaryState\" WHERE salIndex = 1 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -986,7 +986,7 @@
 				"name": "ATOCPS",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.OCPS.logevent_summaryState\" WHERE OCPSID = 1 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.OCPS.logevent_summaryState\" WHERE salIndex = 1 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -998,7 +998,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.OCPS.logevent_summaryState\" WHERE OCPSID = 1 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.OCPS.logevent_summaryState\" WHERE salIndex = 1 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
