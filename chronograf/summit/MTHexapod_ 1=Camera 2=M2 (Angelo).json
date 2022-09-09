@@ -12,6 +12,357 @@
 		"id": "118",
 		"cells": [
 			{
+				"i": "4423a501-aa32-437b-9cf9-c48f5b3f559f",
+				"x": 0,
+				"y": 73,
+				"w": 12,
+				"h": 6,
+				"name": "MTHexapod.application error",
+				"queries": [
+					{
+						"query": "SELECT mean(\"error0\") AS \"mean_error0\", mean(\"error1\") AS \"mean_error1\", mean(\"error2\") AS \"mean_error2\", mean(\"error3\") AS \"mean_error3\", mean(\"error4\") AS \"mean_error4\", mean(\"error5\") AS \"mean_error5\", mean(\"demand0\") AS \"mean_demand0\", mean(\"demand1\") AS \"mean_demand1\", mean(\"demand2\") AS \"mean_demand2\", mean(\"demand3\") AS \"mean_demand3\", mean(\"demand4\") AS \"mean_demand4\", mean(\"demand5\") AS \"mean_demand5\", mean(\"position0\") AS \"mean_position0\", mean(\"position1\") AS \"mean_position1\", mean(\"position2\") AS \"mean_position2\", mean(\"position3\") AS \"mean_position3\", mean(\"position4\") AS \"mean_position4\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT mean(\"error0\") AS \"mean_error0\", mean(\"error1\") AS \"mean_error1\", mean(\"error2\") AS \"mean_error2\", mean(\"error3\") AS \"mean_error3\", mean(\"error4\") AS \"mean_error4\", mean(\"error5\") AS \"mean_error5\", mean(\"demand0\") AS \"mean_demand0\", mean(\"demand1\") AS \"mean_demand1\", mean(\"demand2\") AS \"mean_demand2\", mean(\"demand3\") AS \"mean_demand3\", mean(\"demand4\") AS \"mean_demand4\", mean(\"demand5\") AS \"mean_demand5\", mean(\"position0\") AS \"mean_position0\", mean(\"position1\") AS \"mean_position1\", mean(\"position2\") AS \"mean_position2\", mean(\"position3\") AS \"mean_position3\", mean(\"position4\") AS \"mean_position4\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "5e1d7490-3c6d-4308-8da5-3142a189c248",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "e0b245fd-faa2-4785-a598-ea43366e886f",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "da278066-9e85-46c6-b5a6-916fb672925c",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/118/cells/4423a501-aa32-437b-9cf9-c48f5b3f559f"
+				}
+			},
+			{
+				"i": "d89e3c1e-8b39-4ac9-84f2-e73695fe4d71",
+				"x": 0,
+				"y": 69,
+				"w": 12,
+				"h": 4,
+				"name": "Motor voltages",
+				"queries": [
+					{
+						"query": "SELECT mean(\"motorVoltage1\") AS \"mean_motorVoltage1\", mean(\"motorVoltage2\") AS \"mean_motorVoltage2\", mean(\"motorVoltage3\") AS \"mean_motorVoltage3\", mean(\"motorVoltage4\") AS \"mean_motorVoltage4\", mean(\"motorVoltage5\") AS \"mean_motorVoltage5\", mean(\"motorVoltage0\") AS \"mean_motorVoltage0\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.electrical\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT mean(\"motorVoltage1\") AS \"mean_motorVoltage1\", mean(\"motorVoltage2\") AS \"mean_motorVoltage2\", mean(\"motorVoltage3\") AS \"mean_motorVoltage3\", mean(\"motorVoltage4\") AS \"mean_motorVoltage4\", mean(\"motorVoltage5\") AS \"mean_motorVoltage5\", mean(\"motorVoltage0\") AS \"mean_motorVoltage0\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.electrical\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "4ff4140b-e72e-4325-bd5c-3752bd6230ba",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "d4c782fb-e18f-4745-b749-c10ca95fb9b1",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "07da7b96-69ce-4252-8327-c09caea19b80",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/118/cells/d89e3c1e-8b39-4ac9-84f2-e73695fe4d71"
+				}
+			},
+			{
+				"i": "960c7989-1de6-45c3-ab83-ad2db4a81fac",
+				"x": 0,
+				"y": 64,
+				"w": 12,
+				"h": 5,
+				"name": "Motor currents",
+				"queries": [
+					{
+						"query": "SELECT mean(\"motorCurrent1\") AS \"mean_motorCurrent1\", mean(\"motorCurrent2\") AS \"mean_motorCurrent2\", mean(\"motorCurrent3\") AS \"mean_motorCurrent3\", mean(\"motorCurrent4\") AS \"mean_motorCurrent4\", mean(\"motorCurrent5\") AS \"mean_motorCurrent5\", mean(\"motorCurrent0\") AS \"mean_motorCurrent0\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.electrical\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT mean(\"motorCurrent1\") AS \"mean_motorCurrent1\", mean(\"motorCurrent2\") AS \"mean_motorCurrent2\", mean(\"motorCurrent3\") AS \"mean_motorCurrent3\", mean(\"motorCurrent4\") AS \"mean_motorCurrent4\", mean(\"motorCurrent5\") AS \"mean_motorCurrent5\", mean(\"motorCurrent0\") AS \"mean_motorCurrent0\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.electrical\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "4ff4140b-e72e-4325-bd5c-3752bd6230ba",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "d4c782fb-e18f-4745-b749-c10ca95fb9b1",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "07da7b96-69ce-4252-8327-c09caea19b80",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/118/cells/960c7989-1de6-45c3-ab83-ad2db4a81fac"
+				}
+			},
+			{
 				"i": "d0fe954e-08aa-434b-907b-68d8c837d2e7",
 				"x": 0,
 				"y": 0,
@@ -109,13 +460,13 @@
 			{
 				"i": "5e05d17e-3053-4800-be94-42ba1bc59ca7",
 				"x": 0,
-				"y": 57,
+				"y": 55,
 				"w": 12,
 				"h": 4,
 				"name": "MTHexapod.logevent_uncompensatedPosition: u,v,w ",
 				"queries": [
 					{
-						"query": "SELECT mean(u) as mean_u, mean(v) as mean_v, mean(w) as mean_w FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_uncompensatedPosition\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
+						"query": "SELECT mean(u) as mean_u, mean(v) as mean_v, mean(w) as mean_w FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_uncompensatedPosition\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -127,7 +478,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(u) as mean_u, mean(v) as mean_v, mean(w) as mean_w FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_uncompensatedPosition\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
+							"rawText": "SELECT mean(u) as mean_u, mean(v) as mean_v, mean(w) as mean_w FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_uncompensatedPosition\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -226,13 +577,13 @@
 			{
 				"i": "850a9e2a-f4b9-4410-8578-db7ebc2ba69e",
 				"x": 0,
-				"y": 49,
+				"y": 47,
 				"w": 12,
 				"h": 4,
 				"name": "logevent_compensatedPosition: u,v,w",
 				"queries": [
 					{
-						"query": "SELECT mean(u) as mean_u ,mean(v) as mean_v, mean(w) as mean_w FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_compensatedPosition\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
+						"query": "SELECT mean(u) as mean_u ,mean(v) as mean_v, mean(w) as mean_w FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_compensatedPosition\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -244,7 +595,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(u) as mean_u ,mean(v) as mean_v, mean(w) as mean_w FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_compensatedPosition\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
+							"rawText": "SELECT mean(u) as mean_u ,mean(v) as mean_v, mean(w) as mean_w FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_compensatedPosition\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -343,13 +694,13 @@
 			{
 				"i": "30f404c7-e366-43e4-bdf5-be38ad54ab8a",
 				"x": 0,
-				"y": 41,
+				"y": 39,
 				"w": 4,
 				"h": 4,
 				"name": "Pivot position",
 				"queries": [
 					{
-						"query": "SELECT pivotX, pivotY, pivotZ FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_configuration\" WHERE MTHexapodID = :SalIndex: ORDER BY DESC LIMIT 20;",
+						"query": "SELECT pivotX, pivotY, pivotZ FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_configuration\" WHERE salIndex = :SalIndex: ORDER BY DESC LIMIT 20;",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -361,7 +712,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT pivotX, pivotY, pivotZ FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_configuration\" WHERE MTHexapodID = :SalIndex: ORDER BY DESC LIMIT 20;",
+							"rawText": "SELECT pivotX, pivotY, pivotZ FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_configuration\" WHERE salIndex = :SalIndex: ORDER BY DESC LIMIT 20;",
 							"range": null,
 							"shifts": null
 						},
@@ -461,7 +812,7 @@
 			{
 				"i": "6cd66432-95e9-4f69-93b7-438e252503a2",
 				"x": 4,
-				"y": 13,
+				"y": 11,
 				"w": 4,
 				"h": 4,
 				"name": "Compensation inputs: Mount AZ,EL; Rotator angle",
@@ -645,14 +996,14 @@
 			},
 			{
 				"i": "547ee66b-7af4-4c06-b815-445e25439bd0",
-				"x": 0,
-				"y": 8,
+				"x": 8,
+				"y": 11,
 				"w": 4,
 				"h": 4,
 				"name": "Calibrated Actuator Position (linear encoder)",
 				"queries": [
 					{
-						"query": "SELECT mean(calibrated0) as mean_calibrated0, mean(calibrated1) as mean_calibrated1, mean(calibrated2) as mean_mean_calibrated2, mean(calibrated3) as mean_calibrated3, mean(calibrated4) as mean_calibrated4, mean(mecalibrated5) as mean_calibrated5 FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.actuators\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
+						"query": "SELECT mean(calibrated0) as mean_calibrated0, mean(calibrated1) as mean_calibrated1, mean(calibrated2) as mean_mean_calibrated2, mean(calibrated3) as mean_calibrated3, mean(calibrated4) as mean_calibrated4, mean(mecalibrated5) as mean_calibrated5 FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.actuators\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -664,7 +1015,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(calibrated0) as mean_calibrated0, mean(calibrated1) as mean_calibrated1, mean(calibrated2) as mean_mean_calibrated2, mean(calibrated3) as mean_calibrated3, mean(calibrated4) as mean_calibrated4, mean(mecalibrated5) as mean_calibrated5 FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.actuators\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
+							"rawText": "SELECT mean(calibrated0) as mean_calibrated0, mean(calibrated1) as mean_calibrated1, mean(calibrated2) as mean_mean_calibrated2, mean(calibrated3) as mean_calibrated3, mean(calibrated4) as mean_calibrated4, mean(mecalibrated5) as mean_calibrated5 FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.actuators\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -763,13 +1114,13 @@
 			{
 				"i": "281ab129-58be-4fd4-9f74-ebff5f0ae830",
 				"x": 0,
-				"y": 12,
+				"y": 9,
 				"w": 4,
 				"h": 4,
 				"name": "Camera Hexapod Temperatures",
 				"queries": [
 					{
-						"query": "SELECT \"temperature5\" as \"Strut 12 temp\", \"temperature4\" as \"Strut 11 temp\", \"temperature3\" as \"Strut 10 temp\", \"temperature2\" as \"Strut 9 temp\", \"temperature1\" as \"Strut 8 temp\", \"temperature0\" as \"Strut 7 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"temperature5\" as \"Strut 12 temp\", \"temperature4\" as \"Strut 11 temp\", \"temperature3\" as \"Strut 10 temp\", \"temperature2\" as \"Strut 9 temp\", \"temperature1\" as \"Strut 8 temp\", \"temperature0\" as \"Strut 7 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -781,7 +1132,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"temperature5\" as \"Strut 12 temp\", \"temperature4\" as \"Strut 11 temp\", \"temperature3\" as \"Strut 10 temp\", \"temperature2\" as \"Strut 9 temp\", \"temperature1\" as \"Strut 8 temp\", \"temperature0\" as \"Strut 7 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"rawText": "SELECT \"temperature5\" as \"Strut 12 temp\", \"temperature4\" as \"Strut 11 temp\", \"temperature3\" as \"Strut 10 temp\", \"temperature2\" as \"Strut 9 temp\", \"temperature1\" as \"Strut 8 temp\", \"temperature0\" as \"Strut 7 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -914,13 +1265,13 @@
 			{
 				"i": "11c25ee0-6a35-4dfb-9153-da58475a7452",
 				"x": 0,
-				"y": 53,
+				"y": 51,
 				"w": 12,
 				"h": 4,
 				"name": "MTHexapod.logevent_uncompensatedPosition: x,y,z",
 				"queries": [
 					{
-						"query": "SELECT mean(x) as mean_x, mean(y) as mean_y, mean(z) as mean_z FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_uncompensatedPosition\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
+						"query": "SELECT mean(x) as mean_x, mean(y) as mean_y, mean(z) as mean_z FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_uncompensatedPosition\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -932,7 +1283,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(x) as mean_x, mean(y) as mean_y, mean(z) as mean_z FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_uncompensatedPosition\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
+							"rawText": "SELECT mean(x) as mean_x, mean(y) as mean_y, mean(z) as mean_z FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_uncompensatedPosition\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -1031,13 +1382,13 @@
 			{
 				"i": "03d70311-caa6-409e-89b8-9e7ee59616e4",
 				"x": 0,
-				"y": 45,
+				"y": 43,
 				"w": 12,
 				"h": 4,
 				"name": "MTHexapod.logevent_compensatedPosition, x,y,z",
 				"queries": [
 					{
-						"query": "SELECT mean(x) as mean_x, mean(y) as mean_y, mean(z) as mean_z FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_compensatedPosition\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
+						"query": "SELECT mean(x) as mean_x, mean(y) as mean_y, mean(z) as mean_z FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_compensatedPosition\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1049,7 +1400,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(x) as mean_x, mean(y) as mean_y, mean(z) as mean_z FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_compensatedPosition\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
+							"rawText": "SELECT mean(x) as mean_x, mean(y) as mean_y, mean(z) as mean_z FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_compensatedPosition\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -1148,13 +1499,13 @@
 			{
 				"i": "2e71ac83-ad6b-4a38-90e6-127c4ace7874",
 				"x": 8,
-				"y": 41,
+				"y": 39,
 				"w": 4,
 				"h": 4,
 				"name": "MTHexapod.command_setCompensationMode",
 				"queries": [
 					{
-						"query": "SELECT enable FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.command_setCompensationMode\" WHERE MTHexapodID = :SalIndex: ORDER BY DESC LIMIT 20",
+						"query": "SELECT enable FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.command_setCompensationMode\" WHERE salIndex = :SalIndex: ORDER BY DESC LIMIT 20",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1166,7 +1517,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT enable FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.command_setCompensationMode\" WHERE MTHexapodID = :SalIndex: ORDER BY DESC LIMIT 20",
+							"rawText": "SELECT enable FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.command_setCompensationMode\" WHERE salIndex = :SalIndex: ORDER BY DESC LIMIT 20",
 							"range": null,
 							"shifts": null
 						},
@@ -1256,13 +1607,13 @@
 			{
 				"i": "c3ba0d66-b9ba-4fca-b917-499991201cf5",
 				"x": 4,
-				"y": 41,
+				"y": 39,
 				"w": 4,
 				"h": 4,
 				"name": "Pivot command",
 				"queries": [
 					{
-						"query": "SELECT x, y, z FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.command_setPivot\" WHERE MTHexapodID = :SalIndex: ORDER BY DESC LIMIT 20",
+						"query": "SELECT x, y, z FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.command_setPivot\" WHERE salIndex = :SalIndex: ORDER BY DESC LIMIT 20",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1274,7 +1625,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT x, y, z FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.command_setPivot\" WHERE MTHexapodID = :SalIndex: ORDER BY DESC LIMIT 20",
+							"rawText": "SELECT x, y, z FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.command_setPivot\" WHERE salIndex = :SalIndex: ORDER BY DESC LIMIT 20",
 							"range": null,
 							"shifts": null
 						},
@@ -1374,13 +1725,13 @@
 			{
 				"i": "bed56783-1422-4212-8088-8019cb87b12f",
 				"x": 0,
-				"y": 31,
+				"y": 29,
 				"w": 12,
 				"h": 3,
 				"name": "command_stop",
 				"queries": [
 					{
-						"query": "SELECT private_seqNum, private_identity FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.command_stop\" WHERE MTHexapodID = :SalIndex: ORDER BY DESC LIMIT 5",
+						"query": "SELECT private_seqNum, private_identity FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.command_stop\" WHERE salIndex = :SalIndex: ORDER BY DESC LIMIT 5",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1392,7 +1743,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT private_seqNum, private_identity FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.command_stop\" WHERE MTHexapodID = :SalIndex: ORDER BY DESC LIMIT 5",
+							"rawText": "SELECT private_seqNum, private_identity FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.command_stop\" WHERE salIndex = :SalIndex: ORDER BY DESC LIMIT 5",
 							"range": null,
 							"shifts": null
 						},
@@ -1487,13 +1838,13 @@
 			{
 				"i": "6d7a5b9a-7af3-4d57-9848-1084924f351d",
 				"x": 0,
-				"y": 6,
+				"y": 7,
 				"w": 4,
 				"h": 2,
 				"name": "Connected",
 				"queries": [
 					{
-						"query": "SELECT command, telemetry FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_connected\" WHERE MTHexapodID = :SalIndex: ORDER BY DESC LIMIT 3;",
+						"query": "SELECT connected FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_connected\" WHERE salIndex = :SalIndex: ORDER BY DESC LIMIT 3;",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1505,7 +1856,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT command, telemetry FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_connected\" WHERE MTHexapodID = :SalIndex: ORDER BY DESC LIMIT 3;",
+							"rawText": "SELECT connected FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_connected\" WHERE salIndex = :SalIndex: ORDER BY DESC LIMIT 3;",
 							"range": null,
 							"shifts": null
 						},
@@ -1576,13 +1927,8 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.MTHexapod.logevent_connected.command",
-						"displayName": "command",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.MTHexapod.logevent_connected.telemetry",
-						"displayName": "telemetry",
+						"internalName": "lsst.sal.MTHexapod.logevent_connected.connected",
+						"displayName": "",
 						"visible": true
 					}
 				],
@@ -1600,13 +1946,13 @@
 			{
 				"i": "f64c7962-aba5-427c-ada7-a4934219e261",
 				"x": 8,
-				"y": 9,
+				"y": 8,
 				"w": 4,
-				"h": 4,
+				"h": 3,
 				"name": "Position in w [deg]",
 				"queries": [
 					{
-						"query": "SELECT mean(position5) as mean_w FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
+						"query": "SELECT mean(position5) as mean_w FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1618,7 +1964,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(position5) as mean_w FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
+							"rawText": "SELECT mean(position5) as mean_w FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -1717,13 +2063,13 @@
 			{
 				"i": "8986d0e0-1a46-4a40-ab87-04bd8399f2e3",
 				"x": 4,
-				"y": 9,
+				"y": 8,
 				"w": 4,
-				"h": 4,
+				"h": 3,
 				"name": "Position in v [deg]",
 				"queries": [
 					{
-						"query": "SELECT mean(position4) as mean_v FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
+						"query": "SELECT mean(position4) as mean_v FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1735,7 +2081,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(position4) as mean_v FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
+							"rawText": "SELECT mean(position4) as mean_v FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -1836,7 +2182,7 @@
 				"x": 8,
 				"y": 5,
 				"w": 4,
-				"h": 4,
+				"h": 3,
 				"name": "Position in u [deg]",
 				"queries": [
 					{
@@ -1957,7 +2303,7 @@
 				"name": "Position in Y [um]",
 				"queries": [
 					{
-						"query": "SELECT mean(position1) as mean_y FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(position1) as mean_y FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1969,7 +2315,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(position1) as mean_y FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+							"rawText": "SELECT mean(position1) as mean_y FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -2012,10 +2358,10 @@
 						"scale": "linear"
 					}
 				},
-				"type": "line",
+				"type": "line-plus-single-stat",
 				"colors": [
 					{
-						"id": "10a0d837-244d-4246-87a1-99cafdb19a3c",
+						"id": "base",
 						"type": "scale",
 						"hex": "#31C0F6",
 						"name": "Nineteen Eighty Four",
@@ -2068,13 +2414,13 @@
 			{
 				"i": "9bb63d37-a0d6-4fb5-9421-97b9daecec5f",
 				"x": 0,
-				"y": 4,
+				"y": 2,
 				"w": 4,
 				"h": 2,
 				"name": "commandableByDDS",
 				"queries": [
 					{
-						"query": "SELECT state FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_commandableByDDS\" WHERE MTHexapodID = :SalIndex: ORDER BY DESC LIMIT 3;",
+						"query": "SELECT state FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_commandableByDDS\" WHERE salIndex = :SalIndex: ORDER BY DESC LIMIT 3;",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -2086,7 +2432,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT state FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_commandableByDDS\" WHERE MTHexapodID = :SalIndex: ORDER BY DESC LIMIT 3;",
+							"rawText": "SELECT state FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_commandableByDDS\" WHERE salIndex = :SalIndex: ORDER BY DESC LIMIT 3;",
 							"range": null,
 							"shifts": null
 						},
@@ -2178,11 +2524,11 @@
 				"x": 4,
 				"y": 5,
 				"w": 4,
-				"h": 4,
+				"h": 3,
 				"name": "Position in Z [um]",
 				"queries": [
 					{
-						"query": "SELECT mean(position2) as mean_z FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(position2) as mean_z FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -2194,7 +2540,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(position2) as mean_z FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+							"rawText": "SELECT mean(position2) as mean_z FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -2237,10 +2583,10 @@
 						"scale": "linear"
 					}
 				},
-				"type": "line",
+				"type": "line-plus-single-stat",
 				"colors": [
 					{
-						"id": "10a0d837-244d-4246-87a1-99cafdb19a3c",
+						"id": "base",
 						"type": "scale",
 						"hex": "#31C0F6",
 						"name": "Nineteen Eighty Four",
@@ -2299,7 +2645,7 @@
 				"name": "Position in X [um]",
 				"queries": [
 					{
-						"query": "SELECT mean(position0) as mean_x FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
+						"query": "SELECT mean(position0) as mean_x FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -2311,7 +2657,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(position0) as mean_x FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
+							"rawText": "SELECT mean(position0) as mean_x FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -2354,10 +2700,10 @@
 						"scale": "linear"
 					}
 				},
-				"type": "line",
+				"type": "line-plus-single-stat",
 				"colors": [
 					{
-						"id": "10a0d837-244d-4246-87a1-99cafdb19a3c",
+						"id": "base",
 						"type": "scale",
 						"hex": "#31C0F6",
 						"name": "Nineteen Eighty Four",
@@ -2410,13 +2756,13 @@
 			{
 				"i": "96aaeb63-f5a8-4998-b619-e9c72a4a4cd9",
 				"x": 0,
-				"y": 2,
+				"y": 4,
 				"w": 4,
-				"h": 2,
+				"h": 3,
 				"name": "MTHexapod Summary State",
 				"queries": [
 					{
-						"query": "// CSC states\n// STANDBY = 5\n// OFFLINE = 4\n// FAULT = 3\n// ENABLED = 2\n// DISABLED = 1\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: -inf)\n  |> filter(fn: (r) => r._measurement =~ /lsst.sal.MTHexapod.logevent_summaryState/ and (r._field == \"summaryState\"))\n  |> last()\n  |> map(fn: (r) => ({\n    r with\n    state:\n      if r._value == 5 then \"5 (STANDBY)\"\n      else if r._value == 4 then \"4 (OFFLINE)\"\n      else if r._value == 3 then \"3 (FAULT)\"\n      else if r._value == 2 then \"2 (ENABLED)\"\n      else if r._value == 1 then \"1 (DISABLED)\"\n      else \"UNKNOWN\",\n    duration: strings.splitAfter(v: string(v: duration(v: uint(v: r._stop) - uint(v: r._time))), t: \"m\")[0]\n\n    })\n  )\n  |> keep(columns: [\"state\", \"_time\", \"duration\"])\n \n\n",
+						"query": "// CSC states\n// STANDBY = 5\n// OFFLINE = 4\n// FAULT = 3\n// ENABLED = 2\n// DISABLED = 1\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: -inf)\n  |> filter(fn: (r) => r._measurement == \"lsst.sal.MTHexapod.logevent_summaryState\")\n  |> filter(fn: (r) => r._field == \"summaryState\" or r._field == \"salIndex\")\n  |> pivot(rowKey: [\"_time\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> filter(fn: (r) => r.salIndex==int(v: v.SalIndex))\n  |> map(fn: (r) => ({\n    r with\n    state:\n      if r.summaryState == 5 then \"5 (STANDBY)\"\n      else if r.summaryState == 4 then \"4 (OFFLINE)\"\n      else if r.summaryState == 3 then \"3 (FAULT)\"\n      else if r.summaryState == 2 then \"2 (ENABLED)\"\n      else if r.summaryState == 1 then \"1 (DISABLED)\"\n      else \"UNKNOWN\",\n    })\n) |> sort(desc: true)\n",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -2428,7 +2774,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "// CSC states\n// STANDBY = 5\n// OFFLINE = 4\n// FAULT = 3\n// ENABLED = 2\n// DISABLED = 1\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: -inf)\n  |> filter(fn: (r) => r._measurement =~ /lsst.sal.MTHexapod.logevent_summaryState/ and (r._field == \"summaryState\"))\n  |> last()\n  |> map(fn: (r) => ({\n    r with\n    state:\n      if r._value == 5 then \"5 (STANDBY)\"\n      else if r._value == 4 then \"4 (OFFLINE)\"\n      else if r._value == 3 then \"3 (FAULT)\"\n      else if r._value == 2 then \"2 (ENABLED)\"\n      else if r._value == 1 then \"1 (DISABLED)\"\n      else \"UNKNOWN\",\n    duration: strings.splitAfter(v: string(v: duration(v: uint(v: r._stop) - uint(v: r._time))), t: \"m\")[0]\n\n    })\n  )\n  |> keep(columns: [\"state\", \"_time\", \"duration\"])\n \n\n",
+							"rawText": "// CSC states\n// STANDBY = 5\n// OFFLINE = 4\n// FAULT = 3\n// ENABLED = 2\n// DISABLED = 1\n\nimport \"strings\"\n\nfrom(bucket: \"efd/autogen\")\n  |> range(start: -inf)\n  |> filter(fn: (r) => r._measurement == \"lsst.sal.MTHexapod.logevent_summaryState\")\n  |> filter(fn: (r) => r._field == \"summaryState\" or r._field == \"salIndex\")\n  |> pivot(rowKey: [\"_time\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> filter(fn: (r) => r.salIndex==int(v: v.SalIndex))\n  |> map(fn: (r) => ({\n    r with\n    state:\n      if r.summaryState == 5 then \"5 (STANDBY)\"\n      else if r.summaryState == 4 then \"4 (OFFLINE)\"\n      else if r.summaryState == 3 then \"3 (FAULT)\"\n      else if r.summaryState == 2 then \"2 (ENABLED)\"\n      else if r.summaryState == 1 then \"1 (DISABLED)\"\n      else \"UNKNOWN\",\n    })\n) |> sort(desc: true)\n",
 							"range": null,
 							"shifts": null
 						},
@@ -2475,7 +2821,7 @@
 				"colors": [
 					{
 						"id": "base",
-						"type": "background",
+						"type": "text",
 						"hex": "#00C9FF",
 						"name": "laser",
 						"value": "-1000000000000000000"
@@ -2504,14 +2850,24 @@
 						"visible": true
 					},
 					{
-						"internalName": "duration",
-						"displayName": "Duration",
-						"visible": true
+						"internalName": "salIndex",
+						"displayName": "",
+						"visible": false
+					},
+					{
+						"internalName": "_measurement",
+						"displayName": "",
+						"visible": false
+					},
+					{
+						"internalName": "summaryState",
+						"displayName": "",
+						"visible": false
 					}
 				],
 				"timeFormat": "MM/DD/YYYY HH:mm:ss",
 				"decimalPlaces": {
-					"isEnforced": true,
+					"isEnforced": false,
 					"digits": 0
 				},
 				"note": "OFFLINE  = 4\n\nSTANDBY  = 5\n\nDISABLED = 1\n\nENABLED  = 2\n\nFAULT    = 3",
@@ -2523,7 +2879,7 @@
 			{
 				"i": "f242d9c3-6e80-4c7b-81fa-6e70cb8f5c85",
 				"x": 0,
-				"y": 17,
+				"y": 15,
 				"w": 12,
 				"h": 4,
 				"name": "Script logevents",
@@ -2641,13 +2997,13 @@
 			{
 				"i": "ccba2cb5-ebe9-44ce-b5a7-7dcaa9ea94f4",
 				"x": 0,
-				"y": 21,
+				"y": 19,
 				"w": 7,
 				"h": 4,
 				"name": "MTHexapod Heartbeat",
 				"queries": [
 					{
-						"query": "SELECT count(\"heartbeat\") FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_heartbeat\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
+						"query": "SELECT count(\"heartbeat\") FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_heartbeat\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -2659,7 +3015,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT count(\"heartbeat\") FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_heartbeat\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
+							"rawText": "SELECT count(\"heartbeat\") FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_heartbeat\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -2702,24 +3058,24 @@
 						"scale": "linear"
 					}
 				},
-				"type": "line-stepplot",
+				"type": "line",
 				"colors": [
 					{
-						"id": "89cc4521-a303-48a9-bb89-c886f4b148b2",
+						"id": "d4440ede-bad9-405d-9ba2-64d088e8b632",
 						"type": "scale",
 						"hex": "#31C0F6",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "71cd6063-1db3-46e0-97a7-66d1d405747f",
+						"id": "aa53f0ae-b2a7-4dea-a097-a69290c4b9ab",
 						"type": "scale",
 						"hex": "#A500A5",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "2dd1c629-b240-4f7e-87a1-73b18f1d1f1c",
+						"id": "bea86bd7-b513-4c25-8052-3119e35b62d7",
 						"type": "scale",
 						"hex": "#FF7E27",
 						"name": "Nineteen Eighty Four",
@@ -2742,6 +3098,11 @@
 						"internalName": "time",
 						"displayName": "",
 						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.MTHexapod.logevent_heartbeat.count",
+						"displayName": "",
+						"visible": true
 					}
 				],
 				"timeFormat": "MM/DD/YYYY HH:mm:ss",
@@ -2758,13 +3119,13 @@
 			{
 				"i": "68d013c5-54dd-4ceb-a72b-7877f8d5f0fa",
 				"x": 0,
-				"y": 25,
+				"y": 23,
 				"w": 12,
 				"h": 3,
 				"name": "controllerState",
 				"queries": [
 					{
-						"query": "SELECT \"controllerState\", \"enabledSubstate\", \"offlineSubstate\", \"applicationStatus0\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_controllerState\" WHERE MTHexapodID =:SalIndex: ORDER BY DESC LIMIT 100",
+						"query": "SELECT \"controllerState\", \"enabledSubstate\", \"offlineSubstate\", \"applicationStatus0\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_controllerState\" WHERE salIndex =:SalIndex: ORDER BY DESC LIMIT 100",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -2776,7 +3137,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"controllerState\", \"enabledSubstate\", \"offlineSubstate\", \"applicationStatus0\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_controllerState\" WHERE MTHexapodID =:SalIndex: ORDER BY DESC LIMIT 100",
+							"rawText": "SELECT \"controllerState\", \"enabledSubstate\", \"offlineSubstate\", \"applicationStatus0\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_controllerState\" WHERE salIndex =:SalIndex: ORDER BY DESC LIMIT 100",
 							"range": null,
 							"shifts": null
 						},
@@ -2881,13 +3242,13 @@
 			{
 				"i": "53deb021-8674-42a7-823a-00405cdce5d4",
 				"x": 7,
-				"y": 21,
+				"y": 19,
 				"w": 5,
 				"h": 4,
 				"name": "Logevent \"inPosition\"",
 				"queries": [
 					{
-						"query": "SELECT \"inPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_inPosition\" WHERE MTHexapodID = :SalIndex: ORDER BY DESC LIMIT 100",
+						"query": "SELECT \"inPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_inPosition\" WHERE salIndex = :SalIndex: ORDER BY DESC LIMIT 100",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -2899,7 +3260,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"inPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_inPosition\" WHERE MTHexapodID = :SalIndex: ORDER BY DESC LIMIT 100",
+							"rawText": "SELECT \"inPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_inPosition\" WHERE salIndex = :SalIndex: ORDER BY DESC LIMIT 100",
 							"range": null,
 							"shifts": null
 						},
@@ -2989,13 +3350,13 @@
 			{
 				"i": "d850e05f-cc1d-4410-baab-c7e797c73da5",
 				"x": 0,
-				"y": 28,
+				"y": 26,
 				"w": 12,
 				"h": 3,
 				"name": "MTHexapod log messages",
 				"queries": [
 					{
-						"query": "SELECT \"level\", \"scriptID\", \"message\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_logMessage\" WHERE MTHexapodID = :SalIndex: ORDER BY DESC LIMIT 100",
+						"query": "SELECT \"level\", \"message\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_logMessage\" WHERE salIndex = :SalIndex: ORDER BY DESC LIMIT 100",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -3007,7 +3368,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"level\", \"scriptID\", \"message\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_logMessage\" WHERE MTHexapodID = :SalIndex: ORDER BY DESC LIMIT 100",
+							"rawText": "SELECT \"level\", \"message\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_logMessage\" WHERE salIndex = :SalIndex: ORDER BY DESC LIMIT 100",
 							"range": null,
 							"shifts": null
 						},
@@ -3078,11 +3439,6 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.MTHexapod.logevent_logMessage.scriptID",
-						"displayName": "ScriptID",
-						"visible": true
-					},
-					{
 						"internalName": "lsst.sal.MTHexapod.logevent_logMessage.level",
 						"displayName": "level",
 						"visible": true
@@ -3093,7 +3449,7 @@
 						"visible": true
 					}
 				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"timeFormat": "YYYY-MM-DD HH:mm:ss.SS",
 				"decimalPlaces": {
 					"isEnforced": true,
 					"digits": 0
@@ -3107,13 +3463,13 @@
 			{
 				"i": "2bc7efee-3938-458b-87d1-52ebb29d6e15",
 				"x": 0,
-				"y": 38,
+				"y": 36,
 				"w": 6,
 				"h": 3,
 				"name": "MTHexapod.command_move",
 				"queries": [
 					{
-						"query": "SELECT mean(x) as mean_x, mean(y) as mean_y, mean(z) as mean_z, mean(u) as mean_u, mean(v) as mean_v, mean(w) as mean_w FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.command_move\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
+						"query": "SELECT mean(x) as mean_x, mean(y) as mean_y, mean(z) as mean_z, mean(u) as mean_u, mean(v) as mean_v, mean(w) as mean_w FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.command_move\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -3125,7 +3481,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(x) as mean_x, mean(y) as mean_y, mean(z) as mean_z, mean(u) as mean_u, mean(v) as mean_v, mean(w) as mean_w FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.command_move\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
+							"rawText": "SELECT mean(x) as mean_x, mean(y) as mean_y, mean(z) as mean_z, mean(u) as mean_u, mean(v) as mean_v, mean(w) as mean_w FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.command_move\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -3224,13 +3580,13 @@
 			{
 				"i": "4f1bcf92-d76a-4068-8300-6f9667c08132",
 				"x": 6,
-				"y": 38,
+				"y": 36,
 				"w": 6,
 				"h": 3,
 				"name": "Actutators raw (mean)",
 				"queries": [
 					{
-						"query": "SELECT mean(\"raw0\") AS \"mean_raw0\", mean(\"raw1\") AS \"mean_raw1\", mean(\"raw2\") AS \"mean_raw2\", mean(\"raw3\") AS \"mean_raw3\", mean(\"raw4\") AS \"mean_raw4\", mean(\"raw5\") AS \"mean_raw5\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.actuators\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
+						"query": "SELECT mean(\"raw0\") AS \"mean_raw0\", mean(\"raw1\") AS \"mean_raw1\", mean(\"raw2\") AS \"mean_raw2\", mean(\"raw3\") AS \"mean_raw3\", mean(\"raw4\") AS \"mean_raw4\", mean(\"raw5\") AS \"mean_raw5\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.actuators\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -3242,7 +3598,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(\"raw0\") AS \"mean_raw0\", mean(\"raw1\") AS \"mean_raw1\", mean(\"raw2\") AS \"mean_raw2\", mean(\"raw3\") AS \"mean_raw3\", mean(\"raw4\") AS \"mean_raw4\", mean(\"raw5\") AS \"mean_raw5\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.actuators\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
+							"rawText": "SELECT mean(\"raw0\") AS \"mean_raw0\", mean(\"raw1\") AS \"mean_raw1\", mean(\"raw2\") AS \"mean_raw2\", mean(\"raw3\") AS \"mean_raw3\", mean(\"raw4\") AS \"mean_raw4\", mean(\"raw5\") AS \"mean_raw5\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.actuators\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -3341,13 +3697,13 @@
 			{
 				"i": "ccffd7e7-0ebe-46ab-b4b2-eb0257817146",
 				"x": 0,
-				"y": 34,
+				"y": 32,
 				"w": 12,
 				"h": 4,
 				"name": "Raw Acutators",
 				"queries": [
 					{
-						"query": "SELECT mean(\"raw0\") as mean_raw0, mean(\"raw1\") as mean_raw1, mean(\"raw2\") as mean_raw2, mean(\"raw3\") as mean_raw3, mean(\"raw4\") as mean_raw4, mean(\"raw5\") as mean_raw5 FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.actuators\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
+						"query": "SELECT mean(\"raw0\") as mean_raw0, mean(\"raw1\") as mean_raw1, mean(\"raw2\") as mean_raw2, mean(\"raw3\") as mean_raw3, mean(\"raw4\") as mean_raw4, mean(\"raw5\") as mean_raw5 FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.actuators\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -3359,7 +3715,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(\"raw0\") as mean_raw0, mean(\"raw1\") as mean_raw1, mean(\"raw2\") as mean_raw2, mean(\"raw3\") as mean_raw3, mean(\"raw4\") as mean_raw4, mean(\"raw5\") as mean_raw5 FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.actuators\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
+							"rawText": "SELECT mean(\"raw0\") as mean_raw0, mean(\"raw1\") as mean_raw1, mean(\"raw2\") as mean_raw2, mean(\"raw3\") as mean_raw3, mean(\"raw4\") as mean_raw4, mean(\"raw5\") as mean_raw5 FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.actuators\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:  GROUP BY time(:sampling:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -3458,13 +3814,13 @@
 			{
 				"i": "9ad0546d-a631-4c29-94f1-5766c5c19511",
 				"x": 0,
-				"y": 61,
+				"y": 59,
 				"w": 12,
-				"h": 4,
+				"h": 5,
 				"name": "Copley Drive Status",
 				"queries": [
 					{
-						"query": "SELECT mean(copleyStatusWordDrive0) as mean_copleyStatusWordDrive0, mean(copleyStatusWordDrive1) as mean_copleyStatusWordDrive1, mean(copleyStatusWordDrive2) as mean_copleyStatusWordDrive2, mean(copleyStatusWordDrive3) as mean_copleyStatusWordDrive2, mean(copleyStatusWordDrive4) as mean_copleyStatusWordDrive4, mean(copleyStatusWordDrive5) as mean_copleyStatusWordDrive5 FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.electrical\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
+						"query": "SELECT \"copleyStatusWordDrive3\", \"copleyStatusWordDrive4\", \"copleyStatusWordDrive5\", \"copleyStatusWordDrive2\", \"copleyStatusWordDrive1\", \"copleyStatusWordDrive0\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.electrical\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -3476,7 +3832,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(copleyStatusWordDrive0) as mean_copleyStatusWordDrive0, mean(copleyStatusWordDrive1) as mean_copleyStatusWordDrive1, mean(copleyStatusWordDrive2) as mean_copleyStatusWordDrive2, mean(copleyStatusWordDrive3) as mean_copleyStatusWordDrive2, mean(copleyStatusWordDrive4) as mean_copleyStatusWordDrive4, mean(copleyStatusWordDrive5) as mean_copleyStatusWordDrive5 FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.electrical\" WHERE MTHexapodID = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:sampling:) FILL(null)",
+							"rawText": "SELECT \"copleyStatusWordDrive3\", \"copleyStatusWordDrive4\", \"copleyStatusWordDrive5\", \"copleyStatusWordDrive2\", \"copleyStatusWordDrive1\", \"copleyStatusWordDrive0\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.electrical\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -3519,24 +3875,24 @@
 						"scale": "linear"
 					}
 				},
-				"type": "line",
+				"type": "line-stacked",
 				"colors": [
 					{
-						"id": "19a0978e-9f87-4953-8953-c615fa9528bb",
+						"id": "d4440ede-bad9-405d-9ba2-64d088e8b632",
 						"type": "scale",
 						"hex": "#31C0F6",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "f9cf0a38-cfb3-4896-920c-3c4ae7fd3835",
+						"id": "aa53f0ae-b2a7-4dea-a097-a69290c4b9ab",
 						"type": "scale",
 						"hex": "#A500A5",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "bba6fafe-93f9-4944-9784-ded5af911960",
+						"id": "bea86bd7-b513-4c25-8052-3119e35b62d7",
 						"type": "scale",
 						"hex": "#FF7E27",
 						"name": "Nineteen Eighty Four",
@@ -3552,19 +3908,29 @@
 						"visible": true
 					},
 					"wrapping": "truncate",
-					"fixFirstColumn": true
+					"fixFirstColumn": false
 				},
 				"fieldOptions": [
 					{
 						"internalName": "time",
 						"displayName": "",
 						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.MTHexapod.electrical.copleyStatusWordDrive3",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.MTHexapod.electrical.copleyStatusWordDrive4",
+						"displayName": "",
+						"visible": true
 					}
 				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"timeFormat": "HH:mm:ss.SSS",
 				"decimalPlaces": {
 					"isEnforced": true,
-					"digits": 2
+					"digits": 0
 				},
 				"note": "",
 				"noteVisibility": "default",

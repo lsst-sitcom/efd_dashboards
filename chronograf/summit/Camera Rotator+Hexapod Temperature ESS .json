@@ -20,7 +20,7 @@
 				"name": "Camera Hexapod Temperatures",
 				"queries": [
 					{
-						"query": "SELECT \"temperature5\" as \"Strut 12 temp\", \"temperature4\" as \"Strut 11 temp\", \"temperature3\" as \"Strut 10 temp\", \"temperature2\" as \"Strut 9 temp\", \"temperature1\" as \"Strut 8 temp\", \"temperature0\" as \"Strut 7 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"temperature5\" as \"Strut 12 temp\", \"temperature4\" as \"Strut 11 temp\", \"temperature3\" as \"Strut 10 temp\", \"temperature2\" as \"Strut 9 temp\", \"temperature1\" as \"Strut 8 temp\", \"temperature0\" as \"Strut 7 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"temperature5\" as \"Strut 12 temp\", \"temperature4\" as \"Strut 11 temp\", \"temperature3\" as \"Strut 10 temp\", \"temperature2\" as \"Strut 9 temp\", \"temperature1\" as \"Strut 8 temp\", \"temperature0\" as \"Strut 7 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"rawText": "SELECT \"temperature5\" as \"Strut 12 temp\", \"temperature4\" as \"Strut 11 temp\", \"temperature3\" as \"Strut 10 temp\", \"temperature2\" as \"Strut 9 temp\", \"temperature1\" as \"Strut 8 temp\", \"temperature0\" as \"Strut 7 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -137,7 +137,7 @@
 				"name": "MTRotator Temperatures",
 				"queries": [
 					{
-						"query": "SELECT \"temperature6\" as \"Motor 1 temp\", \"temperature7\" as \"Motor 2 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"temperature6\" as \"Motor 1 temp\", \"temperature7\" as \"Motor 2 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -149,7 +149,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"temperature6\" as \"Motor 1 temp\", \"temperature7\" as \"Motor 2 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"rawText": "SELECT \"temperature6\" as \"Motor 1 temp\", \"temperature7\" as \"Motor 2 temp\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},

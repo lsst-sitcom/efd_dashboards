@@ -20,7 +20,7 @@
 				"name": "MTAirCompressor:1",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTAirCompressor.logevent_summaryState\" WHERE MTAirCompressorID = 1 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTAirCompressor.logevent_summaryState\" WHERE salIndex = 1 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTAirCompressor.logevent_summaryState\" WHERE MTAirCompressorID = 1 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTAirCompressor.logevent_summaryState\" WHERE salIndex = 1 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -158,7 +158,7 @@
 				"name": "Electrometer:1",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Electrometer.logevent_summaryState\" WHERE ElectrometerID = 1 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Electrometer.logevent_summaryState\" WHERE salIndex = 1 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -170,7 +170,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Electrometer.logevent_summaryState\" WHERE ElectrometerID = 1 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Electrometer.logevent_summaryState\" WHERE salIndex = 1 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -692,7 +692,7 @@
 				"x": 9,
 				"y": 4,
 				"w": 3,
-				"h": 2,
+				"h": 1,
 				"name": "MTAOS",
 				"queries": [
 					{
@@ -834,7 +834,7 @@
 				"name": "M2-Hexapod",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_summaryState\" WHERE MTHexapodID = 2. ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_summaryState\" WHERE salIndex = 2 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -846,7 +846,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_summaryState\" WHERE MTHexapodID = 2. ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_summaryState\" WHERE salIndex = 2 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -2214,7 +2214,7 @@
 				"name": "Cam-Hexapod",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_summaryState\" WHERE MTHexapodID = 1. ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_summaryState\" WHERE salIndex = 1 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -2226,7 +2226,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_summaryState\" WHERE MTHexapodID = 1. ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_summaryState\" WHERE salIndex = 1 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -2345,7 +2345,7 @@
 			},
 			{
 				"i": "797490f1-6979-4533-a6e1-4ff4ec0d2b28",
-				"x": 3,
+				"x": 0,
 				"y": 5,
 				"w": 3,
 				"h": 1,
@@ -2490,7 +2490,7 @@
 				"name": "MTAirCompressor:2",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTAirCompressor.logevent_summaryState\" WHERE MTAirCompressorID = 2 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTAirCompressor.logevent_summaryState\" WHERE salIndex = 2 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -2502,7 +2502,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTAirCompressor.logevent_summaryState\" WHERE MTAirCompressorID = 2 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTAirCompressor.logevent_summaryState\" WHERE salIndex = 2 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},

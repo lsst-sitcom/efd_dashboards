@@ -20,7 +20,7 @@
 				"name": "AuxTel-ESS - ESSID 201 Temperatures (with Outside Temp)",
 				"queries": [
 					{
-						"query": "SELECT \"temperature1\" as \"Air\", \"temperature2\" as \"Truss\", \"temperature3\" as \"M2\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 201 AND \"sensorName\" = 'AuxTel-ESS01' AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"temperature1\" as \"Air\", \"temperature2\" as \"Truss\", \"temperature3\" as \"M2\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 201 AND \"sensorName\" = 'AuxTel-ESS01' AND time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"temperature1\" as \"Air\", \"temperature2\" as \"Truss\", \"temperature3\" as \"M2\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 201 AND \"sensorName\" = 'AuxTel-ESS01' AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"rawText": "SELECT \"temperature1\" as \"Air\", \"temperature2\" as \"Truss\", \"temperature3\" as \"M2\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 201 AND \"sensorName\" = 'AuxTel-ESS01' AND time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -171,7 +171,7 @@
 				"name": "AuxTel-ESS - ESSID 201 Humidity",
 				"queries": [
 					{
-						"query": "SELECT \"airTemperature\", \"relativeHumidity\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE ESSID = 201 and time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"airTemperature\", \"relativeHumidity\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE salIndex = 201 and time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -183,7 +183,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"airTemperature\", \"relativeHumidity\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE ESSID = 201 and time > :dashboardTime: AND time < :upperDashboardTime:",
+							"rawText": "SELECT \"airTemperature\", \"relativeHumidity\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE salIndex = 201 and time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -288,7 +288,7 @@
 				"name": "AuxTel-ESS - ESSID 201 Air Pressure",
 				"queries": [
 					{
-						"query": "SELECT \"barometricPressure\" as \"barometricPressure [mbar]\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE ESSID = 201 and time > :dashboardTime: AND time < :upperDashboardTime: and \"barometricPressure\" > 710",
+						"query": "SELECT \"barometricPressure\" as \"barometricPressure [mbar]\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE salIndex = 201 and time > :dashboardTime: AND time < :upperDashboardTime: and \"barometricPressure\" > 710",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -300,7 +300,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"barometricPressure\" as \"barometricPressure [mbar]\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE ESSID = 201 and time > :dashboardTime: AND time < :upperDashboardTime: and \"barometricPressure\" > 710",
+							"rawText": "SELECT \"barometricPressure\" as \"barometricPressure [mbar]\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE salIndex = 201 and time > :dashboardTime: AND time < :upperDashboardTime: and \"barometricPressure\" > 710",
 							"range": null,
 							"shifts": null
 						},
@@ -322,7 +322,7 @@
 					},
 					"y": {
 						"bounds": [
-							"735",
+							"720",
 							"745"
 						],
 						"label": "",
@@ -405,7 +405,7 @@
 				"name": "M1 Mirror Temperature",
 				"queries": [
 					{
-						"query": "SELECT \"temperature0\" as \"M1 sensor 1\", \"temperature1\" as \"M1 sensor 2\", \"temperature2\" as \"M1 sensor 3\", \"temperature3\" as \"M1 sensor 4\", \"temperature4\" as \"M1 sensor 5\", \"temperature5\" as \"M1 sensor 6\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 201 AND \"sensorName\" = 'AuxTel-ESS03' AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"temperature0\" as \"M1 sensor 1\", \"temperature1\" as \"M1 sensor 2\", \"temperature2\" as \"M1 sensor 3\", \"temperature3\" as \"M1 sensor 4\", \"temperature4\" as \"M1 sensor 5\", \"temperature5\" as \"M1 sensor 6\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 201 AND \"sensorName\" = 'AuxTel-ESS03' AND time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -417,7 +417,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"temperature0\" as \"M1 sensor 1\", \"temperature1\" as \"M1 sensor 2\", \"temperature2\" as \"M1 sensor 3\", \"temperature3\" as \"M1 sensor 4\", \"temperature4\" as \"M1 sensor 5\", \"temperature5\" as \"M1 sensor 6\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE ESSID = 201 AND \"sensorName\" = 'AuxTel-ESS03' AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"rawText": "SELECT \"temperature0\" as \"M1 sensor 1\", \"temperature1\" as \"M1 sensor 2\", \"temperature2\" as \"M1 sensor 3\", \"temperature3\" as \"M1 sensor 4\", \"temperature4\" as \"M1 sensor 5\", \"temperature5\" as \"M1 sensor 6\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 201 AND \"sensorName\" = 'AuxTel-ESS03' AND time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},

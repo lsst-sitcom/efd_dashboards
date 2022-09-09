@@ -143,7 +143,7 @@
 				"name": "Min Temperature",
 				"queries": [
 					{
-						"query": "SELECT \"min24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"min24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE \"salIndex\" = 1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -155,7 +155,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"min24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"min24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE \"salIndex\" = 1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -243,7 +243,7 @@
 				"y": 0,
 				"w": 2,
 				"h": 1,
-				"name": "Heartbeat (DIMM)",
+				"name": "Heartbeat DIMM",
 				"queries": [
 					{
 						"query": "SELECT count(\"heartbeat\") FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_heartbeat\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(5s) ORDER BY DESC LIMIT 1",
@@ -612,7 +612,7 @@
 				"y": 0,
 				"w": 2,
 				"h": 1,
-				"name": "Heartbeat",
+				"name": "Heartbeat WeatherStation",
 				"queries": [
 					{
 						"query": "SELECT count(\"heartbeat\") FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.logevent_heartbeat\" WHERE time > :dashboardTime: and time < :upperDashboardTime: GROUP BY time(5s) ORDER BY DESC LIMIT 1",
@@ -902,7 +902,7 @@
 				"name": "Dewpoint",
 				"queries": [
 					{
-						"query": "SELECT \"avg1M\"+1.4 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.dewPoint\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"avg1M\"+1.4 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.dewPoint\" WHERE \"salIndex\" = 1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -914,7 +914,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"avg1M\"+1.4 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.dewPoint\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"avg1M\"+1.4 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.dewPoint\" WHERE \"salIndex\" = 1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1122,7 +1122,7 @@
 				"name": "Wind Direction (avg2M)",
 				"queries": [
 					{
-						"query": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windDirection\" WHERE \"WeatherStationID\" =1 ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windDirection\" WHERE \"salIndex\" =1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1134,7 +1134,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windDirection\" WHERE \"WeatherStationID\" =1 ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windDirection\" WHERE \"salIndex\" =1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1225,7 +1225,7 @@
 				"name": "Wind Speed (avg2M)",
 				"queries": [
 					{
-						"query": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windSpeed\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windSpeed\" WHERE \"salIndex\" = 1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1237,7 +1237,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windSpeed\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windSpeed\" WHERE \"salIndex\" = 1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1507,7 +1507,7 @@
 				"name": "Humidity",
 				"queries": [
 					{
-						"query": "SELECT \"humidity\"/0.90 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.weather\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"humidity\"/0.90 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.weather\" WHERE \"salIndex\" = 1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1519,7 +1519,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"humidity\"/0.90 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.weather\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"humidity\"/0.90 FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.weather\" WHERE \"salIndex\" = 1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1610,7 +1610,7 @@
 				"name": "Max Temperature",
 				"queries": [
 					{
-						"query": "SELECT \"max24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"max24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE \"salIndex\" = 1 ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1622,7 +1622,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"max24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE \"WeatherStationID\" = 1 ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"max24H\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.airTemperature\" WHERE \"salIndex\" = 1 ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},

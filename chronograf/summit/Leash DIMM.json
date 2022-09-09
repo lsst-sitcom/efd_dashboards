@@ -17,7 +17,7 @@
 				"y": 0,
 				"w": 4,
 				"h": 2,
-				"name": "Heartbeat (DIMM)",
+				"name": "Heartbeat DIMM",
 				"queries": [
 					{
 						"query": "SELECT count(\"heartbeat\") FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_heartbeat\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(5s) ORDER BY DESC LIMIT 1",
@@ -386,7 +386,7 @@
 				"y": 2,
 				"w": 4,
 				"h": 2,
-				"name": "Heartbeat",
+				"name": "Heartbeat WeatherStation",
 				"queries": [
 					{
 						"query": "SELECT count(\"heartbeat\") FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.logevent_heartbeat\" WHERE time > :dashboardTime: and time < :upperDashboardTime: GROUP BY time(5s) ORDER BY DESC LIMIT 1",

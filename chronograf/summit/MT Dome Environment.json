@@ -54,7 +54,7 @@
 						"type": "influxql"
 					},
 					{
-						"query": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\", mean(\"temperature\") AS \"mean_temperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE ESSID = 101 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\", mean(\"temperature\") AS \"mean_temperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE salIndex = 101 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -66,7 +66,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\", mean(\"temperature\") AS \"mean_temperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE ESSID = 101 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+							"rawText": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\", mean(\"temperature\") AS \"mean_temperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE salIndex = 101 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -74,7 +74,7 @@
 						"type": "influxql"
 					},
 					{
-						"query": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\", mean(\"temperature\") AS \"mean_temperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE ESSID = 102 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\", mean(\"temperature\") AS \"mean_temperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE salIndex = 102 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -86,7 +86,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\", mean(\"temperature\") AS \"mean_temperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE ESSID = 102 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+							"rawText": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\", mean(\"temperature\") AS \"mean_temperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE salIndex = 102 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -94,7 +94,7 @@
 						"type": "influxql"
 					},
 					{
-						"query": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\", mean(\"temperature\") AS \"mean_temperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE ESSID = 103 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\", mean(\"temperature\") AS \"mean_temperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE salIndex = 103 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -106,7 +106,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\", mean(\"temperature\") AS \"mean_temperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE ESSID = 103 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+							"rawText": "SELECT mean(\"airTemperature\") AS \"mean_airTemperature\", mean(\"temperature\") AS \"mean_temperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE salIndex = 103 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -376,7 +376,7 @@
 				"name": "MTDome-ESS01 - ESSID 101",
 				"queries": [
 					{
-						"query": "SELECT \"airTemperature\", \"dewPoint\", \"relativeHumidity\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE ESSID = 101 and time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"airTemperature\", \"dewPoint\", \"relativeHumidity\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE salIndex = 101 and time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -388,7 +388,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"airTemperature\", \"dewPoint\", \"relativeHumidity\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE ESSID = 101 and time > :dashboardTime: AND time < :upperDashboardTime:",
+							"rawText": "SELECT \"airTemperature\", \"dewPoint\", \"relativeHumidity\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE salIndex = 101 and time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -508,7 +508,7 @@
 				"name": "MTDome-ESS02 - ESSID 102",
 				"queries": [
 					{
-						"query": "SELECT \"airTemperature\", \"dewPoint\", \"relativeHumidity\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE ESSID = 102 and time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"airTemperature\", \"dewPoint\", \"relativeHumidity\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE salIndex = 102 and time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -520,7 +520,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"airTemperature\", \"dewPoint\", \"relativeHumidity\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE ESSID = 102 and time > :dashboardTime: AND time < :upperDashboardTime:",
+							"rawText": "SELECT \"airTemperature\", \"dewPoint\", \"relativeHumidity\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85a\" WHERE salIndex = 102 and time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -625,7 +625,7 @@
 				"name": "MTDome Humidity - ESSID 103",
 				"queries": [
 					{
-						"query": "SELECT \"relativeHumidity\", \"dewPoint\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE ESSID = 103 and time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"relativeHumidity\", \"dewPoint\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE salIndex = 103 and time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -637,7 +637,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"relativeHumidity\", \"dewPoint\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE ESSID = 103 and time > :dashboardTime: AND time < :upperDashboardTime:",
+							"rawText": "SELECT \"relativeHumidity\", \"dewPoint\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE salIndex = 103 and time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -745,7 +745,7 @@
 				"name": "MTDome-ESS03 - ESSID 103 Air Pressure",
 				"queries": [
 					{
-						"query": "SELECT \"barometricPressure\" as \"barometricPressure [mbar]\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE ESSID = 103 and time > :dashboardTime: AND time < :upperDashboardTime: and \"barometricPressure\" > 710",
+						"query": "SELECT \"barometricPressure\" as \"barometricPressure [mbar]\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE salIndex = 103 and time > :dashboardTime: AND time < :upperDashboardTime: and \"barometricPressure\" > 710",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -757,7 +757,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"barometricPressure\" as \"barometricPressure [mbar]\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE ESSID = 103 and time > :dashboardTime: AND time < :upperDashboardTime: and \"barometricPressure\" > 710",
+							"rawText": "SELECT \"barometricPressure\" as \"barometricPressure [mbar]\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.hx85ba\" WHERE salIndex = 103 and time > :dashboardTime: AND time < :upperDashboardTime: and \"barometricPressure\" > 710",
 							"range": null,
 							"shifts": null
 						},
@@ -779,7 +779,7 @@
 					},
 					"y": {
 						"bounds": [
-							"735",
+							"720",
 							"745"
 						],
 						"label": "",

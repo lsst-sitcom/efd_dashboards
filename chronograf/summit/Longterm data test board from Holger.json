@@ -20,7 +20,7 @@
 				"name": "Camera Hexapod Temperatures",
 				"queries": [
 					{
-						"query": "SELECT \"temperatureC03\", \"temperatureC05\", \"temperatureC06\", \"temperatureC01\", \"temperatureC04\", \"temperatureC02\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"temperatureC03\", \"temperatureC05\", \"temperatureC06\", \"temperatureC01\", \"temperatureC04\", \"temperatureC02\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE salIndex = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"temperatureC03\", \"temperatureC05\", \"temperatureC06\", \"temperatureC01\", \"temperatureC04\", \"temperatureC02\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"rawText": "SELECT \"temperatureC03\", \"temperatureC05\", \"temperatureC06\", \"temperatureC01\", \"temperatureC04\", \"temperatureC02\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE salIndex = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},

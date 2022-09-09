@@ -15,12 +15,12 @@
 				"i": "1554764c-63c2-467a-bdbb-0a0c25903c6e",
 				"x": 0,
 				"y": 0,
-				"w": 11,
-				"h": 4,
+				"w": 12,
+				"h": 5,
 				"name": "Mirror Support Air (mbar)",
 				"queries": [
 					{
-						"query": "SELECT mean(\"linePressure\") AS \"linePressure 1\" FROM \"efd\".\"autogen\".\"lsst.sal.MTAirCompressor.analogData\" WHERE MTAirCompressorID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"linePressure\") AS \"linePressure 1\" FROM \"efd\".\"autogen\".\"lsst.sal.MTAirCompressor.analogData\" WHERE salIndex = 1 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +32,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(\"linePressure\") AS \"linePressure 1\" FROM \"efd\".\"autogen\".\"lsst.sal.MTAirCompressor.analogData\" WHERE MTAirCompressorID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+							"rawText": "SELECT mean(\"linePressure\") AS \"linePressure 1\" FROM \"efd\".\"autogen\".\"lsst.sal.MTAirCompressor.analogData\" WHERE salIndex = 1 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -40,7 +40,7 @@
 						"type": "influxql"
 					},
 					{
-						"query": "SELECT mean(\"linePressure\") AS \"linePressure 2\" FROM \"efd\".\"autogen\".\"lsst.sal.MTAirCompressor.analogData\" WHERE MTAirCompressorID = 2 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"linePressure\") AS \"linePressure 2\" FROM \"efd\".\"autogen\".\"lsst.sal.MTAirCompressor.analogData\" WHERE salIndex = 2 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -52,7 +52,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(\"linePressure\") AS \"linePressure 2\" FROM \"efd\".\"autogen\".\"lsst.sal.MTAirCompressor.analogData\" WHERE MTAirCompressorID = 2 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+							"rawText": "SELECT mean(\"linePressure\") AS \"linePressure 2\" FROM \"efd\".\"autogen\".\"lsst.sal.MTAirCompressor.analogData\" WHERE salIndex = 2 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},

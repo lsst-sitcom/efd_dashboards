@@ -151,7 +151,7 @@
 				"name": "camera hexapod actuator temperatures",
 				"queries": [
 					{
-						"query": "SELECT \"temperatureC03\", \"temperatureC05\", \"temperatureC06\", \"temperatureC01\", \"temperatureC04\", \"temperatureC02\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"temperatureC03\", \"temperatureC05\", \"temperatureC06\", \"temperatureC01\", \"temperatureC04\", \"temperatureC02\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE salIndex = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -163,7 +163,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"temperatureC03\", \"temperatureC05\", \"temperatureC06\", \"temperatureC01\", \"temperatureC04\", \"temperatureC02\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE ESSID = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"rawText": "SELECT \"temperatureC03\", \"temperatureC05\", \"temperatureC06\", \"temperatureC01\", \"temperatureC04\", \"temperatureC02\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature8Ch\" WHERE salIndex = 1 AND time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -265,10 +265,10 @@
 				"y": 3,
 				"w": 6,
 				"h": 4,
-				"name": "inPosition",
+				"name": "camera hexapod inPosition",
 				"queries": [
 					{
-						"query": "SELECT \"inPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_inPosition\" WHERE time > :dashboardTime: AND MTHexapodID = 1. AND time < :upperDashboardTime: order by desc limit 4",
+						"query": "SELECT \"inPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_inPosition\" WHERE salIndex = 1 AND time > :dashboardTime: AND time < :upperDashboardTime: order by desc limit 4",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -280,7 +280,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"inPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_inPosition\" WHERE time > :dashboardTime: AND MTHexapodID = 1. AND time < :upperDashboardTime: order by desc limit 4",
+							"rawText": "SELECT \"inPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_inPosition\" WHERE salIndex = 1 AND time > :dashboardTime: AND time < :upperDashboardTime: order by desc limit 4",
 							"range": null,
 							"shifts": null
 						},
@@ -376,7 +376,7 @@
 				"name": "camera Hexapod compensationOffset-y",
 				"queries": [
 					{
-						"query": "SELECT mean(\"y\") AS \"mean_y\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_compensationOffset\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND MTHexapodID = 1. GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"y\") AS \"mean_y\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_compensationOffset\" WHERE salIndex = 1 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -388,7 +388,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(\"y\") AS \"mean_y\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_compensationOffset\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND MTHexapodID = 1. GROUP BY time(:interval:) FILL(null)",
+							"rawText": "SELECT mean(\"y\") AS \"mean_y\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_compensationOffset\" WHERE salIndex = 1 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -493,7 +493,7 @@
 				"name": "camera hexapod y-position",
 				"queries": [
 					{
-						"query": "SELECT mean(\"position1\") AS \"mean_position1\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND MTHexapodID = 1. GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"position1\") AS \"mean_position1\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND salIndex = 1. GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -505,7 +505,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT mean(\"position1\") AS \"mean_position1\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND MTHexapodID = 1. GROUP BY time(:interval:) FILL(null)",
+							"rawText": "SELECT mean(\"position1\") AS \"mean_position1\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.application\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND salIndex = 1. GROUP BY time(:interval:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},

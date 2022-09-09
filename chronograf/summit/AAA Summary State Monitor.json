@@ -164,7 +164,7 @@
 				"name": "DIMM:2 (Portable)",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_summaryState\" WHERE \"DIMMID\" = 2 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_summaryState\" WHERE \"salIndex\" = 2 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -176,7 +176,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_summaryState\" WHERE \"DIMMID\" = 2 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_summaryState\" WHERE \"salIndex\" = 2 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -302,7 +302,7 @@
 				"name": "DSM:1",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE \"DSMID\" = 1 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE \"salIndex\" = 1 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -314,7 +314,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE \"DSMID\" = 1 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DSM.logevent_summaryState\" WHERE \"salIndex\" = 1 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -440,7 +440,7 @@
 				"name": "DIMM:1",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_summaryState\" WHERE \"DIMMID\" = 1 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_summaryState\" WHERE \"salIndex\" = 1 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -452,7 +452,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_summaryState\" WHERE \"DIMMID\" = 1 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_summaryState\" WHERE \"salIndex\" = 1 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -578,7 +578,7 @@
 				"name": "Camera Hexapod",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_summaryState\" WHERE MTHexapodID = 1. ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_summaryState\" WHERE salIndex = 1. ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -590,7 +590,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_summaryState\" WHERE MTHexapodID = 1. ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.MTHexapod.logevent_summaryState\" WHERE salIndex = 1. ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1116,7 +1116,7 @@
 				"name": "GenericCamera:1",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.GenericCamera.logevent_summaryState\" WHERE \"GenericCameraID\" = 1 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.GenericCamera.logevent_summaryState\" WHERE \"salIndex\" = 1 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1128,7 +1128,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.GenericCamera.logevent_summaryState\" WHERE \"GenericCameraID\" = 1 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.GenericCamera.logevent_summaryState\" WHERE \"salIndex\" = 1 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -3738,7 +3738,7 @@
 				"name": "Environment:1",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.logevent_summaryState\" WHERE \"EnvironmentID\" = 1 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.logevent_summaryState\" WHERE \"salIndex\" = 1 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -3750,7 +3750,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.logevent_summaryState\" WHERE \"EnvironmentID\" = 1 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Environment.logevent_summaryState\" WHERE \"salIndex\" = 1 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},

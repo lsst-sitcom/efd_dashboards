@@ -12,15 +12,138 @@
 		"id": "120",
 		"cells": [
 			{
-				"i": "216301a8-f89f-4842-9412-2cb67113ccac",
-				"x": 8,
-				"y": 0,
-				"w": 4,
-				"h": 2,
-				"name": "DIMM Summary State",
+				"i": "1f9bd781-3cb3-47d6-9710-98dcbd3ba7c4",
+				"x": 0,
+				"y": 3,
+				"w": 5,
+				"h": 3,
+				"name": "DIMM Left Strehl",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_summaryState\" WHERE \"DIMMID\" = 1 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"strehlL\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_dimmMeasurement\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.DIMM.logevent_dimmMeasurement",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "strehlL",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							"1"
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line-plus-single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "642178e2-5dfa-4153-b905-a03e0ff8d116",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9885c36f-bd23-45bc-a310-100f1c172cfd",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/120/cells/1f9bd781-3cb3-47d6-9710-98dcbd3ba7c4"
+				}
+			},
+			{
+				"i": "bb09137e-79bb-42da-9ec1-1c75d22af32d",
+				"x": 0,
+				"y": 6,
+				"w": 9,
+				"h": 3,
+				"name": "RA, DEC, AZ, ALT",
+				"queries": [
+					{
+						"query": "SELECT \"ra\", \"decl\", \"azimuth\", \"altitude\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.status\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +155,248 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_summaryState\" WHERE \"DIMMID\" = 1 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"ra\", \"decl\", \"azimuth\", \"altitude\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.status\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DIMM.status.decl",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DIMM.status.ra",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DIMM.status.altitude",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DIMM.status.azimuth",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/120/cells/bb09137e-79bb-42da-9ec1-1c75d22af32d"
+				}
+			},
+			{
+				"i": "1f963a4b-461f-47ca-8d99-0eb895f0b761",
+				"x": 0,
+				"y": 9,
+				"w": 11,
+				"h": 4,
+				"name": "Log messages",
+				"queries": [
+					{
+						"query": "SELECT \"level\", \"message\", \"traceback\"  FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_logMessage\" WHERE salIndex = :SalIndex: ORDER BY DESC LIMIT 20",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"level\", \"message\", \"traceback\"  FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_logMessage\" WHERE salIndex = :SalIndex: ORDER BY DESC LIMIT 20",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DIMM.logevent_logMessage.level",
+						"displayName": "level",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DIMM.logevent_logMessage.message",
+						"displayName": "message",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.DIMM.logevent_logMessage.traceback",
+						"displayName": "traceback",
+						"visible": true
+					}
+				],
+				"timeFormat": "YYYY-MM-DD HH:mm:ss.SS",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/120/cells/1f963a4b-461f-47ca-8d99-0eb895f0b761"
+				}
+			},
+			{
+				"i": "216301a8-f89f-4842-9412-2cb67113ccac",
+				"x": 8,
+				"y": 0,
+				"w": 2,
+				"h": 3,
+				"name": "DIMM Summary State",
+				"queries": [
+					{
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_summaryState\" WHERE salIndex = :SalIndex: ORDER BY DESC LIMIT 1",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_summaryState\" WHERE salIndex = :SalIndex: ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -151,14 +515,14 @@
 			},
 			{
 				"i": "da891c46-9c97-4656-a590-306d06321897",
-				"x": 8,
-				"y": 2,
-				"w": 4,
-				"h": 2,
+				"x": 5,
+				"y": 0,
+				"w": 3,
+				"h": 3,
 				"name": "Heartbeat (DIMM)",
 				"queries": [
 					{
-						"query": "SELECT count(\"heartbeat\") FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_heartbeat\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(5s) ORDER BY DESC LIMIT 1",
+						"query": "SELECT count(\"heartbeat\") FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_heartbeat\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(5s) ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -170,7 +534,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT count(\"heartbeat\") FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_heartbeat\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(5s) ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT count(\"heartbeat\") FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_heartbeat\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(5s) ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -268,30 +632,24 @@
 				"i": "48838e01-4dab-444f-aff9-fb977bf7bce1",
 				"x": 0,
 				"y": 0,
-				"w": 8,
-				"h": 6,
+				"w": 5,
+				"h": 3,
 				"name": "DIMM FWHM",
 				"queries": [
 					{
-						"query": "SELECT \"fwhm\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_dimmMeasurement\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"fwhm\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_dimmMeasurement\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.DIMM.logevent_dimmMeasurement",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "fwhm",
-									"type": "field",
-									"alias": ""
-								}
-							],
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
 							"tags": {},
 							"groupBy": {
 								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": null,
+							"rawText": "SELECT \"fwhm\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_dimmMeasurement\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},
@@ -386,9 +744,163 @@
 				"links": {
 					"self": "/chronograf/v1/dashboards/120/cells/48838e01-4dab-444f-aff9-fb977bf7bce1"
 				}
+			},
+			{
+				"i": "244e8a62-afc1-4726-9f67-cc1ea881e286",
+				"x": 5,
+				"y": 3,
+				"w": 5,
+				"h": 3,
+				"name": "DIMM Right Strehl",
+				"queries": [
+					{
+						"query": "SELECT \"strehlR\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_dimmMeasurement\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.DIMM.logevent_dimmMeasurement",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "strehlR",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							"1"
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line-plus-single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "642178e2-5dfa-4153-b905-a03e0ff8d116",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9885c36f-bd23-45bc-a310-100f1c172cfd",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/120/cells/244e8a62-afc1-4726-9f67-cc1ea881e286"
+				}
 			}
 		],
-		"templates": [],
+		"templates": [
+			{
+				"tempVar": ":SalIndex:",
+				"values": [
+					{
+						"value": "1",
+						"type": "map",
+						"selected": true,
+						"key": "DIMM 1"
+					},
+					{
+						"value": "2",
+						"type": "map",
+						"selected": false,
+						"key": "DIMM 2"
+					}
+				],
+				"id": "c4881f21-c1e7-4721-ac90-c80996a207ea",
+				"type": "map",
+				"label": "",
+				"query": {
+					"influxql": "",
+					"measurement": "",
+					"tagKey": "",
+					"fieldKey": ""
+				},
+				"sourceID": "dynamic",
+				"links": {
+					"self": "/chronograf/v1/dashboards/120/templates/c4881f21-c1e7-4721-ac90-c80996a207ea"
+				}
+			}
+		],
 		"name": "DIMM",
 		"organization": "default",
 		"links": {

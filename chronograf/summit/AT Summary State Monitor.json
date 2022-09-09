@@ -158,7 +158,7 @@
 				"name": "PMD:1",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.PMD.logevent_summaryState\" WHERE PMDID = 1 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.PMD.logevent_summaryState\" WHERE salIndex = 1 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -170,7 +170,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.PMD.logevent_summaryState\" WHERE PMDID = 1 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.PMD.logevent_summaryState\" WHERE salIndex = 1 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -572,7 +572,7 @@
 				"name": "GenericCamera:1",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.GenericCamera.logevent_summaryState\" WHERE \"GenericCameraID\" = 1 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.GenericCamera.logevent_summaryState\" WHERE \"salIndex\" = 1 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -584,7 +584,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.GenericCamera.logevent_summaryState\" WHERE \"GenericCameraID\" = 1 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.GenericCamera.logevent_summaryState\" WHERE \"salIndex\" = 1 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -2642,7 +2642,7 @@
 				"name": "Scheduler:2",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Scheduler.logevent_summaryState\" WHERE SchedulerID = 2 ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Scheduler.logevent_summaryState\" WHERE salIndex = 2 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -2654,7 +2654,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Scheduler.logevent_summaryState\" WHERE SchedulerID = 2 ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Scheduler.logevent_summaryState\" WHERE salIndex = 2 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
