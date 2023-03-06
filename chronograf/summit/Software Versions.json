@@ -145,19 +145,9 @@
 				"tempVar": ":CSCList:",
 				"values": [
 					{
-						"value": "AdamSensors",
-						"type": "csv",
-						"selected": false
-					},
-					{
 						"value": "ATAOS",
 						"type": "csv",
 						"selected": true
-					},
-					{
-						"value": "ATArchiver",
-						"type": "csv",
-						"selected": false
 					},
 					{
 						"value": "ATCamera",
@@ -195,6 +185,11 @@
 						"selected": false
 					},
 					{
+						"value": "ATOODS",
+						"type": "csv",
+						"selected": false
+					},
+					{
 						"value": "ATPtg",
 						"type": "csv",
 						"selected": false
@@ -205,22 +200,17 @@
 						"selected": false
 					},
 					{
-						"value": "AdamSensors",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "CCArchiver",
-						"type": "csv",
-						"selected": false
-					},
-					{
 						"value": "CCCamera",
 						"type": "csv",
 						"selected": false
 					},
 					{
 						"value": "CCHeaderService",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "CCOODS",
 						"type": "csv",
 						"selected": false
 					},
@@ -251,11 +241,6 @@
 					},
 					{
 						"value": "GenericCamera",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "Hexapod",
 						"type": "csv",
 						"selected": false
 					},
@@ -315,16 +300,6 @@
 						"selected": false
 					},
 					{
-						"value": "NewMTMount",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "Rotator",
-						"type": "csv",
-						"selected": false
-					},
-					{
 						"value": "OCPS",
 						"type": "csv",
 						"selected": false
@@ -351,6 +326,11 @@
 					},
 					{
 						"value": "Watcher",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "WeatherForecast",
 						"type": "csv",
 						"selected": false
 					},

@@ -185,6 +185,11 @@
 						"selected": false
 					},
 					{
+						"value": "GenericCamera",
+						"type": "csv",
+						"selected": false
+					},
+					{
 						"value": "MTAOS",
 						"type": "csv",
 						"selected": false

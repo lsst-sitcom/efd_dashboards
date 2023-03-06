@@ -12,10 +12,451 @@
 		"id": "120",
 		"cells": [
 			{
+				"i": "0d2c3189-9656-41b2-b0a9-64119fc8f1fd",
+				"x": 3,
+				"y": 6,
+				"w": 3,
+				"h": 3,
+				"name": "FWHMx & HWHMy",
+				"queries": [
+					{
+						"query": "SELECT mean(\"flux\") AS \"mean_flux\", mean(\"fwhmx\") AS \"mean_fwhmx\", mean(\"fwhmy\") AS \"mean_fwhmy\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_dimmMeasurement\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.DIMM.logevent_dimmMeasurement",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_flux",
+									"args": [
+										{
+											"value": "flux",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_fwhmx",
+									"args": [
+										{
+											"value": "fwhmx",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_fwhmy",
+									"args": [
+										{
+											"value": "fwhmy",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "a3b17eb3-7f95-469f-888d-94633330bcb8",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "5dc53873-5223-4138-b0a2-13d44dcc6755",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "b4d65061-35de-44a0-aa2a-b9583b9ca4a4",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/120/cells/0d2c3189-9656-41b2-b0a9-64119fc8f1fd"
+				}
+			},
+			{
+				"i": "a53fa4f6-fd89-4423-bdda-b518ada8b4b0",
+				"x": 0,
+				"y": 6,
+				"w": 3,
+				"h": 3,
+				"name": "dx & dy",
+				"queries": [
+					{
+						"query": "SELECT mean(\"dx\") AS \"mean_dx\", mean(\"dy\") AS \"mean_dy\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_dimmMeasurement\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.DIMM.logevent_dimmMeasurement",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_dx",
+									"args": [
+										{
+											"value": "dx",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_dy",
+									"args": [
+										{
+											"value": "dy",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "a3b17eb3-7f95-469f-888d-94633330bcb8",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "5dc53873-5223-4138-b0a2-13d44dcc6755",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "b4d65061-35de-44a0-aa2a-b9583b9ca4a4",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/120/cells/a53fa4f6-fd89-4423-bdda-b518ada8b4b0"
+				}
+			},
+			{
+				"i": "a28c99ae-6d73-4652-a04c-5ba70f3e2672",
+				"x": 6,
+				"y": 3,
+				"w": 6,
+				"h": 5,
+				"name": "FluxL & FluxR",
+				"queries": [
+					{
+						"query": "SELECT mean(\"fluxL\") AS \"mean_fluxL\", mean(\"fluxR\") AS \"mean_fluxR\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_dimmMeasurement\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.DIMM.logevent_dimmMeasurement",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_fluxL",
+									"args": [
+										{
+											"value": "fluxL",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_fluxR",
+									"args": [
+										{
+											"value": "fluxR",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "a3b17eb3-7f95-469f-888d-94633330bcb8",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "5dc53873-5223-4138-b0a2-13d44dcc6755",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "b4d65061-35de-44a0-aa2a-b9583b9ca4a4",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/120/cells/a28c99ae-6d73-4652-a04c-5ba70f3e2672"
+				}
+			},
+			{
 				"i": "1f9bd781-3cb3-47d6-9710-98dcbd3ba7c4",
 				"x": 0,
 				"y": 3,
-				"w": 5,
+				"w": 3,
 				"h": 3,
 				"name": "DIMM Left Strehl",
 				"queries": [
@@ -137,25 +578,36 @@
 			{
 				"i": "bb09137e-79bb-42da-9ec1-1c75d22af32d",
 				"x": 0,
-				"y": 6,
+				"y": 9,
 				"w": 9,
 				"h": 3,
 				"name": "RA, DEC, AZ, ALT",
 				"queries": [
 					{
-						"query": "SELECT \"ra\", \"decl\", \"azimuth\", \"altitude\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.status\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"azimuth\", \"altitude\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.status\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
+							"database": "efd",
+							"measurement": "lsst.sal.DIMM.status",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "azimuth",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "altitude",
+									"type": "field",
+									"alias": ""
+								}
+							],
 							"tags": {},
 							"groupBy": {
 								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"ra\", \"decl\", \"azimuth\", \"altitude\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.status\" WHERE salIndex = :SalIndex: AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"rawText": null,
 							"range": null,
 							"shifts": null
 						},
@@ -260,7 +712,7 @@
 			{
 				"i": "1f963a4b-461f-47ca-8d99-0eb895f0b761",
 				"x": 0,
-				"y": 9,
+				"y": 12,
 				"w": 11,
 				"h": 4,
 				"name": "Log messages",
@@ -515,9 +967,9 @@
 			},
 			{
 				"i": "da891c46-9c97-4656-a590-306d06321897",
-				"x": 5,
+				"x": 6,
 				"y": 0,
-				"w": 3,
+				"w": 2,
 				"h": 3,
 				"name": "Heartbeat (DIMM)",
 				"queries": [
@@ -632,7 +1084,7 @@
 				"i": "48838e01-4dab-444f-aff9-fb977bf7bce1",
 				"x": 0,
 				"y": 0,
-				"w": 5,
+				"w": 6,
 				"h": 3,
 				"name": "DIMM FWHM",
 				"queries": [
@@ -671,8 +1123,8 @@
 					},
 					"y": {
 						"bounds": [
-							"0",
-							"3"
+							"",
+							""
 						],
 						"label": "",
 						"prefix": "",
@@ -747,9 +1199,9 @@
 			},
 			{
 				"i": "244e8a62-afc1-4726-9f67-cc1ea881e286",
-				"x": 5,
+				"x": 3,
 				"y": 3,
-				"w": 5,
+				"w": 3,
 				"h": 3,
 				"name": "DIMM Right Strehl",
 				"queries": [

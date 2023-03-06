@@ -651,32 +651,6 @@
 				"name": "Following Error Rotator-CCW",
 				"queries": [
 					{
-						"query": "SELECT \"actualPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.rotation\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
-						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.MTRotator.rotation",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "actualPosition",
-									"type": "field",
-									"alias": ""
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": null,
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					},
-					{
 						"query": "SELECT \"positionError\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.ccwFollowingError\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
@@ -685,63 +659,6 @@
 							"fields": [
 								{
 									"value": "positionError",
-									"type": "field",
-									"alias": ""
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": null,
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					},
-					{
-						"query": "SELECT \"actualPosition\", \"actualAcceleration\" FROM \"efd\".\"autogen\".\"lsst.sal.MTMount.cameraCableWrap\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
-						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.MTMount.cameraCableWrap",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "actualPosition",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "actualAcceleration",
-									"type": "field",
-									"alias": ""
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": null,
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					},
-					{
-						"query": "SELECT \"actualVelocity\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.rotation\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
-						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.MTRotator.rotation",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "actualVelocity",
 									"type": "field",
 									"alias": ""
 								}

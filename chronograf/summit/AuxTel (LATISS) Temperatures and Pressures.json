@@ -20,33 +20,19 @@
 				"name": "Polycold Return Pressure",
 				"queries": [
 					{
-						"query": "SELECT mean(\"pressure1\") AS \"Return Pressure(Pa)\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.pressure\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"pressure1\") AS \"Return Pressure(Pa)\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.pressure\" WHERE \"sensorName\" = 'AuxTel-LabJack01' AND \"salIndex\" = 201 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.ESS.pressure",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "Return Pressure(Pa)",
-									"args": [
-										{
-											"value": "pressure1",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								}
-							],
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
 							"tags": {},
 							"groupBy": {
-								"time": "auto",
+								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"fill": "null",
-							"rawText": null,
+							"rawText": "SELECT mean(\"pressure1\") AS \"Return Pressure(Pa)\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.pressure\" WHERE \"sensorName\" = 'AuxTel-LabJack01' AND \"salIndex\" = 201 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},
@@ -151,33 +137,19 @@
 				"name": "Polycold Supply Pressure",
 				"queries": [
 					{
-						"query": "SELECT mean(\"pressure0\") AS \"Supply Pressure(Pascal)\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.pressure\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"pressure0\") AS \"Supply Pressure(Pascal)\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.pressure\" WHERE \"sensorName\" = 'AuxTel-LabJack01' AND \"salIndex\" = 201 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.ESS.pressure",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "Supply Pressure(Pascal)",
-									"args": [
-										{
-											"value": "pressure0",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								}
-							],
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
 							"tags": {},
 							"groupBy": {
-								"time": "auto",
+								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"fill": "null",
-							"rawText": null,
+							"rawText": "SELECT mean(\"pressure0\") AS \"Supply Pressure(Pascal)\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.pressure\" WHERE \"sensorName\" = 'AuxTel-LabJack01' AND \"salIndex\" = 201 AND time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 							"range": null,
 							"shifts": null
 						},

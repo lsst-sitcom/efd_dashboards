@@ -9,35 +9,25 @@
 		}
 	},
 	"dashboard": {
-		"id": "56",
+		"id": "158",
 		"cells": [
 			{
-				"i": "a2cc34a9-550b-4e8c-97f0-2da54ca73105",
+				"i": "8405df4d-569e-4007-8321-f9cd25b29149",
 				"x": 0,
 				"y": 0,
 				"w": 12,
-				"h": 11,
-				"name": "Explore",
+				"h": 7,
+				"name": "LFA URL",
 				"queries": [
 					{
-						"query": "SELECT \"salIndex\", \"message\", \"traceback\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"url\" FROM \"efd\".\"autogen\".\"lsst.sal.GenericCamera.logevent_largeFileObjectAvailable\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.Script.logevent_logMessage",
+							"measurement": "lsst.sal.GenericCamera.logevent_largeFileObjectAvailable",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "salIndex",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "message",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "traceback",
+									"value": "url",
 									"type": "field",
 									"alias": ""
 								}
@@ -52,7 +42,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -119,17 +109,7 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.Script.logevent_logMessage.message",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.Script.logevent_logMessage.salIndex",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.Script.logevent_logMessage.traceback",
+						"internalName": "lsst.sal.GenericCamera.logevent_largeFileObjectAvailable.url",
 						"displayName": "",
 						"visible": true
 					}
@@ -142,17 +122,17 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/56/cells/a2cc34a9-550b-4e8c-97f0-2da54ca73105"
+					"self": "/chronograf/v1/dashboards/158/cells/8405df4d-569e-4007-8321-f9cd25b29149"
 				}
 			}
 		],
 		"templates": [],
-		"name": "Script log",
+		"name": "Startracker LFA URIs",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/56",
-			"cells": "/chronograf/v1/dashboards/56/cells",
-			"templates": "/chronograf/v1/dashboards/56/templates"
+			"self": "/chronograf/v1/dashboards/158",
+			"cells": "/chronograf/v1/dashboards/158/cells",
+			"templates": "/chronograf/v1/dashboards/158/templates"
 		}
 	}
 }

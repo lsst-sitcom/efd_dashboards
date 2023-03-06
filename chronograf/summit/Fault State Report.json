@@ -140,11 +140,6 @@
 						"selected": true
 					},
 					{
-						"value": "ATArchiver",
-						"type": "csv",
-						"selected": false
-					},
-					{
 						"value": "ATCamera",
 						"type": "csv",
 						"selected": false
@@ -185,17 +180,12 @@
 						"selected": false
 					},
 					{
+						"value": "ATOODS",
+						"type": "csv",
+						"selected": false
+					},
+					{
 						"value": "ATSpectrograph",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "AdamSensors",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "CCArchiver",
 						"type": "csv",
 						"selected": false
 					},
@@ -210,17 +200,17 @@
 						"selected": false
 					},
 					{
+						"value": "CCOODS",
+						"type": "csv",
+						"selected": false
+					},
+					{
 						"value": "DIMM",
 						"type": "csv",
 						"selected": false
 					},
 					{
 						"value": "DSM",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "Dome",
 						"type": "csv",
 						"selected": false
 					},
@@ -236,11 +226,6 @@
 					},
 					{
 						"value": "GenericCamera",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "Hexapod",
 						"type": "csv",
 						"selected": false
 					},
@@ -295,12 +280,7 @@
 						"selected": false
 					},
 					{
-						"value": "NewMTMount",
-						"type": "csv",
-						"selected": false
-					},
-					{
-						"value": "Rotator",
+						"value": "OCPS",
 						"type": "csv",
 						"selected": false
 					},
@@ -326,6 +306,11 @@
 					},
 					{
 						"value": "Watcher",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "WeatherForecast",
 						"type": "csv",
 						"selected": false
 					},

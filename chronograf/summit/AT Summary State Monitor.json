@@ -2087,10 +2087,10 @@
 				"y": 3,
 				"w": 3,
 				"h": 1,
-				"name": "Electrometer",
+				"name": "Electrometer:201",
 				"queries": [
 					{
-						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Electrometer.logevent_summaryState\" ORDER BY DESC LIMIT 1",
+						"query": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Electrometer.logevent_summaryState\" where salIndex = 201 ORDER BY DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -2102,7 +2102,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Electrometer.logevent_summaryState\" ORDER BY DESC LIMIT 1",
+							"rawText": "SELECT \"summaryState\" FROM \"efd\".\"autogen\".\"lsst.sal.Electrometer.logevent_summaryState\" where salIndex = 201 ORDER BY DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},

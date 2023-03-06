@@ -9,279 +9,45 @@
 		}
 	},
 	"dashboard": {
-		"id": "11",
+		"id": "165",
 		"cells": [
 			{
-				"i": "b4c60e54-96fd-4661-bc9a-39d3ac6392bb",
+				"i": "e61580c3-5e49-4578-aace-67a2c7aee790",
 				"x": 0,
-				"y": 4,
-				"w": 11,
-				"h": 4,
-				"name": "vacuum (smoothed 10 min)",
+				"y": 6,
+				"w": 12,
+				"h": 3,
+				"name": "Azimuth Drive Currents",
 				"queries": [
 					{
-						"query": "SELECT median(\"vacuum\") AS \"median_vacuum\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.vacuum\" WHERE time > :dashboardTime: GROUP BY time(5m) FILL(null)",
+						"query": "SELECT \"driveCurrentActual0\", \"driveCurrentActual1\", \"driveCurrentActual2\", \"driveCurrentActual3\", \"driveCurrentActual4\" FROM \"efd\".\"autogen\".\"lsst.sal.MTDome.azimuth\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.vacuum",
+							"measurement": "lsst.sal.MTDome.azimuth",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "median",
-									"type": "func",
-									"alias": "median_vacuum",
-									"args": [
-										{
-											"value": "vacuum",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "5m",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"fill": "null",
-							"rawText": null,
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "line",
-				"colors": [
-					{
-						"id": "0913616a-88cd-4252-becf-9689bbef53dd",
-						"type": "scale",
-						"hex": "#31C0F6",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "7b2bc876-2b69-47d3-b90a-327a0168bb0e",
-						"type": "scale",
-						"hex": "#A500A5",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "ee38b2de-961f-4192-b412-5f0f2ca665a4",
-						"type": "scale",
-						"hex": "#FF7E27",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": true
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					}
-				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 2
-				},
-				"note": "",
-				"noteVisibility": "default",
-				"links": {
-					"self": "/chronograf/v1/dashboards/11/cells/b4c60e54-96fd-4661-bc9a-39d3ac6392bb"
-				}
-			},
-			{
-				"i": "5d9aeeb7-aa3e-4350-a5d0-d45ca97ef672",
-				"x": 0,
-				"y": 0,
-				"w": 11,
-				"h": 4,
-				"name": "vacuum (unsmoothed)",
-				"queries": [
-					{
-						"query": "SELECT \"vacuum\" as \"vacuum (torr)\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.vacuum\" WHERE time > :dashboardTime:",
-						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.vacuum",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "vacuum",
+									"value": "driveCurrentActual0",
 									"type": "field",
-									"alias": "vacuum (torr)"
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": null,
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "line",
-				"colors": [
-					{
-						"id": "0913616a-88cd-4252-becf-9689bbef53dd",
-						"type": "scale",
-						"hex": "#31C0F6",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "7b2bc876-2b69-47d3-b90a-327a0168bb0e",
-						"type": "scale",
-						"hex": "#A500A5",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "ee38b2de-961f-4192-b412-5f0f2ca665a4",
-						"type": "scale",
-						"hex": "#FF7E27",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": true
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					}
-				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 2
-				},
-				"note": "",
-				"noteVisibility": "default",
-				"links": {
-					"self": "/chronograf/v1/dashboards/11/cells/5d9aeeb7-aa3e-4350-a5d0-d45ca97ef672"
-				}
-			},
-			{
-				"i": "66ba2b4e-8108-4069-8564-ca84f1052ee2",
-				"x": 0,
-				"y": 8,
-				"w": 11,
-				"h": 4,
-				"name": "CCD Temp -- WREB",
-				"queries": [
-					{
-						"query": "SELECT \"ccdTemp0\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wreb\" WHERE time > :dashboardTime:",
-						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.wreb",
-							"retentionPolicy": "autogen",
-							"fields": [
+									"alias": ""
+								},
 								{
-									"value": "ccdTemp0",
+									"value": "driveCurrentActual1",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "driveCurrentActual2",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "driveCurrentActual3",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "driveCurrentActual4",
 									"type": "field",
 									"alias": ""
 								}
@@ -338,21 +104,21 @@
 				"type": "line",
 				"colors": [
 					{
-						"id": "0913616a-88cd-4252-becf-9689bbef53dd",
+						"id": "fd17e165-7f39-4473-a8a1-522dae1d355c",
 						"type": "scale",
 						"hex": "#31C0F6",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "7b2bc876-2b69-47d3-b90a-327a0168bb0e",
+						"id": "fa1fef3e-12b9-4023-bbff-a5565256b401",
 						"type": "scale",
 						"hex": "#A500A5",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "ee38b2de-961f-4192-b412-5f0f2ca665a4",
+						"id": "5b3a9948-cbca-4a39-b490-efb33f791795",
 						"type": "scale",
 						"hex": "#FF7E27",
 						"name": "Nineteen Eighty Four",
@@ -385,110 +151,36 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/11/cells/66ba2b4e-8108-4069-8564-ca84f1052ee2"
+					"self": "/chronograf/v1/dashboards/165/cells/e61580c3-5e49-4578-aace-67a2c7aee790"
 				}
 			},
 			{
-				"i": "d30229b3-ad8c-48c1-9c91-b27ad9fafea3",
+				"i": "4ce52b3d-07f4-4a4f-a7b7-8667cc578b56",
 				"x": 0,
-				"y": 12,
-				"w": 11,
+				"y": 9,
+				"w": 6,
 				"h": 4,
-				"name": "CCD Temp Smoothed (5 minutes)",
+				"name": "Azimuth Control Software Status",
 				"queries": [
 					{
-						"query": "SELECT mean(\"temp10\") AS \"mean_temp10\", mean(\"temp20\") AS \"mean_temp20\", mean(\"temp30\") AS \"mean_temp30\", mean(\"temp40\") AS \"mean_temp40\", mean(\"temp50\") AS \"mean_temp50\", mean(\"temp60\") AS \"mean_temp60\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Reb\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "from(bucket: \"efd/autogen\")\n  |> range(start: -30d)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.MTDome.logevent_azEnabled/ )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    \"1\": \n      if r.state == 1.00 then \"DISABLED\"\n      else if r.state == 2.00 then \"ENABLED\"\n      else if r.state == 3.00 then \"FAULT\"\n      else \"UNKNOWN\",\n    \"2\": r.faultCode,\n    })\n  )\n  |> keep(columns: [\n    \"1\", \n    \"2\"\n  ])\n",
 						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.focal_plane_Reb",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_temp10",
-									"args": [
-										{
-											"value": "temp10",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_temp20",
-									"args": [
-										{
-											"value": "temp20",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_temp30",
-									"args": [
-										{
-											"value": "temp30",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_temp40",
-									"args": [
-										{
-											"value": "temp40",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_temp50",
-									"args": [
-										{
-											"value": "temp50",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								},
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_temp60",
-									"args": [
-										{
-											"value": "temp60",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								}
-							],
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
 							"tags": {},
 							"groupBy": {
-								"time": "auto",
+								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"fill": "null",
-							"rawText": null,
+							"rawText": "from(bucket: \"efd/autogen\")\n  |> range(start: -30d)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /lsst.sal.MTDome.logevent_azEnabled/ )\n  |> last()\n  |> pivot(rowKey: [\"_measurement\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |> group()\n  |> map(fn: (r) => ({\n    r with\n    \"1\": \n      if r.state == 1.00 then \"DISABLED\"\n      else if r.state == 2.00 then \"ENABLED\"\n      else if r.state == 3.00 then \"FAULT\"\n      else \"UNKNOWN\",\n    \"2\": r.faultCode,\n    })\n  )\n  |> keep(columns: [\n    \"1\", \n    \"2\"\n  ])\n",
 							"range": null,
 							"shifts": null
 						},
 						"source": "",
-						"type": "influxql"
+						"type": "flux"
 					}
 				],
 				"axes": {
@@ -526,24 +218,143 @@
 						"scale": "linear"
 					}
 				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "1",
+						"displayName": "state",
+						"visible": true
+					},
+					{
+						"internalName": "2",
+						"displayName": "fault code",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/165/cells/4ce52b3d-07f4-4a4f-a7b7-8667cc578b56"
+				}
+			},
+			{
+				"i": "acd76b01-72b9-4f62-ae43-11a510312a3a",
+				"x": 0,
+				"y": 3,
+				"w": 12,
+				"h": 3,
+				"name": "Azimuth Velocity",
+				"queries": [
+					{
+						"query": "SELECT \"velocityActual\", \"velocityCommanded\" FROM \"efd\".\"autogen\".\"lsst.sal.MTDome.azimuth\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.MTDome.azimuth",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "velocityActual",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "velocityCommanded",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"-1",
+							"1"
+						],
+						"label": "Azimuth Velocity",
+						"prefix": "",
+						"suffix": "º/s",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
 				"type": "line",
 				"colors": [
 					{
-						"id": "38fe914e-e913-4888-b0a9-af7be34f44f0",
+						"id": "c19f385a-cfc1-4ba1-9393-3ec502da7ca0",
 						"type": "scale",
 						"hex": "#31C0F6",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "e956a608-21c3-4f0e-9ba0-621c18367699",
+						"id": "5860a427-60cb-460a-903a-5978f1aa5d89",
 						"type": "scale",
 						"hex": "#A500A5",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "01c7783e-cc8e-4c03-b17e-2b3166bde3b0",
+						"id": "5183a5c5-108a-44a1-ac7e-634ecd698efe",
 						"type": "scale",
 						"hex": "#FF7E27",
 						"name": "Nineteen Eighty Four",
@@ -576,17 +387,145 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/11/cells/d30229b3-ad8c-48c1-9c91-b27ad9fafea3"
+					"self": "/chronograf/v1/dashboards/165/cells/acd76b01-72b9-4f62-ae43-11a510312a3a"
+				}
+			},
+			{
+				"i": "39061e13-05a7-4877-a24f-147ac3a58521",
+				"x": 0,
+				"y": 0,
+				"w": 12,
+				"h": 3,
+				"name": "Azimuth Position",
+				"queries": [
+					{
+						"query": "SELECT \"positionActual\", \"positionCommanded\" FROM \"efd\".\"autogen\".\"lsst.sal.MTDome.azimuth\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.MTDome.azimuth",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "positionActual",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "positionCommanded",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							"360"
+						],
+						"label": "Azimuth",
+						"prefix": "",
+						"suffix": "º",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "c19f385a-cfc1-4ba1-9393-3ec502da7ca0",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "5860a427-60cb-460a-903a-5978f1aa5d89",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "5183a5c5-108a-44a1-ac7e-634ecd698efe",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/165/cells/39061e13-05a7-4877-a24f-147ac3a58521"
 				}
 			}
 		],
 		"templates": [],
-		"name": "ATCamera Vacuum",
+		"name": "MT Dome Status",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/11",
-			"cells": "/chronograf/v1/dashboards/11/cells",
-			"templates": "/chronograf/v1/dashboards/11/templates"
+			"self": "/chronograf/v1/dashboards/165",
+			"cells": "/chronograf/v1/dashboards/165/cells",
+			"templates": "/chronograf/v1/dashboards/165/templates"
 		}
 	}
 }

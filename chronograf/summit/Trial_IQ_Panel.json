@@ -9,15 +9,249 @@
 		}
 	},
 	"dashboard": {
-		"id": "91",
+		"id": "168",
 		"cells": [
 			{
-				"i": "59b0d472-c966-42ca-8c42-707174b5d8d2",
+				"i": "83c66014-b2b6-47b1-bc6e-6623926b7d77",
 				"x": 0,
-				"y": 0,
-				"w": 6,
-				"h": 3,
-				"name": "AuxTel-ESS - ESSID 201 Temperatures (with Outside Temp)",
+				"y": 18,
+				"w": 12,
+				"h": 2,
+				"name": "M2 minus Air Temp",
+				"queries": [
+					{
+						"query": "SELECT \"temperature3\"-\"temperature1\" as \"M2 minus Air temp\"  FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 201 AND \"sensorName\" = 'AuxTel-ESS01' AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"temperature3\"-\"temperature1\" as \"M2 minus Air temp\"  FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 201 AND \"sensorName\" = 'AuxTel-ESS01' AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "a9cf5a92-e840-4af0-bdca-7d8b44bd6abe",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "a964f9bb-26b5-4d97-adcf-d4a60c5f1ef2",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "2725766a-81b4-426b-a7c0-aa71baa8cd43",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/168/cells/83c66014-b2b6-47b1-bc6e-6623926b7d77"
+				}
+			},
+			{
+				"i": "a9680127-c32c-4972-b1c4-9869f695f920",
+				"x": 0,
+				"y": 4,
+				"w": 12,
+				"h": 2,
+				"name": "Slit Headwind and Crosswind",
+				"queries": [
+					{
+						"query": "SELECT sqrt(mean(\"speed0\")*mean(\"speed0\") + mean(\"speed2\")*mean(\"speed2\")) AS \"Headwind\", mean(\"speed1\") AS \"Crosswind\"  FROM \"efd\".\"autogen\".\"lsst.sal.ESS.airTurbulence\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT sqrt(mean(\"speed0\")*mean(\"speed0\") + mean(\"speed2\")*mean(\"speed2\")) AS \"Headwind\", mean(\"speed1\") AS \"Crosswind\"  FROM \"efd\".\"autogen\".\"lsst.sal.ESS.airTurbulence\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "4c8cf080-c8ce-414c-bdc4-db27f80d3b97",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "20b03b5e-84ac-49e4-a701-ff931c473678",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "d19e5601-58c1-4e8e-8e06-946a83c5897e",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/168/cells/a9680127-c32c-4972-b1c4-9869f695f920"
+				}
+			},
+			{
+				"i": "d1b5685f-80cb-4936-b9a6-1fb4cba9dc31",
+				"x": 0,
+				"y": 2,
+				"w": 12,
+				"h": 2,
+				"name": "Aux tel temperature sensors",
 				"queries": [
 					{
 						"query": "SELECT \"temperature1\" as \"Air\", \"temperature2\" as \"Truss\", \"temperature3\" as \"M2\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 201 AND \"sensorName\" = 'AuxTel-ESS01' AND time > :dashboardTime: AND time < :upperDashboardTime:",
@@ -38,40 +272,6 @@
 						},
 						"source": "",
 						"type": "influxql"
-					},
-					{
-						"query": "SELECT mean(\"location\") AS \"mean_location\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
-						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.ESS.temperature",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "mean",
-									"type": "func",
-									"alias": "mean_location",
-									"args": [
-										{
-											"value": "location",
-											"type": "field",
-											"alias": ""
-										}
-									]
-								}
-							],
-							"tags": {},
-							"groupBy": {
-								"time": "auto",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"fill": "null",
-							"rawText": null,
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
 					}
 				],
 				"axes": {
@@ -112,193 +312,21 @@
 				"type": "line",
 				"colors": [
 					{
-						"id": "9fb6af1c-b9d0-49fa-9ae8-89e7577c3e0f",
+						"id": "4c8cf080-c8ce-414c-bdc4-db27f80d3b97",
 						"type": "scale",
 						"hex": "#31C0F6",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "26510779-1aba-4e9c-8727-d3f1a0049537",
+						"id": "20b03b5e-84ac-49e4-a701-ff931c473678",
 						"type": "scale",
 						"hex": "#A500A5",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "3df85d19-adf9-48cd-b210-94efba8abbe2",
-						"type": "scale",
-						"hex": "#FF7E27",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": true
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.ESS.temperature.Air",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.ESS.temperature.M2",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.ESS.temperature.Truss",
-						"displayName": "",
-						"visible": true
-					}
-				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 2
-				},
-				"note": "",
-				"noteVisibility": "default",
-				"links": {
-					"self": "/chronograf/v1/dashboards/91/cells/59b0d472-c966-42ca-8c42-707174b5d8d2"
-				}
-			},
-			{
-				"i": "2ed866c6-0d61-4e59-a255-d3d46e92bee4",
-				"x": 6,
-				"y": 0,
-				"w": 6,
-				"h": 3,
-				"name": "AuxTel-ESS - ESSID 201 Humidity",
-				"queries": [
-					{
-						"query": "SELECT \"relativeHumidity\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.relativeHumidity\" WHERE salIndex = 201 and time > :dashboardTime: AND time < :upperDashboardTime:",
-						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": "SELECT \"relativeHumidity\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.relativeHumidity\" WHERE salIndex = 201 and time > :dashboardTime: AND time < :upperDashboardTime:",
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					},
-					{
-						"query": "SELECT \"temperature0\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 201 and time > :dashboardTime: AND time < :upperDashboardTime:",
-						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": "SELECT \"temperature0\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 201 and time > :dashboardTime: AND time < :upperDashboardTime:",
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					},
-					{
-						"query": "SELECT \"dewPoint\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.dewPoint\" WHERE salIndex = 201 and time > :dashboardTime: AND time < :upperDashboardTime:",
-						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": "SELECT \"dewPoint\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.dewPoint\" WHERE salIndex = 201 and time > :dashboardTime: AND time < :upperDashboardTime:",
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "line",
-				"colors": [
-					{
-						"id": "c781fa6a-7a81-4ec1-b22d-63a70c54e178",
-						"type": "scale",
-						"hex": "#31C0F6",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "724c7bb0-0032-42ac-a8f6-3d37be82a2ea",
-						"type": "scale",
-						"hex": "#A500A5",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "bc1536fb-047e-42ef-b99f-f8ef4801bfb3",
+						"id": "d19e5601-58c1-4e8e-8e06-946a83c5897e",
 						"type": "scale",
 						"hex": "#FF7E27",
 						"name": "Nineteen Eighty Four",
@@ -331,253 +359,19 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/91/cells/2ed866c6-0d61-4e59-a255-d3d46e92bee4"
+					"self": "/chronograf/v1/dashboards/168/cells/d1b5685f-80cb-4936-b9a6-1fb4cba9dc31"
 				}
 			},
 			{
-				"i": "5a9a1fe9-3dd9-41ae-a1b8-9c6bc6ccafb5",
-				"x": 0,
-				"y": 3,
-				"w": 6,
-				"h": 3,
-				"name": "AuxTel-ESS - ESSID 201 Air Pressure",
-				"queries": [
-					{
-						"query": "SELECT \"pressure0\" /100 as \"barometricPressure [mbar]\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.pressure\" WHERE salIndex = 201 and time > :dashboardTime: AND time < :upperDashboardTime: and \"pressure0\" / 100 > 710 and \"pressure0\" / 100 < 9000",
-						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": "SELECT \"pressure0\" /100 as \"barometricPressure [mbar]\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.pressure\" WHERE salIndex = 201 and time > :dashboardTime: AND time < :upperDashboardTime: and \"pressure0\" / 100 > 710 and \"pressure0\" / 100 < 9000",
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"720",
-							"745"
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "line",
-				"colors": [
-					{
-						"id": "c781fa6a-7a81-4ec1-b22d-63a70c54e178",
-						"type": "scale",
-						"hex": "#31C0F6",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "724c7bb0-0032-42ac-a8f6-3d37be82a2ea",
-						"type": "scale",
-						"hex": "#A500A5",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "bc1536fb-047e-42ef-b99f-f8ef4801bfb3",
-						"type": "scale",
-						"hex": "#FF7E27",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": true
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					}
-				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 2
-				},
-				"note": "",
-				"noteVisibility": "default",
-				"links": {
-					"self": "/chronograf/v1/dashboards/91/cells/5a9a1fe9-3dd9-41ae-a1b8-9c6bc6ccafb5"
-				}
-			},
-			{
-				"i": "f04c7468-340f-4efe-a088-b2b11e0b4eed",
-				"x": 6,
-				"y": 3,
-				"w": 6,
-				"h": 3,
-				"name": "M1 Mirror Temperature",
-				"queries": [
-					{
-						"query": "SELECT \"temperature0\" as \"M1 sensor 1\", \"temperature1\" as \"M1 sensor 2\", \"temperature2\" as \"M1 sensor 3\", \"temperature3\" as \"M1 sensor 4\", \"temperature4\" as \"M1 sensor 5\", \"temperature5\" as \"M1 sensor 6\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 201 AND \"sensorName\" = 'AuxTel-ESS03' AND time > :dashboardTime: AND time < :upperDashboardTime:",
-						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": "SELECT \"temperature0\" as \"M1 sensor 1\", \"temperature1\" as \"M1 sensor 2\", \"temperature2\" as \"M1 sensor 3\", \"temperature3\" as \"M1 sensor 4\", \"temperature4\" as \"M1 sensor 5\", \"temperature5\" as \"M1 sensor 6\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 201 AND \"sensorName\" = 'AuxTel-ESS03' AND time > :dashboardTime: AND time < :upperDashboardTime:",
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "line",
-				"colors": [
-					{
-						"id": "1a114648-b478-45d0-bfa5-15991e43fa5c",
-						"type": "scale",
-						"hex": "#31C0F6",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "457d8272-94f7-4946-b2fd-54e42858b850",
-						"type": "scale",
-						"hex": "#A500A5",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					},
-					{
-						"id": "fb1b9322-b609-4cf8-bace-ca20acf4b234",
-						"type": "scale",
-						"hex": "#FF7E27",
-						"name": "Nineteen Eighty Four",
-						"value": "0"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": true
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					}
-				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 2
-				},
-				"note": "",
-				"noteVisibility": "default",
-				"links": {
-					"self": "/chronograf/v1/dashboards/91/cells/f04c7468-340f-4efe-a088-b2b11e0b4eed"
-				}
-			},
-			{
-				"i": "0befac71-177e-40ef-85f9-53f08a2a2f76",
+				"i": "4040ab9b-592f-4aca-8804-6144f3c15c80",
 				"x": 0,
 				"y": 6,
-				"w": 6,
-				"h": 3,
-				"name": "Anemometer Sonic Temperature",
+				"w": 12,
+				"h": 2,
+				"name": "Sonic Temperature Std Dev",
 				"queries": [
 					{
-						"query": "SELECT mean(\"sonicTemperature\") AS \"mean_sonicTemperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.airTurbulence\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"sonicTemperatureStdDev\") AS \"mean_sonicTemperatureStdDev\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.airTurbulence\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.ESS.airTurbulence",
@@ -586,10 +380,10 @@
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "mean_sonicTemperature",
+									"alias": "mean_sonicTemperatureStdDev",
 									"args": [
 										{
-											"value": "sonicTemperature",
+											"value": "sonicTemperatureStdDev",
 											"type": "field",
 											"alias": ""
 										}
@@ -649,21 +443,21 @@
 				"type": "line",
 				"colors": [
 					{
-						"id": "9fb6af1c-b9d0-49fa-9ae8-89e7577c3e0f",
+						"id": "cb90228c-91f9-46fd-b110-613bd9847412",
 						"type": "scale",
 						"hex": "#31C0F6",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "26510779-1aba-4e9c-8727-d3f1a0049537",
+						"id": "9bd03158-1948-45ef-9321-31ed970df151",
 						"type": "scale",
 						"hex": "#A500A5",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "3df85d19-adf9-48cd-b210-94efba8abbe2",
+						"id": "9b692be8-ed67-458c-954b-a267e07d3974",
 						"type": "scale",
 						"hex": "#FF7E27",
 						"name": "Nineteen Eighty Four",
@@ -696,16 +490,540 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/91/cells/0befac71-177e-40ef-85f9-53f08a2a2f76"
+					"self": "/chronograf/v1/dashboards/168/cells/4040ab9b-592f-4aca-8804-6144f3c15c80"
 				}
 			},
 			{
-				"i": "f3748ef2-e19a-4ab6-beac-be0547484725",
-				"x": 6,
-				"y": 6,
-				"w": 6,
-				"h": 3,
-				"name": "3D Anemometer",
+				"i": "0e982c8b-e183-4183-93a3-c92a12ec3a41",
+				"x": 0,
+				"y": 12,
+				"w": 12,
+				"h": 2,
+				"name": "DIMM FWHM",
+				"queries": [
+					{
+						"query": "SELECT mean(\"fwhm\") AS \"mean_fwhm\" FROM \"efd\".\"autogen\".\"lsst.sal.DIMM.logevent_dimmMeasurement\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.DIMM.logevent_dimmMeasurement",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_fwhm",
+									"args": [
+										{
+											"value": "fwhm",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "cb90228c-91f9-46fd-b110-613bd9847412",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9bd03158-1948-45ef-9321-31ed970df151",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9b692be8-ed67-458c-954b-a267e07d3974",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/168/cells/0e982c8b-e183-4183-93a3-c92a12ec3a41"
+				}
+			},
+			{
+				"i": "cab1a137-46fb-4013-8800-1093e991b9a9",
+				"x": 0,
+				"y": 8,
+				"w": 12,
+				"h": 2,
+				"name": "AT elevation",
+				"queries": [
+					{
+						"query": "SELECT mean(\"elevation0\") AS \"mean_elevation0\" FROM \"efd\".\"autogen\".\"lsst.sal.ATMCS.trajectory\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ATMCS.trajectory",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_elevation0",
+									"args": [
+										{
+											"value": "elevation0",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "cb90228c-91f9-46fd-b110-613bd9847412",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9bd03158-1948-45ef-9321-31ed970df151",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9b692be8-ed67-458c-954b-a267e07d3974",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/168/cells/cab1a137-46fb-4013-8800-1093e991b9a9"
+				}
+			},
+			{
+				"i": "d1ac34a0-f323-48a2-a48c-60b124534bb4",
+				"x": 0,
+				"y": 10,
+				"w": 12,
+				"h": 2,
+				"name": "AT azimuth",
+				"queries": [
+					{
+						"query": "SELECT mean(\"azimuth0\") AS \"mean_azimuth0\" FROM \"efd\".\"autogen\".\"lsst.sal.ATMCS.trajectory\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ATMCS.trajectory",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_azimuth0",
+									"args": [
+										{
+											"value": "azimuth0",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "cb90228c-91f9-46fd-b110-613bd9847412",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9bd03158-1948-45ef-9321-31ed970df151",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9b692be8-ed67-458c-954b-a267e07d3974",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/168/cells/d1ac34a0-f323-48a2-a48c-60b124534bb4"
+				}
+			},
+			{
+				"i": "4328b79f-9075-4295-9925-22fbb9b508e9",
+				"x": 0,
+				"y": 14,
+				"w": 12,
+				"h": 2,
+				"name": "External wind direction 2min avg",
+				"queries": [
+					{
+						"query": "SELECT mean(\"avg2M\") AS \"mean_avg2M\" FROM \"efd\".\"autogen\".\"lsst.sal.WeatherStation.windDirection\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.WeatherStation.windDirection",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_avg2M",
+									"args": [
+										{
+											"value": "avg2M",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "cb90228c-91f9-46fd-b110-613bd9847412",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9bd03158-1948-45ef-9321-31ed970df151",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9b692be8-ed67-458c-954b-a267e07d3974",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/168/cells/4328b79f-9075-4295-9925-22fbb9b508e9"
+				}
+			},
+			{
+				"i": "40009ef3-f8f9-4ab4-8bea-e68f3d47d571",
+				"x": 0,
+				"y": 16,
+				"w": 12,
+				"h": 2,
+				"name": "Anemometer 3 axis ",
 				"queries": [
 					{
 						"query": "SELECT mean(\"speed0\") AS \"mean_speed0\", mean(\"speed1\") AS \"mean_speed1\", mean(\"speed2\") AS \"mean_speed2\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.airTurbulence\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
@@ -804,21 +1122,21 @@
 				"type": "line",
 				"colors": [
 					{
-						"id": "147d13b7-8696-4ba6-b0c6-8cfc85c8488e",
+						"id": "cb90228c-91f9-46fd-b110-613bd9847412",
 						"type": "scale",
 						"hex": "#31C0F6",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "35f6c44b-3733-4ac8-82b4-b303372b7c6d",
+						"id": "9bd03158-1948-45ef-9321-31ed970df151",
 						"type": "scale",
 						"hex": "#A500A5",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "2b3c95c7-9731-46ff-a450-904cb7357023",
+						"id": "9b692be8-ed67-458c-954b-a267e07d3974",
 						"type": "scale",
 						"hex": "#FF7E27",
 						"name": "Nineteen Eighty Four",
@@ -851,41 +1169,44 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/91/cells/f3748ef2-e19a-4ab6-beac-be0547484725"
+					"self": "/chronograf/v1/dashboards/168/cells/40009ef3-f8f9-4ab4-8bea-e68f3d47d571"
 				}
 			},
 			{
-				"i": "5df6833d-bfaa-456f-8ec9-a077d514edca",
+				"i": "61646403-cc65-480c-a191-85f94b5abc1c",
 				"x": 0,
-				"y": 9,
-				"w": 6,
-				"h": 3,
-				"name": "2D Anemometer Direction",
+				"y": 0,
+				"w": 12,
+				"h": 2,
+				"name": "Sonic temperature",
 				"queries": [
 					{
-						"query": "SELECT \"direction\", \"directionStdDev\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.airFlow\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT mean(\"sonicTemperature\") AS \"mean_sonicTemperature\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.airTurbulence\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ESS.airFlow",
+							"measurement": "lsst.sal.ESS.airTurbulence",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "direction",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "directionStdDev",
-									"type": "field",
-									"alias": ""
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_sonicTemperature",
+									"args": [
+										{
+											"value": "sonicTemperature",
+											"type": "field",
+											"alias": ""
+										}
+									]
 								}
 							],
 							"tags": {},
 							"groupBy": {
-								"time": "",
+								"time": "auto",
 								"tags": []
 							},
 							"areTagsAccepted": false,
+							"fill": "null",
 							"rawText": null,
 							"range": null,
 							"shifts": null
@@ -932,21 +1253,21 @@
 				"type": "line",
 				"colors": [
 					{
-						"id": "93750f2a-fe28-4782-a047-3a0494a7a526",
+						"id": "cb90228c-91f9-46fd-b110-613bd9847412",
 						"type": "scale",
 						"hex": "#31C0F6",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "274f2d86-8bbb-457d-8415-c52665244824",
+						"id": "9bd03158-1948-45ef-9321-31ed970df151",
 						"type": "scale",
 						"hex": "#A500A5",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "2f88daaa-d324-411b-9228-fae2d6bc6060",
+						"id": "9b692be8-ed67-458c-954b-a267e07d3974",
 						"type": "scale",
 						"hex": "#FF7E27",
 						"name": "Nineteen Eighty Four",
@@ -979,46 +1300,44 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/91/cells/5df6833d-bfaa-456f-8ec9-a077d514edca"
+					"self": "/chronograf/v1/dashboards/168/cells/61646403-cc65-480c-a191-85f94b5abc1c"
 				}
 			},
 			{
-				"i": "1f70ecda-7b59-4395-873e-5339661aa630",
-				"x": 6,
-				"y": 9,
-				"w": 6,
-				"h": 3,
-				"name": "2D Anemometer Speed",
+				"i": "9b1a1694-7c02-40a8-a51f-44529dc82c2f",
+				"x": 0,
+				"y": 20,
+				"w": 12,
+				"h": 2,
+				"name": "Vent airspeed",
 				"queries": [
 					{
-						"query": "SELECT \"maxSpeed\", \"speed\", \"speedStdDev\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.airFlow\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT mean(\"speed\") AS \"mean_speed\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.airFlow\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
 							"measurement": "lsst.sal.ESS.airFlow",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
-									"value": "maxSpeed",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "speed",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "speedStdDev",
-									"type": "field",
-									"alias": ""
+									"value": "mean",
+									"type": "func",
+									"alias": "mean_speed",
+									"args": [
+										{
+											"value": "speed",
+											"type": "field",
+											"alias": ""
+										}
+									]
 								}
 							],
 							"tags": {},
 							"groupBy": {
-								"time": "",
+								"time": "auto",
 								"tags": []
 							},
 							"areTagsAccepted": false,
+							"fill": "null",
 							"rawText": null,
 							"range": null,
 							"shifts": null
@@ -1058,28 +1377,28 @@
 						"label": "",
 						"prefix": "",
 						"suffix": "",
-						"base": "10",
-						"scale": "linear"
+						"base": "",
+						"scale": ""
 					}
 				},
 				"type": "line",
 				"colors": [
 					{
-						"id": "93750f2a-fe28-4782-a047-3a0494a7a526",
+						"id": "b0386c24-3d9b-4ca5-98d1-f142e589a4fe",
 						"type": "scale",
 						"hex": "#31C0F6",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "274f2d86-8bbb-457d-8415-c52665244824",
+						"id": "ac7030eb-f6f2-4e15-9ce1-2147e808c4b5",
 						"type": "scale",
 						"hex": "#A500A5",
 						"name": "Nineteen Eighty Four",
 						"value": "0"
 					},
 					{
-						"id": "2f88daaa-d324-411b-9228-fae2d6bc6060",
+						"id": "1fbbe2c4-6ca0-4bf4-a3ac-06c31c54c5a9",
 						"type": "scale",
 						"hex": "#FF7E27",
 						"name": "Nineteen Eighty Four",
@@ -1112,17 +1431,17 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/91/cells/1f70ecda-7b59-4395-873e-5339661aa630"
+					"self": "/chronograf/v1/dashboards/168/cells/9b1a1694-7c02-40a8-a51f-44529dc82c2f"
 				}
 			}
 		],
 		"templates": [],
-		"name": "AuxTel Environment",
+		"name": "Trial_IQ_Panel",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/91",
-			"cells": "/chronograf/v1/dashboards/91/cells",
-			"templates": "/chronograf/v1/dashboards/91/templates"
+			"self": "/chronograf/v1/dashboards/168",
+			"cells": "/chronograf/v1/dashboards/168/cells",
+			"templates": "/chronograf/v1/dashboards/168/templates"
 		}
 	}
 }

@@ -466,7 +466,7 @@
 			{
 				"i": "841c92a7-a90d-4c99-b732-6f6383f31586",
 				"x": 6,
-				"y": 2,
+				"y": 5,
 				"w": 6,
 				"h": 3,
 				"name": "InfluxDB write errors",
@@ -597,7 +597,7 @@
 			{
 				"i": "6f26a648-22df-447c-87aa-0f8c93aaaa91",
 				"x": 6,
-				"y": 5,
+				"y": 2,
 				"w": 6,
 				"h": 3,
 				"name": "Queries per minute",
@@ -1093,8 +1093,8 @@
 			},
 			{
 				"i": "21b68216-be7e-4281-a2ad-4ed89c3da8fc",
-				"x": 0,
-				"y": 11,
+				"x": 6,
+				"y": 8,
 				"w": 6,
 				"h": 3,
 				"name": "diskBytes/s (_internal.monitor.shard)",
