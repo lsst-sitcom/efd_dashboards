@@ -5,6 +5,10 @@
 			"1": {
 				"name": "Sasquatch InfluxDB",
 				"link": "/chronograf/v1/sources/1"
+			},
+			"2": {
+				"name": "InfluxDB2",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},
@@ -126,7 +130,7 @@
 				"timeFormat": "MM/DD/YYYY HH:mm:ss",
 				"decimalPlaces": {
 					"isEnforced": true,
-					"digits": 2
+					"digits": 0
 				},
 				"note": "",
 				"noteVisibility": "default",

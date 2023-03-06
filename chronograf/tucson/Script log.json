@@ -5,6 +5,10 @@
 			"1": {
 				"name": "Sasquatch InfluxDB",
 				"link": "/chronograf/v1/sources/1"
+			},
+			"2": {
+				"name": "InfluxDB2",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},

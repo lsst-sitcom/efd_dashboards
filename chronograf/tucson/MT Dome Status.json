@@ -13,18 +13,18 @@
 		}
 	},
 	"dashboard": {
-		"id": "49",
+		"id": "61",
 		"cells": [
 			{
-				"i": "5cf81ef2-d9ca-4d3b-88d5-bf8d373a842a",
-				"x": 5,
-				"y": 7,
-				"w": 5,
+				"i": "88cb7943-25ec-4948-afef-0fd824878ff3",
+				"x": 4,
+				"y": 0,
+				"w": 4,
 				"h": 4,
-				"name": "Untitled Graph",
+				"name": "Door 2 Position",
 				"queries": [
 					{
-						"query": "SELECT \"rangeValue\" FROM \"efd\".\"autogen\".\"lsst.sal.Electrometer.logevent_measureRange\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND ElectrometerID = 3",
+						"query": "SELECT \"positionActual0\" FROM \"efd\".\"autogen\".\"lsst.sal.MTDome.apertureShutter\" ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -36,7 +36,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"rangeValue\" FROM \"efd\".\"autogen\".\"lsst.sal.Electrometer.logevent_measureRange\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND ElectrometerID = 3",
+							"rawText": "SELECT \"positionActual0\" FROM \"efd\".\"autogen\".\"lsst.sal.MTDome.apertureShutter\" ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -79,14 +79,21 @@
 						"scale": "linear"
 					}
 				},
-				"type": "table",
+				"type": "gauge",
 				"colors": [
 					{
-						"id": "base",
-						"type": "text",
+						"id": "0",
+						"type": "min",
 						"hex": "#00C9FF",
 						"name": "laser",
-						"value": "-1000000000000000000"
+						"value": "0"
+					},
+					{
+						"id": "1",
+						"type": "max",
+						"hex": "#9394FF",
+						"name": "comet",
+						"value": "6000"
 					}
 				],
 				"legend": {},
@@ -103,119 +110,6 @@
 				"fieldOptions": [
 					{
 						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.Electrometer.logevent_measureRange.rangeValue",
-						"displayName": "",
-						"visible": true
-					}
-				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 12
-				},
-				"note": "",
-				"noteVisibility": "default",
-				"links": {
-					"self": "/chronograf/v1/dashboards/49/cells/5cf81ef2-d9ca-4d3b-88d5-bf8d373a842a"
-				}
-			},
-			{
-				"i": "ae4f0720-b517-4719-949d-ef310bc138d8",
-				"x": 5,
-				"y": 3,
-				"w": 5,
-				"h": 4,
-				"name": "Untitled Graph",
-				"queries": [
-					{
-						"query": "SELECT \"intTime\" FROM \"efd\".\"autogen\".\"lsst.sal.Electrometer.logevent_integrationTime\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND ElectrometerID = 3",
-						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": "SELECT \"intTime\" FROM \"efd\".\"autogen\".\"lsst.sal.Electrometer.logevent_integrationTime\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND ElectrometerID = 3",
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "table",
-				"colors": [
-					{
-						"id": "base",
-						"type": "text",
-						"hex": "#00C9FF",
-						"name": "laser",
-						"value": "-1000000000000000000"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": true
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.Electrometer.logevent_integrationTime.intTime",
 						"displayName": "",
 						"visible": true
 					}
@@ -228,19 +122,19 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/49/cells/ae4f0720-b517-4719-949d-ef310bc138d8"
+					"self": "/chronograf/v1/dashboards/61/cells/88cb7943-25ec-4948-afef-0fd824878ff3"
 				}
 			},
 			{
-				"i": "3b56bcae-1fc9-4b8b-9be2-3af31257b5c4",
-				"x": 0,
-				"y": 7,
-				"w": 5,
+				"i": "6ea52685-e5ed-49aa-b28d-c7a9e7ecdb37",
+				"x": 8,
+				"y": 0,
+				"w": 4,
 				"h": 4,
-				"name": "Untitled Graph",
+				"name": "Azimuth Position",
 				"queries": [
 					{
-						"query": "SELECT \"mode\" FROM \"efd\".\"autogen\".\"lsst.sal.Electrometer.logevent_measureType\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND ElectrometerID = 3",
+						"query": "SELECT \"positionActual\" FROM \"efd\".\"autogen\".\"lsst.sal.MTDome.azimuth\" ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -252,7 +146,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"mode\" FROM \"efd\".\"autogen\".\"lsst.sal.Electrometer.logevent_measureType\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND ElectrometerID = 3",
+							"rawText": "SELECT \"positionActual\" FROM \"efd\".\"autogen\".\"lsst.sal.MTDome.azimuth\" ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -295,14 +189,21 @@
 						"scale": "linear"
 					}
 				},
-				"type": "table",
+				"type": "gauge",
 				"colors": [
 					{
-						"id": "base",
-						"type": "text",
+						"id": "0",
+						"type": "min",
 						"hex": "#00C9FF",
 						"name": "laser",
-						"value": "-1000000000000000000"
+						"value": "0"
+					},
+					{
+						"id": "1",
+						"type": "max",
+						"hex": "#9394FF",
+						"name": "comet",
+						"value": "360"
 					}
 				],
 				"legend": {},
@@ -321,11 +222,6 @@
 						"internalName": "time",
 						"displayName": "",
 						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.Electrometer.logevent_measureType.mode",
-						"displayName": "",
-						"visible": true
 					}
 				],
 				"timeFormat": "MM/DD/YYYY HH:mm:ss",
@@ -336,19 +232,19 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/49/cells/3b56bcae-1fc9-4b8b-9be2-3af31257b5c4"
+					"self": "/chronograf/v1/dashboards/61/cells/6ea52685-e5ed-49aa-b28d-c7a9e7ecdb37"
 				}
 			},
 			{
-				"i": "f8ea506d-5963-41e7-922c-25d52f7df20e",
-				"x": 0,
-				"y": 3,
-				"w": 5,
+				"i": "8abb3073-3367-4898-9ea1-b6d18ac47f8d",
+				"x": 4,
+				"y": 4,
+				"w": 4,
 				"h": 4,
-				"name": "Untitled Graph",
+				"name": "Light/Wind Screen Position",
 				"queries": [
 					{
-						"query": "SELECT \"activateAverageFilter\", \"activateFilter\", \"activateMedianFilter\" FROM \"efd\".\"autogen\".\"lsst.sal.Electrometer.logevent_digitalFilterChange\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND ElectrometerID = 3",
+						"query": "SELECT \"positionActual\" FROM \"efd\".\"autogen\".\"lsst.sal.MTDome.lightWindScreen\" ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -360,7 +256,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"activateAverageFilter\", \"activateFilter\", \"activateMedianFilter\" FROM \"efd\".\"autogen\".\"lsst.sal.Electrometer.logevent_digitalFilterChange\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND ElectrometerID = 3",
+							"rawText": "SELECT \"positionActual\" FROM \"efd\".\"autogen\".\"lsst.sal.MTDome.lightWindScreen\" ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -403,14 +299,21 @@
 						"scale": "linear"
 					}
 				},
-				"type": "table",
+				"type": "gauge",
 				"colors": [
 					{
-						"id": "base",
-						"type": "text",
+						"id": "0",
+						"type": "min",
 						"hex": "#00C9FF",
 						"name": "laser",
-						"value": "-1000000000000000000"
+						"value": "0"
+					},
+					{
+						"id": "1",
+						"type": "max",
+						"hex": "#9394FF",
+						"name": "comet",
+						"value": "100"
 					}
 				],
 				"legend": {},
@@ -429,21 +332,6 @@
 						"internalName": "time",
 						"displayName": "",
 						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.Electrometer.logevent_digitalFilterChange.activateAverageFilter",
-						"displayName": "activateAverageFilter",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.Electrometer.logevent_digitalFilterChange.activateFilter",
-						"displayName": "activateFilter",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.Electrometer.logevent_digitalFilterChange.activateMedianFilter",
-						"displayName": "activateMedianFilter",
-						"visible": true
 					}
 				],
 				"timeFormat": "MM/DD/YYYY HH:mm:ss",
@@ -454,19 +342,19 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/49/cells/f8ea506d-5963-41e7-922c-25d52f7df20e"
+					"self": "/chronograf/v1/dashboards/61/cells/8abb3073-3367-4898-9ea1-b6d18ac47f8d"
 				}
 			},
 			{
-				"i": "4bc0b6c2-c548-4d7f-aba9-cbacf577bbbd",
+				"i": "2dd795cb-3df0-49ce-af77-50c37f514303",
 				"x": 0,
 				"y": 0,
-				"w": 12,
-				"h": 3,
-				"name": "Untitled Graph",
+				"w": 4,
+				"h": 4,
+				"name": "Door 1 Position",
 				"queries": [
 					{
-						"query": "SELECT \"message\" FROM \"efd\".\"autogen\".\"lsst.sal.Electrometer.logevent_logMessage\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND ElectrometerID = 3",
+						"query": "SELECT \"positionActual0\" FROM \"efd\".\"autogen\".\"lsst.sal.MTDome.apertureShutter\" ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -478,7 +366,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"message\" FROM \"efd\".\"autogen\".\"lsst.sal.Electrometer.logevent_logMessage\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND ElectrometerID = 3",
+							"rawText": "SELECT \"positionActual0\" FROM \"efd\".\"autogen\".\"lsst.sal.MTDome.apertureShutter\" ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -521,14 +409,21 @@
 						"scale": "linear"
 					}
 				},
-				"type": "table",
+				"type": "gauge",
 				"colors": [
 					{
-						"id": "base",
-						"type": "text",
+						"id": "0",
+						"type": "min",
 						"hex": "#00C9FF",
 						"name": "laser",
-						"value": "-1000000000000000000"
+						"value": "0"
+					},
+					{
+						"id": "1",
+						"type": "max",
+						"hex": "#9394FF",
+						"name": "comet",
+						"value": "100"
 					}
 				],
 				"legend": {},
@@ -547,11 +442,6 @@
 						"internalName": "time",
 						"displayName": "",
 						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.Electrometer.logevent_logMessage.message",
-						"displayName": "",
-						"visible": true
 					}
 				],
 				"timeFormat": "MM/DD/YYYY HH:mm:ss",
@@ -562,17 +452,17 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/49/cells/4bc0b6c2-c548-4d7f-aba9-cbacf577bbbd"
+					"self": "/chronograf/v1/dashboards/61/cells/2dd795cb-3df0-49ce-af77-50c37f514303"
 				}
 			}
 		],
 		"templates": [],
-		"name": "Electrometer 3",
+		"name": "MT Dome Status",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/49",
-			"cells": "/chronograf/v1/dashboards/49/cells",
-			"templates": "/chronograf/v1/dashboards/49/templates"
+			"self": "/chronograf/v1/dashboards/61",
+			"cells": "/chronograf/v1/dashboards/61/cells",
+			"templates": "/chronograf/v1/dashboards/61/templates"
 		}
 	}
 }

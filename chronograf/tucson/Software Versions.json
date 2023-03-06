@@ -5,6 +5,10 @@
 			"1": {
 				"name": "Sasquatch InfluxDB",
 				"link": "/chronograf/v1/sources/1"
+			},
+			"2": {
+				"name": "InfluxDB2",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},
@@ -235,6 +239,26 @@
 						"selected": false
 					},
 					{
+						"value": "GCHeaderService",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "GenericCamera",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "LaserTracker",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTAirCompressor",
+						"type": "csv",
+						"selected": false
+					},
+					{
 						"value": "MTAOS",
 						"type": "csv",
 						"selected": false
@@ -306,6 +330,11 @@
 					},
 					{
 						"value": "Watcher",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "WeatherForecast",
 						"type": "csv",
 						"selected": false
 					},

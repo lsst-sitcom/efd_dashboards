@@ -5,6 +5,10 @@
 			"1": {
 				"name": "Sasquatch InfluxDB",
 				"link": "/chronograf/v1/sources/1"
+			},
+			"2": {
+				"name": "InfluxDB2",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},
@@ -750,10 +754,10 @@
 				"name": "balance forces",
 				"queries": [
 					{
-						"query": "SELECT mean(\"zForces0\") AS \"mean_zForces0\", mean(\"xForces4\") AS \"mean_xForces4\", mean(\"xForces9\") AS \"mean_xForces9\", mean(\"yForces18\") AS \"mean_yForces18\", mean(\"yForces41\") AS \"mean_yForces41\", mean(\"zForces118\") AS \"mean_zForces118\", mean(\"zForces58\") AS \"mean_zForces58\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM1M3.logevent_appliedBalanceForces\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"zForces0\") AS \"mean_zForces0\", mean(\"xForces4\") AS \"mean_xForces4\", mean(\"xForces9\") AS \"mean_xForces9\", mean(\"yForces18\") AS \"mean_yForces18\", mean(\"yForces41\") AS \"mean_yForces41\", mean(\"zForces118\") AS \"mean_zForces118\", mean(\"zForces58\") AS \"mean_zForces58\" FROM \"efd\".\"autogen\".\"lsst.sal.MTM1M3.appliedBalanceForces\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.MTM1M3.logevent_appliedBalanceForces",
+							"measurement": "lsst.sal.MTM1M3.appliedBalanceForces",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{

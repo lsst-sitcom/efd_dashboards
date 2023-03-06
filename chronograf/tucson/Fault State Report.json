@@ -5,6 +5,10 @@
 			"1": {
 				"name": "Sasquatch InfluxDB",
 				"link": "/chronograf/v1/sources/1"
+			},
+			"2": {
+				"name": "InfluxDB2",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},
@@ -140,11 +144,6 @@
 						"selected": true
 					},
 					{
-						"value": "ATArchiver",
-						"type": "csv",
-						"selected": false
-					},
-					{
 						"value": "ATCamera",
 						"type": "csv",
 						"selected": false
@@ -185,12 +184,12 @@
 						"selected": false
 					},
 					{
-						"value": "ATSpectrograph",
+						"value": "ATOODS",
 						"type": "csv",
 						"selected": false
 					},
 					{
-						"value": "CCArchiver",
+						"value": "ATSpectrograph",
 						"type": "csv",
 						"selected": false
 					},
@@ -201,6 +200,11 @@
 					},
 					{
 						"value": "CCHeaderService",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "CCOODS",
 						"type": "csv",
 						"selected": false
 					},
@@ -216,6 +220,11 @@
 					},
 					{
 						"value": "Electrometer",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "LaserTracker",
 						"type": "csv",
 						"selected": false
 					},
@@ -291,6 +300,11 @@
 					},
 					{
 						"value": "Watcher",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "WeatherForecast",
 						"type": "csv",
 						"selected": false
 					},

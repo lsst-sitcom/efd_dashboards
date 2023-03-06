@@ -13,10 +13,10 @@
 		}
 	},
 	"dashboard": {
-		"id": "3",
+		"id": "58",
 		"cells": [
 			{
-				"i": "19a4d96c-867d-4f28-b18e-66e226f5ed54",
+				"i": "a6e96946-0590-4171-9230-18b3bbe428cc",
 				"x": 0,
 				"y": 0,
 				"w": 9,
@@ -40,7 +40,7 @@
 							"range": null,
 							"shifts": null
 						},
-						"source": "",
+						"source": "/chronograf/v1/sources/1",
 						"type": "influxql"
 					}
 				],
@@ -104,64 +104,38 @@
 					"isEnforced": true,
 					"digits": 2
 				},
-				"note": "Last images ingested into the OODS.\n\nSelect an appropriate time window (e.g. `Past 24h`)\n\n",
+				"note": "Last header producer by the HS.\n\nSelect an appropriate time window (e.g. `Past 24h`)\n\n",
 				"noteVisibility": "showWhenNoData",
 				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/19a4d96c-867d-4f28-b18e-66e226f5ed54"
+					"self": "/chronograf/v1/dashboards/58/cells/a6e96946-0590-4171-9230-18b3bbe428cc"
 				}
 			},
 			{
-				"i": "85b01202-665f-409a-a216-0c9671ec0364",
+				"i": "4dcd1426-d2bd-4525-81a7-900040c5f121",
 				"x": 0,
 				"y": 2,
 				"w": 11,
 				"h": 6,
-				"name": "Ingest sequence",
+				"name": "Header sequence",
 				"queries": [
 					{
-						"query": "SELECT \"obsid\", \"statusCode\", \"description\", \"raft\", \"sensor\" FROM \"efd\".\"autogen\".\"lsst.sal.CCOODS.logevent_imageInOODS\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:",
+						"query": "SELECT \"url\" FROM \"efd\".\"autogen\".\"lsst.sal.GCHeaderService.logevent_largeFileObjectAvailable\" WHERE salIndex = :salindex: AND time > :dashboardTime: AND time < :upperDashboardTime:",
 						"queryConfig": {
-							"database": "efd",
-							"measurement": "lsst.sal.CCOODS.logevent_imageInOODS",
-							"retentionPolicy": "autogen",
-							"fields": [
-								{
-									"value": "obsid",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "statusCode",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "description",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "raft",
-									"type": "field",
-									"alias": ""
-								},
-								{
-									"value": "sensor",
-									"type": "field",
-									"alias": ""
-								}
-							],
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
 							"tags": {},
 							"groupBy": {
 								"time": "",
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": null,
+							"rawText": "SELECT \"url\" FROM \"efd\".\"autogen\".\"lsst.sal.GCHeaderService.logevent_largeFileObjectAvailable\" WHERE salIndex = :salindex: AND time > :dashboardTime: AND time < :upperDashboardTime:",
 							"range": null,
 							"shifts": null
 						},
-						"source": "/chronograf/v1/sources/1",
+						"source": "",
 						"type": "influxql"
 					}
 				],
@@ -228,28 +202,8 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.CCArchiver.logevent_imageInOODS.obsid",
-						"displayName": "Obs ID",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.CCArchiver.logevent_imageInOODS.raft",
-						"displayName": "Raft",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.CCArchiver.logevent_imageInOODS.sensor",
-						"displayName": "Sensor",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.CCArchiver.logevent_imageInOODS.statusCode",
-						"displayName": "Status Code",
-						"visible": true
-					},
-					{
-						"internalName": "lsst.sal.CCArchiver.logevent_imageInOODS.description",
-						"displayName": "Description",
+						"internalName": "lsst.sal.GCHeaderService.logevent_largeFileObjectAvailable.url",
+						"displayName": "",
 						"visible": true
 					}
 				],
@@ -261,17 +215,41 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/85b01202-665f-409a-a216-0c9671ec0364"
+					"self": "/chronograf/v1/dashboards/58/cells/4dcd1426-d2bd-4525-81a7-900040c5f121"
 				}
 			}
 		],
-		"templates": [],
-		"name": "ComCam OODS Ingest Status",
+		"templates": [
+			{
+				"tempVar": ":salindex:",
+				"values": [
+					{
+						"value": "1",
+						"type": "csv",
+						"selected": true
+					}
+				],
+				"id": "ab7adaa6-20a9-4cb6-b1eb-af2232af56f2",
+				"type": "csv",
+				"label": "",
+				"query": {
+					"influxql": "",
+					"measurement": "",
+					"tagKey": "",
+					"fieldKey": ""
+				},
+				"sourceID": "dynamic",
+				"links": {
+					"self": "/chronograf/v1/dashboards/58/templates/ab7adaa6-20a9-4cb6-b1eb-af2232af56f2"
+				}
+			}
+		],
+		"name": "GenericCamera Header Status",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/3",
-			"cells": "/chronograf/v1/dashboards/3/cells",
-			"templates": "/chronograf/v1/dashboards/3/templates"
+			"self": "/chronograf/v1/dashboards/58",
+			"cells": "/chronograf/v1/dashboards/58/cells",
+			"templates": "/chronograf/v1/dashboards/58/templates"
 		}
 	}
 }

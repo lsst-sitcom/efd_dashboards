@@ -5,6 +5,10 @@
 			"1": {
 				"name": "Sasquatch InfluxDB",
 				"link": "/chronograf/v1/sources/1"
+			},
+			"2": {
+				"name": "InfluxDB2",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},
@@ -20,7 +24,7 @@
 				"name": "Applied",
 				"queries": [
 					{
-						"query": "SELECT \"configurations\", \"version\", \"url\", \"otherInfo\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_configurationApplied\" ORDER BY time DESC LIMIT 10",
+						"query": "SELECT \"configurations\", \"version\", \"url\", \"otherInfo\", \"schemaVersion\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_configurationApplied\" ORDER BY time DESC LIMIT 10",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -32,7 +36,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"configurations\", \"version\", \"url\", \"otherInfo\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_configurationApplied\" ORDER BY time DESC LIMIT 10",
+							"rawText": "SELECT \"configurations\", \"version\", \"url\", \"otherInfo\", \"schemaVersion\" FROM \"efd\".\"autogen\".\"lsst.sal.:CSCList:.logevent_configurationApplied\" ORDER BY time DESC LIMIT 10",
 							"range": null,
 							"shifts": null
 						},
@@ -103,23 +107,28 @@
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.Watcher.logevent_configurationApplied.configurations",
-						"displayName": "configurations",
+						"internalName": "lsst.sal.ATAOS.logevent_configurationApplied.configurations",
+						"displayName": "",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.Watcher.logevent_configurationApplied.version",
-						"displayName": "version",
+						"internalName": "lsst.sal.ATAOS.logevent_configurationApplied.otherInfo",
+						"displayName": "",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.Watcher.logevent_configurationApplied.url",
-						"displayName": "url",
+						"internalName": "lsst.sal.ATAOS.logevent_configurationApplied.url",
+						"displayName": "",
 						"visible": true
 					},
 					{
-						"internalName": "lsst.sal.Watcher.logevent_configurationApplied.otherInfo",
-						"displayName": "otherInfo",
+						"internalName": "lsst.sal.ATAOS.logevent_configurationApplied.version",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ATAOS.logevent_configurationApplied.schemaVersion",
+						"displayName": "",
 						"visible": true
 					}
 				],
@@ -185,6 +194,16 @@
 						"selected": false
 					},
 					{
+						"value": "LaserTracker",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "MTAirCompressor",
+						"type": "csv",
+						"selected": false
+					},
+					{
 						"value": "MTAOS",
 						"type": "csv",
 						"selected": false
@@ -231,6 +250,11 @@
 					},
 					{
 						"value": "Watcher",
+						"type": "csv",
+						"selected": false
+					},
+					{
+						"value": "WeatherForecast",
 						"type": "csv",
 						"selected": false
 					},

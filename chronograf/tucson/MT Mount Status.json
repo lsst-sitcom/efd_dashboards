@@ -5,6 +5,10 @@
 			"1": {
 				"name": "Sasquatch InfluxDB",
 				"link": "/chronograf/v1/sources/1"
+			},
+			"2": {
+				"name": "InfluxDB2",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},
@@ -912,7 +916,7 @@
 				"name": "Rotator Angle",
 				"queries": [
 					{
-						"query": "SELECT \"position\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_target\" ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"actualPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.rotation\" ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -924,7 +928,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"position\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_target\" ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"actualPosition\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.rotation\" ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},
@@ -1183,7 +1187,7 @@
 				"name": "Rotator Angle Velocity",
 				"queries": [
 					{
-						"query": "SELECT \"velocity\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_target\" ORDER BY time DESC LIMIT 1",
+						"query": "SELECT \"actualVelocity\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.rotation\" ORDER BY time DESC LIMIT 1",
 						"queryConfig": {
 							"database": "",
 							"measurement": "",
@@ -1195,7 +1199,7 @@
 								"tags": []
 							},
 							"areTagsAccepted": false,
-							"rawText": "SELECT \"velocity\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.logevent_target\" ORDER BY time DESC LIMIT 1",
+							"rawText": "SELECT \"actualVelocity\" FROM \"efd\".\"autogen\".\"lsst.sal.MTRotator.rotation\" ORDER BY time DESC LIMIT 1",
 							"range": null,
 							"shifts": null
 						},

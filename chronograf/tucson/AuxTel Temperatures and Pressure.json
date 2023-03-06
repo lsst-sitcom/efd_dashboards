@@ -5,6 +5,10 @@
 			"1": {
 				"name": "Sasquatch InfluxDB",
 				"link": "/chronograf/v1/sources/1"
+			},
+			"2": {
+				"name": "InfluxDB2",
+				"link": "/chronograf/v1/sources/2"
 			}
 		}
 	},
@@ -399,19 +403,19 @@
 				"name": "CCD",
 				"queries": [
 					{
-						"query": "SELECT mean(\"ccdTemp0\") AS \"mean_ccdTemp0\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.wreb\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(none)",
+						"query": "SELECT mean(\"temp0\") AS \"mean_temp0\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Ccd\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(none)",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.wreb",
+							"measurement": "lsst.sal.ATCamera.focal_plane_Ccd",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "mean_ccdTemp0",
+									"alias": "mean_temp0",
 									"args": [
 										{
-											"value": "ccdTemp0",
+											"value": "temp0",
 											"type": "field",
 											"alias": ""
 										}
@@ -556,10 +560,10 @@
 				"name": "WREB On-Board",
 				"queries": [
 					{
-						"query": "SELECT mean(\"temp1\") AS \"mean_temp1\", mean(\"temp2\") AS \"mean_temp2\", mean(\"temp3\") AS \"mean_temp3\", mean(\"temp4\") AS \"mean_temp4\", mean(\"temp5\") AS \"mean_temp5\", mean(\"temp6\") AS \"mean_temp6\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.fp_Reb\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"temp10\") AS \"mean_temp1\", mean(\"temp20\") AS \"mean_temp2\", mean(\"temp30\") AS \"mean_temp3\", mean(\"temp40\") AS \"mean_temp4\", mean(\"temp50\") AS \"mean_temp5\", mean(\"temp60\") AS \"mean_temp6\" FROM \"efd\".\"autogen\".\"lsst.sal.ATCamera.focal_plane_Reb\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "efd",
-							"measurement": "lsst.sal.ATCamera.fp_Reb",
+							"measurement": "lsst.sal.ATCamera.focal_plane_Reb",
 							"retentionPolicy": "autogen",
 							"fields": [
 								{
@@ -568,7 +572,7 @@
 									"alias": "mean_temp1",
 									"args": [
 										{
-											"value": "temp1",
+											"value": "temp10",
 											"type": "field",
 											"alias": ""
 										}
@@ -580,7 +584,7 @@
 									"alias": "mean_temp2",
 									"args": [
 										{
-											"value": "temp2",
+											"value": "temp20",
 											"type": "field",
 											"alias": ""
 										}
@@ -592,7 +596,7 @@
 									"alias": "mean_temp3",
 									"args": [
 										{
-											"value": "temp3",
+											"value": "temp30",
 											"type": "field",
 											"alias": ""
 										}
@@ -604,7 +608,7 @@
 									"alias": "mean_temp4",
 									"args": [
 										{
-											"value": "temp4",
+											"value": "temp40",
 											"type": "field",
 											"alias": ""
 										}
@@ -616,7 +620,7 @@
 									"alias": "mean_temp5",
 									"args": [
 										{
-											"value": "temp5",
+											"value": "temp50",
 											"type": "field",
 											"alias": ""
 										}
@@ -628,7 +632,7 @@
 									"alias": "mean_temp6",
 									"args": [
 										{
-											"value": "temp6",
+											"value": "temp60",
 											"type": "field",
 											"alias": ""
 										}
