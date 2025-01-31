@@ -1,0 +1,300 @@
+{
+	"meta": {
+		"chronografVersion": "1.10.6",
+		"sources": {
+			"1": {
+				"name": "Base Test Stand InfluxDB",
+				"link": "/chronograf/v1/sources/1"
+			}
+		}
+	},
+	"dashboard": {
+		"id": "44",
+		"cells": [
+			{
+				"i": "4b6c6f6b-71e4-46f8-98d8-c7f29f036287",
+				"x": 0,
+				"y": 5,
+				"w": 12,
+				"h": 4,
+				"name": "Query by SAL Index",
+				"queries": [
+					{
+						"query": "SELECT \"salIndex\", \"level\", \"lineNumber\", \"name\", \"message\", \"traceback\", \"filePath\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\" WHERE time > :dashboardTime: AND  time < :upperDashboardTime: and salIndex = :salindex:",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"salIndex\", \"level\", \"lineNumber\", \"name\", \"message\", \"traceback\", \"filePath\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_logMessage\" WHERE time > :dashboardTime: AND  time < :upperDashboardTime: and salIndex = :salindex:",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.Script.logevent_logMessage.filePath",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.Script.logevent_logMessage.level",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.Script.logevent_logMessage.lineNumber",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.Script.logevent_logMessage.message",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.Script.logevent_logMessage.name",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.Script.logevent_logMessage.salIndex",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.Script.logevent_logMessage.traceback",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/44/cells/4b6c6f6b-71e4-46f8-98d8-c7f29f036287"
+				}
+			},
+			{
+				"i": "850d526d-8747-45a9-ad21-ecd22bf77a2e",
+				"x": 0,
+				"y": 0,
+				"w": 12,
+				"h": 5,
+				"name": "Query by BLOCK ID",
+				"queries": [
+					{
+						"query": "SELECT \"salIndex\", \"groupId\", \"reason\", \"lastCheckpoint\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_state\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND lastCheckpoint =~ /:block:/",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"salIndex\", \"groupId\", \"reason\", \"lastCheckpoint\" FROM \"efd\".\"autogen\".\"lsst.sal.Script.logevent_state\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND lastCheckpoint =~ /:block:/",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/44/cells/850d526d-8747-45a9-ad21-ecd22bf77a2e"
+				}
+			}
+		],
+		"templates": [
+			{
+				"tempVar": ":block:",
+				"values": [
+					{
+						"value": "BLOCK-246",
+						"type": "constant",
+						"selected": true
+					}
+				],
+				"id": "32aeca8d-8eb5-410e-86a3-33c1c49b38e6",
+				"type": "text",
+				"label": "",
+				"sourceID": "dynamic",
+				"links": {
+					"self": "/chronograf/v1/dashboards/44/templates/32aeca8d-8eb5-410e-86a3-33c1c49b38e6"
+				}
+			},
+			{
+				"tempVar": ":salindex:",
+				"values": [
+					{
+						"value": "100028",
+						"type": "constant",
+						"selected": true
+					}
+				],
+				"id": "1d3ccd06-f36d-4da8-acd5-9dde7b0d1349",
+				"type": "text",
+				"label": "",
+				"sourceID": "dynamic",
+				"links": {
+					"self": "/chronograf/v1/dashboards/44/templates/1d3ccd06-f36d-4da8-acd5-9dde7b0d1349"
+				}
+			}
+		],
+		"name": "BLOCK and SAL Script Navigator",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/44",
+			"cells": "/chronograf/v1/dashboards/44/cells",
+			"templates": "/chronograf/v1/dashboards/44/templates"
+		}
+	}
+}

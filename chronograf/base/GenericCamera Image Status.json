@@ -1,0 +1,251 @@
+{
+	"meta": {
+		"chronografVersion": "1.10.6",
+		"sources": {
+			"1": {
+				"name": "Base Test Stand InfluxDB",
+				"link": "/chronograf/v1/sources/1"
+			}
+		}
+	},
+	"dashboard": {
+		"id": "15",
+		"cells": [
+			{
+				"i": "32ed29cd-1e74-4765-85de-6a23ac73c681",
+				"x": 0,
+				"y": 0,
+				"w": 9,
+				"h": 2,
+				"name": "Info",
+				"queries": [
+					{
+						"query": "",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "",
+							"range": null,
+							"shifts": null
+						},
+						"source": "/chronograf/v1/sources/1",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "note",
+				"colors": [],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "Last image producer by the GenericCamera.\n\nSelect an appropriate time window (e.g. `Past 24h`)\n\n",
+				"noteVisibility": "showWhenNoData",
+				"links": {
+					"self": "/chronograf/v1/dashboards/15/cells/32ed29cd-1e74-4765-85de-6a23ac73c681"
+				}
+			},
+			{
+				"i": "e20f2b92-70da-4b14-85b3-9b07cc029444",
+				"x": 0,
+				"y": 2,
+				"w": 11,
+				"h": 6,
+				"name": "Image sequence",
+				"queries": [
+					{
+						"query": "SELECT \"url\" FROM \"efd\".\"autogen\".\"lsst.sal.GenericCamera.logevent_largeFileObjectAvailable\" WHERE salIndex = :salindex: AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"url\" FROM \"efd\".\"autogen\".\"lsst.sal.GenericCamera.logevent_largeFileObjectAvailable\" WHERE salIndex = :salindex: AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.GenericCamera.logevent_largeFileObjectAvailable.url",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/15/cells/e20f2b92-70da-4b14-85b3-9b07cc029444"
+				}
+			}
+		],
+		"templates": [
+			{
+				"tempVar": ":salindex:",
+				"values": [
+					{
+						"value": "1",
+						"type": "csv",
+						"selected": true
+					}
+				],
+				"id": "e86f7370-8fe9-410a-8f24-652a5cef9a30",
+				"type": "csv",
+				"label": "",
+				"query": {
+					"influxql": "",
+					"measurement": "",
+					"tagKey": "",
+					"fieldKey": ""
+				},
+				"sourceID": "dynamic",
+				"links": {
+					"self": "/chronograf/v1/dashboards/15/templates/e86f7370-8fe9-410a-8f24-652a5cef9a30"
+				}
+			}
+		],
+		"name": "GenericCamera Image Status",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/15",
+			"cells": "/chronograf/v1/dashboards/15/cells",
+			"templates": "/chronograf/v1/dashboards/15/templates"
+		}
+	}
+}

@@ -1,0 +1,572 @@
+{
+	"meta": {
+		"chronografVersion": "1.10.6",
+		"sources": {
+			"1": {
+				"name": "Base Test Stand InfluxDB",
+				"link": "/chronograf/v1/sources/1"
+			}
+		}
+	},
+	"dashboard": {
+		"id": "28",
+		"cells": [
+			{
+				"i": "7fcfeb19-b0d5-4e09-85a8-222047f7a694",
+				"x": 0,
+				"y": 4,
+				"w": 6,
+				"h": 4,
+				"name": "Acceleration PSD TEA sensor",
+				"queries": [
+					{
+						"query": "SELECT \"accelerationX0\", \"accelerationY0\", \"accelerationZ0\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.accelerometer\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:  AND \"sensorName\" = 'SST spider spindle'",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ESS.accelerometer",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "accelerationX0",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "accelerationY0",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "accelerationZ0",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {
+								"sensorName": [
+									"SST spider spindle"
+								]
+							},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"-10",
+							"10"
+						],
+						"label": "Acceleration (m/s2)",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "4a27e2d5-2cdb-4682-9235-a2140eff5793",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "805dc82a-5f80-45f7-ab21-66821ad82b1d",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "af89b4bd-e8b9-4002-ba2e-0001ff8c51fe",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/28/cells/7fcfeb19-b0d5-4e09-85a8-222047f7a694"
+				}
+			},
+			{
+				"i": "ddb3dd7c-f990-4e97-b894-2b005b650c68",
+				"x": 6,
+				"y": 0,
+				"w": 6,
+				"h": 4,
+				"name": "Acceleration PSD Leg +X sensor",
+				"queries": [
+					{
+						"query": "SELECT \"accelerationX0\", \"accelerationY0\", \"accelerationZ0\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.accelerometer\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"sensorName\" = 'SST top end ring -x -y'",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ESS.accelerometer",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "accelerationX0",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "accelerationY0",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "accelerationZ0",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {
+								"sensorName": [
+									"SST top end ring -x -y"
+								]
+							},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"-10",
+							"10"
+						],
+						"label": "Acceleration (m/s2)",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "4a27e2d5-2cdb-4682-9235-a2140eff5793",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "805dc82a-5f80-45f7-ab21-66821ad82b1d",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "af89b4bd-e8b9-4002-ba2e-0001ff8c51fe",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/28/cells/ddb3dd7c-f990-4e97-b894-2b005b650c68"
+				}
+			},
+			{
+				"i": "174a3733-6729-4414-8f70-6628493f8bb9",
+				"x": 0,
+				"y": 0,
+				"w": 6,
+				"h": 4,
+				"name": "Acceleration Leg -X sensor",
+				"queries": [
+					{
+						"query": "SELECT \"accelerationX0\", \"accelerationY0\", \"accelerationZ0\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.accelerometer\" WHERE time > :dashboardTime: AND time < :upperDashboardTime:  AND \"sensorName\" = 'SST top end ring +x -y'",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ESS.accelerometer",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "accelerationX0",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "accelerationY0",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "accelerationZ0",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {
+								"sensorName": [
+									"SST top end ring +x -y"
+								]
+							},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"-10",
+							"10"
+						],
+						"label": "Acceleration (m/s2)",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "4a27e2d5-2cdb-4682-9235-a2140eff5793",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "805dc82a-5f80-45f7-ab21-66821ad82b1d",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "af89b4bd-e8b9-4002-ba2e-0001ff8c51fe",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/28/cells/174a3733-6729-4414-8f70-6628493f8bb9"
+				}
+			},
+			{
+				"i": "b95a952a-e82b-4cc0-8ec7-37a81820b8b2",
+				"x": 6,
+				"y": 4,
+				"w": 6,
+				"h": 4,
+				"name": "Acceleration PSD M2 Surrogate sensor",
+				"queries": [
+					{
+						"query": "SELECT \"accelerationX0\", \"accelerationY0\", \"accelerationZ0\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.accelerometer\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"sensorName\" = 'SST spider spindle'",
+						"queryConfig": {
+							"database": "efd",
+							"measurement": "lsst.sal.ESS.accelerometer",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "accelerationX0",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "accelerationY0",
+									"type": "field",
+									"alias": ""
+								},
+								{
+									"value": "accelerationZ0",
+									"type": "field",
+									"alias": ""
+								}
+							],
+							"tags": {
+								"sensorName": [
+									"SST spider spindle"
+								]
+							},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"-10",
+							"10"
+						],
+						"label": "Acceleration (m/s2)",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "4a27e2d5-2cdb-4682-9235-a2140eff5793",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "805dc82a-5f80-45f7-ab21-66821ad82b1d",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "af89b4bd-e8b9-4002-ba2e-0001ff8c51fe",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/28/cells/b95a952a-e82b-4cc0-8ec7-37a81820b8b2"
+				}
+			}
+		],
+		"templates": [],
+		"name": "MTMount Accelerometers",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/28",
+			"cells": "/chronograf/v1/dashboards/28/cells",
+			"templates": "/chronograf/v1/dashboards/28/templates"
+		}
+	}
+}

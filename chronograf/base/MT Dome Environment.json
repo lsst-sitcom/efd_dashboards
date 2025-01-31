@@ -1,0 +1,944 @@
+{
+	"meta": {
+		"chronografVersion": "1.10.6",
+		"sources": {
+			"1": {
+				"name": "Base Test Stand InfluxDB",
+				"link": "/chronograf/v1/sources/1"
+			}
+		}
+	},
+	"dashboard": {
+		"id": "26",
+		"cells": [
+			{
+				"i": "a361e01e-764e-4838-8350-e8b2ed8d3b06",
+				"x": 0,
+				"y": 0,
+				"w": 12,
+				"h": 3,
+				"name": "Inside/Outside Temps",
+				"queries": [
+					{
+						"query": "SELECT \"temperature0\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 301 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"temperature0\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 301 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT temperature0 FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 101 AND time > :dashboardTime: AND time < :upperDashboardTime: ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT temperature0 FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 101 AND time > :dashboardTime: AND time < :upperDashboardTime: ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT temperature0 FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 102 AND time > :dashboardTime: AND time < :upperDashboardTime: ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT temperature0 FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 102 AND time > :dashboardTime: AND time < :upperDashboardTime: ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT temperature0 FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 103 AND time > :dashboardTime: AND time < :upperDashboardTime: ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT temperature0 FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 103 AND time > :dashboardTime: AND time < :upperDashboardTime: ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "0b8c9e1e-59cc-4d73-91d5-86f08be6993c",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "860ccdf5-00e6-4b43-89e3-c223db38a90d",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "383848c4-1981-488d-a718-cd6f20a7009a",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/26/cells/a361e01e-764e-4838-8350-e8b2ed8d3b06"
+				}
+			},
+			{
+				"i": "036f201a-4360-4f68-b8eb-62754044fd84",
+				"x": 0,
+				"y": 7,
+				"w": 6,
+				"h": 4,
+				"name": "Outside Temp/Dew Point",
+				"queries": [
+					{
+						"query": "SELECT \"temperature0\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 301 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"temperature0\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 301 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT \"dewPoint\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.dewPoint\" WHERE salIndex = 301 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"dewPoint\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.dewPoint\" WHERE salIndex = 301 AND time > :dashboardTime: AND time < :upperDashboardTime:",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "0b8c9e1e-59cc-4d73-91d5-86f08be6993c",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "860ccdf5-00e6-4b43-89e3-c223db38a90d",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "383848c4-1981-488d-a718-cd6f20a7009a",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/26/cells/036f201a-4360-4f68-b8eb-62754044fd84"
+				}
+			},
+			{
+				"i": "122000cd-d83e-4e67-8f12-e79ddb8dec7a",
+				"x": 0,
+				"y": 3,
+				"w": 4,
+				"h": 4,
+				"name": "MTDome-ESS01 - ESSID 101 - Air Handling Unit 1 - RPi Sticker 3",
+				"queries": [
+					{
+						"query": "SELECT temperature0 FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 101 and time > :dashboardTime: AND time < :upperDashboardTime: ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT temperature0 FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 101 and time > :dashboardTime: AND time < :upperDashboardTime: ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT \"relativeHumidity\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.relativeHumidity\" WHERE salIndex = 101 and time > :dashboardTime: AND time < :upperDashboardTime:\n",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"relativeHumidity\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.relativeHumidity\" WHERE salIndex = 101 and time > :dashboardTime: AND time < :upperDashboardTime:\n",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT \"dewPoint\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.dewPoint\" WHERE salIndex = 101 and time > :dashboardTime: AND time < :upperDashboardTime:\n",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"dewPoint\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.dewPoint\" WHERE salIndex = 101 and time > :dashboardTime: AND time < :upperDashboardTime:\n",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "d461b413-8d7b-4889-b895-3847a59ccdc9",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "5f64a295-8a2a-463b-81c6-0b28db817136",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "81d87c2d-a239-418b-8442-b5a5d1d0d202",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ESS.hx85a.airTemperature",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ESS.hx85a.dewPoint",
+						"displayName": "",
+						"visible": true
+					},
+					{
+						"internalName": "lsst.sal.ESS.hx85a.relativeHumidity",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/26/cells/122000cd-d83e-4e67-8f12-e79ddb8dec7a"
+				}
+			},
+			{
+				"i": "8a4a5f7f-7af1-49e7-b07d-e1c7b7a32b72",
+				"x": 4,
+				"y": 3,
+				"w": 4,
+				"h": 4,
+				"name": "MTDome-ESS02 - ESSID 102 - Wall Inside at 7th Floor - RPi Sticker 1",
+				"queries": [
+					{
+						"query": "SELECT temperature0 FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 102 and time > :dashboardTime: AND time < :upperDashboardTime: ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT temperature0 FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 102 and time > :dashboardTime: AND time < :upperDashboardTime: ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT relativeHumidity FROM \"efd\".\"autogen\".\"lsst.sal.ESS.relativeHumidity\" WHERE salIndex = 102 and time > :dashboardTime: AND time < :upperDashboardTime: ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT relativeHumidity FROM \"efd\".\"autogen\".\"lsst.sal.ESS.relativeHumidity\" WHERE salIndex = 102 and time > :dashboardTime: AND time < :upperDashboardTime: ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT dewPoint FROM \"efd\".\"autogen\".\"lsst.sal.ESS.dewPoint\" WHERE salIndex = 102 and time > :dashboardTime: AND time < :upperDashboardTime: ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT dewPoint FROM \"efd\".\"autogen\".\"lsst.sal.ESS.dewPoint\" WHERE salIndex = 102 and time > :dashboardTime: AND time < :upperDashboardTime: ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "d461b413-8d7b-4889-b895-3847a59ccdc9",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "5f64a295-8a2a-463b-81c6-0b28db817136",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "81d87c2d-a239-418b-8442-b5a5d1d0d202",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/26/cells/8a4a5f7f-7af1-49e7-b07d-e1c7b7a32b72"
+				}
+			},
+			{
+				"i": "d446dfab-3d18-494c-9015-ba5e8a2fcca0",
+				"x": 8,
+				"y": 3,
+				"w": 4,
+				"h": 4,
+				"name": "MTDome Humidity - ESSID 103 - MTDome Inside at Level 8th - RPi w/ Sticker 4",
+				"queries": [
+					{
+						"query": "SELECT temperature0 FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 103 and time > :dashboardTime: AND time < :upperDashboardTime: ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT temperature0 FROM \"efd\".\"autogen\".\"lsst.sal.ESS.temperature\" WHERE salIndex = 103 and time > :dashboardTime: AND time < :upperDashboardTime: ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT relativeHumidity FROM \"efd\".\"autogen\".\"lsst.sal.ESS.relativeHumidity\" WHERE salIndex = 103 and time > :dashboardTime: AND time < :upperDashboardTime: ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT relativeHumidity FROM \"efd\".\"autogen\".\"lsst.sal.ESS.relativeHumidity\" WHERE salIndex = 103 and time > :dashboardTime: AND time < :upperDashboardTime: ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT dewPoint FROM \"efd\".\"autogen\".\"lsst.sal.ESS.dewPoint\" WHERE salIndex = 103 and time > :dashboardTime: AND time < :upperDashboardTime: ",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT dewPoint FROM \"efd\".\"autogen\".\"lsst.sal.ESS.dewPoint\" WHERE salIndex = 103 and time > :dashboardTime: AND time < :upperDashboardTime: ",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "d461b413-8d7b-4889-b895-3847a59ccdc9",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "5f64a295-8a2a-463b-81c6-0b28db817136",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "81d87c2d-a239-418b-8442-b5a5d1d0d202",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {
+					"type": "static",
+					"orientation": "bottom"
+				},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/26/cells/d446dfab-3d18-494c-9015-ba5e8a2fcca0"
+				}
+			},
+			{
+				"i": "2dbd034a-2fad-4f24-9e5b-da60cc25ecb1",
+				"x": 6,
+				"y": 7,
+				"w": 6,
+				"h": 4,
+				"name": "MTDome-ESS03 - ESSID 103 Air Pressure",
+				"queries": [
+					{
+						"query": "SELECT \"pressure0\" / 100 as \"barometricPressure [mbar]\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.pressure\" WHERE salIndex = 103 and time > :dashboardTime: AND time < :upperDashboardTime: and \"pressure0\" / 100 > 710\n",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT \"pressure0\" / 100 as \"barometricPressure [mbar]\" FROM \"efd\".\"autogen\".\"lsst.sal.ESS.pressure\" WHERE salIndex = 103 and time > :dashboardTime: AND time < :upperDashboardTime: and \"pressure0\" / 100 > 710\n",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"720",
+							"745"
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "d461b413-8d7b-4889-b895-3847a59ccdc9",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "5f64a295-8a2a-463b-81c6-0b28db817136",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "81d87c2d-a239-418b-8442-b5a5d1d0d202",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/26/cells/2dbd034a-2fad-4f24-9e5b-da60cc25ecb1"
+				}
+			}
+		],
+		"templates": [],
+		"name": "MT Dome Environment",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/26",
+			"cells": "/chronograf/v1/dashboards/26/cells",
+			"templates": "/chronograf/v1/dashboards/26/templates"
+		}
+	}
+}
